@@ -1,0 +1,12 @@
+C:\Users\user\source\repos\Sistema de diagnostico\Proyecto\bin\Debug\Proyecto.dll
+C:\Users\user\source\repos\Sistema de diagnostico\Proyecto\bin\Debug\Proyecto.pdb
+C:\Users\user\source\repos\Sistema de diagnostico\Proyecto\bin\Debug\Proyecto.xml
+C:\Users\user\source\repos\Sistema de diagnostico\Proyecto\obj\Debug\ConexionBD.vbprojAssemblyReference.cache
+C:\Users\user\source\repos\Sistema de diagnostico\Proyecto\obj\Debug\Interop.ADODB.dll
+C:\Users\user\source\repos\Sistema de diagnostico\Proyecto\obj\Debug\ConexionBD.vbproj.ResolveComReference.cache
+C:\Users\user\source\repos\Sistema de diagnostico\Proyecto\obj\Debug\Proyecto.Resources.resources
+C:\Users\user\source\repos\Sistema de diagnostico\Proyecto\obj\Debug\ConexionBD.vbproj.GenerateResource.cache
+C:\Users\user\source\repos\Sistema de diagnostico\Proyecto\obj\Debug\ConexionBD.vbproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Sistema de diagnostico\Proyecto\obj\Debug\Proyecto.dll
+C:\Users\user\source\repos\Sistema de diagnostico\Proyecto\obj\Debug\Proyecto.xml
+C:\Users\user\source\repos\Sistema de diagnostico\Proyecto\obj\Debug\Proyecto.pdb

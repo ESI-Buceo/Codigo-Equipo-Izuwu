@@ -1,0 +1,52 @@
+C:\Users\user\source\repos\Gestor\Codigo\bin\Debug\Codigo.dll
+C:\Users\user\source\repos\Gestor\Codigo\bin\Debug\Codigo.pdb
+C:\Users\user\source\repos\Gestor\Codigo\bin\Debug\Codigo.xml
+C:\Users\user\source\repos\Gestor\Codigo\obj\Debug\CodigoBase.vbprojAssemblyReference.cache
+C:\Users\user\source\repos\Gestor\Codigo\obj\Debug\Interop.ADODB.dll
+C:\Users\user\source\repos\Gestor\Codigo\obj\Debug\CodigoBase.vbproj.ResolveComReference.cache
+C:\Users\user\source\repos\Gestor\Codigo\obj\Debug\Codigo.Resources.resources
+C:\Users\user\source\repos\Gestor\Codigo\obj\Debug\CodigoBase.vbproj.GenerateResource.cache
+C:\Users\user\source\repos\Gestor\Codigo\obj\Debug\CodigoBase.vbproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Gestor\Codigo\obj\Debug\Codigo.dll
+C:\Users\user\source\repos\Gestor\Codigo\obj\Debug\Codigo.xml
+C:\Users\user\source\repos\Gestor\Codigo\obj\Debug\Codigo.pdb
+C:\Users\Usuario\source\repos\Gestor\Codigo\bin\Debug\Codigo.dll
+C:\Users\Usuario\source\repos\Gestor\Codigo\bin\Debug\Codigo.pdb
+C:\Users\Usuario\source\repos\Gestor\Codigo\bin\Debug\Codigo.xml
+C:\Users\Usuario\source\repos\Gestor\Codigo\obj\Debug\CodigoBase.vbprojAssemblyReference.cache
+C:\Users\Usuario\source\repos\Gestor\Codigo\obj\Debug\Interop.ADODB.dll
+C:\Users\Usuario\source\repos\Gestor\Codigo\obj\Debug\CodigoBase.vbproj.ResolveComReference.cache
+C:\Users\Usuario\source\repos\Gestor\Codigo\obj\Debug\Codigo.Resources.resources
+C:\Users\Usuario\source\repos\Gestor\Codigo\obj\Debug\CodigoBase.vbproj.GenerateResource.cache
+C:\Users\Usuario\source\repos\Gestor\Codigo\obj\Debug\CodigoBase.vbproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\Gestor\Codigo\obj\Debug\Codigo.dll
+C:\Users\Usuario\source\repos\Gestor\Codigo\obj\Debug\Codigo.xml
+C:\Users\Usuario\source\repos\Gestor\Codigo\obj\Debug\Codigo.pdb
+C:\Users\pinto\source\repos\Gestor\Codigo\bin\Debug\Codigo.dll
+C:\Users\pinto\source\repos\Gestor\Codigo\bin\Debug\Codigo.pdb
+C:\Users\pinto\source\repos\Gestor\Codigo\bin\Debug\Codigo.xml
+C:\Users\pinto\source\repos\Gestor\Codigo\obj\Debug\CodigoBase.vbprojAssemblyReference.cache
+C:\Users\pinto\source\repos\Gestor\Codigo\obj\Debug\Interop.ADODB.dll
+C:\Users\pinto\source\repos\Gestor\Codigo\obj\Debug\CodigoBase.vbproj.ResolveComReference.cache
+C:\Users\pinto\source\repos\Gestor\Codigo\obj\Debug\Codigo.Resources.resources
+C:\Users\pinto\source\repos\Gestor\Codigo\obj\Debug\CodigoBase.vbproj.GenerateResource.cache
+C:\Users\pinto\source\repos\Gestor\Codigo\obj\Debug\CodigoBase.vbproj.CoreCompileInputs.cache
+C:\Users\pinto\source\repos\Gestor\Codigo\obj\Debug\Codigo.dll
+C:\Users\pinto\source\repos\Gestor\Codigo\obj\Debug\Codigo.xml
+C:\Users\pinto\source\repos\Gestor\Codigo\obj\Debug\Codigo.pdb
+C:\Users\user\source\repos\Sistema de diagnostico\Codigo\bin\Debug\Codigo.dll
+C:\Users\user\source\repos\Sistema de diagnostico\Codigo\bin\Debug\Codigo.pdb
+C:\Users\user\source\repos\Sistema de diagnostico\Codigo\bin\Debug\Codigo.xml
+C:\Users\user\source\repos\Sistema de diagnostico\Codigo\bin\Debug\Proyecto.dll
+C:\Users\user\source\repos\Sistema de diagnostico\Codigo\bin\Debug\Proyecto.pdb
+C:\Users\user\source\repos\Sistema de diagnostico\Codigo\bin\Debug\Proyecto.xml
+C:\Users\user\source\repos\Sistema de diagnostico\Codigo\obj\Debug\CodigoBase.vbprojAssemblyReference.cache
+C:\Users\user\source\repos\Sistema de diagnostico\Codigo\obj\Debug\Interop.ADODB.dll
+C:\Users\user\source\repos\Sistema de diagnostico\Codigo\obj\Debug\CodigoBase.vbproj.ResolveComReference.cache
+C:\Users\user\source\repos\Sistema de diagnostico\Codigo\obj\Debug\Codigo.Resources.resources
+C:\Users\user\source\repos\Sistema de diagnostico\Codigo\obj\Debug\CodigoBase.vbproj.GenerateResource.cache
+C:\Users\user\source\repos\Sistema de diagnostico\Codigo\obj\Debug\CodigoBase.vbproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Sistema de diagnostico\Codigo\obj\Debug\CodigoBase.vbproj.CopyComplete
+C:\Users\user\source\repos\Sistema de diagnostico\Codigo\obj\Debug\Codigo.dll
+C:\Users\user\source\repos\Sistema de diagnostico\Codigo\obj\Debug\Codigo.xml
+C:\Users\user\source\repos\Sistema de diagnostico\Codigo\obj\Debug\Codigo.pdb
