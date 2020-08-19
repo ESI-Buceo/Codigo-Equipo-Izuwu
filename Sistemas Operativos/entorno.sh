@@ -1,5 +1,8 @@
 #!/bin/bash
 function inicio(){
+clear
+echo "Entorno de trabajos"
+echo " "
 echo "1- Crear directorios"
 echo "2- Respaldar directorios"
 echo "3- Salir"
@@ -8,13 +11,13 @@ case $op in
 1) cd /home
 if [ -d /home/Usuarios ]
 then
-echo "Ya existe"
+echo "ya existe"
 else
 sudo mkdir Usuarios
 fi
 cd Usuarios
 if [ -d /home/Usuarios/Medico ]
-then 
+then
 echo "ya existe"
 else
 sudo mkdir Medico
@@ -24,16 +27,16 @@ then
 echo "ya existe"
 else
 sudo mkdir Administrador
-fi;;
+fi
+inicio;;
 2) cd /home
 sudo mkdir Respaldo
 sudo cp -r /home/Usuarios/ /home/Respaldo/
 inicio;;
-3) inicio;;
+3) exit;;
 *) echo "Opcion incorrecta"
 sleep 1
 inicio;;
 esac
 }
 inicio
-

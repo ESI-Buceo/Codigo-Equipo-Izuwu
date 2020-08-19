@@ -507,4 +507,30 @@ Public Class ConexionBasedeDatos
         End Try
         connection.Close()
     End Sub
+
+    '///------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'Funcion para obtener diagnostico (esta sujeto a cambios)
+    Public Function prueba(ByVal lista)
+        Dim connection As Connection = conectar()
+        Dim cadena As New StringBuilder()
+        Dim consulta As String = "select p.Nombre " +
+                                 "from sintoma s inner join tiene t on s.id_sin=t.id_sin " +
+                                 "inner join patologia p on t.id_pat=p.id_pat " +
+                                 "where"
+        cadena.Append(consulta)
+        Dim listanom As New List(Of String)
+        listanom.AddRange(lista)
+        For Each nombre As String In listanom
+            cadena.Append(" s.Nombre= " + nombre)
+            cadena.Append(" OR")
+        Next
+
+        Dim ultimoOR1 As Integer = cadena.Length - 2
+        Dim cadenaConsulta As String = cadena.ToString
+        Dim consultaFinal As String = cadenaConsulta.Substring(0, ultimoOR1) + ";"
+
+
+        connection.Close()
+        Return consultaFinal
+    End Function
 End Class

@@ -2,10 +2,6 @@
 Public Class Diagnostico
     Dim instancia As LogicaAplicacion = New LogicaAplicacion()
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         listSintoma.Items.Add(cbxSintoma.Text)
         cbxSintoma.ResetText()
@@ -13,9 +9,16 @@ Public Class Diagnostico
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+        Dim listasintomas As New List(Of String)
+        For i = 0 To listSintoma.Items.Count - 1
+            listasintomas.Add(listSintoma.Items.Item(i).ToString)
+        Next
+
+        Console.WriteLine(instancia.prueba(listasintomas))
+
+
         pnlListaSintoma.Hide()
         pnlDiagnostico.Show()
-
 
 
 
@@ -41,9 +44,6 @@ Public Class Diagnostico
 
         Next
     End Sub
-
-
-
 
 
 End Class

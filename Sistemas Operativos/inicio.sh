@@ -10,12 +10,13 @@ echo "3- Modificar Usuario"
 echo "4- Salir"
 read -p "Opcion: " op
 case $op in
-1) sh alta.sh;;
-2) sh baja.sh;;
+1) sh alta.sh ;;
+2) sh baja.sh ;;
 3) sh modificar.sh;;
 4) exit;;
-*) echo "Opcion Incorrecta"
+*) echo "Opcion incorrecta"
 sleep 1
 inicio;;
+esac
 }
 inicio

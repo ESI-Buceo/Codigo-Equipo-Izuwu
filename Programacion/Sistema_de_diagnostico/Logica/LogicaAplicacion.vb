@@ -96,4 +96,9 @@ Public Class LogicaAplicacion
     Public Sub agregarGestor(ByVal ID, ByVal nombre, ByVal apellido, ByVal CI, ByVal Telefono, ByVal direccion, ByVal empresa, ByVal email, ByVal contraseña, ByVal fechanac)
         instancia.agregarGestor(ID, nombre, apellido, CI, Telefono, direccion, empresa, email, contraseña, fechanac)
     End Sub
+
+    Public Function prueba(ByVal lista)
+        Return instancia.prueba(lista)
+    End Function
+
 End Class

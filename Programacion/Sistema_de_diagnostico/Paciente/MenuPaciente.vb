@@ -5,7 +5,9 @@
         Diagnostico.pnlDiagnostico.Visible = False
         Diagnostico.cbxSintoma.Items.Clear()
         Diagnostico.listSintoma.Items.Clear()
+        Diagnostico.cbxSintoma.Items.Clear()
         Diagnostico.ShowDialog()
+
     End Sub
 
     Private Sub Historial_Click(sender As Object, e As EventArgs) Handles Historial.Click

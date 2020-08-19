@@ -32,8 +32,9 @@ Partial Class Diagnostico
         Me.pnlDiagnostico = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.labDiagnostico = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnAceptarDiag = New System.Windows.Forms.Button()
+        Me.btnConsultarMed = New System.Windows.Forms.Button()
+        Me.lblDiagnostico = New System.Windows.Forms.Label()
         Me.pnlListaSintoma.SuspendLayout()
         Me.pnlDiagnostico.SuspendLayout()
         Me.SuspendLayout()
@@ -96,6 +97,7 @@ Partial Class Diagnostico
         '
         'pnlListaSintoma
         '
+        Me.pnlListaSintoma.Controls.Add(Me.pnlDiagnostico)
         Me.pnlListaSintoma.Controls.Add(Me.listSintoma)
         Me.pnlListaSintoma.Controls.Add(Me.btnQuitar)
         Me.pnlListaSintoma.Location = New System.Drawing.Point(326, 36)
@@ -105,11 +107,12 @@ Partial Class Diagnostico
         '
         'pnlDiagnostico
         '
+        Me.pnlDiagnostico.Controls.Add(Me.lblDiagnostico)
         Me.pnlDiagnostico.Controls.Add(Me.Label1)
         Me.pnlDiagnostico.Controls.Add(Me.labDiagnostico)
-        Me.pnlDiagnostico.Controls.Add(Me.Button2)
-        Me.pnlDiagnostico.Controls.Add(Me.Button1)
-        Me.pnlDiagnostico.Location = New System.Drawing.Point(326, 36)
+        Me.pnlDiagnostico.Controls.Add(Me.btnAceptarDiag)
+        Me.pnlDiagnostico.Controls.Add(Me.btnConsultarMed)
+        Me.pnlDiagnostico.Location = New System.Drawing.Point(0, 22)
         Me.pnlDiagnostico.Name = "pnlDiagnostico"
         Me.pnlDiagnostico.Size = New System.Drawing.Size(259, 277)
         Me.pnlDiagnostico.TabIndex = 9
@@ -135,30 +138,38 @@ Partial Class Diagnostico
         Me.labDiagnostico.Size = New System.Drawing.Size(0, 16)
         Me.labDiagnostico.TabIndex = 2
         '
-        'Button2
+        'btnAceptarDiag
         '
-        Me.Button2.Location = New System.Drawing.Point(159, 205)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(77, 36)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Aceptar Diagnostico"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnAceptarDiag.Location = New System.Drawing.Point(159, 205)
+        Me.btnAceptarDiag.Name = "btnAceptarDiag"
+        Me.btnAceptarDiag.Size = New System.Drawing.Size(77, 36)
+        Me.btnAceptarDiag.TabIndex = 1
+        Me.btnAceptarDiag.Text = "Aceptar Diagnostico"
+        Me.btnAceptarDiag.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnConsultarMed
         '
-        Me.Button1.Location = New System.Drawing.Point(21, 205)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(80, 36)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Consultar Medico"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnConsultarMed.Location = New System.Drawing.Point(21, 205)
+        Me.btnConsultarMed.Name = "btnConsultarMed"
+        Me.btnConsultarMed.Size = New System.Drawing.Size(80, 36)
+        Me.btnConsultarMed.TabIndex = 0
+        Me.btnConsultarMed.Text = "Consultar Medico"
+        Me.btnConsultarMed.UseVisualStyleBackColor = True
+        '
+        'lblDiagnostico
+        '
+        Me.lblDiagnostico.AutoSize = True
+        Me.lblDiagnostico.Location = New System.Drawing.Point(49, 72)
+        Me.lblDiagnostico.Name = "lblDiagnostico"
+        Me.lblDiagnostico.Size = New System.Drawing.Size(39, 13)
+        Me.lblDiagnostico.TabIndex = 4
+        Me.lblDiagnostico.Text = "Label3"
         '
         'Diagnostico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(597, 450)
-        Me.Controls.Add(Me.pnlDiagnostico)
         Me.Controls.Add(Me.pnlListaSintoma)
         Me.Controls.Add(Me.cbxSintoma)
         Me.Controls.Add(Me.btnAceptar)
@@ -182,7 +193,8 @@ Partial Class Diagnostico
     Friend WithEvents pnlListaSintoma As Panel
     Friend WithEvents pnlDiagnostico As Panel
     Friend WithEvents labDiagnostico As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnAceptarDiag As Button
+    Friend WithEvents btnConsultarMed As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents lblDiagnostico As Label
 End Class

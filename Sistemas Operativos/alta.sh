@@ -2,7 +2,7 @@
 clear
 function alta(){
 clear
-echo "creacion de Usuarios"
+echo "Creacion de Usuarios"
 echo " "
 echo "1- Medico"
 echo "2- Administrador"
@@ -24,7 +24,8 @@ echo "1- Si"
 echo "2- No"
 read -p "" op
 case $op in
-1) sudo useradd -d /home/Usuarios/Medico/$directorio -m -s /bin/bash -g $grupo -G $grupo $nombre
+1)
+sudo useradd -d /home/Usuarios/Medico/$directorio -m -s /bin/bash -g $grupo -G $grupo $nombre
 echo "Ingrese contraseña para el usuario"
 sudo passwd $nombre;;
 2) sudo groupadd $grupo
@@ -43,7 +44,8 @@ echo "1- Si"
 echo "2- No"
 read -p "" op
 case $op in
-1) sudo useradd -d /home/Usuarios/Administrador/$directorio -m -s /bin/bash -g $grupo -G sudo $nombre
+1)
+sudo useradd -d /home/Usuarios/Administrador/$directorio -m -s /bin/bash -g $grupo -G sudo $nombre
 echo "Ingrese contraseña para el usuario"
 sudo passwd $nombre;;
 2) sudo groupadd $grupo
