@@ -14,7 +14,6 @@ Public Class Diagnostico
             listasintomas.Add(listSintoma.Items.Item(i).ToString)
         Next
 
-        Console.WriteLine(instancia.prueba(listasintomas))
 
 
         pnlListaSintoma.Hide()

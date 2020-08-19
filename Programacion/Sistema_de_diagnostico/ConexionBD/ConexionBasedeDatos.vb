@@ -510,6 +510,7 @@ Public Class ConexionBasedeDatos
 
     '///------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Funcion para obtener diagnostico (esta sujeto a cambios)
+    'Todavia no esta terminado
     Public Function prueba(ByVal lista)
         Dim connection As Connection = conectar()
         Dim cadena As New StringBuilder()
@@ -521,15 +522,18 @@ Public Class ConexionBasedeDatos
         Dim listanom As New List(Of String)
         listanom.AddRange(lista)
         For Each nombre As String In listanom
-            cadena.Append(" s.Nombre= " + nombre)
+            cadena.Append(" s.Nombre= '" + nombre + "'")
             cadena.Append(" OR")
         Next
 
         Dim ultimoOR1 As Integer = cadena.Length - 2
         Dim cadenaConsulta As String = cadena.ToString
         Dim consultaFinal As String = cadenaConsulta.Substring(0, ultimoOR1) + ";"
+        Try
+            Dim consultaBD As Recordset = connection.Execute(consultaFinal)
+        Catch ex As Exception
 
-
+        End Try
         connection.Close()
         Return consultaFinal
     End Function
