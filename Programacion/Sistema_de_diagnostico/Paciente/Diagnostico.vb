@@ -9,15 +9,14 @@ Public Class Diagnostico
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+        pnlListaSintoma.Visible = False
+        pnlDiagnostico.Visible = True
+
         Dim listasintomas As New List(Of String)
         For i = 0 To listSintoma.Items.Count - 1
             listasintomas.Add(listSintoma.Items.Item(i).ToString)
         Next
-
-
-
-        pnlListaSintoma.Hide()
-        pnlDiagnostico.Show()
+        instancia.prueba(listasintomas)
 
 
 
@@ -43,6 +42,5 @@ Public Class Diagnostico
 
         Next
     End Sub
-
 
 End Class

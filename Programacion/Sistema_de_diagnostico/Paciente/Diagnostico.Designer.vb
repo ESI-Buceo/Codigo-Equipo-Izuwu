@@ -30,11 +30,11 @@ Partial Class Diagnostico
         Me.cbxSintoma = New System.Windows.Forms.ComboBox()
         Me.pnlListaSintoma = New System.Windows.Forms.Panel()
         Me.pnlDiagnostico = New System.Windows.Forms.Panel()
+        Me.lblDiagnostico = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.labDiagnostico = New System.Windows.Forms.Label()
         Me.btnAceptarDiag = New System.Windows.Forms.Button()
         Me.btnConsultarMed = New System.Windows.Forms.Button()
-        Me.lblDiagnostico = New System.Windows.Forms.Label()
         Me.pnlListaSintoma.SuspendLayout()
         Me.pnlDiagnostico.SuspendLayout()
         Me.SuspendLayout()
@@ -97,7 +97,6 @@ Partial Class Diagnostico
         '
         'pnlListaSintoma
         '
-        Me.pnlListaSintoma.Controls.Add(Me.pnlDiagnostico)
         Me.pnlListaSintoma.Controls.Add(Me.listSintoma)
         Me.pnlListaSintoma.Controls.Add(Me.btnQuitar)
         Me.pnlListaSintoma.Location = New System.Drawing.Point(326, 36)
@@ -112,11 +111,20 @@ Partial Class Diagnostico
         Me.pnlDiagnostico.Controls.Add(Me.labDiagnostico)
         Me.pnlDiagnostico.Controls.Add(Me.btnAceptarDiag)
         Me.pnlDiagnostico.Controls.Add(Me.btnConsultarMed)
-        Me.pnlDiagnostico.Location = New System.Drawing.Point(0, 22)
+        Me.pnlDiagnostico.Location = New System.Drawing.Point(326, 58)
         Me.pnlDiagnostico.Name = "pnlDiagnostico"
         Me.pnlDiagnostico.Size = New System.Drawing.Size(259, 277)
         Me.pnlDiagnostico.TabIndex = 9
         Me.pnlDiagnostico.Visible = False
+        '
+        'lblDiagnostico
+        '
+        Me.lblDiagnostico.AutoSize = True
+        Me.lblDiagnostico.Location = New System.Drawing.Point(49, 72)
+        Me.lblDiagnostico.Name = "lblDiagnostico"
+        Me.lblDiagnostico.Size = New System.Drawing.Size(39, 13)
+        Me.lblDiagnostico.TabIndex = 4
+        Me.lblDiagnostico.Text = "Label3"
         '
         'Label1
         '
@@ -156,20 +164,12 @@ Partial Class Diagnostico
         Me.btnConsultarMed.Text = "Consultar Medico"
         Me.btnConsultarMed.UseVisualStyleBackColor = True
         '
-        'lblDiagnostico
-        '
-        Me.lblDiagnostico.AutoSize = True
-        Me.lblDiagnostico.Location = New System.Drawing.Point(49, 72)
-        Me.lblDiagnostico.Name = "lblDiagnostico"
-        Me.lblDiagnostico.Size = New System.Drawing.Size(39, 13)
-        Me.lblDiagnostico.TabIndex = 4
-        Me.lblDiagnostico.Text = "Label3"
-        '
         'Diagnostico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(597, 450)
+        Me.Controls.Add(Me.pnlDiagnostico)
         Me.Controls.Add(Me.pnlListaSintoma)
         Me.Controls.Add(Me.cbxSintoma)
         Me.Controls.Add(Me.btnAceptar)

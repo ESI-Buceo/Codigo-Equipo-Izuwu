@@ -521,20 +521,24 @@ Public Class ConexionBasedeDatos
         cadena.Append(consulta)
         Dim listanom As New List(Of String)
         listanom.AddRange(lista)
+        Dim primero As Boolean = True
         For Each nombre As String In listanom
+            If Not primero Then
+                cadena.Append(" OR")
+            End If
+            primero = False
             cadena.Append(" s.Nombre= '" + nombre + "'")
-            cadena.Append(" OR")
-        Next
 
-        Dim ultimoOR1 As Integer = cadena.Length - 2
-        Dim cadenaConsulta As String = cadena.ToString
-        Dim consultaFinal As String = cadenaConsulta.Substring(0, ultimoOR1) + ";"
+        Next
+        cadena.Append(" ;")
+
+
         Try
-            Dim consultaBD As Recordset = connection.Execute(consultaFinal)
+            '   Dim consultaBD As Recordset = connection.Execute(consultaFinal)
         Catch ex As Exception
 
         End Try
         connection.Close()
-        Return consultaFinal
+        Return Nothing
     End Function
 End Class
