@@ -1,6 +1,6 @@
 ﻿Imports ConexionBD
 Public Class LogicaAplicacion
-    Dim instancia As ConexionBasedeDatos = New ConexionBasedeDatos()
+    Dim instancia As ConexionBasedeDatos2 = New ConexionBasedeDatos2()
 
     'Todas estas funciones sirven de nexo entre las sentencias de conexion a la base de datos y la aplicacion.
 
@@ -26,9 +26,7 @@ Public Class LogicaAplicacion
     End Function
 
     Public Function cargarPatologia()
-        Dim lista As New List(Of String)
-        lista = instancia.cargarPatologia()
-        Return lista
+        Return instancia.cargarPatologia()
     End Function
 
     Public Sub agregarSintoma(ByVal ID, ByVal nom)

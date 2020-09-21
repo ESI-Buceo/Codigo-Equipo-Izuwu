@@ -1,8 +1,8 @@
 ﻿Imports System.Text
-Imports ADODB
+Imports ADODB, Datos
 
+Public Class ConexionBasedeDatos2
 
-Public Class ConexionBasedeDatos
     Private Function conectar() As Connection
         Dim connection As New Connection
         connection.ConnectionString = "" &
@@ -16,6 +16,7 @@ Public Class ConexionBasedeDatos
         connection.Open()
         Return connection
     End Function
+
 
 
     'Funcion para logearse al sistema, ya sea desde la aplicacion de paciente, medico o gestor
@@ -45,7 +46,7 @@ Public Class ConexionBasedeDatos
                     Dim user = usu
                     Dim pwd = pass
                     Identificador = Autenticacion.Substring(0, 3)
-                    Console.WriteLine(Identificador)
+
 
 
                     'Se realiza un if para verificar que lo ingresado en la aplicacion existe en la base de datos
@@ -495,18 +496,7 @@ Public Class ConexionBasedeDatos
     '////------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Inicio de funciones para aplicacion Paciente
 
-    Public Sub agregarPaciente(ByVal ID, ByVal nombre, ByVal apellido, ByVal CI, ByVal Telefono, ByVal direccion, ByVal email, ByVal contraseña, ByVal fechanac)
-        Dim connection As Connection = conectar()
-        Dim fecha As String = "'" + fechanac + "'"
-        Try
-            Dim agregarUsuario As Recordset = connection.Execute("insert into Usuario values(""" + nombre + """,""" + apellido + """,""" + email + """,""" + ID + """,""" + direccion + """,""" + CI + """,""" + contraseña + """,""" + Telefono + """," + fecha + ");")
-            Dim agregarPaciente As Recordset = connection.Execute("insert into Paciente values (""" + ID + """);")
-        Catch ex As Exception
-            Console.WriteLine("No se pudieron introducir los datos. Error: " + ex.Message)
-            MsgBox("Error: " + ex.Message)
-        End Try
-        connection.Close()
-    End Sub
+
 
     '///------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Funcion para obtener diagnostico (esta sujeto a cambios)
@@ -514,26 +504,27 @@ Public Class ConexionBasedeDatos
     Public Function prueba(ByVal lista)
         Dim connection As Connection = conectar()
         Dim cadena As New StringBuilder()
-        Dim consulta As String = "select p.Nombre " +
+        Try
+            Dim consulta As String = "select p.Nombre " +
                                  "from sintoma s inner join tiene t on s.id_sin=t.id_sin " +
                                  "inner join patologia p on t.id_pat=p.id_pat " +
                                  "where"
-        cadena.Append(consulta)
-        Dim listanom As New List(Of String)
-        listanom.AddRange(lista)
-        Dim primero As Boolean = True
-        For Each nombre As String In listanom
-            If Not primero Then
-                cadena.Append(" OR")
-            End If
-            primero = False
-            cadena.Append(" s.Nombre= '" + nombre + "'")
+            cadena.Append(consulta)
+            Dim listanom As New List(Of String)
+            listanom.AddRange(lista)
+            Dim primero As Boolean = True
+            For Each nombre As String In listanom
+                If Not primero Then
+                    cadena.Append(" OR")
+                End If
+                primero = False
+                cadena.Append(" s.Nombre= '" + nombre + "'")
 
-        Next
-        cadena.Append(" ;")
+            Next
+            cadena.Append(" ;")
 
 
-        Try
+
             '   Dim consultaBD As Recordset = connection.Execute(consultaFinal)
         Catch ex As Exception
 
