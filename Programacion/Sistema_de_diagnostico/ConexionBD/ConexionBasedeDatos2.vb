@@ -19,6 +19,7 @@ Public Class ConexionBasedeDatos2
 
 
 
+
     'Funcion para logearse al sistema, ya sea desde la aplicacion de paciente, medico o gestor
     Public Function login(ByVal usu, ByVal pass, ByVal Identidad)
 

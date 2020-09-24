@@ -14,7 +14,5 @@ Public Class Login
         End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        instancia.prueba()
-    End Sub
+
 End Class

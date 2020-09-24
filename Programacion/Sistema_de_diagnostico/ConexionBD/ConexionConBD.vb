@@ -21,10 +21,10 @@ Public Class ConexionConBD
     Public Function ObtenerUsuarios() As List(Of Usuario)
         Dim connection As Connection = conectar()
         Dim ListaUsuario As New List(Of Usuario)
-        Try
 
 
-            Dim consulta As Recordset = connection.Execute("Select * from usuario")
+
+        Dim consulta As Recordset = connection.Execute("Select * from usuario")
             Dim fechaBaseDatos As Date
             Dim fechaString As String
             Dim id, nombre, apellido, email, direccion, ci, contraseña, telefono As String
@@ -37,37 +37,14 @@ Public Class ConexionConBD
                 direccion = TryCast(consulta.Fields("Direccion").Value, String)
                 ci = TryCast(consulta.Fields("CI").Value, String)
                 contraseña = TryCast(consulta.Fields("Contraseña").Value, String)
-                telefono = TryCast(consulta.Fields("Telefono").Value, String)
-                'Este fragmento de codigo obtiene la fecha como objeto y la convierte en un string
-                'Con el formato DD/MM/YYYY
-                Dim fecha As New StringBuilder()
-                Dim caracter As Char
-                Dim contador As Integer = 0
-                Dim espacio As Boolean = False
-                fechaBaseDatos = Convert.ToDateTime(TryCast(consulta.Fields("FDN").Value, Object))
-                fechaString = fechaBaseDatos.ToString
-                Do
-                    caracter = fechaString(contador)
-
-                    If caracter = " " Then
-                        espacio = True
-
-
-                    ElseIf caracter = "/" Then
-                        fecha.Append("-")
-                    Else
-                        fecha.Append(caracter)
-                    End If
-                    contador = contador + 1
-                Loop While (espacio = False)
-
-                ListaUsuario.Add(New Usuario(nombre, apellido, email, id, direccion, ci, contraseña, telefono, fecha.ToString))
-                consulta.MoveNext()
+            telefono = TryCast(consulta.Fields("Telefono").Value, String)
+            fechaBaseDatos = TryCast(consulta.Fields("FDN").Value, Object)
+            fechaString = Format(fechaBaseDatos, "yyyy/mm/dd")
+            ListaUsuario.Add(New Usuario(nombre, apellido, email, id, direccion, ci, contraseña, telefono, fechaString))
+            consulta.MoveNext()
             End While
-        Catch ex As Exception
-            MsgBox("Error: " + ex.Message)
-        End Try
-        connection.Close()
+
+            connection.Close()
         Return ListaUsuario
     End Function
 
@@ -76,8 +53,8 @@ Public Class ConexionConBD
         Dim ListaPaciente As New List(Of Paciente)
         Dim ListaUsuarios As List(Of Usuario) = ObtenerUsuarios()
 
-        Try
-            Dim consulta As Recordset = connection.Execute("Select * from paciente")
+
+        Dim consulta As Recordset = connection.Execute("Select * from paciente")
             Dim ID As String
 
             While (Not consulta.EOF)
@@ -91,10 +68,8 @@ Public Class ConexionConBD
 
                 consulta.MoveNext()
             End While
-        Catch ex As Exception
-            MsgBox("Error: " + ex.Message)
-        End Try
-        connection.Close()
+
+            connection.Close()
         Return ListaPaciente
     End Function
 
@@ -102,8 +77,8 @@ Public Class ConexionConBD
         Dim connection As Connection = conectar()
         Dim ListaMedico As New List(Of Medico)
         Dim ListaUsuario As List(Of Usuario) = ObtenerUsuarios()
-        Try
-            Dim consulta As Recordset = connection.Execute("Select * from Medico")
+
+        Dim consulta As Recordset = connection.Execute("Select * from Medico")
             Dim ID As String
             Dim especializacion As String
 
@@ -120,10 +95,8 @@ Public Class ConexionConBD
                 consulta.MoveNext()
             End While
 
-        Catch ex As Exception
-            MsgBox("Error: " + ex.Message)
-        End Try
-        connection.Close()
+
+            connection.Close()
         Return ListaMedico
     End Function
 
@@ -132,8 +105,8 @@ Public Class ConexionConBD
         Dim ListaGestor As New List(Of Gestor)
         Dim ListaUsuario As List(Of Usuario) = ObtenerUsuarios()
 
-        Try
-            Dim consulta As Recordset = connection.Execute("Select * from Gestor")
+
+        Dim consulta As Recordset = connection.Execute("Select * from Gestor")
             Dim ID, empresa As String
             While (Not consulta.EOF)
                 ID = TryCast(consulta.Fields("ID_GES").Value, String)
@@ -146,18 +119,16 @@ Public Class ConexionConBD
 
                 consulta.MoveNext()
             End While
-        Catch ex As Exception
-            MsgBox("Error: " + ex.Message)
-        End Try
-        connection.Close()
+
+            connection.Close()
         Return ListaGestor
     End Function
 
     Public Function ObtenerSintoma() As List(Of Sintoma)
         Dim connection As Connection = conectar()
         Dim ListaSintomas As New List(Of Sintoma)
-        Try
-            Dim consulta As Recordset = connection.Execute("Select * from sintoma")
+
+        Dim consulta As Recordset = connection.Execute("Select * from sintoma")
             Dim nombre, id As String
             While (Not consulta.EOF)
                 nombre = TryCast(consulta.Fields("Nombre").Value, String)
@@ -165,18 +136,16 @@ Public Class ConexionConBD
                 ListaSintomas.Add(New Sintoma(nombre, id))
                 consulta.MoveNext()
             End While
-        Catch ex As Exception
-            MsgBox("Error: " + ex.Message)
-        End Try
-        connection.Close()
+
+            connection.Close()
         Return ListaSintomas
     End Function
 
     Public Function ObtenerPatologia() As List(Of Patologia)
         Dim connection As Connection = conectar()
         Dim ListaPatologia As New List(Of Patologia)
-        Try
-            Dim consulta As Recordset = connection.Execute("Select * from patologia")
+
+        Dim consulta As Recordset = connection.Execute("Select * from patologia")
             Dim nombre, prioridad, id As String
             While (Not consulta.EOF)
                 nombre = TryCast(consulta.Fields("Nombre").Value, String)
@@ -185,18 +154,31 @@ Public Class ConexionConBD
                 ListaPatologia.Add(New Patologia(nombre, prioridad, id))
                 consulta.MoveNext()
             End While
-        Catch ex As Exception
-            MsgBox("Error: " + ex.Message)
-        End Try
-        connection.Close()
+
+            connection.Close()
         Return ListaPatologia
     End Function
 
+
+    Public Function ObtenerReferenciaSintomaPatologia() As List(Of ReferenciaSintomaPatologia)
+        Dim connection As Connection = conectar()
+        Dim listaReferencias As New List(Of ReferenciaSintomaPatologia)
+        Dim consulta As Recordset = connection.Execute("Select * from tiene")
+        Dim IDsintoma, IDpatologia As String
+        While (Not consulta.EOF)
+            IDsintoma = TryCast(consulta.Fields("ID_Sin").Value, String)
+            IDpatologia = TryCast(consulta.Fields("ID_Pac").Value, String)
+            listaReferencias.Add(New ReferenciaSintomaPatologia(IDsintoma, IDpatologia))
+        End While
+        connection.Close()
+        Return listaReferencias
+    End Function
+
     '-----------------------------------------------------------------------------------------------------------////
-
-
     'Funcion de logeo a la aplicacion
-    Public Function login(userCI As String, pass As String) As Medico
+
+
+    Public Function loginMedico(userCI As String, pass As String) As Medico
         Dim connection As Connection = conectar()
 
         Dim consultaUsuario As Recordset = connection.Execute("Select * from usuario where CI='" + userCI + "';")
@@ -215,81 +197,346 @@ Public Class ConexionConBD
             Dim email As String = TryCast(consultaUsuario.Fields("email").Value, String)
             Dim direccion As String = TryCast(consultaUsuario.Fields("direccion").Value, String)
             Dim telefono As String = TryCast(consultaUsuario.Fields("telefono").Value, String)
-            'Este fragmento de codigo obtiene la fecha como objeto y la convierte en un string
-            'Con el formato DD/MM/YYYY
-            Dim fecha As New StringBuilder()
-            Dim caracter As Char
-            Dim contador As Integer = 0
-            Dim espacio As Boolean = False
             Dim fechaBaseDatos As Date = Convert.ToDateTime(TryCast(consultaUsuario.Fields("FDN").Value, Object))
-            Dim fechaString As String = fechaBaseDatos.ToString
-            Do
-                caracter = fechaString(contador)
+            Dim fechaString As String = Format(fechaBaseDatos, "yyyy/mm/dd")
 
-                If caracter = " " Then
-                    espacio = True
-
-
-                ElseIf caracter = "/" Then
-                    fecha.Append("-")
-                Else
-                    fecha.Append(caracter)
-                End If
-                contador = contador + 1
-            Loop While (espacio = False)
             Dim especializacion As String = TryCast(consultaMedico.Fields("Especializacion").Value, String)
 
 
-            Dim medico As New Medico(nombre, apellido, email, idUser, direccion, userCI, pasw, telefono, fecha.ToString, idMed, especializacion)
-
+            Dim medico As New Medico(nombre, apellido, email, idUser, direccion, userCI, pasw, telefono, fechaString, idMed, especializacion)
+            connection.Close()
             Return medico
         Else
+            connection.Close()
             Throw New Exception("Cedula y/o Contraseña incorrectos.")
         End If
     End Function
 
+    Public Function loginPaciente(userCI As String, pass As String) As Paciente
+        Dim connection As Connection = conectar()
+
+        Dim consultaUsuario As Recordset = connection.Execute("Select * from usuario where CI='" + userCI + "';")
+        Dim idUser As String = TryCast(consultaUsuario.Fields("ID_US").Value, String)
+        Dim pasw As String
+        pasw = TryCast(consultaUsuario.Fields("contraseña").Value, String)
+
+        Dim consultaPaciente As Recordset = connection.Execute("Select * from paciente where ID_PAC='" + idUser + "';")
+        Dim idPac As String
+
+        idPac = TryCast(consultaPaciente.Fields("ID_PAC").Value, String)
+
+        If pasw = pass And idPac = idUser Then
+            Dim nombre As String = TryCast(consultaUsuario.Fields("nombre").Value, String)
+            Dim apellido As String = TryCast(consultaUsuario.Fields("apellido").Value, String)
+            Dim email As String = TryCast(consultaUsuario.Fields("email").Value, String)
+            Dim direccion As String = TryCast(consultaUsuario.Fields("direccion").Value, String)
+            Dim telefono As String = TryCast(consultaUsuario.Fields("telefono").Value, String)
+            Dim fechaBaseDatos As Date = Convert.ToDateTime(TryCast(consultaUsuario.Fields("FDN").Value, Object))
+            Dim fechaString As String = Format(fechaBaseDatos, "yyyy/mm/dd")
+
+            Dim paciente As New Paciente(nombre, apellido, email, idUser, direccion, userCI, pasw, telefono, fechaString, idPac)
+            connection.Close()
+            Return paciente
+        Else
+            connection.Close()
+            Throw New Exception("Cedula y/o Contraseña incorrectos.")
+        End If
+    End Function
+
+    Public Function loginGestor(userCI As String, pass As String) As Gestor
+        Dim connection As Connection = conectar()
+
+        Dim consultaUsuario As Recordset = connection.Execute("Select * from usuario where CI='" + userCI + "';")
+        Dim idUser As String = TryCast(consultaUsuario.Fields("ID_US").Value, String)
+        Dim pasw As String
+        pasw = TryCast(consultaUsuario.Fields("contraseña").Value, String)
+
+        Dim consultaGestor As Recordset = connection.Execute("Select * from gestor where ID_GES='" + idUser + "';")
+        Dim idGes As String
+
+        idGes = TryCast(consultaGestor.Fields("ID_PAC").Value, String)
+
+        If pasw = pass And idGes = idUser Then
+            Dim nombre As String = TryCast(consultaUsuario.Fields("nombre").Value, String)
+            Dim apellido As String = TryCast(consultaUsuario.Fields("apellido").Value, String)
+            Dim email As String = TryCast(consultaUsuario.Fields("email").Value, String)
+            Dim direccion As String = TryCast(consultaUsuario.Fields("direccion").Value, String)
+            Dim telefono As String = TryCast(consultaUsuario.Fields("telefono").Value, String)
+            Dim fechaBaseDatos As Date = Convert.ToDateTime(TryCast(consultaUsuario.Fields("FDN").Value, Object))
+            Dim fechaString As String = Format(fechaBaseDatos, "yyyy/mm/dd")
+            Dim empresa As String = TryCast(consultaGestor.Fields("empresa").Value, String)
+
+            Dim gestor As New Gestor(nombre, apellido, email, idUser, direccion, userCI, pasw, telefono, fechaString, idGes, empresa)
+            connection.Close()
+            Return gestor
+
+        Else
+            connection.Close()
+            Throw New Exception("Cedula y/o Contraseña incorrectos.")
+        End If
+    End Function
+
+
+
     '///-------------------------------------------------------------------------------------------------------------------------------------
-    'Funcion de agregar usuarios
-    Public Sub agregarPaciente(ByVal ID, ByVal nombre, ByVal apellido, ByVal CI, ByVal Telefono, ByVal direccion, ByVal email, ByVal contraseña, ByVal fechanac)
+    'Funcion de agregar datos (sintomas, patologias, usuarios)
+    Public Sub agregarPaciente(paciente As Paciente)
         Dim connection As Connection = conectar()
-        Dim fecha As String = "'" + fechanac + "'"
-        Try
-            Dim agregarUsuario As Recordset = connection.Execute("insert into Usuario values(""" + nombre + """,""" + apellido + """,""" + email + """,""" + ID + """,""" + direccion + """,""" + CI + """,""" + contraseña + """,""" + Telefono + """," + fecha + ");")
-            Dim agregarPaciente As Recordset = connection.Execute("insert into Paciente values (""" + ID + """);")
-        Catch ex As Exception
-            Console.WriteLine("No se pudieron introducir los datos. Error: " + ex.Message)
-            MsgBox("Error: " + ex.Message)
-        End Try
+
+        Dim agregarUsuario As Recordset = connection.Execute("insert into Usuario values(""" + paciente.nombre + """,""" + paciente.apellido + """,""" + paciente.email + """,""" + paciente.ID + """,""" + paciente.Direccion + """,""" + paciente.CI + """,""" + paciente.contraseña + """,""" + paciente.telefono + """," + paciente.fechadenacimiento + ");")
+            Dim agregarPaciente As Recordset = connection.Execute("insert into Paciente values (""" + paciente.IDpaciente + """);")
+
+            connection.Close()
+    End Sub
+
+    Public Sub agregarMedico(medico As Medico)
+        Dim connection As Connection = conectar()
+
+
+        Dim agregarUsuario As Recordset = connection.Execute("insert into Usuario values(""" + medico.nombre + """,""" + medico.apellido + """,""" + medico.email + """,""" + medico.ID + """,""" + medico.Direccion + """,""" + medico.CI + """,""" + medico.contraseña + """,""" + medico.telefono + """," + medico.fechadenacimiento + ");")
+        Dim agregarMedico As Recordset = connection.Execute("insert into Medico values (""" + medico.especializacion + """,""" + medico.IDmedico + """);")
+
         connection.Close()
     End Sub
 
-    Public Sub agregarmedico(ByVal ID, ByVal nombre, ByVal apellido, ByVal CI, ByVal Telefono, ByVal direccion, ByVal especializacion, ByVal email, ByVal contraseña, ByVal fechanac)
+    Public Sub agregarGestor(gestor As Gestor)
         Dim connection As Connection = conectar()
-        Dim fecha As String = "'" + fechanac + "'"
-        Try
-            Dim agregarUsuario As Recordset = connection.Execute("insert into Usuario values(""" + nombre + """,""" + apellido + """,""" + email + """,""" + ID + """,""" + direccion + """,""" + CI + """,""" + contraseña + """,""" + Telefono + """," + fecha + ");")
-            Dim agregarMedico As Recordset = connection.Execute("insert into Medico values (""" + especializacion + """,""" + ID + """);")
-        Catch ex As Exception
-            Console.WriteLine("No se pudieron introducir los datos. Error: " + ex.Message)
-            MsgBox("Error: " + ex.Message)
-        End Try
+
+
+        Dim agregarUsuario As Recordset = connection.Execute("insert into Usuario values(""" + gestor.nombre + """,""" + gestor.apellido + """,""" + gestor.email + """,""" + gestor.ID + """,""" + gestor.Direccion + """,""" + gestor.CI + """,""" + gestor.contraseña + """,""" + gestor.telefono + """," + gestor.fechadenacimiento + ");")
+            Dim agregarGestor As Recordset = connection.Execute("insert into Gestor values (""" + gestor.IDgestor + """,""" + gestor.empresa + """);")
+
+
+
         connection.Close()
     End Sub
 
-    Public Sub agregarGestor(ByVal ID, ByVal nombre, ByVal apellido, ByVal CI, ByVal Telefono, ByVal direccion, ByVal empresa, ByVal email, ByVal contraseña, ByVal fechanac)
+    Public Sub agregarSintoma(sintoma As Sintoma)
         Dim connection As Connection = conectar()
-        Dim fecha As String = "'" + fechanac + "'"
-        Try
-            Dim agregarUsuario As Recordset = connection.Execute("insert into Usuario values(""" + nombre + """,""" + apellido + """,""" + email + """,""" + ID + """,""" + direccion + """,""" + CI + """,""" + contraseña + """,""" + Telefono + """," + fecha + ");")
-            Dim agregarGestor As Recordset = connection.Execute("insert into Gestor values (""" + ID + """,""" + empresa + """);")
-        Catch ex As Exception
-            Console.WriteLine("No se pudieron introducir los datos. Error: " + ex.Message)
-            MsgBox("Error: " + ex.Message)
-        End Try
+
+        Dim agregar As Recordset = connection.Execute("insert into sintoma values(""" + sintoma.nombre + """,""" + sintoma.id + """);")
+        connection.Close()
+    End Sub
+
+    Public Sub agregarPatologia(patologia As Patologia)
+        Dim connection As Connection = conectar()
+
+        Dim agregar As Recordset = connection.Execute("insert into patologia values(" + patologia.nombre + "','" + patologia.prioridad + "','" + patologia.id + "');")
         connection.Close()
     End Sub
 
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------////
+
+    '////-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'Funcion para eliminar datos de la base de datos (usuarios, sintomas, patologias)
+
+    Public Sub eliminarPaciente(ID As String)
+        Dim connection As Connection = conectar()
+        Dim eliminarPaciente As Recordset = connection.Execute("delete from paciente where id_pac = '" + ID + "';")
+        Dim eliminarUsuario As Recordset = connection.Execute("delete from usuario where id_us = '" + ID + "';")
+        connection.Close()
+    End Sub
+
+    Public Sub eliminarMedico(ID As String)
+        Dim connection As Connection = conectar()
+        Dim eliminarMedico As Recordset = connection.Execute("delete from medico where id_med = '" + ID + "';")
+        Dim eliminarUsuario As Recordset = connection.Execute("delete from sintoma where id_us = '" + ID + "';")
+        connection.Close()
+    End Sub
+
+    Public Sub eliminarGestor(ID As String)
+        Dim connection As Connection = conectar()
+        Dim eliminarGestor As Recordset = connection.Execute("delete from gestor where id_ges = '" + ID + "';")
+        Dim eliminarUsuario As Recordset = connection.Execute("delete from sintoma where id_us = '" + ID + "';")
+        connection.Close()
+    End Sub
+
+    Public Sub eliminarSintoma(ID As String)
+        Dim connection As Connection = conectar()
+        Dim eliminarRef As Recordset = connection.Execute("delete from tiene where id_sin = '" + ID + "';")
+        Dim eliminarSintoma As Recordset = connection.Execute("delete from sintoma where id_sin = '" + ID + "';")
+        connection.Close()
+    End Sub
+
+    Public Sub eliminarPatologia(ID As String)
+        Dim connection As Connection = conectar()
+        Dim eliminarRef As Recordset = connection.Execute("delete from tiene where id_pat = '" + ID + "';")
+        Dim eliminarPatologia As Recordset = connection.Execute("delete from patologia where id_pat = '" + ID + "';")
+        connection.Close()
+    End Sub
+
+    Public Sub eliminarReferenciaPatologiaSintoma(IDsin As String, IDpat As String)
+        Dim connection As Connection = conectar()
+        Dim eliminarRef As Recordset = connection.Execute("delete from tiene where ID_Sin = '" + IDsin + "' And ID_pat = '" + IDpat + "';")
+        connection.Close()
+    End Sub
+
+    '------------------------------------------------------------------------------------------------------------------------------------------------------------/////
+
+
+    '////------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'Funcion para modificar datos
+
+    Public Sub actualizarNombreSintoma(ID As String, nom As String)
+        Dim connection As Connection = conectar()
+        Dim actualizar As Recordset = connection.Execute("UPDATE sintoma set nombre = '" + nom + "' where id_sin = '" + ID + "';")
+        connection.Close()
+    End Sub
+
+    Public Sub actualizarNombrePatologia(ID As String, nom As String)
+        Dim connection As Connection = conectar()
+        Dim actualizar As Recordset = connection.Execute("UPDATE patologia set nombre = '" + nom + "' where id_pac = '" + ID + "';")
+        connection.Close()
+    End Sub
+
+    Public Sub actualizarPrioridadPatologia(ID As String, prioridad As String)
+        Dim connection As Connection = conectar()
+        Dim actualizar As Recordset = connection.Execute("UPDATE patologia set prioridad = '" + prioridad + "' where id_sin = '" + ID + "';")
+        connection.Close()
+    End Sub
+
+    'Funciones para modificar datos de usuario
+    Public Sub actualizarNombre(ID As String, nom As String)
+        Dim connection As Connection = conectar()
+        Dim actualizar As Recordset = connection.Execute("UPDATE usuario set nombre = '" + nom + "' where id_us = '" + ID + "';")
+        connection.Close()
+    End Sub
+    Public Sub actualizarApellido(ID As String, apellido As String)
+        Dim connection As Connection = conectar()
+        Dim actualizar As Recordset = connection.Execute("UPDATE usuario set apellido = '" + apellido + "' where id_us = '" + ID + "';")
+        connection.Close()
+    End Sub
+    Public Sub actualizarEmail(ID As String, email As String)
+        Dim connection As Connection = conectar()
+        Dim actualizar As Recordset = connection.Execute("UPDATE usuario set email = '" + email + "' where id_us = '" + ID + "';")
+        connection.Close()
+    End Sub
+    Public Sub actualizarDireccion(ID As String, direccion As String)
+        Dim connection As Connection = conectar()
+        Dim actualizar As Recordset = connection.Execute("UPDATE usuario set direccion = '" + direccion + "' where id_us = '" + ID + "';")
+        connection.Close()
+    End Sub
+    Public Sub actualizarCI(ID As String, CI As String)
+        Dim connection As Connection = conectar()
+        Dim actualizar As Recordset = connection.Execute("UPDATE usuario set CI = '" + CI + "' where id_us = '" + ID + "';")
+        connection.Close()
+    End Sub
+    Public Sub actualizarContraseña(ID As String, pass As String)
+        Dim connection As Connection = conectar()
+        Dim actualizar As Recordset = connection.Execute("UPDATE usuario set contraseña = '" + pass + "' where id_us = '" + ID + "';")
+        connection.Close()
+    End Sub
+    Public Sub actualizarTelefono(ID As String, tel As String)
+        Dim connection As Connection = conectar()
+        Dim actualizar As Recordset = connection.Execute("UPDATE usuario set telefono = '" + tel + "' where id_us = '" + ID + "';")
+        connection.Close()
+    End Sub
+    Public Sub actualizarFechadeNacimiento(ID As String, fecha As String)
+        Dim connection As Connection = conectar()
+        Dim actualizar As Recordset = connection.Execute("UPDATE usuario set FDN = '" + fecha + "' where id_us = '" + ID + "';")
+        connection.Close()
+    End Sub
+
+    '-------------------------------------------------------------------------------------------------------------------------------------------------------------------////
+
+
+
+    '-------------------------------------------------------------------------------------------------------------------------------------------------------------------////
+    Public Function codigoRandom(id As String, num As Integer) As String
+
+        Dim connection As Connection = conectar()
+
+        Dim codigoRandoms As String = Nothing
+        Dim consulta As Recordset
+        Dim idConsulta As String
+
+
+        Select Case num
+            Case 0
+                consulta = connection.Execute("select ID_SIN from Sintoma ;")
+                idConsulta = TryCast(consulta.Fields("id_sin").Value, String)
+            Case 1
+                consulta = connection.Execute("select ID_MED from Medico ;")
+                idConsulta = TryCast(consulta.Fields("id_MED").Value, String)
+            Case 2
+                consulta = connection.Execute("select ID_Pat from Patologia ;")
+                idConsulta = TryCast(consulta.Fields("id_Pat").Value, String)
+            Case 3
+                consulta = connection.Execute("select ID_Pac from Paciente ;")
+                idConsulta = TryCast(consulta.Fields("id_Pac").Value, String)
+            Case 4
+                consulta = connection.Execute("select ID_ges from Gestor ;")
+                idConsulta = TryCast(consulta.Fields("id_ges").Value, String)
+        End Select
+
+
+        Dim idsin As String = id
+        Do
+
+            Dim letrasvalidas As String = "ABCDEFGHIJKMNOPQRSTUVWXYZ"
+            Dim numerosvalidos As String = "0123456789"
+            Dim sb As New StringBuilder()
+            Dim random As New Random
+
+            Dim primeraletra As Char = id(0)
+            sb.Append(primeraletra)
+            Dim segundaletra As Char = id(1)
+            sb.Append(segundaletra)
+            Dim terceraletra As Char = id(2)
+            sb.Append(terceraletra)
+
+
+            sb.Append("-")
+            For a As Integer = 1 To 3
+                Dim indice As Integer = random.Next(0, letrasvalidas.Length)
+                Dim randomchar As Char = letrasvalidas(indice)
+                sb.Append(randomchar)
+            Next a
+            sb.Append("-")
+            For b As Integer = 1 To 3
+                Dim indice As Integer = random.Next(0, numerosvalidos.Length)
+                Dim randomchar As Char = numerosvalidos(indice)
+                sb.Append(randomchar)
+            Next b
+
+            codigoRandoms = sb.ToString()
+
+            If codigoRandoms = idConsulta Then
+
+                Dim letrasvalidas2 As String = "ABCDEFGHIJKMNOPQRSTUVWXYZ"
+                Dim numerosvalidos2 As String = "0123456789"
+                Dim sb2 As New StringBuilder()
+
+                Dim primeraletra2 As Char = id(0)
+                sb2.Append(primeraletra)
+                Dim segundaletra2 As Char = id(1)
+                sb2.Append(segundaletra)
+                Dim terceraletra2 As Char = id(2)
+                sb2.Append(terceraletra)
+
+                sb2.Append("-")
+                For a As Integer = 1 To 3
+                    Dim indice As Integer = random.Next(0, letrasvalidas.Length)
+                    Dim randomchar As Char = letrasvalidas(indice)
+                    sb2.Append(randomchar)
+                Next a
+                sb2.Append("-")
+                For b As Integer = 1 To 3
+                    Dim indice As Integer = random.Next(0, numerosvalidos.Length)
+                    Dim randomchar As Char = numerosvalidos(indice)
+                    sb2.Append(randomchar)
+                Next b
+                codigoRandoms = sb2.ToString()
+            End If
+            consulta.MoveNext()
+        Loop While (Not consulta.EOF)
+
+        connection.Close()
+        Return codigoRandoms
+    End Function
+
+
+
 
 
 End Class
