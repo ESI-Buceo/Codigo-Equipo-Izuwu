@@ -114,7 +114,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Usuarios\Datos.vbproj">
+    <ProjectReference Include="..\Datos\Datos.vbproj">
       <Project>{822faf46-94dd-4bcc-9c3e-254bb9c0ead5}</Project>
       <Name>Datos</Name>
     </ProjectReference>

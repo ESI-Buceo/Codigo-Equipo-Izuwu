@@ -106,7 +106,7 @@
       <Project>{8dc331d8-ea73-479c-89d5-003260dd2139}</Project>
       <Name>ConexionBD</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Usuarios\Datos.vbproj">
+    <ProjectReference Include="..\Datos\Datos.vbproj">
       <Project>{822faf46-94dd-4bcc-9c3e-254bb9c0ead5}</Project>
       <Name>Datos</Name>
     </ProjectReference>

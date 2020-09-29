@@ -51,6 +51,7 @@ Public Class LoginNew
 
 
 
+
             Me.Hide()
             MenuPacienteNew.ShowDialog()
             Me.Close()
