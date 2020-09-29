@@ -42,3 +42,15 @@ C:\Users\user\source\repos\Sistema de diagnostico\Gestor\obj\Debug\Gestor.vbproj
 C:\Users\user\source\repos\Sistema de diagnostico\Gestor\obj\Debug\AplicacionGestor.exe
 C:\Users\user\source\repos\Sistema de diagnostico\Gestor\obj\Debug\AplicacionGestor.xml
 C:\Users\user\source\repos\Sistema de diagnostico\Gestor\obj\Debug\AplicacionGestor.pdb
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\Gestor.vbprojAssemblyReference.cache
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\AplicacionGestor.AgrUsuario.resources
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\AplicacionGestor.ABMPatologiaSintoma.resources
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\AplicacionGestor.Login.resources
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\AplicacionGestor.Menu.resources
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\AplicacionGestor.ModUsuario.resources
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\AplicacionGestor.Resources.resources
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\Gestor.vbproj.GenerateResource.cache
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\Gestor.vbproj.CoreCompileInputs.cache
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\AplicacionGestor.exe
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\AplicacionGestor.xml
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\AplicacionGestor.pdb

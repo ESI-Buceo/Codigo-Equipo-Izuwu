@@ -38,3 +38,19 @@ C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\Git
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\ConexionBD\bin\Debug\Datos.dll
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\ConexionBD\bin\Debug\Datos.pdb
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\ConexionBD\bin\Debug\Datos.xml
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\ConexionBD\bin\Debug\ConexionBD.dll
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\ConexionBD\bin\Debug\ConexionBD.pdb
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\ConexionBD\bin\Debug\ConexionBD.xml
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\ConexionBD\bin\Debug\Datos.dll
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\ConexionBD\bin\Debug\Datos.pdb
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\ConexionBD\bin\Debug\Datos.xml
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\ConexionBD\obj\Debug\ConexionBD.vbprojAssemblyReference.cache
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\ConexionBD\obj\Debug\Interop.ADODB.dll
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\ConexionBD\obj\Debug\ConexionBD.vbproj.ResolveComReference.cache
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\ConexionBD\obj\Debug\ConexionBD.Resources.resources
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\ConexionBD\obj\Debug\ConexionBD.vbproj.GenerateResource.cache
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\ConexionBD\obj\Debug\ConexionBD.vbproj.CoreCompileInputs.cache
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\ConexionBD\obj\Debug\ConexionBD.vbproj.CopyComplete
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\ConexionBD\obj\Debug\ConexionBD.dll
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\ConexionBD\obj\Debug\ConexionBD.xml
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\ConexionBD\obj\Debug\ConexionBD.pdb

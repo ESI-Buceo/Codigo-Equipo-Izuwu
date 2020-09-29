@@ -42,3 +42,17 @@ C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\Git
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\Paciente.exe
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\Paciente.xml
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\Paciente.pdb
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\Paciente.vbprojAssemblyReference.cache
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\Paciente.LoginNew.resources
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\Paciente.LoginOLD.resources
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\Paciente.MenuPacienteOLD.resources
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\Paciente.DiagnosticoOLD.resources
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\Paciente.RegistroOLD.resources
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\Paciente.Resources.resources
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\Paciente.vbproj.GenerateResource.cache
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\Paciente.vbproj.CoreCompileInputs.cache
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\Paciente.exe
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\Paciente.xml
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\Paciente.pdb
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\Paciente.MenuPacienteNew.resources
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\Paciente.RegistroNew.resources

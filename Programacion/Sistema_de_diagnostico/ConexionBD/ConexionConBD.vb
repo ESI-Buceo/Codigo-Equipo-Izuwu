@@ -10,7 +10,7 @@ Public Class ConexionConBD
             "port=3306;" &
             "database=proyecto_izuwu;" &
             "uid=root;" &
-            "pwd=1234;"
+            "pwd=56505181bpe;"
 
         connection.Open()
         Return connection
@@ -254,7 +254,7 @@ Public Class ConexionConBD
         Dim consultaGestor As Recordset = connection.Execute("Select * from gestor where ID_GES='" + idUser + "';")
         Dim idGes As String
 
-        idGes = TryCast(consultaGestor.Fields("ID_PAC").Value, String)
+        idGes = TryCast(consultaGestor.Fields("ID_GES").Value, String)
 
         If pasw = pass And idGes = idUser Then
             Dim nombre As String = TryCast(consultaUsuario.Fields("nombre").Value, String)
@@ -395,25 +395,48 @@ Public Class ConexionConBD
         connection.Close()
     End Sub
 
-    Public Sub actualizarMedico(medico As Medico)
+    'Funciones para modificar datos de usuario
+    Public Sub actualizarNombre(ID As String, nom As String)
         Dim connection As Connection = conectar()
-        Dim actualizarUsuario As Recordset = connection.Execute("update usuario set nombre = '" + medico.nombre + "', apellido = '" + medico.apellido + "', email = '" + medico.email + "', direccion = '" + medico.Direccion + "', ci = '" + medico.CI + "', contraseña = '" + medico.contraseña + "', telefono = '" + medico.telefono + "', fdn = '" + medico.telefono + "' where id_us = '" + medico.ID + "';")
-        Dim actualizarMedico As Recordset = connection.Execute("update medico set especializacion = '" + medico.especializacion + "' where = '" + medico.ID + ";")
+        Dim actualizar As Recordset = connection.Execute("UPDATE usuario set nombre = '" + nom + "' where id_us = '" + ID + "';")
+        connection.Close()
+    End Sub
+    Public Sub actualizarApellido(ID As String, apellido As String)
+        Dim connection As Connection = conectar()
+        Dim actualizar As Recordset = connection.Execute("UPDATE usuario set apellido = '" + apellido + "' where id_us = '" + ID + "';")
+        connection.Close()
+    End Sub
+    Public Sub actualizarEmail(ID As String, email As String)
+        Dim connection As Connection = conectar()
+        Dim actualizar As Recordset = connection.Execute("UPDATE usuario set email = '" + email + "' where id_us = '" + ID + "';")
+        connection.Close()
+    End Sub
+    Public Sub actualizarDireccion(ID As String, direccion As String)
+        Dim connection As Connection = conectar()
+        Dim actualizar As Recordset = connection.Execute("UPDATE usuario set direccion = '" + direccion + "' where id_us = '" + ID + "';")
+        connection.Close()
+    End Sub
+    Public Sub actualizarCI(ID As String, CI As String)
+        Dim connection As Connection = conectar()
+        Dim actualizar As Recordset = connection.Execute("UPDATE usuario set CI = '" + CI + "' where id_us = '" + ID + "';")
+        connection.Close()
+    End Sub
+    Public Sub actualizarContraseña(ID As String, pass As String)
+        Dim connection As Connection = conectar()
+        Dim actualizar As Recordset = connection.Execute("UPDATE usuario set contraseña = '" + pass + "' where id_us = '" + ID + "';")
+        connection.Close()
+    End Sub
+    Public Sub actualizarTelefono(ID As String, tel As String)
+        Dim connection As Connection = conectar()
+        Dim actualizar As Recordset = connection.Execute("UPDATE usuario set telefono = '" + tel + "' where id_us = '" + ID + "';")
+        connection.Close()
+    End Sub
+    Public Sub actualizarFechadeNacimiento(ID As String, fecha As String)
+        Dim connection As Connection = conectar()
+        Dim actualizar As Recordset = connection.Execute("UPDATE usuario set FDN = '" + fecha + "' where id_us = '" + ID + "';")
         connection.Close()
     End Sub
 
-    Public Sub actualizarPaciente(paciente As Paciente)
-        Dim connection As Connection = conectar()
-        Dim actualizarUsuario As Recordset = connection.Execute("update usuario set nombre = '" + paciente.nombre + "', apellido = '" + paciente.apellido + "', email = '" + paciente.email + "', direccion = '" + paciente.Direccion + "', ci = '" + paciente.CI + "', contraseña = '" + paciente.contraseña + "', telefono = '" + paciente.telefono + "', fdn = '" + paciente.telefono + "' where id_us = '" + paciente.ID + "';")
-        connection.Close()
-    End Sub
-
-    Public Sub actualizarGestor(gestor As Gestor)
-        Dim connection As Connection = conectar()
-        Dim actualizarUsuario As Recordset = connection.Execute("update usuario set nombre = '" + gestor.nombre + "', apellido = '" + gestor.apellido + "', email = '" + gestor.email + "', direccion = '" + gestor.Direccion + "', ci = '" + gestor.CI + "', contraseña = '" + gestor.contraseña + "', telefono = '" + gestor.telefono + "', fdn = '" + gestor.telefono + "' where id_us = '" + gestor.ID + "';")
-        Dim actualizarMedico As Recordset = connection.Execute("update gestor set empresa = '" + gestor.empresa + "' where = '" + gestor.ID + ";")
-        connection.Close()
-    End Sub
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------////
 
 

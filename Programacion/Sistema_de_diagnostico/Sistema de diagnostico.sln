@@ -7,13 +7,15 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ConexionBD", "ConexionBD\Co
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Logica", "Logica\Logica.vbproj", "{5A5D4D54-BC99-4469-B47C-92470CEDE34D}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Paciente", "Paciente\Paciente.vbproj", "{3DC402BC-5A3D-42BB-9C8A-8CF7C3E49DC8}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PacienteAPP", "Paciente\PacienteAPP.vbproj", "{3DC402BC-5A3D-42BB-9C8A-8CF7C3E49DC8}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Gestor", "Gestor\Gestor.vbproj", "{CF7CCF3C-0127-4D77-A6CA-B0DBF8981392}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GestorAPP", "Gestor\GestorAPP.vbproj", "{CF7CCF3C-0127-4D77-A6CA-B0DBF8981392}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Medico", "Medico\Medico.vbproj", "{C6050DAC-85AC-4E32-96A8-0C4A6607183F}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MedicoAPP", "Medico\MedicoAPP.vbproj", "{C6050DAC-85AC-4E32-96A8-0C4A6607183F}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Datos", "Usuarios\Datos.vbproj", "{822FAF46-94DD-4BCC-9C3E-254BB9C0EAD5}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "OLDPROYECTO", "OLDPROYECTO\OLDPROYECTO.vbproj", "{59B31E8B-32B9-4322-A695-4AAF7E41258D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{822FAF46-94DD-4BCC-9C3E-254BB9C0EAD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{822FAF46-94DD-4BCC-9C3E-254BB9C0EAD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{822FAF46-94DD-4BCC-9C3E-254BB9C0EAD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59B31E8B-32B9-4322-A695-4AAF7E41258D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59B31E8B-32B9-4322-A695-4AAF7E41258D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59B31E8B-32B9-4322-A695-4AAF7E41258D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59B31E8B-32B9-4322-A695-4AAF7E41258D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
