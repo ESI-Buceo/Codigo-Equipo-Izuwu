@@ -48,9 +48,8 @@ Public Class LoginNew
         Try
             'Se toman los datos de los cuadros de texto CI y Contraseña
             Dim paciente As Paciente = Instancia.loginPaciente(txtUsuario.Text, txtContraseña.Text)
-
-
-
+            MenuPacienteNew.labIniciales.Text = paciente.nombre(0) + " " + paciente.apellido(0)
+            MenuPacienteNew.labNombre.Text = paciente.nombre + " " + paciente.apellido
 
             Me.Hide()
             MenuPacienteNew.ShowDialog()

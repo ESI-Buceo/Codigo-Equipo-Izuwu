@@ -1,8 +1,9 @@
-﻿Public Class MenuPacienteNew
+﻿Imports Datos, Logica
+Public Class MenuPacienteNew
 
     Dim ex, ey As Integer
     Dim Arrastre As Boolean
-
+    Dim instancia As New LogicaAplicacion()
 
 
     'Definir variables globales; estas van despues de la linea de inherits
@@ -47,6 +48,13 @@
         pChat.Visible = False
         pRealizarD.Visible = False
         pRealizaD2.Visible = False
+
+        Dim listaSintomas As List(Of Sintoma) = instancia.ObtenerSintoma()
+
+        For Each sintoma As Sintoma In listaSintomas
+            cbxListaSintomas.Items.Add(sintoma.nombre)
+            lstSintomas.Items.Add(sintoma.nombre)
+        Next
     End Sub
 
     Private Sub btnRealizarDiagnostico_Click(sender As Object, e As EventArgs) Handles btnRealizarDiagnostico.Click

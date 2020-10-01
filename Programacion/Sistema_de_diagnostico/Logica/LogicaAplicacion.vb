@@ -24,8 +24,8 @@ Public Class LogicaAplicacion
         Return instancia.ObtenerPatologia()
     End Function
 
-    Public Function ObtenerReferenciaSintomaPatologia() As List(Of ReferenciaSintomaPatologia)
-        Return instancia.ObtenerReferenciaSintomaPatologia()
+    Public Function ObtenerReferenciaSintomaPatologia(ID As String) As List(Of Patologia)
+        Return instancia.ObtenerReferenciaSintomaPatologia(ID)
     End Function
 
     '----------------------------------------------------------------------------------------------------------------------------------------------
@@ -142,67 +142,34 @@ Public Class LogicaAplicacion
     End Sub
 
 
-    Public Sub actualizarNombre(ID As String, nom As String)
-        If nom.Length = 0 Then
-            Throw New Exception("Nombre vacio.")
+    Public Sub actualizarMedico(medico As Medico)
+        If medico.nombre.Length = 0 Or medico.apellido.Length = 0 Or medico.email.Length = 0 Or medico.Direccion.Length = 0 Or medico.CI.Length = 0 Or medico.contraseña.Length = 0 Or medico.telefono.Length = 0 Or medico.fechadenacimiento.Length = 0 Or medico.especializacion.Length = 0 Then
+            Throw New Exception("Datos vacios.")
         Else
-            instancia.actualizarNombre(ID, nom)
+            instancia.actualizarMedico(medico)
         End If
     End Sub
-    Public Sub actualizarApellido(ID As String, apellido As String)
-        If apellido.Length = 0 Then
-            Throw New Exception("Apellido vacio.")
+
+    Public Sub actualizarPaciente(paciente As Paciente)
+        If paciente.nombre.Length = 0 Or paciente.apellido.Length = 0 Or paciente.email.Length = 0 Or paciente.Direccion.Length = 0 Or paciente.CI.Length = 0 Or paciente.contraseña.Length = 0 Or paciente.telefono.Length = 0 Or paciente.fechadenacimiento.Length = 0 Then
+            Throw New Exception("Datos vacios.")
         Else
-            instancia.actualizarApellido(ID, apellido)
+            instancia.actualizarPaciente(paciente)
         End If
     End Sub
-    Public Sub actualizarEmail(ID As String, email As String)
-        If email.Length = 0 Then
-            Throw New Exception("Email vacio.")
+
+    Public Sub actualizarGestor(gestor As Gestor)
+        If gestor.nombre.Length = 0 Or gestor.apellido.Length = 0 Or gestor.email.Length = 0 Or gestor.Direccion.Length = 0 Or gestor.CI.Length = 0 Or gestor.contraseña.Length = 0 Or gestor.telefono.Length = 0 Or gestor.fechadenacimiento.Length = 0 Or gestor.empresa.Length = 0 Then
+            Throw New Exception("Datos vacios.")
         Else
-            instancia.actualizarEmail(ID, email)
-        End If
-    End Sub
-    Public Sub actualizarDireccion(ID As String, direccion As String)
-        If direccion.Length = 0 Then
-            Throw New Exception("Direccion vacia.")
-        Else
-            instancia.actualizarDireccion(ID, direccion)
-        End If
-    End Sub
-    Public Sub actualizarCI(ID As String, CI As String)
-        If CI.Length = 0 Then
-            Throw New Exception("Cedula de identidad vacia.")
-        Else
-            instancia.actualizarCI(ID, CI)
-        End If
-    End Sub
-    Public Sub actualizarContraseña(ID As String, contraseña As String)
-        If contraseña.Length = 0 Then
-            Throw New Exception("Contraseña vacia.")
-        Else
-            instancia.actualizarContraseña(ID, contraseña)
-        End If
-    End Sub
-    Public Sub actualizarTelefono(ID As String, telefono As String)
-        If telefono.Length = 0 Then
-            Throw New Exception("Numero de telefono vacio.")
-        Else
-            instancia.actualizarTelefono(ID, telefono)
-        End If
-    End Sub
-    Public Sub actualizarFechadeNacimiento(ID As String, fecha As String)
-        If fecha.Length = 0 Then
-            Throw New Exception("Fecha de nacimiento vacia.")
-        Else
-            instancia.actualizarFechadeNacimiento(ID, fecha)
+            instancia.actualizarGestor(gestor)
         End If
     End Sub
 
     '------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    Public Function codigoRandom(id As String, num As Integer) As String
-        Return instancia.codigoRandom(id, num)
+    Public Function codigoRandom(num As Integer) As String
+        Return instancia.codigoRandom(num)
     End Function
 
 End Class

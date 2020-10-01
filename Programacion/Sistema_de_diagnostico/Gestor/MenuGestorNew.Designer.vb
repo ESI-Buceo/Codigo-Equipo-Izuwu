@@ -23,34 +23,45 @@ Partial Class MenuGestorNew
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MenuGestorNew))
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.panelMenuInicio = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnModUsuario = New System.Windows.Forms.Button()
-        Me.lbIniciales = New System.Windows.Forms.Label()
-        Me.lbNombre = New System.Windows.Forms.Label()
-        Me.btnABMSintomas = New System.Windows.Forms.Button()
-        Me.btnAgregarMedico = New System.Windows.Forms.Button()
+        Me.btnMenu_ModUsuario = New System.Windows.Forms.Button()
+        Me.labIniciales = New System.Windows.Forms.Label()
+        Me.labNombre = New System.Windows.Forms.Label()
+        Me.btnMenu_AgregarMedico = New System.Windows.Forms.Button()
+        Me.btnMenu_ABMSintomas = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.pAgregarMed = New System.Windows.Forms.Panel()
-        Me.cbIDS = New System.Windows.Forms.ComboBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.panelModificarEliminarMedico = New System.Windows.Forms.Panel()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.lstModDel_Medicos = New System.Windows.Forms.ListView()
+        Me.btnEliminarMedico = New System.Windows.Forms.Button()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.dateModDel_FechaNacimiento = New System.Windows.Forms.DateTimePicker()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.txtModDel_Telefono = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.txtModDel_ConfContraseña = New System.Windows.Forms.TextBox()
+        Me.txtModDel_Contraseña = New System.Windows.Forms.TextBox()
+        Me.txtModDel_SegundoNombre = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtModDel_Empresa = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.btnEntrar = New System.Windows.Forms.Button()
+        Me.txtModDel_Email = New System.Windows.Forms.TextBox()
+        Me.txtModDel_Especializacion = New System.Windows.Forms.TextBox()
+        Me.txtModDel_CI = New System.Windows.Forms.TextBox()
+        Me.txtModDel_Direccion = New System.Windows.Forms.TextBox()
+        Me.txtModDel_Apellido = New System.Windows.Forms.TextBox()
+        Me.txtModDel_PrimerNombre = New System.Windows.Forms.TextBox()
+        Me.btnAceptarModificar = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.pABMSintoma = New System.Windows.Forms.Panel()
+        Me.panelABMSintoma = New System.Windows.Forms.Panel()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -61,26 +72,53 @@ Partial Class MenuGestorNew
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.ListView2 = New System.Windows.Forms.ListView()
-        Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.Panel1.SuspendLayout()
-        Me.pAgregarMed.SuspendLayout()
-        Me.pABMSintoma.SuspendLayout()
+        Me.lstPatologia = New System.Windows.Forms.ListView()
+        Me.lstSintomas = New System.Windows.Forms.ListView()
+        Me.panelAgregarUsuario = New System.Windows.Forms.Panel()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.dateFechaNacimiento = New System.Windows.Forms.DateTimePicker()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.txtTelefono = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.txtConfContraseña = New System.Windows.Forms.TextBox()
+        Me.txtContraseña = New System.Windows.Forms.TextBox()
+        Me.txtSegundoNombre = New System.Windows.Forms.TextBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.txtEmpresa = New System.Windows.Forms.TextBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.txtEmail = New System.Windows.Forms.TextBox()
+        Me.txtEspecializacion = New System.Windows.Forms.TextBox()
+        Me.txtCI = New System.Windows.Forms.TextBox()
+        Me.txtDireccion = New System.Windows.Forms.TextBox()
+        Me.txtApellido = New System.Windows.Forms.TextBox()
+        Me.txtPrimerNombre = New System.Windows.Forms.TextBox()
+        Me.btnAgregarMedico = New System.Windows.Forms.Button()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.panelMenuInicio.SuspendLayout()
+        Me.panelModificarEliminarMedico.SuspendLayout()
+        Me.panelABMSintoma.SuspendLayout()
+        Me.panelAgregarUsuario.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Panel1
+        'panelMenuInicio
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.btnModUsuario)
-        Me.Panel1.Controls.Add(Me.lbIniciales)
-        Me.Panel1.Controls.Add(Me.lbNombre)
-        Me.Panel1.Controls.Add(Me.btnABMSintomas)
-        Me.Panel1.Controls.Add(Me.btnAgregarMedico)
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(284, 648)
-        Me.Panel1.TabIndex = 1
+        Me.panelMenuInicio.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer))
+        Me.panelMenuInicio.Controls.Add(Me.Label2)
+        Me.panelMenuInicio.Controls.Add(Me.btnMenu_ModUsuario)
+        Me.panelMenuInicio.Controls.Add(Me.labIniciales)
+        Me.panelMenuInicio.Controls.Add(Me.labNombre)
+        Me.panelMenuInicio.Controls.Add(Me.btnMenu_AgregarMedico)
+        Me.panelMenuInicio.Controls.Add(Me.btnMenu_ABMSintomas)
+        Me.panelMenuInicio.Location = New System.Drawing.Point(0, 0)
+        Me.panelMenuInicio.Name = "panelMenuInicio"
+        Me.panelMenuInicio.Size = New System.Drawing.Size(284, 648)
+        Me.panelMenuInicio.TabIndex = 1
         '
         'Label2
         '
@@ -93,69 +131,69 @@ Partial Class MenuGestorNew
         Me.Label2.TabIndex = 33
         Me.Label2.Text = "Politicas de privacidad"
         '
-        'btnModUsuario
+        'btnMenu_ModUsuario
         '
-        Me.btnModUsuario.BackColor = System.Drawing.Color.Transparent
-        Me.btnModUsuario.FlatAppearance.BorderSize = 0
-        Me.btnModUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnModUsuario.ForeColor = System.Drawing.Color.White
-        Me.btnModUsuario.Location = New System.Drawing.Point(0, 392)
-        Me.btnModUsuario.Name = "btnModUsuario"
-        Me.btnModUsuario.Size = New System.Drawing.Size(291, 47)
-        Me.btnModUsuario.TabIndex = 11
-        Me.btnModUsuario.Text = "Modificar Usuario"
-        Me.btnModUsuario.UseVisualStyleBackColor = False
+        Me.btnMenu_ModUsuario.BackColor = System.Drawing.Color.Transparent
+        Me.btnMenu_ModUsuario.FlatAppearance.BorderSize = 0
+        Me.btnMenu_ModUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMenu_ModUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMenu_ModUsuario.ForeColor = System.Drawing.Color.White
+        Me.btnMenu_ModUsuario.Location = New System.Drawing.Point(0, 392)
+        Me.btnMenu_ModUsuario.Name = "btnMenu_ModUsuario"
+        Me.btnMenu_ModUsuario.Size = New System.Drawing.Size(291, 47)
+        Me.btnMenu_ModUsuario.TabIndex = 11
+        Me.btnMenu_ModUsuario.Text = "Modificar / Eliminar Usuario"
+        Me.btnMenu_ModUsuario.UseVisualStyleBackColor = False
         '
-        'lbIniciales
+        'labIniciales
         '
-        Me.lbIniciales.AutoSize = True
-        Me.lbIniciales.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbIniciales.ForeColor = System.Drawing.Color.White
-        Me.lbIniciales.Location = New System.Drawing.Point(12, 16)
-        Me.lbIniciales.Name = "lbIniciales"
-        Me.lbIniciales.Size = New System.Drawing.Size(53, 44)
-        Me.lbIniciales.TabIndex = 8
-        Me.lbIniciales.Text = "IF"
+        Me.labIniciales.AutoSize = True
+        Me.labIniciales.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labIniciales.ForeColor = System.Drawing.Color.White
+        Me.labIniciales.Location = New System.Drawing.Point(12, 16)
+        Me.labIniciales.Name = "labIniciales"
+        Me.labIniciales.Size = New System.Drawing.Size(53, 44)
+        Me.labIniciales.TabIndex = 8
+        Me.labIniciales.Text = "IF"
         '
-        'lbNombre
+        'labNombre
         '
-        Me.lbNombre.AutoSize = True
-        Me.lbNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbNombre.ForeColor = System.Drawing.Color.White
-        Me.lbNombre.Location = New System.Drawing.Point(103, 9)
-        Me.lbNombre.Name = "lbNombre"
-        Me.lbNombre.Size = New System.Drawing.Size(141, 25)
-        Me.lbNombre.TabIndex = 5
-        Me.lbNombre.Text = "Ignacio Franco"
+        Me.labNombre.AutoSize = True
+        Me.labNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labNombre.ForeColor = System.Drawing.Color.White
+        Me.labNombre.Location = New System.Drawing.Point(103, 9)
+        Me.labNombre.Name = "labNombre"
+        Me.labNombre.Size = New System.Drawing.Size(141, 25)
+        Me.labNombre.TabIndex = 5
+        Me.labNombre.Text = "Ignacio Franco"
         '
-        'btnABMSintomas
+        'btnMenu_AgregarMedico
         '
-        Me.btnABMSintomas.BackColor = System.Drawing.Color.Transparent
-        Me.btnABMSintomas.FlatAppearance.BorderSize = 0
-        Me.btnABMSintomas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnABMSintomas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnABMSintomas.ForeColor = System.Drawing.Color.White
-        Me.btnABMSintomas.Location = New System.Drawing.Point(0, 286)
-        Me.btnABMSintomas.Name = "btnABMSintomas"
-        Me.btnABMSintomas.Size = New System.Drawing.Size(291, 47)
-        Me.btnABMSintomas.TabIndex = 2
-        Me.btnABMSintomas.Text = "Agregar / Modificar Sintomas"
-        Me.btnABMSintomas.UseVisualStyleBackColor = False
+        Me.btnMenu_AgregarMedico.BackColor = System.Drawing.Color.Transparent
+        Me.btnMenu_AgregarMedico.FlatAppearance.BorderSize = 0
+        Me.btnMenu_AgregarMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMenu_AgregarMedico.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMenu_AgregarMedico.ForeColor = System.Drawing.Color.White
+        Me.btnMenu_AgregarMedico.Location = New System.Drawing.Point(0, 180)
+        Me.btnMenu_AgregarMedico.Name = "btnMenu_AgregarMedico"
+        Me.btnMenu_AgregarMedico.Size = New System.Drawing.Size(291, 47)
+        Me.btnMenu_AgregarMedico.TabIndex = 0
+        Me.btnMenu_AgregarMedico.Text = "Agregar Medico"
+        Me.btnMenu_AgregarMedico.UseVisualStyleBackColor = False
         '
-        'btnAgregarMedico
+        'btnMenu_ABMSintomas
         '
-        Me.btnAgregarMedico.BackColor = System.Drawing.Color.Transparent
-        Me.btnAgregarMedico.FlatAppearance.BorderSize = 0
-        Me.btnAgregarMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAgregarMedico.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregarMedico.ForeColor = System.Drawing.Color.White
-        Me.btnAgregarMedico.Location = New System.Drawing.Point(0, 180)
-        Me.btnAgregarMedico.Name = "btnAgregarMedico"
-        Me.btnAgregarMedico.Size = New System.Drawing.Size(291, 47)
-        Me.btnAgregarMedico.TabIndex = 0
-        Me.btnAgregarMedico.Text = "Agregar Medico"
-        Me.btnAgregarMedico.UseVisualStyleBackColor = False
+        Me.btnMenu_ABMSintomas.BackColor = System.Drawing.Color.Transparent
+        Me.btnMenu_ABMSintomas.FlatAppearance.BorderSize = 0
+        Me.btnMenu_ABMSintomas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMenu_ABMSintomas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMenu_ABMSintomas.ForeColor = System.Drawing.Color.White
+        Me.btnMenu_ABMSintomas.Location = New System.Drawing.Point(0, 285)
+        Me.btnMenu_ABMSintomas.Name = "btnMenu_ABMSintomas"
+        Me.btnMenu_ABMSintomas.Size = New System.Drawing.Size(291, 47)
+        Me.btnMenu_ABMSintomas.TabIndex = 2
+        Me.btnMenu_ABMSintomas.Text = "Agregar / Modificar Sintomas"
+        Me.btnMenu_ABMSintomas.UseVisualStyleBackColor = False
         '
         'Button2
         '
@@ -185,126 +223,239 @@ Partial Class MenuGestorNew
         Me.Button1.Text = "X"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'pAgregarMed
+        'panelModificarEliminarMedico
         '
-        Me.pAgregarMed.Controls.Add(Me.cbIDS)
-        Me.pAgregarMed.Controls.Add(Me.TextBox8)
-        Me.pAgregarMed.Controls.Add(Me.Label10)
-        Me.pAgregarMed.Controls.Add(Me.TextBox7)
-        Me.pAgregarMed.Controls.Add(Me.TextBox6)
-        Me.pAgregarMed.Controls.Add(Me.TextBox5)
-        Me.pAgregarMed.Controls.Add(Me.TextBox4)
-        Me.pAgregarMed.Controls.Add(Me.TextBox3)
-        Me.pAgregarMed.Controls.Add(Me.TextBox2)
-        Me.pAgregarMed.Controls.Add(Me.TextBox1)
-        Me.pAgregarMed.Controls.Add(Me.btnEntrar)
-        Me.pAgregarMed.Controls.Add(Me.Label9)
-        Me.pAgregarMed.Controls.Add(Me.Label8)
-        Me.pAgregarMed.Controls.Add(Me.Label7)
-        Me.pAgregarMed.Controls.Add(Me.Label6)
-        Me.pAgregarMed.Controls.Add(Me.Label5)
-        Me.pAgregarMed.Controls.Add(Me.Label4)
-        Me.pAgregarMed.Location = New System.Drawing.Point(290, 16)
-        Me.pAgregarMed.Name = "pAgregarMed"
-        Me.pAgregarMed.Size = New System.Drawing.Size(685, 617)
-        Me.pAgregarMed.TabIndex = 7
+        Me.panelModificarEliminarMedico.Controls.Add(Me.Label30)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.lstModDel_Medicos)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.btnEliminarMedico)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.Label17)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.dateModDel_FechaNacimiento)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.Label16)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_Telefono)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.Label15)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.Label14)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_ConfContraseña)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_Contraseña)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_SegundoNombre)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.Label1)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_Empresa)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.Label10)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_Email)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_Especializacion)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_CI)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_Direccion)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_Apellido)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_PrimerNombre)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.btnAceptarModificar)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.Label9)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.Label8)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.Label7)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.Label6)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.Label5)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.Label4)
+        Me.panelModificarEliminarMedico.Location = New System.Drawing.Point(290, 24)
+        Me.panelModificarEliminarMedico.Name = "panelModificarEliminarMedico"
+        Me.panelModificarEliminarMedico.Size = New System.Drawing.Size(685, 617)
+        Me.panelModificarEliminarMedico.TabIndex = 7
         '
-        'cbIDS
+        'Label30
         '
-        Me.cbIDS.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbIDS.FormattingEnabled = True
-        Me.cbIDS.Items.AddRange(New Object() {"ID Medico:", "ID Paciente:"})
-        Me.cbIDS.Location = New System.Drawing.Point(23, 24)
-        Me.cbIDS.Name = "cbIDS"
-        Me.cbIDS.Size = New System.Drawing.Size(96, 25)
-        Me.cbIDS.TabIndex = 33
-        Me.cbIDS.Text = "ID Medico:"
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.Location = New System.Drawing.Point(453, 128)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(151, 20)
+        Me.Label30.TabIndex = 45
+        Me.Label30.Text = "Lista de usuarios:"
         '
-        'TextBox8
+        'lstModDel_Medicos
         '
-        Me.TextBox8.Location = New System.Drawing.Point(196, 464)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(241, 20)
-        Me.TextBox8.TabIndex = 32
+        Me.lstModDel_Medicos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lstModDel_Medicos.HideSelection = False
+        Me.lstModDel_Medicos.Location = New System.Drawing.Point(453, 156)
+        Me.lstModDel_Medicos.Name = "lstModDel_Medicos"
+        Me.lstModDel_Medicos.Size = New System.Drawing.Size(225, 340)
+        Me.lstModDel_Medicos.TabIndex = 44
+        Me.lstModDel_Medicos.UseCompatibleStateImageBehavior = False
+        Me.lstModDel_Medicos.View = System.Windows.Forms.View.Tile
+        '
+        'btnEliminarMedico
+        '
+        Me.btnEliminarMedico.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.btnEliminarMedico.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnEliminarMedico.FlatAppearance.BorderSize = 0
+        Me.btnEliminarMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminarMedico.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnEliminarMedico.Location = New System.Drawing.Point(558, 520)
+        Me.btnEliminarMedico.Name = "btnEliminarMedico"
+        Me.btnEliminarMedico.Size = New System.Drawing.Size(106, 28)
+        Me.btnEliminarMedico.TabIndex = 43
+        Me.btnEliminarMedico.Text = "Eliminar"
+        Me.btnEliminarMedico.UseVisualStyleBackColor = False
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(16, 245)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(184, 22)
+        Me.Label17.TabIndex = 42
+        Me.Label17.Text = "Fecha de Nacimiento:"
+        '
+        'dateModDel_FechaNacimiento
+        '
+        Me.dateModDel_FechaNacimiento.Location = New System.Drawing.Point(206, 247)
+        Me.dateModDel_FechaNacimiento.Name = "dateModDel_FechaNacimiento"
+        Me.dateModDel_FechaNacimiento.Size = New System.Drawing.Size(198, 20)
+        Me.dateModDel_FechaNacimiento.TabIndex = 41
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(114, 287)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(86, 22)
+        Me.Label16.TabIndex = 40
+        Me.Label16.Text = "Telefono:"
+        '
+        'txtModDel_Telefono
+        '
+        Me.txtModDel_Telefono.Location = New System.Drawing.Point(206, 291)
+        Me.txtModDel_Telefono.Name = "txtModDel_Telefono"
+        Me.txtModDel_Telefono.Size = New System.Drawing.Size(198, 20)
+        Me.txtModDel_Telefono.TabIndex = 39
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(9, 507)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(191, 22)
+        Me.Label15.TabIndex = 38
+        Me.Label15.Text = "Confirmar Contraseña:"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(92, 462)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(108, 22)
+        Me.Label14.TabIndex = 37
+        Me.Label14.Text = "Contraseña:"
+        '
+        'txtModDel_ConfContraseña
+        '
+        Me.txtModDel_ConfContraseña.Location = New System.Drawing.Point(206, 509)
+        Me.txtModDel_ConfContraseña.Name = "txtModDel_ConfContraseña"
+        Me.txtModDel_ConfContraseña.Size = New System.Drawing.Size(198, 20)
+        Me.txtModDel_ConfContraseña.TabIndex = 36
+        '
+        'txtModDel_Contraseña
+        '
+        Me.txtModDel_Contraseña.Location = New System.Drawing.Point(206, 464)
+        Me.txtModDel_Contraseña.Name = "txtModDel_Contraseña"
+        Me.txtModDel_Contraseña.Size = New System.Drawing.Size(198, 20)
+        Me.txtModDel_Contraseña.TabIndex = 35
+        '
+        'txtModDel_SegundoNombre
+        '
+        Me.txtModDel_SegundoNombre.Location = New System.Drawing.Point(206, 82)
+        Me.txtModDel_SegundoNombre.Name = "txtModDel_SegundoNombre"
+        Me.txtModDel_SegundoNombre.Size = New System.Drawing.Size(198, 20)
+        Me.txtModDel_SegundoNombre.TabIndex = 34
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(45, 80)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(155, 22)
+        Me.Label1.TabIndex = 33
+        Me.Label1.Text = "Segundo Nombre:"
+        '
+        'txtModDel_Empresa
+        '
+        Me.txtModDel_Empresa.Location = New System.Drawing.Point(206, 419)
+        Me.txtModDel_Empresa.Name = "txtModDel_Empresa"
+        Me.txtModDel_Empresa.Size = New System.Drawing.Size(198, 20)
+        Me.txtModDel_Empresa.TabIndex = 32
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(19, 462)
+        Me.Label10.Location = New System.Drawing.Point(29, 417)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(171, 22)
         Me.Label10.TabIndex = 31
         Me.Label10.Text = "Empresa de trabajo:"
         '
-        'TextBox7
+        'txtModDel_Email
         '
-        Me.TextBox7.Location = New System.Drawing.Point(196, 403)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(241, 20)
-        Me.TextBox7.TabIndex = 28
+        Me.txtModDel_Email.Location = New System.Drawing.Point(206, 377)
+        Me.txtModDel_Email.Name = "txtModDel_Email"
+        Me.txtModDel_Email.Size = New System.Drawing.Size(198, 20)
+        Me.txtModDel_Email.TabIndex = 28
         '
-        'TextBox6
+        'txtModDel_Especializacion
         '
-        Me.TextBox6.Location = New System.Drawing.Point(196, 344)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(241, 20)
-        Me.TextBox6.TabIndex = 27
+        Me.txtModDel_Especializacion.Location = New System.Drawing.Point(206, 332)
+        Me.txtModDel_Especializacion.Name = "txtModDel_Especializacion"
+        Me.txtModDel_Especializacion.Size = New System.Drawing.Size(198, 20)
+        Me.txtModDel_Especializacion.TabIndex = 27
         '
-        'TextBox5
+        'txtModDel_CI
         '
-        Me.TextBox5.Location = New System.Drawing.Point(196, 284)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(241, 20)
-        Me.TextBox5.TabIndex = 26
+        Me.txtModDel_CI.Location = New System.Drawing.Point(206, 162)
+        Me.txtModDel_CI.Name = "txtModDel_CI"
+        Me.txtModDel_CI.Size = New System.Drawing.Size(198, 20)
+        Me.txtModDel_CI.TabIndex = 26
         '
-        'TextBox4
+        'txtModDel_Direccion
         '
-        Me.TextBox4.Location = New System.Drawing.Point(196, 220)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(241, 20)
-        Me.TextBox4.TabIndex = 25
+        Me.txtModDel_Direccion.Location = New System.Drawing.Point(206, 204)
+        Me.txtModDel_Direccion.Name = "txtModDel_Direccion"
+        Me.txtModDel_Direccion.Size = New System.Drawing.Size(198, 20)
+        Me.txtModDel_Direccion.TabIndex = 25
         '
-        'TextBox3
+        'txtModDel_Apellido
         '
-        Me.TextBox3.Location = New System.Drawing.Point(196, 156)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(241, 20)
-        Me.TextBox3.TabIndex = 24
+        Me.txtModDel_Apellido.Location = New System.Drawing.Point(206, 122)
+        Me.txtModDel_Apellido.Name = "txtModDel_Apellido"
+        Me.txtModDel_Apellido.Size = New System.Drawing.Size(198, 20)
+        Me.txtModDel_Apellido.TabIndex = 24
         '
-        'TextBox2
+        'txtModDel_PrimerNombre
         '
-        Me.TextBox2.Location = New System.Drawing.Point(196, 90)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(241, 20)
-        Me.TextBox2.TabIndex = 23
+        Me.txtModDel_PrimerNombre.Location = New System.Drawing.Point(206, 41)
+        Me.txtModDel_PrimerNombre.Name = "txtModDel_PrimerNombre"
+        Me.txtModDel_PrimerNombre.Size = New System.Drawing.Size(198, 20)
+        Me.txtModDel_PrimerNombre.TabIndex = 23
         '
-        'TextBox1
+        'btnAceptarModificar
         '
-        Me.TextBox1.Location = New System.Drawing.Point(196, 24)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(241, 20)
-        Me.TextBox1.TabIndex = 22
-        '
-        'btnEntrar
-        '
-        Me.btnEntrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.btnEntrar.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnEntrar.FlatAppearance.BorderSize = 0
-        Me.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEntrar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnEntrar.Location = New System.Drawing.Point(558, 576)
-        Me.btnEntrar.Name = "btnEntrar"
-        Me.btnEntrar.Size = New System.Drawing.Size(106, 28)
-        Me.btnEntrar.TabIndex = 21
-        Me.btnEntrar.Text = "Agregar"
-        Me.btnEntrar.UseVisualStyleBackColor = False
+        Me.btnAceptarModificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.btnAceptarModificar.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnAceptarModificar.FlatAppearance.BorderSize = 0
+        Me.btnAceptarModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAceptarModificar.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnAceptarModificar.Location = New System.Drawing.Point(558, 574)
+        Me.btnAceptarModificar.Name = "btnAceptarModificar"
+        Me.btnAceptarModificar.Size = New System.Drawing.Size(106, 28)
+        Me.btnAceptarModificar.TabIndex = 21
+        Me.btnAceptarModificar.Text = "Aceptar"
+        Me.btnAceptarModificar.UseVisualStyleBackColor = False
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(19, 401)
+        Me.Label9.Location = New System.Drawing.Point(135, 375)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(65, 22)
         Me.Label9.TabIndex = 20
@@ -314,7 +465,7 @@ Partial Class MenuGestorNew
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(19, 342)
+        Me.Label8.Location = New System.Drawing.Point(62, 330)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(138, 22)
         Me.Label8.TabIndex = 17
@@ -324,7 +475,7 @@ Partial Class MenuGestorNew
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(19, 282)
+        Me.Label7.Location = New System.Drawing.Point(168, 162)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(32, 22)
         Me.Label7.TabIndex = 14
@@ -334,7 +485,7 @@ Partial Class MenuGestorNew
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(19, 220)
+        Me.Label6.Location = New System.Drawing.Point(110, 200)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(90, 22)
         Me.Label6.TabIndex = 11
@@ -344,7 +495,7 @@ Partial Class MenuGestorNew
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(19, 154)
+        Me.Label5.Location = New System.Drawing.Point(121, 120)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(79, 22)
         Me.Label5.TabIndex = 8
@@ -354,30 +505,30 @@ Partial Class MenuGestorNew
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(19, 88)
+        Me.Label4.Location = New System.Drawing.Point(65, 41)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(83, 22)
+        Me.Label4.Size = New System.Drawing.Size(135, 22)
         Me.Label4.TabIndex = 5
-        Me.Label4.Text = "Nombre: "
+        Me.Label4.Text = "Primer Nombre:"
         '
-        'pABMSintoma
+        'panelABMSintoma
         '
-        Me.pABMSintoma.Controls.Add(Me.Button5)
-        Me.pABMSintoma.Controls.Add(Me.Button4)
-        Me.pABMSintoma.Controls.Add(Me.Button6)
-        Me.pABMSintoma.Controls.Add(Me.Button3)
-        Me.pABMSintoma.Controls.Add(Me.TextBox9)
-        Me.pABMSintoma.Controls.Add(Me.TextBox10)
-        Me.pABMSintoma.Controls.Add(Me.Label13)
-        Me.pABMSintoma.Controls.Add(Me.Label12)
-        Me.pABMSintoma.Controls.Add(Me.Label11)
-        Me.pABMSintoma.Controls.Add(Me.Label3)
-        Me.pABMSintoma.Controls.Add(Me.ListView2)
-        Me.pABMSintoma.Controls.Add(Me.ListView1)
-        Me.pABMSintoma.Location = New System.Drawing.Point(288, 14)
-        Me.pABMSintoma.Name = "pABMSintoma"
-        Me.pABMSintoma.Size = New System.Drawing.Size(689, 618)
-        Me.pABMSintoma.TabIndex = 8
+        Me.panelABMSintoma.Controls.Add(Me.Button5)
+        Me.panelABMSintoma.Controls.Add(Me.Button4)
+        Me.panelABMSintoma.Controls.Add(Me.Button6)
+        Me.panelABMSintoma.Controls.Add(Me.Button3)
+        Me.panelABMSintoma.Controls.Add(Me.TextBox9)
+        Me.panelABMSintoma.Controls.Add(Me.TextBox10)
+        Me.panelABMSintoma.Controls.Add(Me.Label13)
+        Me.panelABMSintoma.Controls.Add(Me.Label12)
+        Me.panelABMSintoma.Controls.Add(Me.Label11)
+        Me.panelABMSintoma.Controls.Add(Me.Label3)
+        Me.panelABMSintoma.Controls.Add(Me.lstPatologia)
+        Me.panelABMSintoma.Controls.Add(Me.lstSintomas)
+        Me.panelABMSintoma.Location = New System.Drawing.Point(288, 22)
+        Me.panelABMSintoma.Name = "panelABMSintoma"
+        Me.panelABMSintoma.Size = New System.Drawing.Size(689, 618)
+        Me.panelABMSintoma.TabIndex = 8
         '
         'Button5
         '
@@ -418,7 +569,7 @@ Partial Class MenuGestorNew
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(116, 28)
         Me.Button6.TabIndex = 12
-        Me.Button6.Text = "+ Agregar Patologia"
+        Me.Button6.Text = "Agregar Patologia"
         Me.Button6.UseVisualStyleBackColor = False
         '
         'Button3
@@ -432,7 +583,7 @@ Partial Class MenuGestorNew
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(106, 28)
         Me.Button3.TabIndex = 9
-        Me.Button3.Text = "+ Agregar Sintoma"
+        Me.Button3.Text = "Agregar Sintoma"
         Me.Button3.UseVisualStyleBackColor = False
         '
         'TextBox9
@@ -453,7 +604,7 @@ Partial Class MenuGestorNew
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(365, 101)
+        Me.Label13.Location = New System.Drawing.Point(365, 98)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(139, 17)
         Me.Label13.TabIndex = 5
@@ -463,11 +614,11 @@ Partial Class MenuGestorNew
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(9, 101)
+        Me.Label12.Location = New System.Drawing.Point(19, 98)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(139, 17)
+        Me.Label12.Size = New System.Drawing.Size(130, 17)
         Me.Label12.TabIndex = 4
-        Me.Label12.Text = "Nombre de patologia:"
+        Me.Label12.Text = "Nombre de Sintoma:"
         '
         'Label11
         '
@@ -489,23 +640,277 @@ Partial Class MenuGestorNew
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Lista de sintomas:"
         '
-        'ListView2
+        'lstPatologia
         '
-        Me.ListView2.HideSelection = False
-        Me.ListView2.Location = New System.Drawing.Point(368, 212)
-        Me.ListView2.Name = "ListView2"
-        Me.ListView2.Size = New System.Drawing.Size(312, 352)
-        Me.ListView2.TabIndex = 1
-        Me.ListView2.UseCompatibleStateImageBehavior = False
+        Me.lstPatologia.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lstPatologia.HideSelection = False
+        Me.lstPatologia.Location = New System.Drawing.Point(368, 212)
+        Me.lstPatologia.Name = "lstPatologia"
+        Me.lstPatologia.Size = New System.Drawing.Size(312, 352)
+        Me.lstPatologia.TabIndex = 1
+        Me.lstPatologia.UseCompatibleStateImageBehavior = False
+        Me.lstPatologia.View = System.Windows.Forms.View.Tile
         '
-        'ListView1
+        'lstSintomas
         '
-        Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(9, 212)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(312, 352)
-        Me.ListView1.TabIndex = 0
-        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.lstSintomas.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lstSintomas.HideSelection = False
+        Me.lstSintomas.Location = New System.Drawing.Point(9, 212)
+        Me.lstSintomas.Name = "lstSintomas"
+        Me.lstSintomas.Size = New System.Drawing.Size(312, 352)
+        Me.lstSintomas.TabIndex = 0
+        Me.lstSintomas.UseCompatibleStateImageBehavior = False
+        Me.lstSintomas.View = System.Windows.Forms.View.Tile
+        '
+        'panelAgregarUsuario
+        '
+        Me.panelAgregarUsuario.Controls.Add(Me.Label18)
+        Me.panelAgregarUsuario.Controls.Add(Me.dateFechaNacimiento)
+        Me.panelAgregarUsuario.Controls.Add(Me.Label19)
+        Me.panelAgregarUsuario.Controls.Add(Me.txtTelefono)
+        Me.panelAgregarUsuario.Controls.Add(Me.Label20)
+        Me.panelAgregarUsuario.Controls.Add(Me.Label21)
+        Me.panelAgregarUsuario.Controls.Add(Me.txtConfContraseña)
+        Me.panelAgregarUsuario.Controls.Add(Me.txtContraseña)
+        Me.panelAgregarUsuario.Controls.Add(Me.txtSegundoNombre)
+        Me.panelAgregarUsuario.Controls.Add(Me.Label22)
+        Me.panelAgregarUsuario.Controls.Add(Me.txtEmpresa)
+        Me.panelAgregarUsuario.Controls.Add(Me.Label23)
+        Me.panelAgregarUsuario.Controls.Add(Me.txtEmail)
+        Me.panelAgregarUsuario.Controls.Add(Me.txtEspecializacion)
+        Me.panelAgregarUsuario.Controls.Add(Me.txtCI)
+        Me.panelAgregarUsuario.Controls.Add(Me.txtDireccion)
+        Me.panelAgregarUsuario.Controls.Add(Me.txtApellido)
+        Me.panelAgregarUsuario.Controls.Add(Me.txtPrimerNombre)
+        Me.panelAgregarUsuario.Controls.Add(Me.btnAgregarMedico)
+        Me.panelAgregarUsuario.Controls.Add(Me.Label24)
+        Me.panelAgregarUsuario.Controls.Add(Me.Label25)
+        Me.panelAgregarUsuario.Controls.Add(Me.Label26)
+        Me.panelAgregarUsuario.Controls.Add(Me.Label27)
+        Me.panelAgregarUsuario.Controls.Add(Me.Label28)
+        Me.panelAgregarUsuario.Controls.Add(Me.Label29)
+        Me.panelAgregarUsuario.Location = New System.Drawing.Point(290, 24)
+        Me.panelAgregarUsuario.Name = "panelAgregarUsuario"
+        Me.panelAgregarUsuario.Size = New System.Drawing.Size(685, 617)
+        Me.panelAgregarUsuario.TabIndex = 43
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(16, 245)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(184, 22)
+        Me.Label18.TabIndex = 42
+        Me.Label18.Text = "Fecha de Nacimiento:"
+        '
+        'dateFechaNacimiento
+        '
+        Me.dateFechaNacimiento.Location = New System.Drawing.Point(206, 247)
+        Me.dateFechaNacimiento.Name = "dateFechaNacimiento"
+        Me.dateFechaNacimiento.Size = New System.Drawing.Size(241, 20)
+        Me.dateFechaNacimiento.TabIndex = 41
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(114, 287)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(86, 22)
+        Me.Label19.TabIndex = 40
+        Me.Label19.Text = "Telefono:"
+        '
+        'txtTelefono
+        '
+        Me.txtTelefono.Location = New System.Drawing.Point(206, 291)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Size = New System.Drawing.Size(241, 20)
+        Me.txtTelefono.TabIndex = 39
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(9, 507)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(191, 22)
+        Me.Label20.TabIndex = 38
+        Me.Label20.Text = "Confirmar Contraseña:"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(92, 462)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(108, 22)
+        Me.Label21.TabIndex = 37
+        Me.Label21.Text = "Contraseña:"
+        '
+        'txtConfContraseña
+        '
+        Me.txtConfContraseña.Location = New System.Drawing.Point(206, 509)
+        Me.txtConfContraseña.Name = "txtConfContraseña"
+        Me.txtConfContraseña.Size = New System.Drawing.Size(241, 20)
+        Me.txtConfContraseña.TabIndex = 36
+        '
+        'txtContraseña
+        '
+        Me.txtContraseña.Location = New System.Drawing.Point(206, 464)
+        Me.txtContraseña.Name = "txtContraseña"
+        Me.txtContraseña.Size = New System.Drawing.Size(241, 20)
+        Me.txtContraseña.TabIndex = 35
+        '
+        'txtSegundoNombre
+        '
+        Me.txtSegundoNombre.Location = New System.Drawing.Point(206, 82)
+        Me.txtSegundoNombre.Name = "txtSegundoNombre"
+        Me.txtSegundoNombre.Size = New System.Drawing.Size(241, 20)
+        Me.txtSegundoNombre.TabIndex = 34
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(45, 80)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(155, 22)
+        Me.Label22.TabIndex = 33
+        Me.Label22.Text = "Segundo Nombre:"
+        '
+        'txtEmpresa
+        '
+        Me.txtEmpresa.Location = New System.Drawing.Point(206, 419)
+        Me.txtEmpresa.Name = "txtEmpresa"
+        Me.txtEmpresa.Size = New System.Drawing.Size(241, 20)
+        Me.txtEmpresa.TabIndex = 32
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.Location = New System.Drawing.Point(29, 417)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(171, 22)
+        Me.Label23.TabIndex = 31
+        Me.Label23.Text = "Empresa de trabajo:"
+        '
+        'txtEmail
+        '
+        Me.txtEmail.Location = New System.Drawing.Point(206, 377)
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(241, 20)
+        Me.txtEmail.TabIndex = 28
+        '
+        'txtEspecializacion
+        '
+        Me.txtEspecializacion.Location = New System.Drawing.Point(206, 332)
+        Me.txtEspecializacion.Name = "txtEspecializacion"
+        Me.txtEspecializacion.Size = New System.Drawing.Size(241, 20)
+        Me.txtEspecializacion.TabIndex = 27
+        '
+        'txtCI
+        '
+        Me.txtCI.Location = New System.Drawing.Point(206, 162)
+        Me.txtCI.Name = "txtCI"
+        Me.txtCI.Size = New System.Drawing.Size(241, 20)
+        Me.txtCI.TabIndex = 26
+        '
+        'txtDireccion
+        '
+        Me.txtDireccion.Location = New System.Drawing.Point(206, 204)
+        Me.txtDireccion.Name = "txtDireccion"
+        Me.txtDireccion.Size = New System.Drawing.Size(241, 20)
+        Me.txtDireccion.TabIndex = 25
+        '
+        'txtApellido
+        '
+        Me.txtApellido.Location = New System.Drawing.Point(206, 122)
+        Me.txtApellido.Name = "txtApellido"
+        Me.txtApellido.Size = New System.Drawing.Size(241, 20)
+        Me.txtApellido.TabIndex = 24
+        '
+        'txtPrimerNombre
+        '
+        Me.txtPrimerNombre.Location = New System.Drawing.Point(206, 41)
+        Me.txtPrimerNombre.Name = "txtPrimerNombre"
+        Me.txtPrimerNombre.Size = New System.Drawing.Size(241, 20)
+        Me.txtPrimerNombre.TabIndex = 23
+        '
+        'btnAgregarMedico
+        '
+        Me.btnAgregarMedico.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.btnAgregarMedico.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnAgregarMedico.FlatAppearance.BorderSize = 0
+        Me.btnAgregarMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregarMedico.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnAgregarMedico.Location = New System.Drawing.Point(558, 576)
+        Me.btnAgregarMedico.Name = "btnAgregarMedico"
+        Me.btnAgregarMedico.Size = New System.Drawing.Size(106, 28)
+        Me.btnAgregarMedico.TabIndex = 21
+        Me.btnAgregarMedico.Text = "Agregar"
+        Me.btnAgregarMedico.UseVisualStyleBackColor = False
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(135, 375)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(65, 22)
+        Me.Label24.TabIndex = 20
+        Me.Label24.Text = "E-mail:"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.Location = New System.Drawing.Point(62, 330)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(138, 22)
+        Me.Label25.TabIndex = 17
+        Me.Label25.Text = "Especializacion:"
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.Location = New System.Drawing.Point(168, 162)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(32, 22)
+        Me.Label26.TabIndex = 14
+        Me.Label26.Text = "CI:"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.Location = New System.Drawing.Point(110, 200)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(90, 22)
+        Me.Label27.TabIndex = 11
+        Me.Label27.Text = "Direccion:"
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.Location = New System.Drawing.Point(121, 120)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(79, 22)
+        Me.Label28.TabIndex = 8
+        Me.Label28.Text = "Apellido:"
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.Location = New System.Drawing.Point(65, 41)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(135, 22)
+        Me.Label29.TabIndex = 5
+        Me.Label29.Text = "Primer Nombre:"
         '
         'MenuGestorNew
         '
@@ -516,62 +921,102 @@ Partial Class MenuGestorNew
         Me.ControlBox = False
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.pAgregarMed)
-        Me.Controls.Add(Me.pABMSintoma)
+        Me.Controls.Add(Me.panelMenuInicio)
+        Me.Controls.Add(Me.panelModificarEliminarMedico)
+        Me.Controls.Add(Me.panelAgregarUsuario)
+        Me.Controls.Add(Me.panelABMSintoma)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)
         Me.Name = "MenuGestorNew"
         Me.Text = "MenuPacienteNew"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.pAgregarMed.ResumeLayout(False)
-        Me.pAgregarMed.PerformLayout()
-        Me.pABMSintoma.ResumeLayout(False)
-        Me.pABMSintoma.PerformLayout()
+        Me.panelMenuInicio.ResumeLayout(False)
+        Me.panelMenuInicio.PerformLayout()
+        Me.panelModificarEliminarMedico.ResumeLayout(False)
+        Me.panelModificarEliminarMedico.PerformLayout()
+        Me.panelABMSintoma.ResumeLayout(False)
+        Me.panelABMSintoma.PerformLayout()
+        Me.panelAgregarUsuario.ResumeLayout(False)
+        Me.panelAgregarUsuario.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents lbIniciales As Label
-    Friend WithEvents lbNombre As Label
-    Friend WithEvents btnABMSintomas As Button
-    Friend WithEvents btnAgregarMedico As Button
-    Friend WithEvents btnModUsuario As Button
+    Friend WithEvents panelMenuInicio As Panel
+    Friend WithEvents labIniciales As Label
+    Friend WithEvents labNombre As Label
+    Friend WithEvents btnMenu_ABMSintomas As Button
+    Friend WithEvents btnMenu_AgregarMedico As Button
+    Friend WithEvents btnMenu_ModUsuario As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents pAgregarMed As Panel
+    Friend WithEvents panelModificarEliminarMedico As Panel
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents btnEntrar As Button
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents txtModDel_CI As TextBox
+    Friend WithEvents txtModDel_Direccion As TextBox
+    Friend WithEvents txtModDel_Apellido As TextBox
+    Friend WithEvents txtModDel_PrimerNombre As TextBox
+    Friend WithEvents btnAceptarModificar As Button
+    Friend WithEvents txtModDel_Email As TextBox
+    Friend WithEvents txtModDel_Especializacion As TextBox
+    Friend WithEvents txtModDel_Empresa As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents pABMSintoma As Panel
+    Friend WithEvents panelABMSintoma As Panel
     Friend WithEvents TextBox9 As TextBox
     Friend WithEvents TextBox10 As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents ListView2 As ListView
-    Friend WithEvents ListView1 As ListView
+    Friend WithEvents lstPatologia As ListView
+    Friend WithEvents lstSintomas As ListView
     Friend WithEvents Button4 As Button
     Friend WithEvents Button6 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button5 As Button
-    Friend WithEvents cbIDS As ComboBox
+    Friend WithEvents txtModDel_SegundoNombre As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents txtModDel_ConfContraseña As TextBox
+    Friend WithEvents txtModDel_Contraseña As TextBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents txtModDel_Telefono As TextBox
+    Friend WithEvents dateModDel_FechaNacimiento As DateTimePicker
+    Friend WithEvents Label17 As Label
+    Friend WithEvents panelAgregarUsuario As Panel
+    Friend WithEvents Label18 As Label
+    Friend WithEvents dateFechaNacimiento As DateTimePicker
+    Friend WithEvents Label19 As Label
+    Friend WithEvents txtTelefono As TextBox
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents txtConfContraseña As TextBox
+    Friend WithEvents txtContraseña As TextBox
+    Friend WithEvents txtSegundoNombre As TextBox
+    Friend WithEvents Label22 As Label
+    Friend WithEvents txtEmpresa As TextBox
+    Friend WithEvents Label23 As Label
+    Friend WithEvents txtEmail As TextBox
+    Friend WithEvents txtEspecializacion As TextBox
+    Friend WithEvents txtCI As TextBox
+    Friend WithEvents txtDireccion As TextBox
+    Friend WithEvents txtApellido As TextBox
+    Friend WithEvents txtPrimerNombre As TextBox
+    Friend WithEvents btnAgregarMedico As Button
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Label25 As Label
+    Friend WithEvents Label26 As Label
+    Friend WithEvents Label27 As Label
+    Friend WithEvents Label28 As Label
+    Friend WithEvents Label29 As Label
+    Friend WithEvents Label30 As Label
+    Friend WithEvents lstModDel_Medicos As ListView
+    Friend WithEvents btnEliminarMedico As Button
 End Class

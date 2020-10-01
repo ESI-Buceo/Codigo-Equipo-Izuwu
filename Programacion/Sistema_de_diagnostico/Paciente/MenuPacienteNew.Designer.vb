@@ -27,12 +27,12 @@ Partial Class MenuPacienteNew
         Me.Label13 = New System.Windows.Forms.Label()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
-        Me.ltsSintoma = New System.Windows.Forms.ListView()
+        Me.lstSintomas = New System.Windows.Forms.ListView()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnCerrarsesion = New System.Windows.Forms.Button()
-        Me.lbIniciales = New System.Windows.Forms.Label()
+        Me.labIniciales = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.lbNombre = New System.Windows.Forms.Label()
+        Me.labNombre = New System.Windows.Forms.Label()
         Me.btnChats = New System.Windows.Forms.Button()
         Me.btnRealizarDiagnostico = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -41,7 +41,7 @@ Partial Class MenuPacienteNew
         Me.pRealizaD2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button8 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.cbxListaSintomas = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.pRealizarD.SuspendLayout()
         Me.pRealizaD2.SuspendLayout()
@@ -52,9 +52,9 @@ Partial Class MenuPacienteNew
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(207, Byte), Integer))
         Me.Panel1.Controls.Add(Me.pRealizarD)
         Me.Panel1.Controls.Add(Me.btnCerrarsesion)
-        Me.Panel1.Controls.Add(Me.lbIniciales)
+        Me.Panel1.Controls.Add(Me.labIniciales)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.lbNombre)
+        Me.Panel1.Controls.Add(Me.labNombre)
         Me.Panel1.Controls.Add(Me.btnChats)
         Me.Panel1.Controls.Add(Me.btnRealizarDiagnostico)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -67,7 +67,7 @@ Partial Class MenuPacienteNew
         Me.pRealizarD.Controls.Add(Me.Label13)
         Me.pRealizarD.Controls.Add(Me.btnEliminar)
         Me.pRealizarD.Controls.Add(Me.btnAgregar)
-        Me.pRealizarD.Controls.Add(Me.ltsSintoma)
+        Me.pRealizarD.Controls.Add(Me.lstSintomas)
         Me.pRealizarD.Controls.Add(Me.Label4)
         Me.pRealizarD.Location = New System.Drawing.Point(0, 130)
         Me.pRealizarD.Name = "pRealizarD"
@@ -112,15 +112,17 @@ Partial Class MenuPacienteNew
         Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.UseVisualStyleBackColor = False
         '
-        'ltsSintoma
+        'lstSintomas
         '
-        Me.ltsSintoma.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer))
-        Me.ltsSintoma.HideSelection = False
-        Me.ltsSintoma.Location = New System.Drawing.Point(4, 14)
-        Me.ltsSintoma.Name = "ltsSintoma"
-        Me.ltsSintoma.Size = New System.Drawing.Size(278, 390)
-        Me.ltsSintoma.TabIndex = 10
-        Me.ltsSintoma.UseCompatibleStateImageBehavior = False
+        Me.lstSintomas.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.lstSintomas.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lstSintomas.HideSelection = False
+        Me.lstSintomas.Location = New System.Drawing.Point(4, 14)
+        Me.lstSintomas.Name = "lstSintomas"
+        Me.lstSintomas.Size = New System.Drawing.Size(278, 390)
+        Me.lstSintomas.TabIndex = 10
+        Me.lstSintomas.UseCompatibleStateImageBehavior = False
+        Me.lstSintomas.View = System.Windows.Forms.View.Tile
         '
         'Label4
         '
@@ -146,16 +148,17 @@ Partial Class MenuPacienteNew
         Me.btnCerrarsesion.Text = "Cerrar sesion"
         Me.btnCerrarsesion.UseVisualStyleBackColor = False
         '
-        'lbIniciales
+        'labIniciales
         '
-        Me.lbIniciales.AutoSize = True
-        Me.lbIniciales.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbIniciales.ForeColor = System.Drawing.Color.White
-        Me.lbIniciales.Location = New System.Drawing.Point(12, 16)
-        Me.lbIniciales.Name = "lbIniciales"
-        Me.lbIniciales.Size = New System.Drawing.Size(74, 44)
-        Me.lbIniciales.TabIndex = 8
-        Me.lbIniciales.Text = "CN"
+        Me.labIniciales.AutoSize = True
+        Me.labIniciales.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(207, Byte), Integer))
+        Me.labIniciales.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labIniciales.ForeColor = System.Drawing.Color.White
+        Me.labIniciales.Location = New System.Drawing.Point(12, 16)
+        Me.labIniciales.Name = "labIniciales"
+        Me.labIniciales.Size = New System.Drawing.Size(84, 44)
+        Me.labIniciales.TabIndex = 8
+        Me.labIniciales.Text = "N U"
         '
         'Label2
         '
@@ -167,16 +170,16 @@ Partial Class MenuPacienteNew
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Historial medico"
         '
-        'lbNombre
+        'labNombre
         '
-        Me.lbNombre.AutoSize = True
-        Me.lbNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbNombre.ForeColor = System.Drawing.Color.White
-        Me.lbNombre.Location = New System.Drawing.Point(103, 9)
-        Me.lbNombre.Name = "lbNombre"
-        Me.lbNombre.Size = New System.Drawing.Size(130, 25)
-        Me.lbNombre.TabIndex = 5
-        Me.lbNombre.Text = "Cristian Norte" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.labNombre.AutoSize = True
+        Me.labNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labNombre.ForeColor = System.Drawing.Color.White
+        Me.labNombre.Location = New System.Drawing.Point(103, 9)
+        Me.labNombre.Name = "labNombre"
+        Me.labNombre.Size = New System.Drawing.Size(153, 25)
+        Me.labNombre.TabIndex = 5
+        Me.labNombre.Text = "Nombre Usuario"
         '
         'btnChats
         '
@@ -246,9 +249,9 @@ Partial Class MenuPacienteNew
         '
         Me.pRealizaD2.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer))
         Me.pRealizaD2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pRealizaD2.Controls.Add(Me.cbxListaSintomas)
         Me.pRealizaD2.Controls.Add(Me.Label1)
         Me.pRealizaD2.Controls.Add(Me.Button8)
-        Me.pRealizaD2.Controls.Add(Me.TextBox1)
         Me.pRealizaD2.Location = New System.Drawing.Point(427, 97)
         Me.pRealizaD2.Name = "pRealizaD2"
         Me.pRealizaD2.Size = New System.Drawing.Size(433, 140)
@@ -279,13 +282,16 @@ Partial Class MenuPacienteNew
         Me.Button8.Text = "Buscar"
         Me.Button8.UseVisualStyleBackColor = False
         '
-        'TextBox1
+        'cbxListaSintomas
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(196, Byte), Integer), CType(CType(196, Byte), Integer), CType(CType(196, Byte), Integer))
-        Me.TextBox1.Location = New System.Drawing.Point(18, 33)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(398, 20)
-        Me.TextBox1.TabIndex = 0
+        Me.cbxListaSintomas.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cbxListaSintomas.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cbxListaSintomas.BackColor = System.Drawing.Color.Silver
+        Me.cbxListaSintomas.FormattingEnabled = True
+        Me.cbxListaSintomas.Location = New System.Drawing.Point(18, 46)
+        Me.cbxListaSintomas.Name = "cbxListaSintomas"
+        Me.cbxListaSintomas.Size = New System.Drawing.Size(398, 21)
+        Me.cbxListaSintomas.TabIndex = 20
         '
         'MenuPacienteNew
         '
@@ -316,9 +322,9 @@ Partial Class MenuPacienteNew
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label4 As Label
-    Friend WithEvents lbIniciales As Label
+    Friend WithEvents labIniciales As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents lbNombre As Label
+    Friend WithEvents labNombre As Label
     Friend WithEvents btnChats As Button
     Friend WithEvents btnRealizarDiagnostico As Button
     Friend WithEvents btnCerrarsesion As Button
@@ -326,12 +332,12 @@ Partial Class MenuPacienteNew
     Friend WithEvents Button1 As Button
     Friend WithEvents pChat As Panel
     Friend WithEvents pRealizarD As Panel
-    Friend WithEvents ltsSintoma As ListView
+    Friend WithEvents lstSintomas As ListView
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnAgregar As Button
     Friend WithEvents pRealizaD2 As Panel
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button8 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label13 As Label
+    Friend WithEvents cbxListaSintomas As ComboBox
 End Class

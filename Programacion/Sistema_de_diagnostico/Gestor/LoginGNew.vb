@@ -49,7 +49,8 @@ Public Class LoginGNew
             'Se toman los datos de los cuadros de texto CI y Contraseña
             Dim gestor As Gestor = Instancia.loginGestor(txtUsuario.Text, txtContraseña.Text)
 
-
+            MenuGestorNew.labNombre.Text = gestor.nombre + " " + gestor.apellido
+            MenuGestorNew.labIniciales.Text = gestor.nombre(0) + " " + gestor.apellido(0)
 
             Me.Hide()
             MenuGestorNew.ShowDialog()
@@ -79,15 +80,15 @@ Public Class LoginGNew
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub Label6_MouseMove(sender As Object, e As MouseEventArgs) Handles Label6.MouseMove
-        Label6.ForeColor = Color.FromArgb(0, 0, 255)
-    End Sub
+    ' Private Sub Label6_MouseMove(sender As Object, e As MouseEventArgs) 
+    '    Label6.ForeColor = Color.FromArgb(0, 0, 255)
+    'End Sub
 
-    Private Sub Label6_MouseLeave(sender As Object, e As EventArgs) Handles Label6.MouseLeave
-        Label6.ForeColor = Color.FromArgb(255, 255, 255)
-    End Sub
+    'Private Sub Label6_MouseLeave(sender As Object, e As EventArgs) 
+    '   Label6.ForeColor = Color.FromArgb(255, 255, 255)
+    'End Sub
 
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+    Private Sub Label6_Click(sender As Object, e As EventArgs) 
         Me.Hide()
         'Registro.ShowDialog()
         Me.Close()

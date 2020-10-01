@@ -182,6 +182,13 @@ insert into Diagnostico_app values ("DAP-AAA-002","PAC-AAA-004","2020-05-14");
 
 /* Consultas de prueba */    
 
+use proyecto_izuwu;
+
+Select *
+from medico;
+
+Select *
+from usuario;
 
 
 
@@ -199,11 +206,13 @@ Paciente.id_pac=Usuario.id_us;
  tiene.id_sin=sintoma.id_sin;
  
 
+ insert into Usuario values("Prueba","Usuario","norte22@gmail,com","GES-AAA-002","la casas de prueba","46503231","algo123","53892731133",'2010-01-22'); 
+
  delete  
  from paciente
  where id_pac="000-000-003";
  
- 
+alter table medico change Espacializacion Especializacion varchar(30);
  
  
  /* Fin de consultas de prueba */
