@@ -86,7 +86,7 @@ Partial Class LoginNew
         Me.btnEntrar.FlatAppearance.BorderSize = 0
         Me.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEntrar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnEntrar.Location = New System.Drawing.Point(63, 367)
+        Me.btnEntrar.Location = New System.Drawing.Point(63, 408)
         Me.btnEntrar.Name = "btnEntrar"
         Me.btnEntrar.Size = New System.Drawing.Size(106, 28)
         Me.btnEntrar.TabIndex = 6
@@ -98,7 +98,7 @@ Partial Class LoginNew
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(12, 281)
+        Me.Label4.Location = New System.Drawing.Point(22, 306)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(130, 13)
         Me.Label4.TabIndex = 5
@@ -107,7 +107,7 @@ Partial Class LoginNew
         'txtContraseña
         '
         Me.txtContraseña.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContraseña.Location = New System.Drawing.Point(15, 227)
+        Me.txtContraseña.Location = New System.Drawing.Point(15, 248)
         Me.txtContraseña.Name = "txtContraseña"
         Me.txtContraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
         Me.txtContraseña.Size = New System.Drawing.Size(177, 22)
@@ -118,7 +118,7 @@ Partial Class LoginNew
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(12, 202)
+        Me.Label3.Location = New System.Drawing.Point(12, 223)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(70, 15)
         Me.Label3.TabIndex = 3
@@ -128,7 +128,7 @@ Partial Class LoginNew
         '
         Me.txtUsuario.BackColor = System.Drawing.SystemColors.Window
         Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario.Location = New System.Drawing.Point(15, 155)
+        Me.txtUsuario.Location = New System.Drawing.Point(15, 176)
         Me.txtUsuario.MaxLength = 8
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(177, 22)
@@ -139,7 +139,7 @@ Partial Class LoginNew
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(12, 130)
+        Me.Label2.Location = New System.Drawing.Point(12, 151)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(69, 15)
         Me.Label2.TabIndex = 1

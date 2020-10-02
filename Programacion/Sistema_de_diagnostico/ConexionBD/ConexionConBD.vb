@@ -8,7 +8,7 @@ Public Class ConexionConBD
             "driver={MySQL ODBC 8.0 Unicode Driver};" &
             "server=127.0.0.1;" &
             "port=3306;" &
-            "database=proyecto_izuwu;" &
+            "database=proyecto_prueba;" &
             "uid=root;" &
             "pwd=1234;"
 
@@ -292,7 +292,7 @@ Public Class ConexionConBD
     Public Sub agregarPaciente(paciente As Paciente)
         Dim connection As Connection = conectar()
 
-        Dim agregarUsuario As Recordset = connection.Execute("insert into Usuario values(""" + paciente.nombre + """,""" + paciente.apellido + """,""" + paciente.email + """,""" + paciente.ID + """,""" + paciente.Direccion + """,""" + paciente.CI + """,""" + paciente.contraseña + """,""" + paciente.telefono + """," + paciente.fechadenacimiento + ");")
+        Dim agregarUsuario As Recordset = connection.Execute("insert into Usuario values(""" + paciente.nombre + """,""" + paciente.apellido + """,""" + paciente.email + """,""" + paciente.ID + """,""" + paciente.Direccion + """,""" + paciente.CI + """,""" + paciente.contraseña + """,""" + paciente.telefono + """,'" + paciente.fechadenacimiento + "');")
         Dim agregarPaciente As Recordset = connection.Execute("insert into Paciente values (""" + paciente.ID + """);")
 
         connection.Close()

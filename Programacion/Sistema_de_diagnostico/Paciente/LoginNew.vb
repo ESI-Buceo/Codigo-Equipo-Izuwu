@@ -4,10 +4,6 @@ Public Class LoginNew
     Dim ex, ey As Integer
     Dim Arrastre As Boolean
 
-
-
-    'Definir variables globales; estas van despues de la linea de inherits
-
     'Estas tres subrutinas permiten desplazar el formulario. 
 
     Private Sub LoginNew_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseDown
@@ -90,6 +86,6 @@ Public Class LoginNew
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
         Me.Hide()
         RegistroNew.ShowDialog()
-        Me.Close()
+        Me.Show()
     End Sub
 End Class

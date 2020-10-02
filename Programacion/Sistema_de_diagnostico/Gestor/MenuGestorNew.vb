@@ -60,7 +60,7 @@ Public Class MenuGestorNew
 
     End Sub
 
-    Private Sub btnAgregarMedico_Click(sender As Object, e As EventArgs) Handles btnMenu_AgregarMedico.Click
+    Private Sub btnMenu_AgregarMedico_Click(sender As Object, e As EventArgs) Handles btnMenu_AgregarMedico.Click
         btnMenu_AgregarMedico.BackColor = Color.FromArgb(36, 36, 36)
         btnMenu_ABMSintomas.BackColor = Color.FromArgb(48, 48, 48)
         btnMenu_ModUsuario.BackColor = Color.FromArgb(48, 48, 48)
@@ -115,7 +115,7 @@ Public Class MenuGestorNew
         Me.Close()
     End Sub
 
-    Private Sub btnAgregarNuevoMedico_Click(sender As Object, e As EventArgs) Handles btnAceptarModificar.Click
+    Private Sub btnAceptarModificar_Click(sender As Object, e As EventArgs) Handles btnAceptarModificar.Click
         Dim fecha As Date = dateModDel_FechaNacimiento.Value.Date
         Dim fechastring As String = Format(fecha, "yyyy/MM/dd")
         instancia.actualizarMedico(New Medico(txtModDel_PrimerNombre.Text, txtModDel_Apellido.Text, txtModDel_Email.Text, listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).ID, txtModDel_Direccion.Text, txtModDel_CI.Text, txtModDel_Contraseña.Text, txtModDel_Telefono.Text, fechastring, txtModDel_Especializacion.Text))
@@ -141,7 +141,7 @@ Public Class MenuGestorNew
 
 
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles btnAgregarMedico.Click
+    Private Sub btnAgregarMedico_Click(sender As Object, e As EventArgs) Handles btnAgregarMedico.Click
         Dim fecha As Date = dateFechaNacimiento.Value.Date
         Dim fechastring As String = Format(fecha, "yyyy/MM/dd")
         Dim ID As String = instancia.codigoRandom(1)

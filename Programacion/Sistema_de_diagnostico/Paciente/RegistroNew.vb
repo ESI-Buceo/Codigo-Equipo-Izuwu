@@ -1,9 +1,10 @@
-﻿Public Class RegistroNew
+﻿Imports Datos, Logica
+Public Class RegistroNew
 
 
     Dim ex, ey As Integer
     Dim Arrastre As Boolean
-
+    Dim instancia As New LogicaAplicacion()
 
 
     'Definir variables globales; estas van despues de la linea de inherits
@@ -53,6 +54,30 @@
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub btnRegis_Click(sender As Object, e As EventArgs) Handles btnRegistro.Click
+        If txtContraseña.Text = txtConfContraseña.Text Then
+            Dim fecha As Date = dateFechaNacimiento.Value.Date
+            Dim fechastring As String = Format(fecha, "yyyy/MM/dd")
+            Dim id As String = instancia.codigoRandom(3)
+            instancia.agregarPaciente(New Paciente(txtPrimerNombre.Text, txtApellido.Text, txtEmail.Text, id, txtDireccion.Text, txtCI.Text, txtContraseña.Text, txtTelefono.Text, fechastring))
+            MsgBox("Registro exitoso.")
+            txtPrimerNombre.Clear()
+            txtSegundoNombre.Clear()
+            txtApellido.Clear()
+            dateFechaNacimiento.ResetText()
+            cbxSexo.ResetText()
+            txtDireccion.Clear()
+            txtCI.Clear()
+            txtEmail.Clear()
+            txtTelefono.Clear()
+            txtContraseña.Clear()
+            txtConfContraseña.Clear()
+            Me.Close()
+        Else
+            MsgBox("Las contraseñas no coincides.")
+        End If
     End Sub
 
     Private Sub Label13_Click(sender As Object, e As EventArgs) Handles Label13.Click

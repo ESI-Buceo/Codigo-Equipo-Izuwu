@@ -24,9 +24,13 @@ Partial Class RegistroNew
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RegistroNew))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.btnRegistro = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -38,24 +42,23 @@ Partial Class RegistroNew
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.btnRegis = New System.Windows.Forms.Button()
-        Me.txtNombreRegis = New System.Windows.Forms.TextBox()
-        Me.txtTelRegis = New System.Windows.Forms.TextBox()
-        Me.txtContraseñaRegis = New System.Windows.Forms.TextBox()
-        Me.txtCCRegis = New System.Windows.Forms.TextBox()
-        Me.txtApellidoRegis = New System.Windows.Forms.TextBox()
-        Me.txtCIRegis = New System.Windows.Forms.TextBox()
-        Me.txtDireccionRegis = New System.Windows.Forms.TextBox()
-        Me.txtCorreoRegis = New System.Windows.Forms.TextBox()
-        Me.cbSexoRegis = New System.Windows.Forms.ComboBox()
-        Me.nudEdadRegis = New System.Windows.Forms.NumericUpDown()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
+        Me.txtPrimerNombre = New System.Windows.Forms.TextBox()
+        Me.txtTelefono = New System.Windows.Forms.TextBox()
+        Me.txtContraseña = New System.Windows.Forms.TextBox()
+        Me.txtConfContraseña = New System.Windows.Forms.TextBox()
+        Me.txtApellido = New System.Windows.Forms.TextBox()
+        Me.txtCI = New System.Windows.Forms.TextBox()
+        Me.txtDireccion = New System.Windows.Forms.TextBox()
+        Me.txtEmail = New System.Windows.Forms.TextBox()
+        Me.cbxSexo = New System.Windows.Forms.ComboBox()
+        Me.dateFechaNacimiento = New System.Windows.Forms.DateTimePicker()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.txtSegundoNombre = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nudEdadRegis, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -64,12 +67,68 @@ Partial Class RegistroNew
         Me.Panel1.Controls.Add(Me.Label13)
         Me.Panel1.Controls.Add(Me.Label12)
         Me.Panel1.Controls.Add(Me.Label11)
-        Me.Panel1.Controls.Add(Me.btnRegis)
+        Me.Panel1.Controls.Add(Me.btnRegistro)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(284, 648)
         Me.Panel1.TabIndex = 1
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Yu Gothic UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(3, 2)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(31, 25)
+        Me.Label13.TabIndex = 22
+        Me.Label13.Text = "←"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.Location = New System.Drawing.Point(12, 614)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(111, 13)
+        Me.Label12.TabIndex = 21
+        Me.Label12.Text = "Politicas de privacidad"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(43, 69)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(185, 40)
+        Me.Label11.TabIndex = 20
+        Me.Label11.Text = "DiagnosTICK"
+        '
+        'btnRegistro
+        '
+        Me.btnRegistro.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(122, Byte), Integer))
+        Me.btnRegistro.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnRegistro.FlatAppearance.BorderSize = 0
+        Me.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegistro.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnRegistro.Location = New System.Drawing.Point(84, 283)
+        Me.btnRegistro.Name = "btnRegistro"
+        Me.btnRegistro.Size = New System.Drawing.Size(92, 28)
+        Me.btnRegistro.TabIndex = 19
+        Me.btnRegistro.Text = "Registrarse"
+        Me.btnRegistro.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 177)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(284, 289)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'Button2
         '
@@ -99,31 +158,21 @@ Partial Class RegistroNew
         Me.Button1.Text = "X"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 177)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(284, 289)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(337, 87)
+        Me.Label1.Location = New System.Drawing.Point(291, 86)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(83, 22)
+        Me.Label1.Size = New System.Drawing.Size(132, 22)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Nombre: "
+        Me.Label1.Text = "Primer nombre:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(338, 157)
+        Me.Label2.Location = New System.Drawing.Point(367, 190)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(56, 22)
         Me.Label2.TabIndex = 9
@@ -133,7 +182,7 @@ Partial Class RegistroNew
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(337, 218)
+        Me.Label3.Location = New System.Drawing.Point(698, 184)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(57, 22)
         Me.Label3.TabIndex = 10
@@ -143,7 +192,7 @@ Partial Class RegistroNew
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(337, 283)
+        Me.Label4.Location = New System.Drawing.Point(378, 289)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(86, 22)
         Me.Label4.TabIndex = 11
@@ -153,7 +202,7 @@ Partial Class RegistroNew
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(315, 365)
+        Me.Label5.Location = New System.Drawing.Point(327, 347)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(108, 22)
         Me.Label5.TabIndex = 12
@@ -163,7 +212,7 @@ Partial Class RegistroNew
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(315, 444)
+        Me.Label6.Location = New System.Drawing.Point(285, 405)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(191, 22)
         Me.Label6.TabIndex = 13
@@ -173,17 +222,17 @@ Partial Class RegistroNew
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(652, 87)
+        Me.Label7.Location = New System.Drawing.Point(614, 82)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(79, 22)
+        Me.Label7.Size = New System.Drawing.Size(136, 22)
         Me.Label7.TabIndex = 14
-        Me.Label7.Text = "Apellido:"
+        Me.Label7.Text = "Primer Apellido:"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(669, 155)
+        Me.Label8.Location = New System.Drawing.Point(427, 239)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(37, 22)
         Me.Label8.TabIndex = 15
@@ -193,7 +242,7 @@ Partial Class RegistroNew
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(641, 218)
+        Me.Label9.Location = New System.Drawing.Point(665, 239)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(90, 22)
         Me.Label9.TabIndex = 16
@@ -203,11 +252,11 @@ Partial Class RegistroNew
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(661, 283)
+        Me.Label10.Location = New System.Drawing.Point(690, 284)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(70, 22)
+        Me.Label10.Size = New System.Drawing.Size(65, 22)
         Me.Label10.TabIndex = 17
-        Me.Label10.Text = "Correo:"
+        Me.Label10.Text = "E-mail:"
         '
         'PictureBox2
         '
@@ -219,123 +268,112 @@ Partial Class RegistroNew
         Me.PictureBox2.TabIndex = 18
         Me.PictureBox2.TabStop = False
         '
-        'btnRegis
+        'txtPrimerNombre
         '
-        Me.btnRegis.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(122, Byte), Integer))
-        Me.btnRegis.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnRegis.FlatAppearance.BorderSize = 0
-        Me.btnRegis.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegis.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnRegis.Location = New System.Drawing.Point(84, 283)
-        Me.btnRegis.Name = "btnRegis"
-        Me.btnRegis.Size = New System.Drawing.Size(92, 28)
-        Me.btnRegis.TabIndex = 19
-        Me.btnRegis.Text = "Registrarse"
-        Me.btnRegis.UseVisualStyleBackColor = False
+        Me.txtPrimerNombre.Location = New System.Drawing.Point(431, 88)
+        Me.txtPrimerNombre.Name = "txtPrimerNombre"
+        Me.txtPrimerNombre.Size = New System.Drawing.Size(167, 20)
+        Me.txtPrimerNombre.TabIndex = 19
         '
-        'txtNombreRegis
+        'txtTelefono
         '
-        Me.txtNombreRegis.Location = New System.Drawing.Point(426, 89)
-        Me.txtNombreRegis.Name = "txtNombreRegis"
-        Me.txtNombreRegis.Size = New System.Drawing.Size(130, 20)
-        Me.txtNombreRegis.TabIndex = 19
+        Me.txtTelefono.Location = New System.Drawing.Point(472, 291)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Size = New System.Drawing.Size(167, 20)
+        Me.txtTelefono.TabIndex = 20
         '
-        'txtTelRegis
+        'txtContraseña
         '
-        Me.txtTelRegis.Location = New System.Drawing.Point(426, 285)
-        Me.txtTelRegis.Name = "txtTelRegis"
-        Me.txtTelRegis.Size = New System.Drawing.Size(130, 20)
-        Me.txtTelRegis.TabIndex = 20
+        Me.txtContraseña.Location = New System.Drawing.Point(443, 349)
+        Me.txtContraseña.Name = "txtContraseña"
+        Me.txtContraseña.Size = New System.Drawing.Size(167, 20)
+        Me.txtContraseña.TabIndex = 21
         '
-        'txtContraseñaRegis
+        'txtConfContraseña
         '
-        Me.txtContraseñaRegis.Location = New System.Drawing.Point(429, 367)
-        Me.txtContraseñaRegis.Name = "txtContraseñaRegis"
-        Me.txtContraseñaRegis.Size = New System.Drawing.Size(130, 20)
-        Me.txtContraseñaRegis.TabIndex = 21
+        Me.txtConfContraseña.Location = New System.Drawing.Point(472, 407)
+        Me.txtConfContraseña.Name = "txtConfContraseña"
+        Me.txtConfContraseña.Size = New System.Drawing.Size(167, 20)
+        Me.txtConfContraseña.TabIndex = 22
         '
-        'txtCCRegis
+        'txtApellido
         '
-        Me.txtCCRegis.Location = New System.Drawing.Point(512, 446)
-        Me.txtCCRegis.Name = "txtCCRegis"
-        Me.txtCCRegis.Size = New System.Drawing.Size(130, 20)
-        Me.txtCCRegis.TabIndex = 22
+        Me.txtApellido.Location = New System.Drawing.Point(756, 84)
+        Me.txtApellido.Name = "txtApellido"
+        Me.txtApellido.Size = New System.Drawing.Size(200, 20)
+        Me.txtApellido.TabIndex = 23
         '
-        'txtApellidoRegis
+        'txtCI
         '
-        Me.txtApellidoRegis.Location = New System.Drawing.Point(737, 89)
-        Me.txtApellidoRegis.Name = "txtApellidoRegis"
-        Me.txtApellidoRegis.Size = New System.Drawing.Size(130, 20)
-        Me.txtApellidoRegis.TabIndex = 23
+        Me.txtCI.Location = New System.Drawing.Point(472, 241)
+        Me.txtCI.MaxLength = 8
+        Me.txtCI.Name = "txtCI"
+        Me.txtCI.Size = New System.Drawing.Size(167, 20)
+        Me.txtCI.TabIndex = 24
         '
-        'txtCIRegis
+        'txtDireccion
         '
-        Me.txtCIRegis.Location = New System.Drawing.Point(737, 155)
-        Me.txtCIRegis.MaxLength = 8
-        Me.txtCIRegis.Name = "txtCIRegis"
-        Me.txtCIRegis.Size = New System.Drawing.Size(130, 20)
-        Me.txtCIRegis.TabIndex = 24
+        Me.txtDireccion.Location = New System.Drawing.Point(756, 241)
+        Me.txtDireccion.Name = "txtDireccion"
+        Me.txtDireccion.Size = New System.Drawing.Size(200, 20)
+        Me.txtDireccion.TabIndex = 25
         '
-        'txtDireccionRegis
+        'txtEmail
         '
-        Me.txtDireccionRegis.Location = New System.Drawing.Point(737, 220)
-        Me.txtDireccionRegis.Name = "txtDireccionRegis"
-        Me.txtDireccionRegis.Size = New System.Drawing.Size(130, 20)
-        Me.txtDireccionRegis.TabIndex = 25
+        Me.txtEmail.Location = New System.Drawing.Point(756, 291)
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(200, 20)
+        Me.txtEmail.TabIndex = 26
         '
-        'txtCorreoRegis
+        'cbxSexo
         '
-        Me.txtCorreoRegis.Location = New System.Drawing.Point(737, 288)
-        Me.txtCorreoRegis.Name = "txtCorreoRegis"
-        Me.txtCorreoRegis.Size = New System.Drawing.Size(130, 20)
-        Me.txtCorreoRegis.TabIndex = 26
+        Me.cbxSexo.FormattingEnabled = True
+        Me.cbxSexo.Items.AddRange(New Object() {"Hombre", "Mujer"})
+        Me.cbxSexo.Location = New System.Drawing.Point(431, 190)
+        Me.cbxSexo.Name = "cbxSexo"
+        Me.cbxSexo.Size = New System.Drawing.Size(167, 21)
+        Me.cbxSexo.TabIndex = 27
         '
-        'cbSexoRegis
+        'dateFechaNacimiento
         '
-        Me.cbSexoRegis.FormattingEnabled = True
-        Me.cbSexoRegis.Location = New System.Drawing.Point(426, 157)
-        Me.cbSexoRegis.Name = "cbSexoRegis"
-        Me.cbSexoRegis.Size = New System.Drawing.Size(121, 21)
-        Me.cbSexoRegis.TabIndex = 27
+        Me.dateFechaNacimiento.Location = New System.Drawing.Point(756, 187)
+        Me.dateFechaNacimiento.Name = "dateFechaNacimiento"
+        Me.dateFechaNacimiento.Size = New System.Drawing.Size(200, 20)
+        Me.dateFechaNacimiento.TabIndex = 28
         '
-        'nudEdadRegis
+        'Label14
         '
-        Me.nudEdadRegis.Location = New System.Drawing.Point(429, 221)
-        Me.nudEdadRegis.Name = "nudEdadRegis"
-        Me.nudEdadRegis.Size = New System.Drawing.Size(65, 20)
-        Me.nudEdadRegis.TabIndex = 28
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(285, 132)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(152, 22)
+        Me.Label14.TabIndex = 29
+        Me.Label14.Text = "Segundo nombre:"
         '
-        'Label11
+        'txtSegundoNombre
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(43, 69)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(185, 40)
-        Me.Label11.TabIndex = 20
-        Me.Label11.Text = "DiagnosTICK"
+        Me.txtSegundoNombre.Location = New System.Drawing.Point(443, 134)
+        Me.txtSegundoNombre.Name = "txtSegundoNombre"
+        Me.txtSegundoNombre.Size = New System.Drawing.Size(167, 20)
+        Me.txtSegundoNombre.TabIndex = 30
         '
-        'Label12
+        'TextBox1
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(12, 614)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(111, 13)
-        Me.Label12.TabIndex = 21
-        Me.Label12.Text = "Politicas de privacidad"
+        Me.TextBox1.Location = New System.Drawing.Point(765, 134)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(191, 20)
+        Me.TextBox1.TabIndex = 32
         '
-        'Label13
+        'Label15
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Yu Gothic UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(3, 2)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(31, 25)
-        Me.Label13.TabIndex = 22
-        Me.Label13.Text = "←"
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(616, 132)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(152, 22)
+        Me.Label15.TabIndex = 31
+        Me.Label15.Text = "Segundo nombre:"
         '
         'RegistroNew
         '
@@ -343,16 +381,20 @@ Partial Class RegistroNew
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(980, 645)
-        Me.Controls.Add(Me.nudEdadRegis)
-        Me.Controls.Add(Me.cbSexoRegis)
-        Me.Controls.Add(Me.txtCorreoRegis)
-        Me.Controls.Add(Me.txtDireccionRegis)
-        Me.Controls.Add(Me.txtCIRegis)
-        Me.Controls.Add(Me.txtApellidoRegis)
-        Me.Controls.Add(Me.txtCCRegis)
-        Me.Controls.Add(Me.txtContraseñaRegis)
-        Me.Controls.Add(Me.txtTelRegis)
-        Me.Controls.Add(Me.txtNombreRegis)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.txtSegundoNombre)
+        Me.Controls.Add(Me.Label14)
+        Me.Controls.Add(Me.dateFechaNacimiento)
+        Me.Controls.Add(Me.cbxSexo)
+        Me.Controls.Add(Me.txtEmail)
+        Me.Controls.Add(Me.txtDireccion)
+        Me.Controls.Add(Me.txtCI)
+        Me.Controls.Add(Me.txtApellido)
+        Me.Controls.Add(Me.txtConfContraseña)
+        Me.Controls.Add(Me.txtContraseña)
+        Me.Controls.Add(Me.txtTelefono)
+        Me.Controls.Add(Me.txtPrimerNombre)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
@@ -371,12 +413,10 @@ Partial Class RegistroNew
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(980, 645)
         Me.Name = "RegistroNew"
-        Me.Text = "RegistroNew"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nudEdadRegis, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -397,18 +437,22 @@ Partial Class RegistroNew
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents btnRegis As Button
-    Friend WithEvents txtNombreRegis As TextBox
-    Friend WithEvents txtTelRegis As TextBox
-    Friend WithEvents txtContraseñaRegis As TextBox
-    Friend WithEvents txtCCRegis As TextBox
-    Friend WithEvents txtApellidoRegis As TextBox
-    Friend WithEvents txtCIRegis As TextBox
-    Friend WithEvents txtDireccionRegis As TextBox
-    Friend WithEvents txtCorreoRegis As TextBox
-    Friend WithEvents cbSexoRegis As ComboBox
-    Friend WithEvents nudEdadRegis As NumericUpDown
+    Friend WithEvents btnRegistro As Button
+    Friend WithEvents txtPrimerNombre As TextBox
+    Friend WithEvents txtTelefono As TextBox
+    Friend WithEvents txtContraseña As TextBox
+    Friend WithEvents txtConfContraseña As TextBox
+    Friend WithEvents txtApellido As TextBox
+    Friend WithEvents txtCI As TextBox
+    Friend WithEvents txtDireccion As TextBox
+    Friend WithEvents txtEmail As TextBox
+    Friend WithEvents cbxSexo As ComboBox
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
+    Friend WithEvents dateFechaNacimiento As DateTimePicker
+    Friend WithEvents Label14 As Label
+    Friend WithEvents txtSegundoNombre As TextBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label15 As Label
 End Class

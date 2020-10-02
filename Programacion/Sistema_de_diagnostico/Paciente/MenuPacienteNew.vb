@@ -5,6 +5,10 @@ Public Class MenuPacienteNew
     Dim Arrastre As Boolean
     Dim instancia As New LogicaAplicacion()
 
+    Dim SintomasSeleccionados As New List(Of Sintoma)
+    Dim listaSintomas As List(Of Sintoma)
+    Dim filtroSintomas As New List(Of Sintoma)
+
 
     'Definir variables globales; estas van despues de la linea de inherits
 
@@ -41,20 +45,18 @@ Public Class MenuPacienteNew
 
 
     Private Sub MenuPacienteNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        cargarListaSintomas()
         btnRealizarDiagnostico.BackColor = Color.FromArgb(40, 117, 207)
         btnChats.BackColor = Color.FromArgb(40, 117, 207)
         btnCerrarsesion.BackColor = Color.FromArgb(40, 117, 207)
 
-        pChat.Visible = False
-        pRealizarD.Visible = False
-        pRealizaD2.Visible = False
+        panelMenu_Chat.Visible = False
+        panelChat.Visible = False
+        panelRealizarDiagnostico.Visible = False
+        panelRealizarDiagnostico2.Visible = False
 
-        Dim listaSintomas As List(Of Sintoma) = instancia.ObtenerSintoma()
 
-        For Each sintoma As Sintoma In listaSintomas
-            cbxListaSintomas.Items.Add(sintoma.nombre)
-            lstSintomas.Items.Add(sintoma.nombre)
-        Next
     End Sub
 
     Private Sub btnRealizarDiagnostico_Click(sender As Object, e As EventArgs) Handles btnRealizarDiagnostico.Click
@@ -62,9 +64,10 @@ Public Class MenuPacienteNew
         btnChats.BackColor = Color.FromArgb(40, 117, 207)
         btnCerrarsesion.BackColor = Color.FromArgb(40, 117, 207)
 
-        pChat.Visible = False
-        pRealizarD.Visible = True
-        pRealizaD2.Visible = True
+        panelMenu_Chat.Visible = False
+        panelChat.Visible = False
+        panelRealizarDiagnostico.Visible = True
+        panelRealizarDiagnostico2.Visible = True
     End Sub
 
     Private Sub btnChats_Click(sender As Object, e As EventArgs) Handles btnChats.Click
@@ -72,7 +75,10 @@ Public Class MenuPacienteNew
         btnChats.BackColor = Color.FromArgb(24, 68, 122)
         btnCerrarsesion.BackColor = Color.FromArgb(40, 117, 207)
 
-        pChat.Visible = True
+        panelChat.Visible = True
+        panelMenu_Chat.Visible = True
+        panelRealizarDiagnostico.Visible = False
+        panelRealizarDiagnostico2.Visible = False
     End Sub
 
 
@@ -81,7 +87,8 @@ Public Class MenuPacienteNew
         btnChats.BackColor = Color.FromArgb(40, 117, 207)
         btnCerrarsesion.BackColor = Color.FromArgb(24, 68, 122)
 
-        pChat.Visible = False
+        panelChat.Visible = False
+        panelMenu_Chat.Visible = False
     End Sub
     '-------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -101,11 +108,46 @@ Public Class MenuPacienteNew
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        SintomasSeleccionados.Add(New Sintoma(listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).nombre, listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).id))
+        lstSintomasSeleccionados.Clear()
+        For Each sintoma As Sintoma In SintomasSeleccionados
+            lstSintomasSeleccionados.Items.Add(sintoma.nombre)
+        Next
+    End Sub
 
     Private Sub Label13_Click(sender As Object, e As EventArgs) Handles Label13.Click
-        pRealizarD.Visible = False
-        pRealizaD2.Visible = False
+        panelRealizarDiagnostico.Visible = False
+        paelRealizaDiagnostico2.Visible = False
         btnRealizarDiagnostico.BackColor = Color.FromArgb(40, 117, 207)
     End Sub
+
+    Private Sub txtBusquedaSintomas_TextChanged(sender As Object, e As EventArgs) Handles txtBusquedaSintomas.TextChanged
+        cargarListaSintomas()
+    End Sub
+
+    Public Sub cargarListaSintomas()
+        listaSintomas = instancia.ObtenerSintoma()
+        filtroSintomas.Clear()
+        For Each filtro As Sintoma In listaSintomas
+            If filtro.nombre.ToLower.StartsWith(txtBusquedaSintomas.Text.ToLower) Then
+                filtroSintomas.Add(filtro)
+            End If
+        Next
+        lstSintomas.Clear()
+        For Each resultado As Sintoma In filtroSintomas
+            lstSintomas.Items.Add(resultado.nombre)
+        Next
+    End Sub
+
+    'listafiltrada.Clear()
+    'For Each valor As String In lista
+    'If valor.ToLower.StartsWith(txtFiltro.Text.ToLower) Then
+    'listafiltrada.Add(valor)
+    'End If
+    'Next
+    'lstLista.Clear()
+    'For Each filtro As String In listafiltrada
+    'lstLista.Items.Add(filtro)
+    'Next
 End Class
