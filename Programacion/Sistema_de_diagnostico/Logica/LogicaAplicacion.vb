@@ -57,7 +57,7 @@ Public Class LogicaAplicacion
     '---------------------------------------------------------------------------------------------------------------------------------------------
 
     Public Sub agregarPaciente(paciente As Paciente)
-        If paciente.nombre.Length = 0 Or paciente.apellido.Length = 0 Or paciente.CI.Length = 0 Or paciente.Direccion.Length = 0 Or paciente.email.Length = 0 Or paciente.contraseña.Length = 0 Or paciente.telefono.Length = 0 Or paciente.fechadenacimiento.Length = 0 Then
+        If paciente.nombre.Length = 0 Or paciente.apellido.Length = 0 Or paciente.CI.Length = 0 Or paciente.Direccion.Length = 0 Or paciente.email.Length = 0 Or paciente.contraseña.Length = 0 Or paciente.telefono.Length = 0 Or paciente.fechadenacimiento.Length = 0 Or paciente.segundonombre.Length = 0 Or paciente.segundoapellido.Length = 0 Or paciente.altura.Length = 0 Or paciente.peso.Length = 0 Or paciente.patologiaPrevia.Length = 0 Then
             Throw New Exception("Datos incompletos.")
         Else
             instancia.agregarPaciente(paciente)
@@ -65,7 +65,7 @@ Public Class LogicaAplicacion
     End Sub
 
     Public Sub agregarMedico(medico As Medico)
-        If medico.nombre.Length = 0 Or medico.apellido.Length = 0 Or medico.CI.Length = 0 Or medico.Direccion.Length = 0 Or medico.email.Length = 0 Or medico.contraseña.Length = 0 Or medico.telefono.Length = 0 Or medico.fechadenacimiento.Length = 0 Or medico.especializacion.Length = 0 Then
+        If medico.nombre.Length = 0 Or medico.apellido.Length = 0 Or medico.CI.Length = 0 Or medico.Direccion.Length = 0 Or medico.email.Length = 0 Or medico.contraseña.Length = 0 Or medico.telefono.Length = 0 Or medico.fechadenacimiento.Length = 0 Or medico.especializacion.Length = 0 Or medico.segundonombre.Length = 0 Or medico.segundoapellido.Length = 0 Or medico.lugarDeTrabajo.Length = 0 Then
             Throw New Exception("Datos incompletos.")
         Else
             instancia.agregarMedico(medico)
@@ -73,7 +73,7 @@ Public Class LogicaAplicacion
     End Sub
 
     Public Sub agregarGestor(gestor As Gestor)
-        If gestor.nombre.Length = 0 Or gestor.apellido.Length = 0 Or gestor.CI.Length = 0 Or gestor.Direccion.Length = 0 Or gestor.email.Length = 0 Or gestor.contraseña.Length = 0 Or gestor.telefono.Length = 0 Or gestor.fechadenacimiento.Length = 0 Or gestor.empresa.Length = 0 Then
+        If gestor.nombre.Length = 0 Or gestor.apellido.Length = 0 Or gestor.CI.Length = 0 Or gestor.Direccion.Length = 0 Or gestor.email.Length = 0 Or gestor.contraseña.Length = 0 Or gestor.telefono.Length = 0 Or gestor.fechadenacimiento.Length = 0 Or gestor.empresa.Length = 0 Or gestor.segundonombre.Length = 0 Or gestor.segundoapellido.Length = 0 Then
             Throw New Exception("Datos incompletos.")
         Else
             instancia.agregarGestor(gestor)
@@ -143,7 +143,7 @@ Public Class LogicaAplicacion
 
 
     Public Sub actualizarMedico(medico As Medico)
-        If medico.nombre.Length = 0 Or medico.apellido.Length = 0 Or medico.email.Length = 0 Or medico.Direccion.Length = 0 Or medico.CI.Length = 0 Or medico.contraseña.Length = 0 Or medico.telefono.Length = 0 Or medico.fechadenacimiento.Length = 0 Or medico.especializacion.Length = 0 Then
+        If medico.nombre.Length = 0 Or medico.apellido.Length = 0 Or medico.email.Length = 0 Or medico.Direccion.Length = 0 Or medico.CI.Length = 0 Or medico.contraseña.Length = 0 Or medico.telefono.Length = 0 Or medico.fechadenacimiento.Length = 0 Or medico.especializacion.Length = 0 Or medico.segundonombre.Length = 0 Or medico.segundoapellido.Length = 0 Or medico.lugarDeTrabajo.Length = 0 Then
             Throw New Exception("Datos vacios.")
         Else
             instancia.actualizarMedico(medico)
@@ -151,7 +151,7 @@ Public Class LogicaAplicacion
     End Sub
 
     Public Sub actualizarPaciente(paciente As Paciente)
-        If paciente.nombre.Length = 0 Or paciente.apellido.Length = 0 Or paciente.email.Length = 0 Or paciente.Direccion.Length = 0 Or paciente.CI.Length = 0 Or paciente.contraseña.Length = 0 Or paciente.telefono.Length = 0 Or paciente.fechadenacimiento.Length = 0 Then
+        If paciente.nombre.Length = 0 Or paciente.apellido.Length = 0 Or paciente.email.Length = 0 Or paciente.Direccion.Length = 0 Or paciente.CI.Length = 0 Or paciente.contraseña.Length = 0 Or paciente.telefono.Length = 0 Or paciente.fechadenacimiento.Length = 0 Or paciente.segundonombre.Length = 0 Or paciente.segundoapellido.Length = 0 Or paciente.altura.Length = 0 Or paciente.peso.Length = 0 Or paciente.patologiaPrevia.Length = 0 Then
             Throw New Exception("Datos vacios.")
         Else
             instancia.actualizarPaciente(paciente)
@@ -159,7 +159,7 @@ Public Class LogicaAplicacion
     End Sub
 
     Public Sub actualizarGestor(gestor As Gestor)
-        If gestor.nombre.Length = 0 Or gestor.apellido.Length = 0 Or gestor.email.Length = 0 Or gestor.Direccion.Length = 0 Or gestor.CI.Length = 0 Or gestor.contraseña.Length = 0 Or gestor.telefono.Length = 0 Or gestor.fechadenacimiento.Length = 0 Or gestor.empresa.Length = 0 Then
+        If gestor.nombre.Length = 0 Or gestor.apellido.Length = 0 Or gestor.email.Length = 0 Or gestor.Direccion.Length = 0 Or gestor.CI.Length = 0 Or gestor.contraseña.Length = 0 Or gestor.telefono.Length = 0 Or gestor.fechadenacimiento.Length = 0 Or gestor.empresa.Length = 0 Or gestor.segundonombre.Length = 0 Or gestor.segundoapellido.Length = 0 Then
             Throw New Exception("Datos vacios.")
         Else
             instancia.actualizarGestor(gestor)

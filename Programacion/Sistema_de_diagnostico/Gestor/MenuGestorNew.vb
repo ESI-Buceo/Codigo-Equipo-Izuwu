@@ -118,7 +118,7 @@ Public Class MenuGestorNew
     Private Sub btnAceptarModificar_Click(sender As Object, e As EventArgs) Handles btnAceptarModificar.Click
         Dim fecha As Date = dateModDel_FechaNacimiento.Value.Date
         Dim fechastring As String = Format(fecha, "yyyy/MM/dd")
-        instancia.actualizarMedico(New Medico(txtModDel_PrimerNombre.Text, txtModDel_Apellido.Text, txtModDel_Email.Text, listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).ID, txtModDel_Direccion.Text, txtModDel_CI.Text, txtModDel_Contraseña.Text, txtModDel_Telefono.Text, fechastring, txtModDel_Especializacion.Text))
+        instancia.actualizarMedico(New Medico(txtModDel_PrimerNombre.Text, txtModDel_SegundoNombre.Text, txtModDel_Apellido.Text, txtModDel_Segundoapellido.Text, txtModDel_Email.Text, listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).ID, txtModDel_Direccion.Text, txtModDel_CI.Text, txtModDel_Contraseña.Text, txtModDel_Telefono.Text, fechastring, txtModDel_Especializacion.Text, txtModDel_Empresa.Text))
         limpiarModDel_Medicos()
         cargarListaMedicos()
     End Sub
@@ -147,7 +147,7 @@ Public Class MenuGestorNew
         Dim ID As String = instancia.codigoRandom(1)
 
         If txtContraseña.Text = txtConfContraseña.Text Then
-            instancia.agregarMedico(New Medico(txtPrimerNombre.Text, txtApellido.Text, txtEmail.Text, ID, txtDireccion.Text, txtCI.Text, txtContraseña.Text, txtTelefono.Text, fechastring, txtEspecializacion.Text))
+            instancia.agregarMedico(New Medico(txtPrimerNombre.Text, txtSegundoNombre.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, ID, txtDireccion.Text, txtCI.Text, txtContraseña.Text, txtTelefono.Text, fechastring, txtEspecializacion.Text, txtEmpresa.Text))
             limpiarAgregarMedico()
         Else
             MsgBox("Las contraseñas no coiniciden.")
@@ -155,22 +155,25 @@ Public Class MenuGestorNew
     End Sub
 
     Private Sub lstMedicos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstModDel_Medicos.SelectedIndexChanged
-        'instancia.ObtenerReferenciaSintomaPatologia(listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).id
+
 
         txtModDel_PrimerNombre.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).nombre
+        txtModDel_SegundoNombre.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).segundonombre
         txtModDel_Apellido.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).apellido
+        txtModDel_Segundoapellido.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).segundoapellido
         txtModDel_CI.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).CI
         txtModDel_Direccion.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).Direccion
         Dim fechaString As String = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).fechadenacimiento
         Dim fecha As Date = Date.ParseExact(fechaString, "yyyy/MM/dd", System.Globalization.DateTimeFormatInfo.InvariantInfo)
         dateModDel_FechaNacimiento.Value = fecha
-        'dateModDel_FechaNacimiento.Value = DateTime.Parse(listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).fechadenacimiento).ToString("yyyy-MM-dd")  'Format(listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).fechadenacimiento, "yyyy-MM-dd")
+
         txtModDel_Contraseña.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).contraseña
         txtModDel_ConfContraseña.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).contraseña
         txtModDel_Telefono.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).telefono
         txtModDel_Especializacion.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).especializacion
         txtModDel_Email.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).email
-        'txtModDel_Email.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).contraseña
+        txtModDel_Empresa.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).lugarDeTrabajo
+
     End Sub
 
 

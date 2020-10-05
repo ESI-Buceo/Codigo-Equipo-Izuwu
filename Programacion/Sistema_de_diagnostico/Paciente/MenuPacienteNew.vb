@@ -48,7 +48,7 @@ Public Class MenuPacienteNew
         panelChat.Visible = False
         panelRealizarDiagnostico.Visible = False
         panelRealizarDiagnostico2.Visible = False
-        pPerfilPaciente.Visible = False
+        panelPerfil.Visible = False
     End Function
 
     Private Sub MenuPacienteNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -131,12 +131,12 @@ Public Class MenuPacienteNew
 
     Private Sub labNombre_Click(sender As Object, e As EventArgs) Handles labNombre.Click
         nullvisible()
-        pPerfilPaciente.Visible = True
+        panelPerfil.Visible = True
 
     End Sub
 
     Private Sub Label5_Click(sender As Object, e As EventArgs)
-        pPerfilPaciente.Visible = False
+        panelPerfil.Visible = False
     End Sub
 
     Private Sub Label5_Click_1(sender As Object, e As EventArgs) Handles Label5.Click

@@ -24,7 +24,7 @@ Partial Class RegistroNew
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RegistroNew))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label13 = New System.Windows.Forms.Label()
+        Me.labAtras = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnRegistro = New System.Windows.Forms.Button()
@@ -54,17 +54,25 @@ Partial Class RegistroNew
         Me.dateFechaNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtSegundoNombre = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtSegundoApellido = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.numPeso = New System.Windows.Forms.NumericUpDown()
+        Me.numAltura = New System.Windows.Forms.NumericUpDown()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.txtPatologiaPrevia = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numPeso, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numAltura, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(207, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Label13)
+        Me.Panel1.Controls.Add(Me.labAtras)
         Me.Panel1.Controls.Add(Me.Label12)
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.btnRegistro)
@@ -74,15 +82,15 @@ Partial Class RegistroNew
         Me.Panel1.Size = New System.Drawing.Size(284, 648)
         Me.Panel1.TabIndex = 1
         '
-        'Label13
+        'labAtras
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Yu Gothic UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(3, 2)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(31, 25)
-        Me.Label13.TabIndex = 22
-        Me.Label13.Text = "←"
+        Me.labAtras.AutoSize = True
+        Me.labAtras.Font = New System.Drawing.Font("Yu Gothic UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labAtras.Location = New System.Drawing.Point(3, 2)
+        Me.labAtras.Name = "labAtras"
+        Me.labAtras.Size = New System.Drawing.Size(31, 25)
+        Me.labAtras.TabIndex = 22
+        Me.labAtras.Text = "←"
         '
         'Label12
         '
@@ -164,9 +172,9 @@ Partial Class RegistroNew
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(291, 86)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(132, 22)
+        Me.Label1.Size = New System.Drawing.Size(135, 22)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Primer nombre:"
+        Me.Label1.Text = "Primer Nombre:"
         '
         'Label2
         '
@@ -192,7 +200,7 @@ Partial Class RegistroNew
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(378, 289)
+        Me.Label4.Location = New System.Drawing.Point(349, 337)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(86, 22)
         Me.Label4.TabIndex = 11
@@ -202,7 +210,7 @@ Partial Class RegistroNew
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(327, 347)
+        Me.Label5.Location = New System.Drawing.Point(327, 495)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(108, 22)
         Me.Label5.TabIndex = 12
@@ -212,7 +220,7 @@ Partial Class RegistroNew
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(285, 405)
+        Me.Label6.Location = New System.Drawing.Point(285, 553)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(191, 22)
         Me.Label6.TabIndex = 13
@@ -277,21 +285,21 @@ Partial Class RegistroNew
         '
         'txtTelefono
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(472, 291)
+        Me.txtTelefono.Location = New System.Drawing.Point(443, 339)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(167, 20)
         Me.txtTelefono.TabIndex = 20
         '
         'txtContraseña
         '
-        Me.txtContraseña.Location = New System.Drawing.Point(443, 349)
+        Me.txtContraseña.Location = New System.Drawing.Point(443, 497)
         Me.txtContraseña.Name = "txtContraseña"
         Me.txtContraseña.Size = New System.Drawing.Size(167, 20)
         Me.txtContraseña.TabIndex = 21
         '
         'txtConfContraseña
         '
-        Me.txtConfContraseña.Location = New System.Drawing.Point(472, 407)
+        Me.txtConfContraseña.Location = New System.Drawing.Point(472, 555)
         Me.txtConfContraseña.Name = "txtConfContraseña"
         Me.txtConfContraseña.Size = New System.Drawing.Size(167, 20)
         Me.txtConfContraseña.TabIndex = 22
@@ -347,9 +355,9 @@ Partial Class RegistroNew
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.Location = New System.Drawing.Point(285, 132)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(152, 22)
+        Me.Label14.Size = New System.Drawing.Size(155, 22)
         Me.Label14.TabIndex = 29
-        Me.Label14.Text = "Segundo nombre:"
+        Me.Label14.Text = "Segundo Nombre:"
         '
         'txtSegundoNombre
         '
@@ -358,22 +366,75 @@ Partial Class RegistroNew
         Me.txtSegundoNombre.Size = New System.Drawing.Size(167, 20)
         Me.txtSegundoNombre.TabIndex = 30
         '
-        'TextBox1
+        'txtSegundoApellido
         '
-        Me.TextBox1.Location = New System.Drawing.Point(765, 134)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(191, 20)
-        Me.TextBox1.TabIndex = 32
+        Me.txtSegundoApellido.Location = New System.Drawing.Point(765, 134)
+        Me.txtSegundoApellido.Name = "txtSegundoApellido"
+        Me.txtSegundoApellido.Size = New System.Drawing.Size(191, 20)
+        Me.txtSegundoApellido.TabIndex = 32
         '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(616, 132)
+        Me.Label15.Location = New System.Drawing.Point(611, 132)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(152, 22)
+        Me.Label15.Size = New System.Drawing.Size(156, 22)
         Me.Label15.TabIndex = 31
-        Me.Label15.Text = "Segundo nombre:"
+        Me.Label15.Text = "Segundo Apellido:"
+        '
+        'numPeso
+        '
+        Me.numPeso.Location = New System.Drawing.Point(407, 292)
+        Me.numPeso.Name = "numPeso"
+        Me.numPeso.Size = New System.Drawing.Size(57, 20)
+        Me.numPeso.TabIndex = 33
+        '
+        'numAltura
+        '
+        Me.numAltura.DecimalPlaces = 2
+        Me.numAltura.Location = New System.Drawing.Point(584, 292)
+        Me.numAltura.Name = "numAltura"
+        Me.numAltura.Size = New System.Drawing.Size(55, 20)
+        Me.numAltura.TabIndex = 34
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(345, 289)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(56, 22)
+        Me.Label16.TabIndex = 35
+        Me.Label16.Text = "Peso:"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(520, 289)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(62, 22)
+        Me.Label17.TabIndex = 36
+        Me.Label17.Text = "Altura:"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(291, 379)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(162, 22)
+        Me.Label18.TabIndex = 37
+        Me.Label18.Text = "Patologias previas:"
+        '
+        'txtPatologiaPrevia
+        '
+        Me.txtPatologiaPrevia.Location = New System.Drawing.Point(301, 404)
+        Me.txtPatologiaPrevia.Multiline = True
+        Me.txtPatologiaPrevia.Name = "txtPatologiaPrevia"
+        Me.txtPatologiaPrevia.Size = New System.Drawing.Size(309, 69)
+        Me.txtPatologiaPrevia.TabIndex = 38
         '
         'RegistroNew
         '
@@ -381,7 +442,13 @@ Partial Class RegistroNew
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(980, 645)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtPatologiaPrevia)
+        Me.Controls.Add(Me.Label18)
+        Me.Controls.Add(Me.Label17)
+        Me.Controls.Add(Me.Label16)
+        Me.Controls.Add(Me.numAltura)
+        Me.Controls.Add(Me.numPeso)
+        Me.Controls.Add(Me.txtSegundoApellido)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.txtSegundoNombre)
         Me.Controls.Add(Me.Label14)
@@ -417,6 +484,8 @@ Partial Class RegistroNew
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numPeso, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numAltura, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -449,10 +518,16 @@ Partial Class RegistroNew
     Friend WithEvents cbxSexo As ComboBox
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
-    Friend WithEvents Label13 As Label
+    Friend WithEvents labAtras As Label
     Friend WithEvents dateFechaNacimiento As DateTimePicker
     Friend WithEvents Label14 As Label
     Friend WithEvents txtSegundoNombre As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtSegundoApellido As TextBox
     Friend WithEvents Label15 As Label
+    Friend WithEvents numPeso As NumericUpDown
+    Friend WithEvents numAltura As NumericUpDown
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents txtPatologiaPrevia As TextBox
 End Class

@@ -102,6 +102,10 @@ Partial Class MenuGestorNew
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
+        Me.txtModDel_Segundoapellido = New System.Windows.Forms.TextBox()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.txtSegundoApellido = New System.Windows.Forms.TextBox()
+        Me.Label33 = New System.Windows.Forms.Label()
         Me.panelMenuInicio.SuspendLayout()
         Me.panelModificarEliminarMedico.SuspendLayout()
         Me.panelABMSintoma.SuspendLayout()
@@ -227,6 +231,8 @@ Partial Class MenuGestorNew
         '
         'panelModificarEliminarMedico
         '
+        Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_Segundoapellido)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.Label32)
         Me.panelModificarEliminarMedico.Controls.Add(Me.Label31)
         Me.panelModificarEliminarMedico.Controls.Add(Me.ComboBox1)
         Me.panelModificarEliminarMedico.Controls.Add(Me.Label30)
@@ -266,7 +272,7 @@ Partial Class MenuGestorNew
         '
         Me.Label31.AutoSize = True
         Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.Location = New System.Drawing.Point(144, 160)
+        Me.Label31.Location = New System.Drawing.Point(144, 185)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(56, 22)
         Me.Label31.TabIndex = 47
@@ -276,7 +282,7 @@ Partial Class MenuGestorNew
         '
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Hombre", "Mujer", "Indefinido"})
-        Me.ComboBox1.Location = New System.Drawing.Point(206, 161)
+        Me.ComboBox1.Location = New System.Drawing.Point(206, 186)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(198, 21)
         Me.ComboBox1.TabIndex = 46
@@ -285,7 +291,7 @@ Partial Class MenuGestorNew
         '
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(453, 128)
+        Me.Label30.Location = New System.Drawing.Point(449, 122)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(151, 20)
         Me.Label30.TabIndex = 45
@@ -320,7 +326,7 @@ Partial Class MenuGestorNew
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(16, 288)
+        Me.Label17.Location = New System.Drawing.Point(16, 313)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(184, 22)
         Me.Label17.TabIndex = 42
@@ -328,7 +334,7 @@ Partial Class MenuGestorNew
         '
         'dateModDel_FechaNacimiento
         '
-        Me.dateModDel_FechaNacimiento.Location = New System.Drawing.Point(206, 290)
+        Me.dateModDel_FechaNacimiento.Location = New System.Drawing.Point(206, 315)
         Me.dateModDel_FechaNacimiento.Name = "dateModDel_FechaNacimiento"
         Me.dateModDel_FechaNacimiento.Size = New System.Drawing.Size(198, 20)
         Me.dateModDel_FechaNacimiento.TabIndex = 41
@@ -337,7 +343,7 @@ Partial Class MenuGestorNew
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(114, 330)
+        Me.Label16.Location = New System.Drawing.Point(114, 355)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(86, 22)
         Me.Label16.TabIndex = 40
@@ -345,7 +351,7 @@ Partial Class MenuGestorNew
         '
         'txtModDel_Telefono
         '
-        Me.txtModDel_Telefono.Location = New System.Drawing.Point(206, 334)
+        Me.txtModDel_Telefono.Location = New System.Drawing.Point(206, 359)
         Me.txtModDel_Telefono.Name = "txtModDel_Telefono"
         Me.txtModDel_Telefono.Size = New System.Drawing.Size(198, 20)
         Me.txtModDel_Telefono.TabIndex = 39
@@ -354,7 +360,7 @@ Partial Class MenuGestorNew
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(9, 550)
+        Me.Label15.Location = New System.Drawing.Point(9, 573)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(191, 22)
         Me.Label15.TabIndex = 38
@@ -364,7 +370,7 @@ Partial Class MenuGestorNew
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(92, 505)
+        Me.Label14.Location = New System.Drawing.Point(92, 530)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(108, 22)
         Me.Label14.TabIndex = 37
@@ -372,21 +378,21 @@ Partial Class MenuGestorNew
         '
         'txtModDel_ConfContraseña
         '
-        Me.txtModDel_ConfContraseña.Location = New System.Drawing.Point(206, 552)
+        Me.txtModDel_ConfContraseña.Location = New System.Drawing.Point(206, 575)
         Me.txtModDel_ConfContraseña.Name = "txtModDel_ConfContraseña"
         Me.txtModDel_ConfContraseña.Size = New System.Drawing.Size(198, 20)
         Me.txtModDel_ConfContraseña.TabIndex = 36
         '
         'txtModDel_Contraseña
         '
-        Me.txtModDel_Contraseña.Location = New System.Drawing.Point(206, 507)
+        Me.txtModDel_Contraseña.Location = New System.Drawing.Point(206, 532)
         Me.txtModDel_Contraseña.Name = "txtModDel_Contraseña"
         Me.txtModDel_Contraseña.Size = New System.Drawing.Size(198, 20)
         Me.txtModDel_Contraseña.TabIndex = 35
         '
         'txtModDel_SegundoNombre
         '
-        Me.txtModDel_SegundoNombre.Location = New System.Drawing.Point(206, 82)
+        Me.txtModDel_SegundoNombre.Location = New System.Drawing.Point(206, 57)
         Me.txtModDel_SegundoNombre.Name = "txtModDel_SegundoNombre"
         Me.txtModDel_SegundoNombre.Size = New System.Drawing.Size(198, 20)
         Me.txtModDel_SegundoNombre.TabIndex = 34
@@ -395,7 +401,7 @@ Partial Class MenuGestorNew
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(45, 80)
+        Me.Label1.Location = New System.Drawing.Point(45, 55)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(155, 22)
         Me.Label1.TabIndex = 33
@@ -403,7 +409,7 @@ Partial Class MenuGestorNew
         '
         'txtModDel_Empresa
         '
-        Me.txtModDel_Empresa.Location = New System.Drawing.Point(206, 462)
+        Me.txtModDel_Empresa.Location = New System.Drawing.Point(206, 487)
         Me.txtModDel_Empresa.Name = "txtModDel_Empresa"
         Me.txtModDel_Empresa.Size = New System.Drawing.Size(198, 20)
         Me.txtModDel_Empresa.TabIndex = 32
@@ -412,7 +418,7 @@ Partial Class MenuGestorNew
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(29, 460)
+        Me.Label10.Location = New System.Drawing.Point(29, 485)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(171, 22)
         Me.Label10.TabIndex = 31
@@ -420,42 +426,42 @@ Partial Class MenuGestorNew
         '
         'txtModDel_Email
         '
-        Me.txtModDel_Email.Location = New System.Drawing.Point(206, 420)
+        Me.txtModDel_Email.Location = New System.Drawing.Point(206, 445)
         Me.txtModDel_Email.Name = "txtModDel_Email"
         Me.txtModDel_Email.Size = New System.Drawing.Size(198, 20)
         Me.txtModDel_Email.TabIndex = 28
         '
         'txtModDel_Especializacion
         '
-        Me.txtModDel_Especializacion.Location = New System.Drawing.Point(206, 375)
+        Me.txtModDel_Especializacion.Location = New System.Drawing.Point(206, 400)
         Me.txtModDel_Especializacion.Name = "txtModDel_Especializacion"
         Me.txtModDel_Especializacion.Size = New System.Drawing.Size(198, 20)
         Me.txtModDel_Especializacion.TabIndex = 27
         '
         'txtModDel_CI
         '
-        Me.txtModDel_CI.Location = New System.Drawing.Point(206, 205)
+        Me.txtModDel_CI.Location = New System.Drawing.Point(206, 230)
         Me.txtModDel_CI.Name = "txtModDel_CI"
         Me.txtModDel_CI.Size = New System.Drawing.Size(198, 20)
         Me.txtModDel_CI.TabIndex = 26
         '
         'txtModDel_Direccion
         '
-        Me.txtModDel_Direccion.Location = New System.Drawing.Point(206, 247)
+        Me.txtModDel_Direccion.Location = New System.Drawing.Point(206, 272)
         Me.txtModDel_Direccion.Name = "txtModDel_Direccion"
         Me.txtModDel_Direccion.Size = New System.Drawing.Size(198, 20)
         Me.txtModDel_Direccion.TabIndex = 25
         '
         'txtModDel_Apellido
         '
-        Me.txtModDel_Apellido.Location = New System.Drawing.Point(206, 122)
+        Me.txtModDel_Apellido.Location = New System.Drawing.Point(206, 101)
         Me.txtModDel_Apellido.Name = "txtModDel_Apellido"
         Me.txtModDel_Apellido.Size = New System.Drawing.Size(198, 20)
         Me.txtModDel_Apellido.TabIndex = 24
         '
         'txtModDel_PrimerNombre
         '
-        Me.txtModDel_PrimerNombre.Location = New System.Drawing.Point(206, 41)
+        Me.txtModDel_PrimerNombre.Location = New System.Drawing.Point(206, 16)
         Me.txtModDel_PrimerNombre.Name = "txtModDel_PrimerNombre"
         Me.txtModDel_PrimerNombre.Size = New System.Drawing.Size(198, 20)
         Me.txtModDel_PrimerNombre.TabIndex = 23
@@ -478,7 +484,7 @@ Partial Class MenuGestorNew
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(135, 418)
+        Me.Label9.Location = New System.Drawing.Point(135, 443)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(65, 22)
         Me.Label9.TabIndex = 20
@@ -488,7 +494,7 @@ Partial Class MenuGestorNew
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(62, 373)
+        Me.Label8.Location = New System.Drawing.Point(62, 398)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(138, 22)
         Me.Label8.TabIndex = 17
@@ -498,7 +504,7 @@ Partial Class MenuGestorNew
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(168, 205)
+        Me.Label7.Location = New System.Drawing.Point(168, 230)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(32, 22)
         Me.Label7.TabIndex = 14
@@ -508,7 +514,7 @@ Partial Class MenuGestorNew
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(110, 243)
+        Me.Label6.Location = New System.Drawing.Point(110, 268)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(90, 22)
         Me.Label6.TabIndex = 11
@@ -518,7 +524,7 @@ Partial Class MenuGestorNew
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(121, 120)
+        Me.Label5.Location = New System.Drawing.Point(121, 99)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(79, 22)
         Me.Label5.TabIndex = 8
@@ -528,11 +534,11 @@ Partial Class MenuGestorNew
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(65, 41)
+        Me.Label4.Location = New System.Drawing.Point(122, 16)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(135, 22)
+        Me.Label4.Size = New System.Drawing.Size(78, 22)
         Me.Label4.TabIndex = 5
-        Me.Label4.Text = "Primer Nombre:"
+        Me.Label4.Text = "Nombre:"
         '
         'panelABMSintoma
         '
@@ -687,6 +693,8 @@ Partial Class MenuGestorNew
         '
         'panelAgregarUsuario
         '
+        Me.panelAgregarUsuario.Controls.Add(Me.txtSegundoApellido)
+        Me.panelAgregarUsuario.Controls.Add(Me.Label33)
         Me.panelAgregarUsuario.Controls.Add(Me.Label18)
         Me.panelAgregarUsuario.Controls.Add(Me.dateFechaNacimiento)
         Me.panelAgregarUsuario.Controls.Add(Me.Label19)
@@ -721,7 +729,7 @@ Partial Class MenuGestorNew
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(16, 245)
+        Me.Label18.Location = New System.Drawing.Point(16, 256)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(184, 22)
         Me.Label18.TabIndex = 42
@@ -729,7 +737,7 @@ Partial Class MenuGestorNew
         '
         'dateFechaNacimiento
         '
-        Me.dateFechaNacimiento.Location = New System.Drawing.Point(206, 247)
+        Me.dateFechaNacimiento.Location = New System.Drawing.Point(206, 258)
         Me.dateFechaNacimiento.Name = "dateFechaNacimiento"
         Me.dateFechaNacimiento.Size = New System.Drawing.Size(241, 20)
         Me.dateFechaNacimiento.TabIndex = 41
@@ -738,7 +746,7 @@ Partial Class MenuGestorNew
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(114, 287)
+        Me.Label19.Location = New System.Drawing.Point(114, 298)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(86, 22)
         Me.Label19.TabIndex = 40
@@ -746,7 +754,7 @@ Partial Class MenuGestorNew
         '
         'txtTelefono
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(206, 291)
+        Me.txtTelefono.Location = New System.Drawing.Point(206, 302)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(241, 20)
         Me.txtTelefono.TabIndex = 39
@@ -755,7 +763,7 @@ Partial Class MenuGestorNew
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(9, 507)
+        Me.Label20.Location = New System.Drawing.Point(9, 518)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(191, 22)
         Me.Label20.TabIndex = 38
@@ -765,7 +773,7 @@ Partial Class MenuGestorNew
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(92, 462)
+        Me.Label21.Location = New System.Drawing.Point(92, 473)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(108, 22)
         Me.Label21.TabIndex = 37
@@ -773,21 +781,21 @@ Partial Class MenuGestorNew
         '
         'txtConfContraseña
         '
-        Me.txtConfContraseña.Location = New System.Drawing.Point(206, 509)
+        Me.txtConfContraseña.Location = New System.Drawing.Point(206, 520)
         Me.txtConfContraseña.Name = "txtConfContraseña"
         Me.txtConfContraseña.Size = New System.Drawing.Size(241, 20)
         Me.txtConfContraseña.TabIndex = 36
         '
         'txtContraseña
         '
-        Me.txtContraseña.Location = New System.Drawing.Point(206, 464)
+        Me.txtContraseña.Location = New System.Drawing.Point(206, 475)
         Me.txtContraseña.Name = "txtContraseña"
         Me.txtContraseña.Size = New System.Drawing.Size(241, 20)
         Me.txtContraseña.TabIndex = 35
         '
         'txtSegundoNombre
         '
-        Me.txtSegundoNombre.Location = New System.Drawing.Point(206, 82)
+        Me.txtSegundoNombre.Location = New System.Drawing.Point(206, 53)
         Me.txtSegundoNombre.Name = "txtSegundoNombre"
         Me.txtSegundoNombre.Size = New System.Drawing.Size(241, 20)
         Me.txtSegundoNombre.TabIndex = 34
@@ -796,7 +804,7 @@ Partial Class MenuGestorNew
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(45, 80)
+        Me.Label22.Location = New System.Drawing.Point(45, 51)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(155, 22)
         Me.Label22.TabIndex = 33
@@ -804,7 +812,7 @@ Partial Class MenuGestorNew
         '
         'txtEmpresa
         '
-        Me.txtEmpresa.Location = New System.Drawing.Point(206, 419)
+        Me.txtEmpresa.Location = New System.Drawing.Point(206, 430)
         Me.txtEmpresa.Name = "txtEmpresa"
         Me.txtEmpresa.Size = New System.Drawing.Size(241, 20)
         Me.txtEmpresa.TabIndex = 32
@@ -813,7 +821,7 @@ Partial Class MenuGestorNew
         '
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(29, 417)
+        Me.Label23.Location = New System.Drawing.Point(29, 428)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(171, 22)
         Me.Label23.TabIndex = 31
@@ -821,42 +829,42 @@ Partial Class MenuGestorNew
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(206, 377)
+        Me.txtEmail.Location = New System.Drawing.Point(206, 388)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(241, 20)
         Me.txtEmail.TabIndex = 28
         '
         'txtEspecializacion
         '
-        Me.txtEspecializacion.Location = New System.Drawing.Point(206, 332)
+        Me.txtEspecializacion.Location = New System.Drawing.Point(206, 343)
         Me.txtEspecializacion.Name = "txtEspecializacion"
         Me.txtEspecializacion.Size = New System.Drawing.Size(241, 20)
         Me.txtEspecializacion.TabIndex = 27
         '
         'txtCI
         '
-        Me.txtCI.Location = New System.Drawing.Point(206, 162)
+        Me.txtCI.Location = New System.Drawing.Point(206, 173)
         Me.txtCI.Name = "txtCI"
         Me.txtCI.Size = New System.Drawing.Size(241, 20)
         Me.txtCI.TabIndex = 26
         '
         'txtDireccion
         '
-        Me.txtDireccion.Location = New System.Drawing.Point(206, 204)
+        Me.txtDireccion.Location = New System.Drawing.Point(206, 215)
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(241, 20)
         Me.txtDireccion.TabIndex = 25
         '
         'txtApellido
         '
-        Me.txtApellido.Location = New System.Drawing.Point(206, 122)
+        Me.txtApellido.Location = New System.Drawing.Point(206, 93)
         Me.txtApellido.Name = "txtApellido"
         Me.txtApellido.Size = New System.Drawing.Size(241, 20)
         Me.txtApellido.TabIndex = 24
         '
         'txtPrimerNombre
         '
-        Me.txtPrimerNombre.Location = New System.Drawing.Point(206, 41)
+        Me.txtPrimerNombre.Location = New System.Drawing.Point(206, 12)
         Me.txtPrimerNombre.Name = "txtPrimerNombre"
         Me.txtPrimerNombre.Size = New System.Drawing.Size(241, 20)
         Me.txtPrimerNombre.TabIndex = 23
@@ -879,7 +887,7 @@ Partial Class MenuGestorNew
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(135, 375)
+        Me.Label24.Location = New System.Drawing.Point(135, 386)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(65, 22)
         Me.Label24.TabIndex = 20
@@ -889,7 +897,7 @@ Partial Class MenuGestorNew
         '
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(62, 330)
+        Me.Label25.Location = New System.Drawing.Point(62, 341)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(138, 22)
         Me.Label25.TabIndex = 17
@@ -899,7 +907,7 @@ Partial Class MenuGestorNew
         '
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.Location = New System.Drawing.Point(168, 162)
+        Me.Label26.Location = New System.Drawing.Point(168, 173)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(32, 22)
         Me.Label26.TabIndex = 14
@@ -909,7 +917,7 @@ Partial Class MenuGestorNew
         '
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(110, 200)
+        Me.Label27.Location = New System.Drawing.Point(110, 211)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(90, 22)
         Me.Label27.TabIndex = 11
@@ -919,7 +927,7 @@ Partial Class MenuGestorNew
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(121, 120)
+        Me.Label28.Location = New System.Drawing.Point(121, 91)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(79, 22)
         Me.Label28.TabIndex = 8
@@ -929,11 +937,45 @@ Partial Class MenuGestorNew
         '
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(65, 41)
+        Me.Label29.Location = New System.Drawing.Point(65, 12)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(135, 22)
+        Me.Label29.Size = New System.Drawing.Size(78, 22)
         Me.Label29.TabIndex = 5
-        Me.Label29.Text = "Primer Nombre:"
+        Me.Label29.Text = "Nombre:"
+        '
+        'txtModDel_Segundoapellido
+        '
+        Me.txtModDel_Segundoapellido.Location = New System.Drawing.Point(206, 144)
+        Me.txtModDel_Segundoapellido.Name = "txtModDel_Segundoapellido"
+        Me.txtModDel_Segundoapellido.Size = New System.Drawing.Size(198, 20)
+        Me.txtModDel_Segundoapellido.TabIndex = 49
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label32.Location = New System.Drawing.Point(44, 142)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(156, 22)
+        Me.Label32.TabIndex = 48
+        Me.Label32.Text = "Segundo Apellido:"
+        '
+        'txtSegundoApellido
+        '
+        Me.txtSegundoApellido.Location = New System.Drawing.Point(206, 131)
+        Me.txtSegundoApellido.Name = "txtSegundoApellido"
+        Me.txtSegundoApellido.Size = New System.Drawing.Size(241, 20)
+        Me.txtSegundoApellido.TabIndex = 44
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label33.Location = New System.Drawing.Point(44, 129)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(156, 22)
+        Me.Label33.TabIndex = 43
+        Me.Label33.Text = "Segundo Apellido:"
         '
         'MenuGestorNew
         '
@@ -945,9 +987,9 @@ Partial Class MenuGestorNew
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.panelMenuInicio)
+        Me.Controls.Add(Me.panelAgregarUsuario)
         Me.Controls.Add(Me.panelABMSintoma)
         Me.Controls.Add(Me.panelModificarEliminarMedico)
-        Me.Controls.Add(Me.panelAgregarUsuario)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)
@@ -1044,4 +1086,8 @@ Partial Class MenuGestorNew
     Friend WithEvents btnEliminarMedico As Button
     Friend WithEvents Label31 As Label
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents txtModDel_Segundoapellido As TextBox
+    Friend WithEvents Label32 As Label
+    Friend WithEvents txtSegundoApellido As TextBox
+    Friend WithEvents Label33 As Label
 End Class

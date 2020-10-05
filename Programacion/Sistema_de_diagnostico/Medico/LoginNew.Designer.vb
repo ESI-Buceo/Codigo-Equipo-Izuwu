@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class LoginNewm
+Partial Class LoginNew
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,20 +22,20 @@ Partial Class LoginNewm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginNewm))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginNew))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnEntrar = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtContraseña = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.txtUsuario = New System.Windows.Forms.TextBox()
+        Me.txtContraseña = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -43,13 +43,13 @@ Partial Class LoginNewm
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(144, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.txtContraseña)
+        Me.Panel1.Controls.Add(Me.txtUsuario)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.btnEntrar)
         Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.txtContraseña)
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.txtUsuario)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(0, -3)
@@ -104,16 +104,6 @@ Partial Class LoginNewm
         Me.Label4.TabIndex = 5
         Me.Label4.Text = "¿Olvidaste tu contraseña?"
         '
-        'txtContraseña
-        '
-        Me.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtContraseña.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContraseña.Location = New System.Drawing.Point(15, 284)
-        Me.txtContraseña.Name = "txtContraseña"
-        Me.txtContraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.txtContraseña.Size = New System.Drawing.Size(177, 15)
-        Me.txtContraseña.TabIndex = 4
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -124,17 +114,6 @@ Partial Class LoginNewm
         Me.Label3.Size = New System.Drawing.Size(70, 15)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Contraseña"
-        '
-        'txtUsuario
-        '
-        Me.txtUsuario.BackColor = System.Drawing.SystemColors.Window
-        Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario.Location = New System.Drawing.Point(15, 212)
-        Me.txtUsuario.MaxLength = 8
-        Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(177, 15)
-        Me.txtUsuario.TabIndex = 2
         '
         'Label2
         '
@@ -197,7 +176,21 @@ Partial Class LoginNewm
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
-        'LoginNewm
+        'txtUsuario
+        '
+        Me.txtUsuario.Location = New System.Drawing.Point(15, 205)
+        Me.txtUsuario.Name = "txtUsuario"
+        Me.txtUsuario.Size = New System.Drawing.Size(177, 20)
+        Me.txtUsuario.TabIndex = 9
+        '
+        'txtContraseña
+        '
+        Me.txtContraseña.Location = New System.Drawing.Point(12, 277)
+        Me.txtContraseña.Name = "txtContraseña"
+        Me.txtContraseña.Size = New System.Drawing.Size(180, 20)
+        Me.txtContraseña.TabIndex = 10
+        '
+        'LoginNew
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -211,7 +204,7 @@ Partial Class LoginNewm
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(980, 645)
-        Me.Name = "LoginNewm"
+        Me.Name = "LoginNew"
         Me.Text = "LoginNew"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -223,9 +216,7 @@ Partial Class LoginNewm
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnEntrar As Button
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtContraseña As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents txtUsuario As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label6 As Label
@@ -233,4 +224,6 @@ Partial Class LoginNewm
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents txtContraseña As TextBox
+    Friend WithEvents txtUsuario As TextBox
 End Class

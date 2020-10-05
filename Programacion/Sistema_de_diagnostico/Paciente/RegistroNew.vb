@@ -61,13 +61,16 @@ Public Class RegistroNew
             Dim fecha As Date = dateFechaNacimiento.Value.Date
             Dim fechastring As String = Format(fecha, "yyyy/MM/dd")
             Dim id As String = instancia.codigoRandom(3)
-            instancia.agregarPaciente(New Paciente(txtPrimerNombre.Text, txtApellido.Text, txtEmail.Text, id, txtDireccion.Text, txtCI.Text, txtContraseña.Text, txtTelefono.Text, fechastring))
+            instancia.agregarPaciente(New Paciente(txtPrimerNombre.Text, txtSegundoNombre.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, id, txtDireccion.Text, txtCI.Text, txtContraseña.Text, txtTelefono.Text, fechastring, numPeso.Value.ToString, numAltura.Value.ToString, txtPatologiaPrevia.Text))
             MsgBox("Registro exitoso.")
             txtPrimerNombre.Clear()
             txtSegundoNombre.Clear()
             txtApellido.Clear()
+            txtSegundoApellido.Clear()
             dateFechaNacimiento.ResetText()
             cbxSexo.ResetText()
+            numAltura.ResetText()
+            numPeso.ResetText()
             txtDireccion.Clear()
             txtCI.Clear()
             txtEmail.Clear()
@@ -80,7 +83,7 @@ Public Class RegistroNew
         End If
     End Sub
 
-    Private Sub Label13_Click(sender As Object, e As EventArgs) Handles Label13.Click
+    Private Sub Label13_Click(sender As Object, e As EventArgs) Handles labAtras.Click
         Me.Hide()
         LoginNew.ShowDialog()
         Me.Close()

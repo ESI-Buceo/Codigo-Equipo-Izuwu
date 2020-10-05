@@ -8,9 +8,9 @@ Public Class ConexionConBD
             "driver={MySQL ODBC 8.0 Unicode Driver};" &
             "server=127.0.0.1;" &
             "port=3306;" &
-            "database=proyecto_izuwu;" &
+            "database=proyecto_prueba;" &
             "uid=root;" &
-            "pwd=56505181bpe;"
+            "pwd=1234;"
 
         connection.Open()
         Return connection
@@ -24,7 +24,7 @@ Public Class ConexionConBD
         Dim ListaPaciente As New List(Of Paciente)
         Dim fechaBaseDatos As Date
         Dim fechaString As String
-        Dim id, nombre, apellido, email, direccion, ci, contraseña, telefono As String
+        Dim id, nombre, segundonombre, apellido, segundoapellido, email, direccion, ci, contraseña, telefono, peso, altura, patologiaprevia As String
         Dim consulta As Recordset = connection.Execute("select * " +
                                                        "from usuario inner join paciente " +
                                                        "on usuario.id_us = paciente.id_pac;")
@@ -33,7 +33,9 @@ Public Class ConexionConBD
 
             id = TryCast(consulta.Fields("ID_us").Value, String)
             nombre = TryCast(consulta.Fields("Nombre").Value, String)
+
             apellido = TryCast(consulta.Fields("Apellido").Value, String)
+
             email = TryCast(consulta.Fields("Email").Value, String)
             direccion = TryCast(consulta.Fields("Direccion").Value, String)
             ci = TryCast(consulta.Fields("CI").Value, String)
@@ -41,7 +43,13 @@ Public Class ConexionConBD
             telefono = TryCast(consulta.Fields("Telefono").Value, String)
             fechaBaseDatos = TryCast(consulta.Fields("FDN").Value, Object)
             fechaString = Format(fechaBaseDatos, "yyyy/MM/dd")
-            ListaPaciente.Add(New Paciente(nombre, apellido, email, id, direccion, ci, contraseña, telefono, fechaString))
+            peso = TryCast(consulta.Fields("peso").Value, String)
+            altura = DirectCast(consulta.Fields("altura").Value, Double)
+            patologiaprevia = TryCast(consulta.Fields("patologiasp").Value, String)
+            segundonombre = TryCast(consulta.Fields("segundo_nombre").Value, String)
+            segundoapellido = TryCast(consulta.Fields("segundo_apellido").Value, String)
+
+            ListaPaciente.Add(New Paciente(nombre, segundonombre, apellido, segundoapellido, email, id, direccion, ci, contraseña, telefono, fechaString, peso, altura.ToString, patologiaprevia))
 
             consulta.MoveNext()
         End While
@@ -56,7 +64,7 @@ Public Class ConexionConBD
 
         Dim fechaBaseDatos As Date
         Dim fechaString As String
-        Dim id, nombre, apellido, email, direccion, ci, contraseña, telefono, especializacion As String
+        Dim id, nombre, segundonombre, apellido, segundoapellido, email, direccion, ci, contraseña, telefono, especializacion, lugardetrabajo As String
 
         Dim consulta As Recordset = connection.Execute("select * " +
                                                        "from usuario inner join medico " +
@@ -74,7 +82,10 @@ Public Class ConexionConBD
             fechaBaseDatos = TryCast(consulta.Fields("FDN").Value, Object)
             fechaString = Format(fechaBaseDatos, "yyyy/MM/dd")
             especializacion = TryCast(consulta.Fields("Especializacion").Value, String)
-            ListaMedico.Add(New Medico(nombre, apellido, email, id, direccion, ci, contraseña, telefono, fechaString, especializacion))
+            segundonombre = TryCast(consulta.Fields("segundo_nombre").Value, String)
+            segundoapellido = TryCast(consulta.Fields("segundo_apellido").Value, String)
+            lugardetrabajo = TryCast(consulta.Fields("Lugar_de_trabajo").Value, String)
+            ListaMedico.Add(New Medico(nombre, segundonombre, apellido, segundoapellido, email, id, direccion, ci, contraseña, telefono, fechaString, especializacion, lugardetrabajo))
 
             consulta.MoveNext()
         End While
@@ -89,11 +100,11 @@ Public Class ConexionConBD
         Dim ListaGestor As New List(Of Gestor)
         Dim fechaBaseDatos As Date
         Dim fechaString As String
-        Dim id, nombre, apellido, email, direccion, ci, contraseña, telefono, empresa As String
+        Dim id, nombre, segundonombre, apellido, segundoapellido, email, direccion, ci, contraseña, telefono, empresa As String
 
         Dim consulta As Recordset = connection.Execute("select * " +
                                                        "from usuario inner join gestor " +
-                                                       "on usuario.id_us = medico.id_ges;")
+                                                       "on usuario.id_us = gestor.id_ges;")
         While (Not consulta.EOF)
             id = TryCast(consulta.Fields("ID_us").Value, String)
             nombre = TryCast(consulta.Fields("Nombre").Value, String)
@@ -106,7 +117,9 @@ Public Class ConexionConBD
             fechaBaseDatos = TryCast(consulta.Fields("FDN").Value, Object)
             fechaString = Format(fechaBaseDatos, "yyyy/MM/dd")
             empresa = TryCast(consulta.Fields("Empresa").Value, String)
-            ListaGestor.Add(New Gestor(nombre, apellido, email, id, direccion, ci, contraseña, telefono, fechaString, empresa))
+            segundonombre = TryCast(consulta.Fields("segundo_nombre").Value, String)
+            segundoapellido = TryCast(consulta.Fields("segundo_apellido").Value, String)
+            ListaGestor.Add(New Gestor(nombre, segundonombre, apellido, segundoapellido, email, id, direccion, ci, contraseña, telefono, fechaString, empresa))
 
             consulta.MoveNext()
         End While
@@ -150,23 +163,13 @@ Public Class ConexionConBD
         Return ListaPatologia
     End Function
 
-    'Select patologia.nombre,patologia.id_pat
-    'from patologia
-    'inner join tiene On
-    'tiene.id_pat=patologia.id_pat 
-    'inner join sintoma On
-    'tiene.id_sin=sintoma.id_sin
-    'where sintoma.id_sin = "FSC-AAA-004";
+
 
 
     Public Function ObtenerReferenciaSintomaPatologia(ID As String) As List(Of Patologia)
         Dim connection As Connection = conectar()
         Dim listaReferencias As New List(Of Patologia)
-        'Dim consulta2 As String = "Select patologia.nombre, patologia.id_pat, patologia.prioridad " &
-        '                                               "from patologia inner join tiene on tiene.id_pat=patologia.id_pat " &
-        '                                              "inner join sintoma on tiene.id_sin=sintoma.id_sin " &
-        '                                             "where sintoma.id_sin = '" & ID & "';"
-        'Console.WriteLine(consulta2)
+
         Dim consulta As Recordset = Connection.Execute("Select patologia.nombre, patologia.id_pat, patologia.prioridad " &
                                                         "from patologia inner join tiene on tiene.id_pat=patologia.id_pat " &
                                                         "inner join sintoma on tiene.id_sin=sintoma.id_sin " &
@@ -206,13 +209,14 @@ Public Class ConexionConBD
             Dim email As String = TryCast(consultaUsuario.Fields("email").Value, String)
             Dim direccion As String = TryCast(consultaUsuario.Fields("direccion").Value, String)
             Dim telefono As String = TryCast(consultaUsuario.Fields("telefono").Value, String)
-            Dim fechaBaseDatos As Date = Convert.ToDateTime(TryCast(consultaUsuario.Fields("FDN").Value, Object))
+            Dim fechaBaseDatos As Date = TryCast(consultaUsuario.Fields("FDN").Value, Object)
             Dim fechaString As String = Format(fechaBaseDatos, "yyyy/MM/dd")
-
             Dim especializacion As String = TryCast(consultaMedico.Fields("Especializacion").Value, String)
+            Dim segundonombre = TryCast(consultaUsuario.Fields("segundo_nombre").Value, String)
+            Dim segundoapellido = TryCast(consultaUsuario.Fields("segundo_apellido").Value, String)
+            Dim lugardetrabajo = TryCast(consultaMedico.Fields("Lugar_de_trabajo").Value, String)
 
-
-            Dim medico As New Medico(nombre, apellido, email, idUser, direccion, userCI, pasw, telefono, fechaString, especializacion)
+            Dim medico As New Medico(nombre, segundonombre, apellido, segundoapellido, email, idUser, direccion, userCI, pasw, telefono, fechaString, especializacion, lugardetrabajo)
             connection.Close()
             Return medico
         Else
@@ -242,8 +246,13 @@ Public Class ConexionConBD
             Dim telefono As String = TryCast(consultaUsuario.Fields("telefono").Value, String)
             Dim fechaBaseDatos As Date = Convert.ToDateTime(TryCast(consultaUsuario.Fields("FDN").Value, Object))
             Dim fechaString As String = Format(fechaBaseDatos, "yyyy/MM/dd")
+            Dim peso = TryCast(consultaPaciente.Fields("peso").Value, String)
+            Dim altura = DirectCast(consultaPaciente.Fields("altura").Value, Double)
+            Dim patologiaprevia = TryCast(consultaPaciente.Fields("patologiasp").Value, String)
+            Dim segundonombre = TryCast(consultaUsuario.Fields("segundo_nombre").Value, String)
+            Dim segundoapellido = TryCast(consultaUsuario.Fields("segundo_apellido").Value, String)
 
-            Dim paciente As New Paciente(nombre, apellido, email, idUser, direccion, userCI, pasw, telefono, fechaString)
+            Dim paciente As New Paciente(nombre, segundonombre, apellido, segundoapellido, email, idUser, direccion, userCI, pasw, telefono, fechaString, peso, altura.ToString, patologiaprevia)
             connection.Close()
             Return paciente
         Else
@@ -274,8 +283,9 @@ Public Class ConexionConBD
             Dim fechaBaseDatos As Date = Convert.ToDateTime(TryCast(consultaUsuario.Fields("FDN").Value, Object))
             Dim fechaString As String = Format(fechaBaseDatos, "yyyy/MM/dd")
             Dim empresa As String = TryCast(consultaGestor.Fields("empresa").Value, String)
-
-            Dim gestor As New Gestor(nombre, apellido, email, idUser, direccion, userCI, pasw, telefono, fechaString, empresa)
+            Dim segundonombre = TryCast(consultaUsuario.Fields("segundo_nombre").Value, String)
+            Dim segundoapellido = TryCast(consultaUsuario.Fields("segundo_apellido").Value, String)
+            Dim gestor As New Gestor(nombre, segundonombre, apellido, segundoapellido, email, idUser, direccion, userCI, pasw, telefono, fechaString, empresa)
             connection.Close()
             Return gestor
 
@@ -292,25 +302,23 @@ Public Class ConexionConBD
     Public Sub agregarPaciente(paciente As Paciente)
         Dim connection As Connection = conectar()
 
-        Dim agregarUsuario As Recordset = connection.Execute("insert into Usuario values(""" + paciente.nombre + """,""" + paciente.apellido + """,""" + paciente.email + """,""" + paciente.ID + """,""" + paciente.Direccion + """,""" + paciente.CI + """,""" + paciente.contraseña + """,""" + paciente.telefono + """,'" + paciente.fechadenacimiento + "');")
-        Dim agregarPaciente As Recordset = connection.Execute("insert into Paciente values (""" + paciente.ID + """);")
+        Dim agregarUsuario As Recordset = connection.Execute("insert into Usuario values('" + paciente.nombre + "','" + paciente.apellido + "','" + paciente.email + "','" + paciente.ID + "','" + paciente.Direccion + "','" + paciente.CI + "','" + paciente.contraseña + "','" + paciente.telefono + "','" + paciente.fechadenacimiento + "','" + paciente.segundonombre + "','" + paciente.segundoapellido + "');")
+        Dim agregarPaciente As Recordset = connection.Execute("insert into Paciente values ('" + paciente.ID + "'" + paciente.peso + "" + paciente.altura + "" + paciente.patologiaPrevia + ");")
 
         connection.Close()
     End Sub
 
     Public Sub agregarMedico(medico As Medico)
         Dim connection As Connection = conectar()
-        Dim agregarUsuario As Recordset = connection.Execute("insert into Usuario values(""" + medico.nombre + """,""" + medico.apellido + """,""" + medico.email + """,""" + medico.ID + """,""" + medico.Direccion + """,""" + medico.CI + """,""" + medico.contraseña + """,""" + medico.telefono + """,""" + medico.fechadenacimiento + """);")
-        Dim agregarMedico As Recordset = connection.Execute("insert into Medico values (""" + medico.especializacion + """,""" + medico.ID + """);")
+        Dim agregarUsuario As Recordset = connection.Execute("insert into Usuario values('" + medico.nombre + "','" + medico.apellido + "','" + medico.email + "','" + medico.ID + "','" + medico.Direccion + "','" + medico.CI + "','" + medico.contraseña + "','" + medico.telefono + "','" + medico.fechadenacimiento + "','" + medico.segundonombre + "','" + medico.segundoapellido + "');")
+        Dim agregarMedico As Recordset = connection.Execute("insert into Medico values ('" + medico.especializacion + "','" + medico.ID + "','" + medico.lugarDeTrabajo + "');")
 
         connection.Close()
     End Sub
 
     Public Sub agregarGestor(gestor As Gestor)
         Dim connection As Connection = conectar()
-
-
-        Dim agregarUsuario As Recordset = connection.Execute("insert into Usuario values(""" + gestor.nombre + """,""" + gestor.apellido + """,""" + gestor.email + """,""" + gestor.ID + """,""" + gestor.Direccion + """,""" + gestor.CI + """,""" + gestor.contraseña + """,""" + gestor.telefono + """," + gestor.fechadenacimiento + ");")
+        Dim agregarUsuario As Recordset = connection.Execute("insert into Usuario values('" + gestor.nombre + "','" + gestor.apellido + "','" + gestor.email + "','" + gestor.ID + "','" + gestor.Direccion + "','" + gestor.CI + "','" + gestor.contraseña + "','" + gestor.telefono + "','" + gestor.fechadenacimiento + "','" + gestor.segundonombre + "','" + gestor.segundoapellido + "');")
         Dim agregarGestor As Recordset = connection.Execute("insert into Gestor values (""" + gestor.ID + """,""" + gestor.empresa + """);")
 
 
@@ -405,20 +413,21 @@ Public Class ConexionConBD
 
     Public Sub actualizarMedico(medico As Medico)
         Dim connection As Connection = conectar()
-        Dim actualizarUsuario As Recordset = connection.Execute("UPDATE usuario set nombre = '" + medico.nombre + "', apellido = '" + medico.apellido + "', email = '" + medico.email + "', direccion = '" + medico.Direccion + "', ci = '" + medico.CI + "', contraseña= '" + medico.contraseña + "', telefono ='" + medico.telefono + "', FDN ='" + medico.fechadenacimiento + "' where id_us ='" + medico.ID + "';")
-        Dim actualizarMedico As Recordset = connection.Execute("UPDATE medico set especializacion ='" + medico.especializacion + "' where id_med ='" + medico.ID + "';")
+        Dim actualizarUsuario As Recordset = connection.Execute("UPDATE usuario set nombre = '" + medico.nombre + "', apellido = '" + medico.apellido + "', email = '" + medico.email + "', direccion = '" + medico.Direccion + "', ci = '" + medico.CI + "', contraseña= '" + medico.contraseña + "', telefono ='" + medico.telefono + "', FDN ='" + medico.fechadenacimiento + "', segundo_nombre ='" + medico.segundonombre + "', segundo_apellido= '" + medico.segundoapellido + "' where id_us ='" + medico.ID + ";")
+        Dim actualizarMedico As Recordset = connection.Execute("UPDATE medico set especializacion ='" + medico.especializacion + "', Lugar_de_trabajo ='" + medico.lugarDeTrabajo + "' where id_med ='" + medico.ID + "';")
         connection.Close()
     End Sub
 
     Public Sub actualizarPaciente(paciente As Paciente)
         Dim connection As Connection = conectar()
-        Dim actualizarUsuario As Recordset = connection.Execute("UPDATE usuario set nombre = '" + paciente.nombre + "', apellido = '" + paciente.apellido + "', email = '" + paciente.email + "', direccion = '" + paciente.Direccion + "', ci = '" + paciente.CI + "', contraseña= '" + paciente.contraseña + "', telefono ='" + paciente.telefono + "', FDN ='" + paciente.fechadenacimiento + "' where id_us ='" + paciente.ID + "';")
+        Dim actualizarUsuario As Recordset = connection.Execute("UPDATE usuario set nombre = '" + paciente.nombre + "', apellido = '" + paciente.apellido + "', email = '" + paciente.email + "', direccion = '" + paciente.Direccion + "', ci = '" + paciente.CI + "', contraseña= '" + paciente.contraseña + "', telefono ='" + paciente.telefono + "', FDN ='" + paciente.fechadenacimiento + "', segundo_nombre= '" + paciente.segundonombre + "', segundo_apellido= '" + paciente.segundoapellido + " where id_us ='" + paciente.ID + "';")
+        Dim actualizarPaciente As Recordset = connection.Execute("UPDATE paciente set peso = '" + paciente.peso + "', altura = '" + paciente.altura + "', Patologiasp = '" + paciente.patologiaPrevia + "' where id_pat = '" + paciente.ID + "';")
         connection.Close()
     End Sub
 
     Public Sub actualizarGestor(gestor As Gestor)
         Dim connection As Connection = conectar()
-        Dim actualizarUsuario As Recordset = connection.Execute("UPDATE usuario set nombre = '" + gestor.nombre + "', apellido = '" + gestor.apellido + "', email = '" + gestor.email + "', direccion = '" + gestor.Direccion + "', ci = '" + gestor.CI + "', contraseña= '" + gestor.contraseña + "', telefono ='" + gestor.telefono + "', FDN ='" + gestor.fechadenacimiento + "' where id_us ='" + gestor.ID + "';")
+        Dim actualizarUsuario As Recordset = connection.Execute("UPDATE usuario set nombre = '" + gestor.nombre + "', apellido = '" + gestor.apellido + "', email = '" + gestor.email + "', direccion = '" + gestor.Direccion + "', ci = '" + gestor.CI + "', contraseña= '" + gestor.contraseña + "', telefono ='" + gestor.telefono + "', FDN ='" + gestor.fechadenacimiento + "', segundo_nombre= '" + gestor.segundonombre + "', segundo_apellido = '" + gestor.segundoapellido + "' where id_us ='" + gestor.ID + "';")
         Dim actualizarMedico As Recordset = connection.Execute("UPDATE gestor set empresa ='" + gestor.empresa + "' where id_ges ='" + gestor.ID + "';")
         connection.Close()
     End Sub

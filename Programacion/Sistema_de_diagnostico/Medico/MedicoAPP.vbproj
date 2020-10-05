@@ -73,10 +73,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginNewm.Designer.vb">
-      <DependentUpon>LoginNewm.vb</DependentUpon>
+    <Compile Include="LoginNew.Designer.vb">
+      <DependentUpon>LoginNew.vb</DependentUpon>
     </Compile>
-    <Compile Include="LoginNewm.vb">
+    <Compile Include="LoginNew.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MenuMedicoNew.Designer.vb">
@@ -103,8 +103,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LoginNewm.resx">
-      <DependentUpon>LoginNewm.vb</DependentUpon>
+    <EmbeddedResource Include="LoginNew.resx">
+      <DependentUpon>LoginNew.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuMedicoNew.resx">
       <DependentUpon>MenuMedicoNew.vb</DependentUpon>

@@ -49,29 +49,30 @@ Partial Class MenuPacienteNew
         Me.panelRealizarDiagnostico2 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lstSintomasSeleccionados = New System.Windows.Forms.ListView()
-        Me.pPerfilPaciente = New System.Windows.Forms.Panel()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.panelPerfil = New System.Windows.Forms.Panel()
+        Me.labPerfilID = New System.Windows.Forms.Label()
+        Me.labPerfilNombre = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.pdatosPaciente = New System.Windows.Forms.Panel()
+        Me.labPerfilPatologias = New System.Windows.Forms.Label()
+        Me.labPerfilDireccion = New System.Windows.Forms.Label()
+        Me.labPerfilTelefono = New System.Windows.Forms.Label()
+        Me.labPerfilEdad = New System.Windows.Forms.Label()
         Me.pDatosMedicos = New System.Windows.Forms.Panel()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.pdatosPaciente = New System.Windows.Forms.Panel()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtPerfilPatologias = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.panelRealizarDiagnostico.SuspendLayout()
         Me.paelRealizaDiagnostico2.SuspendLayout()
         Me.panelChat.SuspendLayout()
         Me.panelRealizarDiagnostico2.SuspendLayout()
-        Me.pPerfilPaciente.SuspendLayout()
+        Me.panelPerfil.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pDatosMedicos.SuspendLayout()
         Me.pdatosPaciente.SuspendLayout()
+        Me.pDatosMedicos.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -228,7 +229,7 @@ Partial Class MenuPacienteNew
         Me.btnEliminar.FlatAppearance.BorderSize = 0
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnEliminar.Location = New System.Drawing.Point(258, 507)
+        Me.btnEliminar.Location = New System.Drawing.Point(113, 561)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(92, 28)
         Me.btnEliminar.TabIndex = 14
@@ -358,7 +359,7 @@ Partial Class MenuPacienteNew
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(176, 157)
+        Me.Label3.Location = New System.Drawing.Point(31, 211)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(245, 24)
         Me.Label3.TabIndex = 16
@@ -368,54 +369,54 @@ Partial Class MenuPacienteNew
         '
         Me.lstSintomasSeleccionados.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstSintomasSeleccionados.HideSelection = False
-        Me.lstSintomasSeleccionados.Location = New System.Drawing.Point(180, 200)
+        Me.lstSintomasSeleccionados.Location = New System.Drawing.Point(35, 254)
         Me.lstSintomasSeleccionados.Name = "lstSintomasSeleccionados"
         Me.lstSintomasSeleccionados.Size = New System.Drawing.Size(241, 283)
         Me.lstSintomasSeleccionados.TabIndex = 15
         Me.lstSintomasSeleccionados.UseCompatibleStateImageBehavior = False
         Me.lstSintomasSeleccionados.View = System.Windows.Forms.View.Tile
         '
-        'pPerfilPaciente
+        'panelPerfil
         '
-        Me.pPerfilPaciente.BackColor = System.Drawing.Color.White
-        Me.pPerfilPaciente.Controls.Add(Me.Label7)
-        Me.pPerfilPaciente.Controls.Add(Me.Label6)
-        Me.pPerfilPaciente.Controls.Add(Me.Label5)
-        Me.pPerfilPaciente.Controls.Add(Me.PictureBox1)
-        Me.pPerfilPaciente.Controls.Add(Me.pdatosPaciente)
-        Me.pPerfilPaciente.Controls.Add(Me.pDatosMedicos)
-        Me.pPerfilPaciente.Location = New System.Drawing.Point(288, 3)
-        Me.pPerfilPaciente.Name = "pPerfilPaciente"
-        Me.pPerfilPaciente.Size = New System.Drawing.Size(691, 641)
-        Me.pPerfilPaciente.TabIndex = 11
+        Me.panelPerfil.BackColor = System.Drawing.Color.White
+        Me.panelPerfil.Controls.Add(Me.labPerfilID)
+        Me.panelPerfil.Controls.Add(Me.labPerfilNombre)
+        Me.panelPerfil.Controls.Add(Me.Label5)
+        Me.panelPerfil.Controls.Add(Me.PictureBox1)
+        Me.panelPerfil.Controls.Add(Me.pdatosPaciente)
+        Me.panelPerfil.Controls.Add(Me.pDatosMedicos)
+        Me.panelPerfil.Location = New System.Drawing.Point(349, 31)
+        Me.panelPerfil.Name = "panelPerfil"
+        Me.panelPerfil.Size = New System.Drawing.Size(630, 609)
+        Me.panelPerfil.TabIndex = 11
         '
-        'Label7
+        'labPerfilID
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Yu Gothic UI Semilight", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(232, 227)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(159, 25)
-        Me.Label7.TabIndex = 13
-        Me.Label7.Text = "ID Paciente O MED"
+        Me.labPerfilID.AutoSize = True
+        Me.labPerfilID.Font = New System.Drawing.Font("Yu Gothic UI Semilight", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labPerfilID.ForeColor = System.Drawing.Color.Black
+        Me.labPerfilID.Location = New System.Drawing.Point(232, 227)
+        Me.labPerfilID.Name = "labPerfilID"
+        Me.labPerfilID.Size = New System.Drawing.Size(159, 25)
+        Me.labPerfilID.TabIndex = 13
+        Me.labPerfilID.Text = "ID Paciente O MED"
         '
-        'Label6
+        'labPerfilNombre
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Yu Gothic UI", 24.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(187, 179)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(259, 45)
-        Me.Label6.TabIndex = 13
-        Me.Label6.Text = "Nombre Usuario"
+        Me.labPerfilNombre.AutoSize = True
+        Me.labPerfilNombre.Font = New System.Drawing.Font("Yu Gothic UI", 24.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labPerfilNombre.ForeColor = System.Drawing.Color.Black
+        Me.labPerfilNombre.Location = New System.Drawing.Point(187, 179)
+        Me.labPerfilNombre.Name = "labPerfilNombre"
+        Me.labPerfilNombre.Size = New System.Drawing.Size(259, 45)
+        Me.labPerfilNombre.TabIndex = 13
+        Me.labPerfilNombre.Text = "Nombre Usuario"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Yu Gothic UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(4, 5)
+        Me.Label5.Location = New System.Drawing.Point(3, 7)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(31, 25)
         Me.Label5.TabIndex = 24
@@ -430,6 +431,62 @@ Partial Class MenuPacienteNew
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
+        '
+        'pdatosPaciente
+        '
+        Me.pdatosPaciente.Controls.Add(Me.txtPerfilPatologias)
+        Me.pdatosPaciente.Controls.Add(Me.labPerfilPatologias)
+        Me.pdatosPaciente.Controls.Add(Me.labPerfilDireccion)
+        Me.pdatosPaciente.Controls.Add(Me.labPerfilTelefono)
+        Me.pdatosPaciente.Controls.Add(Me.labPerfilEdad)
+        Me.pdatosPaciente.Location = New System.Drawing.Point(3, 358)
+        Me.pdatosPaciente.Name = "pdatosPaciente"
+        Me.pdatosPaciente.Size = New System.Drawing.Size(619, 270)
+        Me.pdatosPaciente.TabIndex = 25
+        '
+        'labPerfilPatologias
+        '
+        Me.labPerfilPatologias.AutoSize = True
+        Me.labPerfilPatologias.Font = New System.Drawing.Font("Yu Gothic UI Semilight", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labPerfilPatologias.ForeColor = System.Drawing.Color.Black
+        Me.labPerfilPatologias.Location = New System.Drawing.Point(305, 57)
+        Me.labPerfilPatologias.Name = "labPerfilPatologias"
+        Me.labPerfilPatologias.Size = New System.Drawing.Size(153, 25)
+        Me.labPerfilPatologias.TabIndex = 17
+        Me.labPerfilPatologias.Text = "Patologias Previas:"
+        '
+        'labPerfilDireccion
+        '
+        Me.labPerfilDireccion.AutoSize = True
+        Me.labPerfilDireccion.Font = New System.Drawing.Font("Yu Gothic UI Semilight", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labPerfilDireccion.ForeColor = System.Drawing.Color.Black
+        Me.labPerfilDireccion.Location = New System.Drawing.Point(35, 163)
+        Me.labPerfilDireccion.Name = "labPerfilDireccion"
+        Me.labPerfilDireccion.Size = New System.Drawing.Size(87, 25)
+        Me.labPerfilDireccion.TabIndex = 16
+        Me.labPerfilDireccion.Text = "Direccion:"
+        '
+        'labPerfilTelefono
+        '
+        Me.labPerfilTelefono.AutoSize = True
+        Me.labPerfilTelefono.Font = New System.Drawing.Font("Yu Gothic UI Semilight", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labPerfilTelefono.ForeColor = System.Drawing.Color.Black
+        Me.labPerfilTelefono.Location = New System.Drawing.Point(35, 109)
+        Me.labPerfilTelefono.Name = "labPerfilTelefono"
+        Me.labPerfilTelefono.Size = New System.Drawing.Size(80, 25)
+        Me.labPerfilTelefono.TabIndex = 15
+        Me.labPerfilTelefono.Text = "Telefono:"
+        '
+        'labPerfilEdad
+        '
+        Me.labPerfilEdad.AutoSize = True
+        Me.labPerfilEdad.Font = New System.Drawing.Font("Yu Gothic UI Semilight", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labPerfilEdad.ForeColor = System.Drawing.Color.Black
+        Me.labPerfilEdad.Location = New System.Drawing.Point(35, 57)
+        Me.labPerfilEdad.Name = "labPerfilEdad"
+        Me.labPerfilEdad.Size = New System.Drawing.Size(54, 25)
+        Me.labPerfilEdad.TabIndex = 14
+        Me.labPerfilEdad.Text = "Edad:"
         '
         'pDatosMedicos
         '
@@ -475,60 +532,15 @@ Partial Class MenuPacienteNew
         Me.Label12.TabIndex = 15
         Me.Label12.Text = "Lugar de Trabajo:"
         '
-        'pdatosPaciente
+        'txtPerfilPatologias
         '
-        Me.pdatosPaciente.Controls.Add(Me.Label11)
-        Me.pdatosPaciente.Controls.Add(Me.Label10)
-        Me.pdatosPaciente.Controls.Add(Me.Label9)
-        Me.pdatosPaciente.Controls.Add(Me.Label8)
-        Me.pdatosPaciente.Location = New System.Drawing.Point(3, 358)
-        Me.pdatosPaciente.Name = "pdatosPaciente"
-        Me.pdatosPaciente.Size = New System.Drawing.Size(619, 270)
-        Me.pdatosPaciente.TabIndex = 25
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Yu Gothic UI Semilight", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(434, 57)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(153, 25)
-        Me.Label11.TabIndex = 17
-        Me.Label11.Text = "Patologias Previas:"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Yu Gothic UI Semilight", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(35, 163)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(87, 25)
-        Me.Label10.TabIndex = 16
-        Me.Label10.Text = "Direccion:"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Yu Gothic UI Semilight", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(35, 109)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(80, 25)
-        Me.Label9.TabIndex = 15
-        Me.Label9.Text = "Telefono:"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Yu Gothic UI Semilight", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(35, 57)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(54, 25)
-        Me.Label8.TabIndex = 14
-        Me.Label8.Text = "Edad:"
+        Me.txtPerfilPatologias.BackColor = System.Drawing.Color.White
+        Me.txtPerfilPatologias.Location = New System.Drawing.Point(310, 85)
+        Me.txtPerfilPatologias.Multiline = True
+        Me.txtPerfilPatologias.Name = "txtPerfilPatologias"
+        Me.txtPerfilPatologias.ReadOnly = True
+        Me.txtPerfilPatologias.Size = New System.Drawing.Size(305, 106)
+        Me.txtPerfilPatologias.TabIndex = 18
         '
         'MenuPacienteNew
         '
@@ -540,10 +552,10 @@ Partial Class MenuPacienteNew
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.pPerfilPaciente)
-        Me.Controls.Add(Me.panelRealizarDiagnostico2)
-        Me.Controls.Add(Me.panelChat)
         Me.Controls.Add(Me.panelMenu_Chat)
+        Me.Controls.Add(Me.panelRealizarDiagnostico2)
+        Me.Controls.Add(Me.panelPerfil)
+        Me.Controls.Add(Me.panelChat)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)
@@ -559,13 +571,13 @@ Partial Class MenuPacienteNew
         Me.panelChat.PerformLayout()
         Me.panelRealizarDiagnostico2.ResumeLayout(False)
         Me.panelRealizarDiagnostico2.PerformLayout()
-        Me.pPerfilPaciente.ResumeLayout(False)
-        Me.pPerfilPaciente.PerformLayout()
+        Me.panelPerfil.ResumeLayout(False)
+        Me.panelPerfil.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pDatosMedicos.ResumeLayout(False)
-        Me.pDatosMedicos.PerformLayout()
         Me.pdatosPaciente.ResumeLayout(False)
         Me.pdatosPaciente.PerformLayout()
+        Me.pDatosMedicos.ResumeLayout(False)
+        Me.pDatosMedicos.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -596,9 +608,9 @@ Partial Class MenuPacienteNew
     Friend WithEvents panelRealizarDiagnostico2 As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents lstSintomasSeleccionados As ListView
-    Friend WithEvents pPerfilPaciente As Panel
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label6 As Label
+    Friend WithEvents panelPerfil As Panel
+    Friend WithEvents labPerfilID As Label
+    Friend WithEvents labPerfilNombre As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents pDatosMedicos As Panel
@@ -606,8 +618,9 @@ Partial Class MenuPacienteNew
     Friend WithEvents Label14 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents pdatosPaciente As Panel
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label8 As Label
+    Friend WithEvents labPerfilPatologias As Label
+    Friend WithEvents labPerfilDireccion As Label
+    Friend WithEvents labPerfilTelefono As Label
+    Friend WithEvents labPerfilEdad As Label
+    Friend WithEvents txtPerfilPatologias As TextBox
 End Class

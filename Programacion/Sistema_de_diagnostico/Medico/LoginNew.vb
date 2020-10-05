@@ -1,5 +1,5 @@
 ﻿Imports Logica, Datos
-Public Class LoginNewm
+Public Class LoginNew
 
     Dim ex, ey As Integer
     Dim Arrastre As Boolean
