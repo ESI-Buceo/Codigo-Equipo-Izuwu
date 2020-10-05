@@ -33,6 +33,8 @@ Partial Class MenuGestorNew
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.panelModificarEliminarMedico = New System.Windows.Forms.Panel()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.lstModDel_Medicos = New System.Windows.Forms.ListView()
         Me.btnEliminarMedico = New System.Windows.Forms.Button()
@@ -100,8 +102,6 @@ Partial Class MenuGestorNew
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label31 = New System.Windows.Forms.Label()
         Me.panelMenuInicio.SuspendLayout()
         Me.panelModificarEliminarMedico.SuspendLayout()
         Me.panelABMSintoma.SuspendLayout()
@@ -204,7 +204,7 @@ Partial Class MenuGestorNew
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(890, 0)
+        Me.Button2.Location = New System.Drawing.Point(898, -1)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(41, 26)
         Me.Button2.TabIndex = 6
@@ -218,7 +218,7 @@ Partial Class MenuGestorNew
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(937, 0)
+        Me.Button1.Location = New System.Drawing.Point(940, -1)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(41, 26)
         Me.Button1.TabIndex = 5
@@ -261,6 +261,25 @@ Partial Class MenuGestorNew
         Me.panelModificarEliminarMedico.Name = "panelModificarEliminarMedico"
         Me.panelModificarEliminarMedico.Size = New System.Drawing.Size(685, 617)
         Me.panelModificarEliminarMedico.TabIndex = 7
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label31.Location = New System.Drawing.Point(144, 160)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(56, 22)
+        Me.Label31.TabIndex = 47
+        Me.Label31.Text = "Sexo:"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Hombre", "Mujer", "Indefinido"})
+        Me.ComboBox1.Location = New System.Drawing.Point(206, 161)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(198, 21)
+        Me.ComboBox1.TabIndex = 46
         '
         'Label30
         '
@@ -583,7 +602,7 @@ Partial Class MenuGestorNew
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button3.Location = New System.Drawing.Point(110, 570)
+        Me.Button3.Location = New System.Drawing.Point(116, 570)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(106, 28)
         Me.Button3.TabIndex = 9
@@ -916,25 +935,6 @@ Partial Class MenuGestorNew
         Me.Label29.TabIndex = 5
         Me.Label29.Text = "Primer Nombre:"
         '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Hombre", "Mujer", "Indefinido"})
-        Me.ComboBox1.Location = New System.Drawing.Point(206, 161)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(198, 21)
-        Me.ComboBox1.TabIndex = 46
-        '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.Location = New System.Drawing.Point(144, 160)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(56, 22)
-        Me.Label31.TabIndex = 47
-        Me.Label31.Text = "Sexo:"
-        '
         'MenuGestorNew
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -945,9 +945,9 @@ Partial Class MenuGestorNew
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.panelMenuInicio)
+        Me.Controls.Add(Me.panelABMSintoma)
         Me.Controls.Add(Me.panelModificarEliminarMedico)
         Me.Controls.Add(Me.panelAgregarUsuario)
-        Me.Controls.Add(Me.panelABMSintoma)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)

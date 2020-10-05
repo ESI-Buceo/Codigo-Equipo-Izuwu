@@ -64,13 +64,7 @@ Public Class LoginGNew
 
     End Sub
 
-    Private Sub Button1_MouseMove(sender As Object, e As MouseEventArgs) Handles Button1.MouseMove
-        Button1.BackColor = Color.FromArgb(255, 96, 96)
-    End Sub
 
-    Private Sub Button1_MouseLeave(sender As Object, e As EventArgs) Handles Button1.MouseLeave
-        Button1.BackColor = Color.FromArgb(255, 255, 255)
-    End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()

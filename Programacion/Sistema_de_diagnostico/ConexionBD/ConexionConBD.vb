@@ -8,9 +8,9 @@ Public Class ConexionConBD
             "driver={MySQL ODBC 8.0 Unicode Driver};" &
             "server=127.0.0.1;" &
             "port=3306;" &
-            "database=proyecto_prueba;" &
+            "database=proyecto_izuwu;" &
             "uid=root;" &
-            "pwd=1234;"
+            "pwd=56505181bpe;"
 
         connection.Open()
         Return connection

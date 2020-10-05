@@ -43,6 +43,13 @@ Public Class MenuPacienteNew
     End Sub
 
 
+    Public Function nullvisible()
+        panelMenu_Chat.Visible = False
+        panelChat.Visible = False
+        panelRealizarDiagnostico.Visible = False
+        panelRealizarDiagnostico2.Visible = False
+        pPerfilPaciente.Visible = False
+    End Function
 
     Private Sub MenuPacienteNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -51,11 +58,8 @@ Public Class MenuPacienteNew
         btnChats.BackColor = Color.FromArgb(40, 117, 207)
         btnCerrarsesion.BackColor = Color.FromArgb(40, 117, 207)
 
-        panelMenu_Chat.Visible = False
-        panelChat.Visible = False
-        panelRealizarDiagnostico.Visible = False
-        panelRealizarDiagnostico2.Visible = False
 
+        nullvisible()
 
     End Sub
 
@@ -117,13 +121,26 @@ Public Class MenuPacienteNew
     End Sub
 
     Private Sub Label13_Click(sender As Object, e As EventArgs) Handles Label13.Click
-        panelRealizarDiagnostico.Visible = False
-        paelRealizaDiagnostico2.Visible = False
+        nullvisible()
         btnRealizarDiagnostico.BackColor = Color.FromArgb(40, 117, 207)
     End Sub
 
     Private Sub txtBusquedaSintomas_TextChanged(sender As Object, e As EventArgs) Handles txtBusquedaSintomas.TextChanged
         cargarListaSintomas()
+    End Sub
+
+    Private Sub labNombre_Click(sender As Object, e As EventArgs) Handles labNombre.Click
+        nullvisible()
+        pPerfilPaciente.Visible = True
+
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs)
+        pPerfilPaciente.Visible = False
+    End Sub
+
+    Private Sub Label5_Click_1(sender As Object, e As EventArgs) Handles Label5.Click
+        nullvisible()
     End Sub
 
     Public Sub cargarListaSintomas()

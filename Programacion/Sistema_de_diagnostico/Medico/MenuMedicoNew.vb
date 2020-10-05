@@ -37,15 +37,18 @@
 
     End Sub
 
-
+    Public Function nullvisible()
+        pConsultaPend.Visible = False
+        PHistCons.Visible = False
+        pPerfilPaciente.Visible = False
+    End Function
 
     Private Sub MenuPacienteNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btnConsPendientes.BackColor = Color.FromArgb(50, 174, 144)
         btnChats.BackColor = Color.FromArgb(50, 174, 144)
         btnHistorialdeConsultas.BackColor = Color.FromArgb(50, 174, 144)
 
-        pConsultaPend.Visible = False
-        PHistCons.Visible = False
+        nullvisible()
     End Sub
 
     Private Sub btnRealizarDiagnostico_Click(sender As Object, e As EventArgs) Handles btnConsPendientes.Click
@@ -87,6 +90,14 @@
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+        nullvisible()
+    End Sub
+
+    Private Sub lbNombre_Click(sender As Object, e As EventArgs) Handles lbNombre.Click
+        pPerfilPaciente.Visible = True
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

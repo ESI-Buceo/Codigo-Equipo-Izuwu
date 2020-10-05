@@ -85,12 +85,6 @@
     <Compile Include="MenuPacienteNew.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DiagnosticoOLD.Designer.vb">
-      <DependentUpon>DiagnosticoOLD.vb</DependentUpon>
-    </Compile>
-    <Compile Include="DiagnosticoOLD.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -120,9 +114,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPacienteNew.resx">
       <DependentUpon>MenuPacienteNew.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DiagnosticoOLD.resx">
-      <DependentUpon>DiagnosticoOLD.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistroNew.resx">
       <DependentUpon>RegistroNew.vb</DependentUpon>

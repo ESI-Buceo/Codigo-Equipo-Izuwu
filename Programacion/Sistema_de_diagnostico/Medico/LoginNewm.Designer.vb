@@ -86,7 +86,7 @@ Partial Class LoginNewm
         Me.btnEntrar.FlatAppearance.BorderSize = 0
         Me.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEntrar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnEntrar.Location = New System.Drawing.Point(63, 367)
+        Me.btnEntrar.Location = New System.Drawing.Point(74, 405)
         Me.btnEntrar.Name = "btnEntrar"
         Me.btnEntrar.Size = New System.Drawing.Size(106, 28)
         Me.btnEntrar.TabIndex = 6
@@ -98,7 +98,7 @@ Partial Class LoginNewm
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(12, 281)
+        Me.Label4.Location = New System.Drawing.Point(12, 338)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(130, 13)
         Me.Label4.TabIndex = 5
@@ -106,11 +106,12 @@ Partial Class LoginNewm
         '
         'txtContraseña
         '
+        Me.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtContraseña.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContraseña.Location = New System.Drawing.Point(15, 227)
+        Me.txtContraseña.Location = New System.Drawing.Point(15, 284)
         Me.txtContraseña.Name = "txtContraseña"
         Me.txtContraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.txtContraseña.Size = New System.Drawing.Size(177, 22)
+        Me.txtContraseña.Size = New System.Drawing.Size(177, 15)
         Me.txtContraseña.TabIndex = 4
         '
         'Label3
@@ -118,7 +119,7 @@ Partial Class LoginNewm
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(12, 202)
+        Me.Label3.Location = New System.Drawing.Point(12, 259)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(70, 15)
         Me.Label3.TabIndex = 3
@@ -127,11 +128,12 @@ Partial Class LoginNewm
         'txtUsuario
         '
         Me.txtUsuario.BackColor = System.Drawing.SystemColors.Window
+        Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario.Location = New System.Drawing.Point(15, 155)
+        Me.txtUsuario.Location = New System.Drawing.Point(15, 212)
         Me.txtUsuario.MaxLength = 8
         Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(177, 22)
+        Me.txtUsuario.Size = New System.Drawing.Size(177, 15)
         Me.txtUsuario.TabIndex = 2
         '
         'Label2
@@ -139,7 +141,7 @@ Partial Class LoginNewm
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(12, 130)
+        Me.Label2.Location = New System.Drawing.Point(12, 187)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(69, 15)
         Me.Label2.TabIndex = 1
@@ -148,22 +150,22 @@ Partial Class LoginNewm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 25.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(32, 42)
+        Me.Label1.Location = New System.Drawing.Point(29, 69)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(185, 40)
+        Me.Label1.Size = New System.Drawing.Size(217, 46)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "DiagnosTICK"
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(938, 1)
+        Me.Button1.Location = New System.Drawing.Point(939, 0)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(41, 26)
         Me.Button1.TabIndex = 3
@@ -172,12 +174,12 @@ Partial Class LoginNewm
         '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.Color.White
+        Me.Button2.BackColor = System.Drawing.Color.LightGray
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(891, 1)
+        Me.Button2.Location = New System.Drawing.Point(898, 0)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(41, 26)
         Me.Button2.TabIndex = 4
@@ -190,7 +192,7 @@ Partial Class LoginNewm
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(283, -3)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(696, 652)
+        Me.PictureBox1.Size = New System.Drawing.Size(707, 652)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
