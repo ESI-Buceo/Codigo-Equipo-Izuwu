@@ -11,7 +11,7 @@ Public Class ConexionBasedeDatos2
             "port=3306;" &
             "database=proyecto_izuwu;" &
             "uid=root;" &
-            "pwd=1234;"
+            "pwd=56505181bpe;"
 
         connection.Open()
         Return connection

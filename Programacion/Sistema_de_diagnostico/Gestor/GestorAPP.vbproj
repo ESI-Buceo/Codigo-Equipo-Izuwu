@@ -73,6 +73,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ABMPatologia.Designer.vb">
+      <DependentUpon>ABMPatologia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMPatologia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMSintoma.Designer.vb">
+      <DependentUpon>ABMSintoma.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMSintoma.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LoginGNew.Designer.vb">
       <DependentUpon>LoginGNew.vb</DependentUpon>
     </Compile>
@@ -103,6 +115,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ABMPatologia.resx">
+      <DependentUpon>ABMPatologia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMSintoma.resx">
+      <DependentUpon>ABMSintoma.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginGNew.resx">
       <DependentUpon>LoginGNew.vb</DependentUpon>
     </EmbeddedResource>

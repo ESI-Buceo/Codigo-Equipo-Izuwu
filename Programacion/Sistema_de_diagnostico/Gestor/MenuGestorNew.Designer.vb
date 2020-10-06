@@ -33,6 +33,8 @@ Partial Class MenuGestorNew
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.panelModificarEliminarMedico = New System.Windows.Forms.Panel()
+        Me.txtModDel_Segundoapellido = New System.Windows.Forms.TextBox()
+        Me.Label32 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label30 = New System.Windows.Forms.Label()
@@ -77,6 +79,8 @@ Partial Class MenuGestorNew
         Me.lstPatologia = New System.Windows.Forms.ListView()
         Me.lstSintomas = New System.Windows.Forms.ListView()
         Me.panelAgregarUsuario = New System.Windows.Forms.Panel()
+        Me.txtSegundoApellido = New System.Windows.Forms.TextBox()
+        Me.Label33 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.dateFechaNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -102,10 +106,6 @@ Partial Class MenuGestorNew
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
-        Me.txtModDel_Segundoapellido = New System.Windows.Forms.TextBox()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.txtSegundoApellido = New System.Windows.Forms.TextBox()
-        Me.Label33 = New System.Windows.Forms.Label()
         Me.panelMenuInicio.SuspendLayout()
         Me.panelModificarEliminarMedico.SuspendLayout()
         Me.panelABMSintoma.SuspendLayout()
@@ -267,6 +267,23 @@ Partial Class MenuGestorNew
         Me.panelModificarEliminarMedico.Name = "panelModificarEliminarMedico"
         Me.panelModificarEliminarMedico.Size = New System.Drawing.Size(685, 617)
         Me.panelModificarEliminarMedico.TabIndex = 7
+        '
+        'txtModDel_Segundoapellido
+        '
+        Me.txtModDel_Segundoapellido.Location = New System.Drawing.Point(206, 144)
+        Me.txtModDel_Segundoapellido.Name = "txtModDel_Segundoapellido"
+        Me.txtModDel_Segundoapellido.Size = New System.Drawing.Size(198, 20)
+        Me.txtModDel_Segundoapellido.TabIndex = 49
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label32.Location = New System.Drawing.Point(44, 142)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(156, 22)
+        Me.Label32.TabIndex = 48
+        Me.Label32.Text = "Segundo Apellido:"
         '
         'Label31
         '
@@ -725,6 +742,23 @@ Partial Class MenuGestorNew
         Me.panelAgregarUsuario.Size = New System.Drawing.Size(685, 617)
         Me.panelAgregarUsuario.TabIndex = 43
         '
+        'txtSegundoApellido
+        '
+        Me.txtSegundoApellido.Location = New System.Drawing.Point(206, 131)
+        Me.txtSegundoApellido.Name = "txtSegundoApellido"
+        Me.txtSegundoApellido.Size = New System.Drawing.Size(241, 20)
+        Me.txtSegundoApellido.TabIndex = 44
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label33.Location = New System.Drawing.Point(44, 129)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(156, 22)
+        Me.Label33.TabIndex = 43
+        Me.Label33.Text = "Segundo Apellido:"
+        '
         'Label18
         '
         Me.Label18.AutoSize = True
@@ -943,40 +977,6 @@ Partial Class MenuGestorNew
         Me.Label29.TabIndex = 5
         Me.Label29.Text = "Nombre:"
         '
-        'txtModDel_Segundoapellido
-        '
-        Me.txtModDel_Segundoapellido.Location = New System.Drawing.Point(206, 144)
-        Me.txtModDel_Segundoapellido.Name = "txtModDel_Segundoapellido"
-        Me.txtModDel_Segundoapellido.Size = New System.Drawing.Size(198, 20)
-        Me.txtModDel_Segundoapellido.TabIndex = 49
-        '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.Location = New System.Drawing.Point(44, 142)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(156, 22)
-        Me.Label32.TabIndex = 48
-        Me.Label32.Text = "Segundo Apellido:"
-        '
-        'txtSegundoApellido
-        '
-        Me.txtSegundoApellido.Location = New System.Drawing.Point(206, 131)
-        Me.txtSegundoApellido.Name = "txtSegundoApellido"
-        Me.txtSegundoApellido.Size = New System.Drawing.Size(241, 20)
-        Me.txtSegundoApellido.TabIndex = 44
-        '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label33.Location = New System.Drawing.Point(44, 129)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(156, 22)
-        Me.Label33.TabIndex = 43
-        Me.Label33.Text = "Segundo Apellido:"
-        '
         'MenuGestorNew
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -987,9 +987,9 @@ Partial Class MenuGestorNew
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.panelMenuInicio)
-        Me.Controls.Add(Me.panelAgregarUsuario)
         Me.Controls.Add(Me.panelABMSintoma)
         Me.Controls.Add(Me.panelModificarEliminarMedico)
+        Me.Controls.Add(Me.panelAgregarUsuario)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)

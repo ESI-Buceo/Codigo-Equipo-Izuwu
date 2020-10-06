@@ -228,7 +228,13 @@ Public Class MenuGestorNew
         cargarListaMedicos()
     End Sub
 
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        ABMSintoma.ShowDialog()
+    End Sub
 
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        ABMPatologia.ShowDialog()
+    End Sub
 
     Public Sub limpiarModDel_Medicos()
         txtModDel_PrimerNombre.Clear()
