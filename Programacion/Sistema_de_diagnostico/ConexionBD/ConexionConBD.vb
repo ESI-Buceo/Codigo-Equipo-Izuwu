@@ -8,9 +8,9 @@ Public Class ConexionConBD
             "driver={MySQL ODBC 8.0 Unicode Driver};" &
             "server=127.0.0.1;" &
             "port=3306;" &
-            "database=proyecto_izuwu;" &
+            "database=proyecto_prueba;" &
             "uid=root;" &
-            "pwd=56505181bpe;"
+            "pwd=1234;"
 
         connection.Open()
         Return connection
@@ -186,6 +186,24 @@ Public Class ConexionConBD
         Return listaReferencias
     End Function
 
+
+    Public Function ObtenerRefenciaPatologiaSintoma(ID As String) As List(Of Sintoma)
+        Dim connection As Connection = conectar()
+        Dim listaReferencias As New List(Of Sintoma)
+        Dim consulta As Recordset = connection.Execute("Select sintoma.nombre, sintoma.id_sin " &
+                                                        "from patologia inner join tiene on tiene.id_pat=patologia.id_pat " &
+                                                        "inner join sintoma on tiene.id_sin=sintoma.id_sin " &
+                                                        "where patologia.id_pat = '" & ID & "';")
+        Dim nombre, IDsintoma As String
+        While (Not consulta.EOF)
+            nombre = TryCast(consulta.Fields("nombre").Value, String)
+            IDsintoma = TryCast(consulta.Fields("id_sin").Value, String)
+            listaReferencias.Add(New Sintoma(nombre, IDsintoma))
+            consulta.MoveNext()
+        End While
+        connection.Close()
+        Return listaReferencias
+    End Function
     '-----------------------------------------------------------------------------------------------------------////
     'Funcion de logeo a la aplicacion
 
@@ -336,10 +354,17 @@ Public Class ConexionConBD
     Public Sub agregarPatologia(patologia As Patologia)
         Dim connection As Connection = conectar()
 
-        Dim agregar As Recordset = connection.Execute("insert into patologia values(" + patologia.nombre + "','" + patologia.prioridad + "','" + patologia.id + "');")
+        Dim agregar As Recordset = connection.Execute("insert into patologia values('" + patologia.nombre + "','" + patologia.prioridad + "','" + patologia.id + "');")
         connection.Close()
     End Sub
 
+    Public Sub agregarSintomaDePatologia(IDSintoma As String, IDPatologia As String)
+        Dim connection As Connection = conectar()
+
+        Dim agregar As Recordset = connection.Execute("insert into tiene values ('" + IDPatologia + "','" + IDSintoma + "');")
+        connection.Close()
+
+    End Sub
 
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------////
 
@@ -393,23 +418,18 @@ Public Class ConexionConBD
     '////------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Funcion para modificar datos
 
-    Public Sub actualizarNombreSintoma(ID As String, nom As String)
+    Public Sub actualizarSintoma(sintoma As Sintoma)
         Dim connection As Connection = conectar()
-        Dim actualizar As Recordset = connection.Execute("UPDATE sintoma set nombre = '" + nom + "' where id_sin = '" + ID + "';")
+        Dim actualizar As Recordset = connection.Execute("UPDATE sintoma set nombre = '" + sintoma.nombre + "' where id_sin = '" + sintoma.id + "';")
         connection.Close()
     End Sub
 
-    Public Sub actualizarNombrePatologia(ID As String, nom As String)
+    Public Sub actualizarPatologia(patologia As Patologia)
         Dim connection As Connection = conectar()
-        Dim actualizar As Recordset = connection.Execute("UPDATE patologia set nombre = '" + nom + "' where id_pac = '" + ID + "';")
+        Dim actualizar As Recordset = connection.Execute("UPDATE patologia set nombre = '" + patologia.nombre + "', prioridad ='" + patologia.prioridad + "' where id_pat = '" + patologia.id + "';")
         connection.Close()
     End Sub
 
-    Public Sub actualizarPrioridadPatologia(ID As String, prioridad As String)
-        Dim connection As Connection = conectar()
-        Dim actualizar As Recordset = connection.Execute("UPDATE patologia set prioridad = '" + prioridad + "' where id_sin = '" + ID + "';")
-        connection.Close()
-    End Sub
 
     Public Sub actualizarMedico(medico As Medico)
         Dim connection As Connection = conectar()

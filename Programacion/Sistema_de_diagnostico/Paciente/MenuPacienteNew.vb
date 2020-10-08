@@ -6,7 +6,7 @@ Public Class MenuPacienteNew
     Dim instancia As New LogicaAplicacion()
 
     Dim SintomasSeleccionados As New List(Of Sintoma)
-    Dim listaSintomas As List(Of Sintoma)
+    Dim listaSintomas As List(Of Sintoma) = instancia.ObtenerSintoma()
     Dim filtroSintomas As New List(Of Sintoma)
 
 
@@ -144,7 +144,7 @@ Public Class MenuPacienteNew
     End Sub
 
     Public Sub cargarListaSintomas()
-        listaSintomas = instancia.ObtenerSintoma()
+        ' listaSintomas = instancia.ObtenerSintoma()
         filtroSintomas.Clear()
         For Each filtro As Sintoma In listaSintomas
             If filtro.nombre.ToLower.StartsWith(txtBusquedaSintomas.Text.ToLower) Then

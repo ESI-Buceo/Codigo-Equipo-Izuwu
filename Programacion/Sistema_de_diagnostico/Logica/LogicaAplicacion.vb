@@ -28,6 +28,10 @@ Public Class LogicaAplicacion
         Return instancia.ObtenerReferenciaSintomaPatologia(ID)
     End Function
 
+    Public Function ObtenerReferenciaPatologiaSintoma(ID As String) As List(Of Sintoma)
+        Return instancia.ObtenerRefenciaPatologiaSintoma(ID)
+    End Function
+
     '----------------------------------------------------------------------------------------------------------------------------------------------
 
     Public Function loginMedico(userCI As String, pass As String) As Medico
@@ -56,6 +60,23 @@ Public Class LogicaAplicacion
 
     '---------------------------------------------------------------------------------------------------------------------------------------------
 
+    Public Sub AMsintoma(conf As Integer, sintoma As Sintoma)
+        If conf = -1 Then
+            agregarSintoma(sintoma)
+
+        ElseIf conf = 0 Then
+            actualizarSintoma(sintoma)
+        End If
+    End Sub
+
+    Public Sub AMpatologia(conf As Integer, patologia As Patologia)
+        If conf = -1 Then
+            agregarPatologia(patologia)
+        ElseIf conf = 0 Then
+            actualizarPatologia(patologia)
+        End If
+    End Sub
+    '-----------------------------------------------------------------------------------------------------------------------------------------------
     Public Sub agregarPaciente(paciente As Paciente)
         If paciente.nombre.Length = 0 Or paciente.apellido.Length = 0 Or paciente.CI.Length = 0 Or paciente.Direccion.Length = 0 Or paciente.email.Length = 0 Or paciente.contraseña.Length = 0 Or paciente.telefono.Length = 0 Or paciente.fechadenacimiento.Length = 0 Or paciente.segundonombre.Length = 0 Or paciente.segundoapellido.Length = 0 Or paciente.altura.Length = 0 Or paciente.peso.Length = 0 Or paciente.patologiaPrevia.Length = 0 Then
             Throw New Exception("Datos incompletos.")
@@ -80,7 +101,7 @@ Public Class LogicaAplicacion
         End If
     End Sub
 
-    Public Sub agregarSintoma(sintoma As Sintoma)
+    Private Sub agregarSintoma(sintoma As Sintoma)
         If sintoma.nombre.Length = 0 Or sintoma.id.Length = 0 Then
             Throw New Exception("Datos incompletos.")
         Else
@@ -93,6 +114,14 @@ Public Class LogicaAplicacion
             Throw New Exception("Datos incompletos.")
         Else
             instancia.agregarPatologia(patologia)
+        End If
+    End Sub
+
+    Public Sub agregarSintomaDePatologia(IDsintoma As String, IDpatologia As String)
+        If IDpatologia.Length = 0 Then
+            Throw New Exception("Ninguna patologia seleccionada.")
+        Else
+            instancia.agregarSintomaDePatologia(IDsintoma, IDpatologia)
         End If
     End Sub
 
@@ -119,28 +148,20 @@ Public Class LogicaAplicacion
 
     '-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    Public Sub actualizarNombreSintoma(ID As String, nom As String)
-        If nom.Length = 0 Then
+    Public Sub actualizarSintoma(sintoma As Sintoma)
+        If sintoma.nombre.Length = 0 Then
             Throw New Exception("Nombre vacio.")
         Else
-            instancia.actualizarNombreSintoma(ID, nom)
+            instancia.actualizarSintoma(sintoma)
         End If
     End Sub
-    Public Sub actualizarNombrePatologia(ID As String, nom As String)
-        If nom.Length = 0 Then
+    Public Sub actualizarPatologia(patologia As Patologia)
+        If patologia.nombre.Length = 0 Then
             Throw New Exception("Nombre vacio.")
         Else
-            instancia.actualizarNombrePatologia(ID, nom)
+            instancia.actualizarPatologia(patologia)
         End If
     End Sub
-    Public Sub actualizarPrioridadPatologia(ID As String, prioridad As String)
-        If prioridad.Length = 0 Then
-            Throw New Exception("Prioridad vacia.")
-        Else
-            instancia.actualizarPrioridadPatologia(ID, prioridad)
-        End If
-    End Sub
-
 
     Public Sub actualizarMedico(medico As Medico)
         If medico.nombre.Length = 0 Or medico.apellido.Length = 0 Or medico.email.Length = 0 Or medico.Direccion.Length = 0 Or medico.CI.Length = 0 Or medico.contraseña.Length = 0 Or medico.telefono.Length = 0 Or medico.fechadenacimiento.Length = 0 Or medico.especializacion.Length = 0 Or medico.segundonombre.Length = 0 Or medico.segundoapellido.Length = 0 Or medico.lugarDeTrabajo.Length = 0 Then

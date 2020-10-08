@@ -66,12 +66,12 @@ Partial Class MenuGestorNew
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.panelABMSintoma = New System.Windows.Forms.Panel()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.btnModPatologia = New System.Windows.Forms.Button()
+        Me.btnModSintoma = New System.Windows.Forms.Button()
+        Me.btnAgregarPatologia = New System.Windows.Forms.Button()
+        Me.btnAgregarSintoma = New System.Windows.Forms.Button()
+        Me.txtBuscarSintoma = New System.Windows.Forms.TextBox()
+        Me.txtBuscarPatologia = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -106,6 +106,8 @@ Partial Class MenuGestorNew
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
+        Me.btnEliminarSintoma = New System.Windows.Forms.Button()
+        Me.btnEliminarPatologia = New System.Windows.Forms.Button()
         Me.panelMenuInicio.SuspendLayout()
         Me.panelModificarEliminarMedico.SuspendLayout()
         Me.panelABMSintoma.SuspendLayout()
@@ -198,7 +200,7 @@ Partial Class MenuGestorNew
         Me.btnMenu_ABMSintomas.Name = "btnMenu_ABMSintomas"
         Me.btnMenu_ABMSintomas.Size = New System.Drawing.Size(291, 47)
         Me.btnMenu_ABMSintomas.TabIndex = 2
-        Me.btnMenu_ABMSintomas.Text = "Agregar / Modificar Sintomas"
+        Me.btnMenu_ABMSintomas.Text = "Agregar / Modificar Sintomas y Patologias"
         Me.btnMenu_ABMSintomas.UseVisualStyleBackColor = False
         '
         'Button2
@@ -559,12 +561,14 @@ Partial Class MenuGestorNew
         '
         'panelABMSintoma
         '
-        Me.panelABMSintoma.Controls.Add(Me.Button5)
-        Me.panelABMSintoma.Controls.Add(Me.Button4)
-        Me.panelABMSintoma.Controls.Add(Me.Button6)
-        Me.panelABMSintoma.Controls.Add(Me.Button3)
-        Me.panelABMSintoma.Controls.Add(Me.TextBox9)
-        Me.panelABMSintoma.Controls.Add(Me.TextBox10)
+        Me.panelABMSintoma.Controls.Add(Me.btnEliminarPatologia)
+        Me.panelABMSintoma.Controls.Add(Me.btnEliminarSintoma)
+        Me.panelABMSintoma.Controls.Add(Me.btnModPatologia)
+        Me.panelABMSintoma.Controls.Add(Me.btnModSintoma)
+        Me.panelABMSintoma.Controls.Add(Me.btnAgregarPatologia)
+        Me.panelABMSintoma.Controls.Add(Me.btnAgregarSintoma)
+        Me.panelABMSintoma.Controls.Add(Me.txtBuscarSintoma)
+        Me.panelABMSintoma.Controls.Add(Me.txtBuscarPatologia)
         Me.panelABMSintoma.Controls.Add(Me.Label13)
         Me.panelABMSintoma.Controls.Add(Me.Label12)
         Me.panelABMSintoma.Controls.Add(Me.Label11)
@@ -576,75 +580,75 @@ Partial Class MenuGestorNew
         Me.panelABMSintoma.Size = New System.Drawing.Size(689, 618)
         Me.panelABMSintoma.TabIndex = 8
         '
-        'Button5
+        'btnModPatologia
         '
-        Me.Button5.BackColor = System.Drawing.Color.White
-        Me.Button5.BackgroundImage = CType(resources.GetObject("Button5.BackgroundImage"), System.Drawing.Image)
-        Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button5.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Button5.FlatAppearance.BorderSize = 0
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Location = New System.Drawing.Point(658, 570)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(22, 20)
-        Me.Button5.TabIndex = 14
-        Me.Button5.UseVisualStyleBackColor = False
+        Me.btnModPatologia.BackColor = System.Drawing.Color.White
+        Me.btnModPatologia.BackgroundImage = CType(resources.GetObject("btnModPatologia.BackgroundImage"), System.Drawing.Image)
+        Me.btnModPatologia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnModPatologia.Cursor = System.Windows.Forms.Cursors.Default
+        Me.btnModPatologia.FlatAppearance.BorderSize = 0
+        Me.btnModPatologia.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModPatologia.Location = New System.Drawing.Point(658, 570)
+        Me.btnModPatologia.Name = "btnModPatologia"
+        Me.btnModPatologia.Size = New System.Drawing.Size(22, 20)
+        Me.btnModPatologia.TabIndex = 14
+        Me.btnModPatologia.UseVisualStyleBackColor = False
         '
-        'Button4
+        'btnModSintoma
         '
-        Me.Button4.BackColor = System.Drawing.Color.White
-        Me.Button4.BackgroundImage = CType(resources.GetObject("Button4.BackgroundImage"), System.Drawing.Image)
-        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button4.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Location = New System.Drawing.Point(299, 570)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(22, 20)
-        Me.Button4.TabIndex = 13
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.btnModSintoma.BackColor = System.Drawing.Color.White
+        Me.btnModSintoma.BackgroundImage = CType(resources.GetObject("btnModSintoma.BackgroundImage"), System.Drawing.Image)
+        Me.btnModSintoma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnModSintoma.Cursor = System.Windows.Forms.Cursors.Default
+        Me.btnModSintoma.FlatAppearance.BorderSize = 0
+        Me.btnModSintoma.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModSintoma.Location = New System.Drawing.Point(299, 570)
+        Me.btnModSintoma.Name = "btnModSintoma"
+        Me.btnModSintoma.Size = New System.Drawing.Size(22, 20)
+        Me.btnModSintoma.TabIndex = 13
+        Me.btnModSintoma.UseVisualStyleBackColor = False
         '
-        'Button6
+        'btnAgregarPatologia
         '
-        Me.Button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.Button6.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button6.FlatAppearance.BorderSize = 0
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button6.Location = New System.Drawing.Point(473, 570)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(116, 28)
-        Me.Button6.TabIndex = 12
-        Me.Button6.Text = "Agregar Patologia"
-        Me.Button6.UseVisualStyleBackColor = False
+        Me.btnAgregarPatologia.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.btnAgregarPatologia.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnAgregarPatologia.FlatAppearance.BorderSize = 0
+        Me.btnAgregarPatologia.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregarPatologia.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnAgregarPatologia.Location = New System.Drawing.Point(473, 570)
+        Me.btnAgregarPatologia.Name = "btnAgregarPatologia"
+        Me.btnAgregarPatologia.Size = New System.Drawing.Size(116, 28)
+        Me.btnAgregarPatologia.TabIndex = 12
+        Me.btnAgregarPatologia.Text = "Agregar Patologia"
+        Me.btnAgregarPatologia.UseVisualStyleBackColor = False
         '
-        'Button3
+        'btnAgregarSintoma
         '
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button3.Location = New System.Drawing.Point(116, 570)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(106, 28)
-        Me.Button3.TabIndex = 9
-        Me.Button3.Text = "Agregar Sintoma"
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.btnAgregarSintoma.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.btnAgregarSintoma.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnAgregarSintoma.FlatAppearance.BorderSize = 0
+        Me.btnAgregarSintoma.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregarSintoma.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnAgregarSintoma.Location = New System.Drawing.Point(116, 570)
+        Me.btnAgregarSintoma.Name = "btnAgregarSintoma"
+        Me.btnAgregarSintoma.Size = New System.Drawing.Size(106, 28)
+        Me.btnAgregarSintoma.TabIndex = 9
+        Me.btnAgregarSintoma.Text = "Agregar Sintoma"
+        Me.btnAgregarSintoma.UseVisualStyleBackColor = False
         '
-        'TextBox9
+        'txtBuscarSintoma
         '
-        Me.TextBox9.Location = New System.Drawing.Point(154, 98)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(167, 20)
-        Me.TextBox9.TabIndex = 8
+        Me.txtBuscarSintoma.Location = New System.Drawing.Point(154, 98)
+        Me.txtBuscarSintoma.Name = "txtBuscarSintoma"
+        Me.txtBuscarSintoma.Size = New System.Drawing.Size(167, 20)
+        Me.txtBuscarSintoma.TabIndex = 8
         '
-        'TextBox10
+        'txtBuscarPatologia
         '
-        Me.TextBox10.Location = New System.Drawing.Point(510, 98)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(170, 20)
-        Me.TextBox10.TabIndex = 7
+        Me.txtBuscarPatologia.Location = New System.Drawing.Point(510, 98)
+        Me.txtBuscarPatologia.Name = "txtBuscarPatologia"
+        Me.txtBuscarPatologia.Size = New System.Drawing.Size(170, 20)
+        Me.txtBuscarPatologia.TabIndex = 7
         '
         'Label13
         '
@@ -977,6 +981,30 @@ Partial Class MenuGestorNew
         Me.Label29.TabIndex = 5
         Me.Label29.Text = "Nombre:"
         '
+        'btnEliminarSintoma
+        '
+        Me.btnEliminarSintoma.BackgroundImage = CType(resources.GetObject("btnEliminarSintoma.BackgroundImage"), System.Drawing.Image)
+        Me.btnEliminarSintoma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnEliminarSintoma.FlatAppearance.BorderSize = 0
+        Me.btnEliminarSintoma.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminarSintoma.Location = New System.Drawing.Point(9, 569)
+        Me.btnEliminarSintoma.Name = "btnEliminarSintoma"
+        Me.btnEliminarSintoma.Size = New System.Drawing.Size(25, 21)
+        Me.btnEliminarSintoma.TabIndex = 15
+        Me.btnEliminarSintoma.UseVisualStyleBackColor = True
+        '
+        'btnEliminarPatologia
+        '
+        Me.btnEliminarPatologia.BackgroundImage = CType(resources.GetObject("btnEliminarPatologia.BackgroundImage"), System.Drawing.Image)
+        Me.btnEliminarPatologia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnEliminarPatologia.FlatAppearance.BorderSize = 0
+        Me.btnEliminarPatologia.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminarPatologia.Location = New System.Drawing.Point(368, 569)
+        Me.btnEliminarPatologia.Name = "btnEliminarPatologia"
+        Me.btnEliminarPatologia.Size = New System.Drawing.Size(25, 21)
+        Me.btnEliminarPatologia.TabIndex = 16
+        Me.btnEliminarPatologia.UseVisualStyleBackColor = True
+        '
         'MenuGestorNew
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -994,6 +1022,7 @@ Partial Class MenuGestorNew
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)
         Me.Name = "MenuGestorNew"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MenuPacienteNew"
         Me.panelMenuInicio.ResumeLayout(False)
         Me.panelMenuInicio.PerformLayout()
@@ -1033,18 +1062,18 @@ Partial Class MenuGestorNew
     Friend WithEvents Label10 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents panelABMSintoma As Panel
-    Friend WithEvents TextBox9 As TextBox
-    Friend WithEvents TextBox10 As TextBox
+    Friend WithEvents txtBuscarSintoma As TextBox
+    Friend WithEvents txtBuscarPatologia As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents lstPatologia As ListView
     Friend WithEvents lstSintomas As ListView
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button5 As Button
+    Friend WithEvents btnModSintoma As Button
+    Friend WithEvents btnAgregarPatologia As Button
+    Friend WithEvents btnAgregarSintoma As Button
+    Friend WithEvents btnModPatologia As Button
     Friend WithEvents txtModDel_SegundoNombre As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label15 As Label
@@ -1090,4 +1119,6 @@ Partial Class MenuGestorNew
     Friend WithEvents Label32 As Label
     Friend WithEvents txtSegundoApellido As TextBox
     Friend WithEvents Label33 As Label
+    Friend WithEvents btnEliminarPatologia As Button
+    Friend WithEvents btnEliminarSintoma As Button
 End Class

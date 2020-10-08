@@ -10,6 +10,12 @@ Public Class MenuGestorNew
     Dim listaSintomas As List(Of Sintoma)
     Dim listaPatologia As List(Of Patologia)
 
+    Dim AltaModSintoma As New ABMSintoma()
+    Dim AltaModPatologia As New ABMPatologia()
+
+    Dim filtroSintomas As New List(Of Sintoma)
+    Dim filtroPatologias As New List(Of Patologia)
+
     'Definir variables globales; estas van despues de la linea de inherits
 
     'Estas tres subrutinas permiten desplazar el formulario. 
@@ -53,7 +59,8 @@ Public Class MenuGestorNew
         panelModificarEliminarMedico.Visible = False
         panelABMSintoma.Visible = False
 
-        cargarListaSintomaPatologia()
+        cargarListaSintoma()
+        cargarListaPatologia()
         cargarListaMedicos()
 
 
@@ -80,7 +87,8 @@ Public Class MenuGestorNew
         btnMenu_ModUsuario.BackColor = Color.FromArgb(48, 48, 48)
         limpiarListaPatologia()
         limpiarListaSintomas()
-        cargarListaSintomaPatologia()
+        cargarListaSintoma()
+        cargarListaPatologia()
 
         panelAgregarUsuario.Visible = False
         panelModificarEliminarMedico.Visible = False
@@ -137,10 +145,6 @@ Public Class MenuGestorNew
 
     End Sub
 
-
-
-
-
     Private Sub btnAgregarMedico_Click(sender As Object, e As EventArgs) Handles btnAgregarMedico.Click
         Dim fecha As Date = dateFechaNacimiento.Value.Date
         Dim fechastring As String = Format(fecha, "yyyy/MM/dd")
@@ -177,24 +181,153 @@ Public Class MenuGestorNew
     End Sub
 
 
+
+
+    Private Sub btnEliminarMedico_Click(sender As Object, e As EventArgs) Handles btnEliminarMedico.Click
+        instancia.eliminarMedico(listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).ID)
+        limpiarModDel_Medicos()
+        cargarListaMedicos()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnModSintoma.Click
+        If lstSintomas.FocusedItem.Index = Nothing Then
+            MsgBox("Ningun sintoma seleccionado")
+        Else
+            Dim sintoma As New Sintoma(listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).nombre, listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).id)
+            AltaModSintoma.sintoma = sintoma
+            AltaModSintoma.confirmar = 0
+
+
+            AltaModSintoma.ShowDialog()
+        End If
+
+    End Sub
+
+
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnAgregarSintoma.Click
+        AltaModSintoma.confirmar = -1
+        AltaModSintoma.sintoma = Nothing
+        AltaModSintoma.ShowDialog()
+
+
+    End Sub
+
+    Private Sub btnAgregarPatologia_Click(sender As Object, e As EventArgs) Handles btnAgregarPatologia.Click
+        AltaModPatologia.confirmar = -1
+        AltaModPatologia.ShowDialog()
+
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles btnModPatologia.Click
+        If lstPatologia.FocusedItem.Index = Nothing Then
+            MsgBox("Ninguna patologia seleccionada")
+        Else
+            Dim patologia As New Patologia(listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).nombre, listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).prioridad, listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).id)
+            AltaModPatologia.patologia = patologia
+            AltaModPatologia.confirmar = 0
+            AltaModPatologia.ShowDialog()
+        End If
+
+    End Sub
+
+    Private Sub txtBuscarSintoma_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarSintoma.TextChanged
+        filtroSintomas.Clear()
+        For Each filtro As Sintoma In listaSintomas
+            If filtro.nombre.ToLower.StartsWith(txtBuscarSintoma.Text.ToLower) Then
+                filtroSintomas.Add(filtro)
+            End If
+        Next
+        lstSintomas.Clear()
+        For Each resultado As Sintoma In filtroSintomas
+            lstSintomas.Items.Add(resultado.nombre)
+        Next
+    End Sub
+
+    Private Sub txtBuscarPatologia_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarPatologia.TextChanged
+        filtroPatologias.Clear()
+        For Each filtro As Patologia In listaPatologia
+            If filtro.nombre.ToLower.StartsWith(txtBuscarPatologia.Text.ToLower) Then
+                filtroPatologias.Add(filtro)
+            End If
+        Next
+        lstPatologia.Clear()
+        For Each resultado As Patologia In filtroPatologias
+            lstPatologia.Items.Add(resultado.nombre)
+        Next
+    End Sub
+
+    Private Sub btnEliminarSintoma_Click(sender As Object, e As EventArgs) Handles btnEliminarSintoma.Click
+
+        If lstSintomas.SelectedItems.Count = 0 Then
+            MsgBox("Ningun sintoma seleccionado")
+        Else
+            Dim pregunta As DialogResult = MessageBox.Show("¿Esta seguro de que quiere eliminar el sintoma?", "Eliminar", MessageBoxButtons.YesNo)
+            If pregunta = DialogResult.Yes Then
+                Dim patologiaDeSintoma As List(Of Patologia) = instancia.ObtenerReferenciaSintomaPatologia(listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).id)
+                If patologiaDeSintoma.Count < 0 Then
+                    For Each patologia As Patologia In patologiaDeSintoma
+                        instancia.eliminarReferenciaPatologiaSintoma(listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).id, patologia.id)
+                    Next
+
+
+                End If
+                instancia.eliminarSintoma(listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).id)
+                limpiarListaSintomas()
+                cargarListaSintoma()
+                limpiarListaPatologia()
+                cargarListaPatologia()
+            End If
+
+        End If
+    End Sub
+
+    Private Sub btnEliminarPatologia_Click(sender As Object, e As EventArgs) Handles btnEliminarPatologia.Click
+
+        If lstPatologia.SelectedItems.Count = 0 Then
+            MsgBox("Ninguna patologia seleccionada")
+        Else
+            Dim pregunta As DialogResult = MessageBox.Show("¿Esta seguro de que quiere eliminar la patologia?", "Eliminar", MessageBoxButtons.YesNo)
+            If pregunta = DialogResult.Yes Then
+                Dim sintomaDePatologia As List(Of Sintoma) = instancia.ObtenerReferenciaPatologiaSintoma(listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).id)
+                If sintomaDePatologia.Count < 0 Then
+                    For Each sintoma As Sintoma In sintomaDePatologia
+                        instancia.eliminarReferenciaPatologiaSintoma(sintoma.id, listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).id)
+                    Next
+
+
+                End If
+                instancia.eliminarPatologia(listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).id)
+                limpiarListaSintomas()
+                cargarListaSintoma()
+                limpiarListaPatologia()
+                cargarListaPatologia()
+            End If
+
+        End If
+
+
+    End Sub
+
     '-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Lista de funciones para limpiar diferentes areas de la pantalla (textbox, listbox, etc.)
 
     Public Sub limpiarListaSintomas()
         lstSintomas.Clear()
     End Sub
-    Public Sub cargarListaSintomaPatologia()
+    Public Sub cargarListaSintoma()
         listaSintomas = instancia.ObtenerSintoma()
         For Each sintoma As Sintoma In listaSintomas
             lstSintomas.Items.Add(sintoma.nombre)
         Next
+    End Sub
+    Public Sub cargarListaPatologia()
 
         listaPatologia = instancia.ObtenerPatologia()
         For Each patologia As Patologia In listaPatologia
             lstPatologia.Items.Add(patologia.nombre)
         Next
     End Sub
-
     Public Sub cargarListaMedicos()
         listaMedicos = instancia.ObtenerMedicos()
 
@@ -202,11 +335,9 @@ Public Class MenuGestorNew
             lstModDel_Medicos.Items.Add(medico.CI + " " + medico.nombre(0) + " " + medico.apellido(0))
         Next
     End Sub
-
     Public Sub limpiarListaPatologia()
         lstPatologia.Clear()
     End Sub
-
     Private Sub limpiarAgregarMedico()
         txtPrimerNombre.Clear()
         txtSegundoNombre.Clear()
@@ -222,19 +353,7 @@ Public Class MenuGestorNew
         txtConfContraseña.Clear()
     End Sub
 
-    Private Sub btnEliminarMedico_Click(sender As Object, e As EventArgs) Handles btnEliminarMedico.Click
-        instancia.eliminarMedico(listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).ID)
-        limpiarModDel_Medicos()
-        cargarListaMedicos()
-    End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        ABMSintoma.ShowDialog()
-    End Sub
-
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        ABMPatologia.ShowDialog()
-    End Sub
 
     Public Sub limpiarModDel_Medicos()
         txtModDel_PrimerNombre.Clear()
