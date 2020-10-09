@@ -124,11 +124,17 @@ Public Class MenuGestorNew
     End Sub
 
     Private Sub btnAceptarModificar_Click(sender As Object, e As EventArgs) Handles btnAceptarModificar.Click
-        Dim fecha As Date = dateModDel_FechaNacimiento.Value.Date
-        Dim fechastring As String = Format(fecha, "yyyy/MM/dd")
-        instancia.actualizarMedico(New Medico(txtModDel_PrimerNombre.Text, txtModDel_SegundoNombre.Text, txtModDel_Apellido.Text, txtModDel_Segundoapellido.Text, txtModDel_Email.Text, listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).ID, txtModDel_Direccion.Text, txtModDel_CI.Text, txtModDel_Contraseña.Text, txtModDel_Telefono.Text, fechastring, txtModDel_Especializacion.Text, txtModDel_Empresa.Text))
-        limpiarModDel_Medicos()
-        cargarListaMedicos()
+        Try
+
+
+            Dim fecha As Date = dateModDel_FechaNacimiento.Value.Date
+            Dim fechastring As String = Format(fecha, "yyyy/MM/dd")
+            instancia.actualizarMedico(New Medico(txtModDel_PrimerNombre.Text, txtModDel_SegundoNombre.Text, txtModDel_Apellido.Text, txtModDel_Segundoapellido.Text, txtModDel_Email.Text, listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).ID, txtModDel_Direccion.Text, txtModDel_CI.Text, txtModDel_Contraseña.Text, txtModDel_Telefono.Text, fechastring, txtModDel_Especializacion.Text, txtModDel_Empresa.Text))
+            limpiarModDel_Medicos()
+            cargarListaMedicos()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -146,20 +152,25 @@ Public Class MenuGestorNew
     End Sub
 
     Private Sub btnAgregarMedico_Click(sender As Object, e As EventArgs) Handles btnAgregarMedico.Click
-        Dim fecha As Date = dateFechaNacimiento.Value.Date
-        Dim fechastring As String = Format(fecha, "yyyy/MM/dd")
-        Dim ID As String = instancia.codigoRandom(1)
+        Try
 
-        If txtContraseña.Text = txtConfContraseña.Text Then
-            instancia.agregarMedico(New Medico(txtPrimerNombre.Text, txtSegundoNombre.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, ID, txtDireccion.Text, txtCI.Text, txtContraseña.Text, txtTelefono.Text, fechastring, txtEspecializacion.Text, txtEmpresa.Text))
-            limpiarAgregarMedico()
-        Else
-            MsgBox("Las contraseñas no coiniciden.")
-        End If
+
+            Dim fecha As Date = dateFechaNacimiento.Value.Date
+            Dim fechastring As String = Format(fecha, "yyyy/MM/dd")
+            Dim ID As String = instancia.codigoRandom(1)
+
+            If txtContraseña.Text = txtConfContraseña.Text Then
+                instancia.agregarMedico(New Medico(txtPrimerNombre.Text, txtSegundoNombre.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, ID, txtDireccion.Text, txtCI.Text, txtContraseña.Text, txtTelefono.Text, fechastring, txtEspecializacion.Text, txtEmpresa.Text))
+                limpiarAgregarMedico()
+            Else
+                MsgBox("Las contraseñas no coiniciden.")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub lstMedicos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstModDel_Medicos.SelectedIndexChanged
-
 
         txtModDel_PrimerNombre.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).nombre
         txtModDel_SegundoNombre.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).segundonombre
@@ -179,9 +190,6 @@ Public Class MenuGestorNew
         txtModDel_Empresa.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).lugarDeTrabajo
 
     End Sub
-
-
-
 
     Private Sub btnEliminarMedico_Click(sender As Object, e As EventArgs) Handles btnEliminarMedico.Click
         instancia.eliminarMedico(listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).ID)
@@ -258,54 +266,64 @@ Public Class MenuGestorNew
     End Sub
 
     Private Sub btnEliminarSintoma_Click(sender As Object, e As EventArgs) Handles btnEliminarSintoma.Click
-
-        If lstSintomas.SelectedItems.Count = 0 Then
-            MsgBox("Ningun sintoma seleccionado")
-        Else
-            Dim pregunta As DialogResult = MessageBox.Show("¿Esta seguro de que quiere eliminar el sintoma?", "Eliminar", MessageBoxButtons.YesNo)
-            If pregunta = DialogResult.Yes Then
-                Dim patologiaDeSintoma As List(Of Patologia) = instancia.ObtenerReferenciaSintomaPatologia(listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).id)
-                If patologiaDeSintoma.Count < 0 Then
-                    For Each patologia As Patologia In patologiaDeSintoma
-                        instancia.eliminarReferenciaPatologiaSintoma(listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).id, patologia.id)
-                    Next
+        Try
 
 
+            If lstSintomas.SelectedItems.Count = 0 Then
+                MsgBox("Ningun sintoma seleccionado")
+            Else
+                Dim pregunta As DialogResult = MessageBox.Show("¿Esta seguro de que quiere eliminar el sintoma?", "Eliminar", MessageBoxButtons.YesNo)
+                If pregunta = DialogResult.Yes Then
+                    Dim patologiaDeSintoma As List(Of Patologia) = instancia.ObtenerReferenciaSintomaPatologia(listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).id)
+                    If patologiaDeSintoma.Count < 0 Then
+                        For Each patologia As Patologia In patologiaDeSintoma
+                            instancia.eliminarReferenciaPatologiaSintoma(listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).id, patologia.id)
+                        Next
+
+
+                    End If
+                    instancia.eliminarSintoma(listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).id)
+                    limpiarListaSintomas()
+                    cargarListaSintoma()
+                    limpiarListaPatologia()
+                    cargarListaPatologia()
                 End If
-                instancia.eliminarSintoma(listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).id)
-                limpiarListaSintomas()
-                cargarListaSintoma()
-                limpiarListaPatologia()
-                cargarListaPatologia()
-            End If
 
-        End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub btnEliminarPatologia_Click(sender As Object, e As EventArgs) Handles btnEliminarPatologia.Click
+        Try
 
-        If lstPatologia.SelectedItems.Count = 0 Then
-            MsgBox("Ninguna patologia seleccionada")
-        Else
-            Dim pregunta As DialogResult = MessageBox.Show("¿Esta seguro de que quiere eliminar la patologia?", "Eliminar", MessageBoxButtons.YesNo)
-            If pregunta = DialogResult.Yes Then
-                Dim sintomaDePatologia As List(Of Sintoma) = instancia.ObtenerReferenciaPatologiaSintoma(listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).id)
-                If sintomaDePatologia.Count < 0 Then
-                    For Each sintoma As Sintoma In sintomaDePatologia
-                        instancia.eliminarReferenciaPatologiaSintoma(sintoma.id, listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).id)
-                    Next
+            If lstPatologia.SelectedItems.Count = 0 Then
+                MsgBox("Ninguna patologia seleccionada")
+            Else
+                Dim pregunta As DialogResult = MessageBox.Show("¿Esta seguro de que quiere eliminar la patologia?", "Eliminar", MessageBoxButtons.YesNo)
+                If pregunta = DialogResult.Yes Then
+                    Dim sintomaDePatologia As List(Of Sintoma) = instancia.ObtenerReferenciaPatologiaSintoma(listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).id)
+                    If sintomaDePatologia.Count < 0 Then
 
+                        For Each sintoma As Sintoma In sintomaDePatologia
+                            instancia.eliminarReferenciaPatologiaSintoma(sintoma.id, listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).id)
+                        Next
+
+                    End If
+
+                    instancia.eliminarPatologia(listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).id)
+                    limpiarListaSintomas()
+                    cargarListaSintoma()
+                    limpiarListaPatologia()
+                    cargarListaPatologia()
 
                 End If
-                instancia.eliminarPatologia(listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).id)
-                limpiarListaSintomas()
-                cargarListaSintoma()
-                limpiarListaPatologia()
-                cargarListaPatologia()
+
             End If
-
-        End If
-
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
 

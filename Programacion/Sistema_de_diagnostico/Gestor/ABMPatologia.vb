@@ -6,7 +6,6 @@ Public Class ABMPatologia
     Dim instancia As New LogicaAplicacion()
 
 
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
     End Sub
@@ -26,6 +25,31 @@ Public Class ABMPatologia
         End If
     End Sub
 
+    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+        Try
+
+            If confirmar = -1 Then
+                instancia.AMpatologia(confirmar, New Patologia(txtNombre.Text, numPrioridad.Value.ToString, txtIDPatologia.Text))
+            ElseIf confirmar = 0 Then
+                instancia.AMpatologia(confirmar, New Patologia(txtNombre.Text, numPrioridad.Value.ToString, txtIDPatologia.Text))
+            End If
+
+            MenuGestorNew.limpiarListaPatologia()
+            MenuGestorNew.limpiarListaSintomas()
+            MenuGestorNew.cargarListaSintoma()
+            MenuGestorNew.cargarListaPatologia()
+            Me.Close()
+
+        Catch ex As Exception
+
+            MsgBox(ex.Message)
+
+        End Try
+    End Sub
+
+    '---------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'Funcion para cargar listas, textbox, etc.
+
     Public Sub limpiarPantalla()
         txtNombre.Clear()
         txtIDPatologia.Clear()
@@ -37,19 +61,5 @@ Public Class ABMPatologia
         txtNombre.Text = patologia.nombre
         txtIDPatologia.Text = patologia.id
         numPrioridad.Value = Convert.ToInt32(patologia.prioridad)
-    End Sub
-
-    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        If confirmar = -1 Then
-            instancia.AMpatologia(confirmar, New Patologia(txtNombre.Text, numPrioridad.Value.ToString, txtIDPatologia.Text))
-        ElseIf confirmar = 0 Then
-            instancia.AMpatologia(confirmar, New Patologia(txtNombre.Text, numPrioridad.Value.ToString, txtIDPatologia.Text))
-        End If
-
-        MenuGestorNew.limpiarListaPatologia()
-        MenuGestorNew.limpiarListaSintomas()
-        MenuGestorNew.cargarListaSintoma()
-        MenuGestorNew.cargarListaPatologia()
-        Me.Close()
     End Sub
 End Class

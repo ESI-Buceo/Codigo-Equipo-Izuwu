@@ -55,16 +55,13 @@ Public Class LoginGNew
             Me.Hide()
             MenuGestorNew.ShowDialog()
             Me.Close()
+
         Catch ex As Exception
             MsgBox(ex.Message)
+
         End Try
 
-
-
-
     End Sub
-
-
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
@@ -73,14 +70,6 @@ Public Class LoginGNew
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
-
-    ' Private Sub Label6_MouseMove(sender As Object, e As MouseEventArgs) 
-    '    Label6.ForeColor = Color.FromArgb(0, 0, 255)
-    'End Sub
-
-    'Private Sub Label6_MouseLeave(sender As Object, e As EventArgs) 
-    '   Label6.ForeColor = Color.FromArgb(255, 255, 255)
-    'End Sub
 
     Private Sub Label6_Click(sender As Object, e As EventArgs) 
         Me.Hide()
