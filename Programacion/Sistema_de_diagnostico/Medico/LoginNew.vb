@@ -48,12 +48,14 @@ Public Class LoginNew
         Try
             'Se toman los datos de los cuadros de texto CI y Contraseña
             Dim medico As Medico = Instancia.loginMedico(txtUsuario.Text, txtContraseña.Text)
-
+            Dim menuPaciente As New MenuMedicoNew()
+            menuPaciente.medico = medico
 
 
             Me.Hide()
-            MenuMedicoNew.ShowDialog()
+            menuPaciente.ShowDialog()
             Me.Close()
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

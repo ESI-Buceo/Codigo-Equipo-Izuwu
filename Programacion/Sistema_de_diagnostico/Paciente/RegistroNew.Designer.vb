@@ -336,10 +336,10 @@ Partial Class RegistroNew
         'cbxSexo
         '
         Me.cbxSexo.FormattingEnabled = True
-        Me.cbxSexo.Items.AddRange(New Object() {"Hombre", "Mujer"})
+        Me.cbxSexo.Items.AddRange(New Object() {"H", "M"})
         Me.cbxSexo.Location = New System.Drawing.Point(431, 190)
         Me.cbxSexo.Name = "cbxSexo"
-        Me.cbxSexo.Size = New System.Drawing.Size(167, 21)
+        Me.cbxSexo.Size = New System.Drawing.Size(45, 21)
         Me.cbxSexo.TabIndex = 27
         '
         'dateFechaNacimiento
@@ -480,6 +480,7 @@ Partial Class RegistroNew
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(980, 645)
         Me.Name = "RegistroNew"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

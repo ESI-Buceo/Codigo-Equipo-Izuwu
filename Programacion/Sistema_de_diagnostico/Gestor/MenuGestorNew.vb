@@ -1,6 +1,8 @@
 ﻿Imports Datos, Logica
 Public Class MenuGestorNew
 
+    Public gestor As Gestor
+
     Dim ex, ey As Integer
     Dim Arrastre As Boolean
 
@@ -55,9 +57,10 @@ Public Class MenuGestorNew
         btnMenu_ABMSintomas.BackColor = Color.FromArgb(48, 48, 48)
         btnMenu_ModUsuario.BackColor = Color.FromArgb(48, 48, 48)
 
-        panelAgregarUsuario.Visible = False
-        panelModificarEliminarMedico.Visible = False
-        panelABMSintoma.Visible = False
+        labIniciales.Text = gestor.nombre(0) + " " + gestor.apellido(0)
+        labNombre.Text = gestor.nombre + " " + gestor.apellido
+        nullvisible()
+
 
         cargarListaSintoma()
         cargarListaPatologia()
@@ -72,11 +75,10 @@ Public Class MenuGestorNew
         btnMenu_ABMSintomas.BackColor = Color.FromArgb(48, 48, 48)
         btnMenu_ModUsuario.BackColor = Color.FromArgb(48, 48, 48)
 
-
+        nullvisible()
 
         panelAgregarUsuario.Visible = True
-        panelModificarEliminarMedico.Visible = False
-        panelABMSintoma.Visible = False
+
 
 
     End Sub
@@ -89,9 +91,8 @@ Public Class MenuGestorNew
         limpiarListaSintomas()
         cargarListaSintoma()
         cargarListaPatologia()
+        nullvisible()
 
-        panelAgregarUsuario.Visible = False
-        panelModificarEliminarMedico.Visible = False
         panelABMSintoma.Visible = True
     End Sub
 
@@ -102,10 +103,10 @@ Public Class MenuGestorNew
         btnMenu_ModUsuario.BackColor = Color.FromArgb(36, 36, 36)
         limpiarModDel_Medicos()
         cargarListaMedicos()
+        nullvisible()
 
-        panelAgregarUsuario.Visible = False
         panelModificarEliminarMedico.Visible = True
-        panelABMSintoma.Visible = False
+
 
 
     End Sub
@@ -129,7 +130,10 @@ Public Class MenuGestorNew
 
             Dim fecha As Date = dateModDel_FechaNacimiento.Value.Date
             Dim fechastring As String = Format(fecha, "yyyy/MM/dd")
-            instancia.actualizarMedico(New Medico(txtModDel_PrimerNombre.Text, txtModDel_SegundoNombre.Text, txtModDel_Apellido.Text, txtModDel_Segundoapellido.Text, txtModDel_Email.Text, listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).ID, txtModDel_Direccion.Text, txtModDel_CI.Text, txtModDel_Contraseña.Text, txtModDel_Telefono.Text, fechastring, txtModDel_Especializacion.Text, txtModDel_Empresa.Text))
+            instancia.actualizarMedico(New Medico(txtModDel_PrimerNombre.Text, txtModDel_SegundoNombre.Text, txtModDel_Apellido.Text,
+                                                  txtModDel_Segundoapellido.Text, txtModDel_Email.Text, listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).ID,
+                                                  txtModDel_Direccion.Text, txtModDel_CI.Text, txtModDel_Contraseña.Text, txtModDel_Telefono.Text, fechastring, cbxModDel_Sexo.Text,
+                                                  txtModDel_Especializacion.Text, txtModDel_Empresa.Text))
             limpiarModDel_Medicos()
             cargarListaMedicos()
         Catch ex As Exception
@@ -160,7 +164,8 @@ Public Class MenuGestorNew
             Dim ID As String = instancia.codigoRandom(1)
 
             If txtContraseña.Text = txtConfContraseña.Text Then
-                instancia.agregarMedico(New Medico(txtPrimerNombre.Text, txtSegundoNombre.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, ID, txtDireccion.Text, txtCI.Text, txtContraseña.Text, txtTelefono.Text, fechastring, txtEspecializacion.Text, txtEmpresa.Text))
+                instancia.agregarMedico(New Medico(txtPrimerNombre.Text, txtSegundoNombre.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text,
+                                                   ID, txtDireccion.Text, txtCI.Text, txtContraseña.Text, txtTelefono.Text, fechastring, cbxSexo.Text, txtEspecializacion.Text, txtEmpresa.Text))
                 limpiarAgregarMedico()
             Else
                 MsgBox("Las contraseñas no coiniciden.")
@@ -178,10 +183,12 @@ Public Class MenuGestorNew
         txtModDel_Segundoapellido.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).segundoapellido
         txtModDel_CI.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).CI
         txtModDel_Direccion.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).Direccion
+
         Dim fechaString As String = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).fechadenacimiento
         Dim fecha As Date = Date.ParseExact(fechaString, "yyyy/MM/dd", System.Globalization.DateTimeFormatInfo.InvariantInfo)
         dateModDel_FechaNacimiento.Value = fecha
 
+        cbxModDel_Sexo.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).sexo
         txtModDel_Contraseña.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).contraseña
         txtModDel_ConfContraseña.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).contraseña
         txtModDel_Telefono.Text = listaMedicos.ElementAt(lstModDel_Medicos.FocusedItem.Index).telefono
@@ -211,8 +218,6 @@ Public Class MenuGestorNew
 
     End Sub
 
-
-
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnAgregarSintoma.Click
         AltaModSintoma.confirmar = -1
         AltaModSintoma.sintoma = Nothing
@@ -228,10 +233,11 @@ Public Class MenuGestorNew
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles btnModPatologia.Click
-        If lstPatologia.FocusedItem.Index = Nothing Then
+        If lstSintomas.SelectedItems.Count = 0 Then
             MsgBox("Ninguna patologia seleccionada")
         Else
-            Dim patologia As New Patologia(listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).nombre, listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).prioridad, listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).id)
+            Dim patologia As New Patologia(listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).nombre, listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).prioridad,
+                                           listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).id)
             AltaModPatologia.patologia = patologia
             AltaModPatologia.confirmar = 0
             AltaModPatologia.ShowDialog()
@@ -360,6 +366,7 @@ Public Class MenuGestorNew
         txtPrimerNombre.Clear()
         txtSegundoNombre.Clear()
         txtApellido.Clear()
+        txtSegundoApellido.Clear()
         txtCI.Clear()
         txtDireccion.Clear()
         dateFechaNacimiento.ResetText()
@@ -367,16 +374,16 @@ Public Class MenuGestorNew
         txtEspecializacion.Clear()
         txtEmail.Clear()
         txtEmpresa.Clear()
+        cbxSexo.ResetText()
         txtContraseña.Clear()
         txtConfContraseña.Clear()
     End Sub
-
-
 
     Public Sub limpiarModDel_Medicos()
         txtModDel_PrimerNombre.Clear()
         txtModDel_SegundoNombre.Clear()
         txtModDel_Apellido.Clear()
+        txtModDel_Segundoapellido.Clear()
         txtModDel_CI.Clear()
         txtModDel_Direccion.Clear()
         dateModDel_FechaNacimiento.ResetText()
@@ -384,9 +391,15 @@ Public Class MenuGestorNew
         txtModDel_Especializacion.Clear()
         txtModDel_Email.Clear()
         txtModDel_Empresa.Clear()
+        cbxModDel_Sexo.ResetText()
         txtModDel_Contraseña.Clear()
         txtModDel_ConfContraseña.Clear()
-
         lstModDel_Medicos.Items.Clear()
+    End Sub
+
+    Public Sub nullvisible()
+        panelABMSintoma.Visible = False
+        panelAgregarUsuario.Visible = False
+        panelModificarEliminarMedico.Visible = False
     End Sub
 End Class

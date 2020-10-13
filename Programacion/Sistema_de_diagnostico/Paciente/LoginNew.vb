@@ -40,23 +40,27 @@ Public Class LoginNew
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnEntrar.Click
-
         Try
+
             'Se toman los datos de los cuadros de texto CI y Contraseña
-            Dim paciente As Paciente = Instancia.loginPaciente(txtUsuario.Text, txtContraseña.Text)
-            MenuPacienteNew.labIniciales.Text = paciente.nombre(0) + " " + paciente.apellido(0)
-            MenuPacienteNew.labNombre.Text = paciente.nombre + " " + paciente.apellido
+            Dim login As Paciente = Instancia.loginPaciente(txtUsuario.Text, txtContraseña.Text)
+
+            'Dim paciente As New Paciente(login.nombre, login.segundonombre, login.apellido, login.segundoapellido,
+            'login.email, login.ID, login.Direccion, login.CI, login.contraseña, login.telefono, login.fechadenacimiento, login.peso, login.altura, login.patologiaPrevia)
+
+            Dim menuPaciente As New MenuPacienteNew()
+
+            menuPaciente.paciente = login
+
 
             Me.Hide()
-            MenuPacienteNew.ShowDialog()
+            menuPaciente.ShowDialog()
             Me.Close()
+
         Catch ex As Exception
             MsgBox(ex.Message)
+
         End Try
-
-
-
-
     End Sub
 
 

@@ -50,17 +50,17 @@ Partial Class LoginGNew
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.btnEntrar)
-        Me.Panel1.Location = New System.Drawing.Point(0, -2)
+        Me.Panel1.Location = New System.Drawing.Point(-1, -2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(284, 648)
         Me.Panel1.TabIndex = 0
         '
         'txtContraseña
         '
-        Me.txtContraseña.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContraseña.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.txtContraseña.Location = New System.Drawing.Point(21, 272)
         Me.txtContraseña.Name = "txtContraseña"
-        Me.txtContraseña.Size = New System.Drawing.Size(183, 21)
+        Me.txtContraseña.Size = New System.Drawing.Size(183, 20)
         Me.txtContraseña.TabIndex = 15
         Me.txtContraseña.UseSystemPasswordChar = True
         '

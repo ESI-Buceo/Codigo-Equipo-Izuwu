@@ -24,6 +24,8 @@ Partial Class LoginNew
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginNew))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtContraseña = New System.Windows.Forms.TextBox()
+        Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -34,8 +36,6 @@ Partial Class LoginNew
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.txtUsuario = New System.Windows.Forms.TextBox()
-        Me.txtContraseña = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -56,6 +56,22 @@ Partial Class LoginNew
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(284, 648)
         Me.Panel1.TabIndex = 0
+        '
+        'txtContraseña
+        '
+        Me.txtContraseña.Location = New System.Drawing.Point(17, 274)
+        Me.txtContraseña.Name = "txtContraseña"
+        Me.txtContraseña.Size = New System.Drawing.Size(192, 20)
+        Me.txtContraseña.TabIndex = 16
+        Me.txtContraseña.UseSystemPasswordChar = True
+        '
+        'txtUsuario
+        '
+        Me.txtUsuario.Font = New System.Drawing.Font("DejaVu Sans", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsuario.Location = New System.Drawing.Point(17, 202)
+        Me.txtUsuario.Name = "txtUsuario"
+        Me.txtUsuario.Size = New System.Drawing.Size(192, 21)
+        Me.txtUsuario.TabIndex = 15
         '
         'Label4
         '
@@ -169,26 +185,12 @@ Partial Class LoginNew
         '
         Me.PictureBox1.Enabled = False
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(149, 1)
+        Me.PictureBox1.Location = New System.Drawing.Point(149, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(926, 652)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
-        '
-        'txtUsuario
-        '
-        Me.txtUsuario.Location = New System.Drawing.Point(17, 202)
-        Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(192, 20)
-        Me.txtUsuario.TabIndex = 15
-        '
-        'txtContraseña
-        '
-        Me.txtContraseña.Location = New System.Drawing.Point(15, 274)
-        Me.txtContraseña.Name = "txtContraseña"
-        Me.txtContraseña.Size = New System.Drawing.Size(192, 20)
-        Me.txtContraseña.TabIndex = 16
         '
         'LoginNew
         '
@@ -205,6 +207,7 @@ Partial Class LoginNew
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(980, 645)
         Me.Name = "LoginNew"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LoginNew"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

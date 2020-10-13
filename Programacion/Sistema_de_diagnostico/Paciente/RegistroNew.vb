@@ -61,7 +61,7 @@ Public Class RegistroNew
             Dim fecha As Date = dateFechaNacimiento.Value.Date
             Dim fechastring As String = Format(fecha, "yyyy/MM/dd")
             Dim id As String = instancia.codigoRandom(3)
-            instancia.agregarPaciente(New Paciente(txtPrimerNombre.Text, txtSegundoNombre.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, id, txtDireccion.Text, txtCI.Text, txtContraseña.Text, txtTelefono.Text, fechastring, numPeso.Value.ToString, numAltura.Value.ToString, txtPatologiaPrevia.Text))
+            instancia.agregarPaciente(New Paciente(txtPrimerNombre.Text, txtSegundoNombre.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, id, txtDireccion.Text, txtCI.Text, txtContraseña.Text, txtTelefono.Text, fechastring, cbxSexo.Text, numPeso.Value.ToString, numAltura.Value.ToString, txtPatologiaPrevia.Text))
             MsgBox("Registro exitoso.")
             txtPrimerNombre.Clear()
             txtSegundoNombre.Clear()

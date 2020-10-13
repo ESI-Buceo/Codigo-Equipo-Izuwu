@@ -35,7 +35,6 @@ C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\Git
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\bin\Debug\ConexionBD.pdb
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\bin\Debug\ConexionBD.xml
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.vbprojAssemblyReference.cache
-C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.LoginNewm.resources
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.MenuMedicoNew.resources
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.Resources.resources
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.vbproj.GenerateResource.cache
@@ -44,3 +43,4 @@ C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\Git
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.exe
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.xml
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.pdb
+C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.LoginNew.resources

@@ -24,18 +24,18 @@ Partial Class LoginNew
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginNew))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtContraseña = New System.Windows.Forms.TextBox()
+        Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnEntrar = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.labOlvidoPassword = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.txtUsuario = New System.Windows.Forms.TextBox()
-        Me.txtContraseña = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -48,7 +48,7 @@ Partial Class LoginNew
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.btnEntrar)
-        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.labOlvidoPassword)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -56,6 +56,22 @@ Partial Class LoginNew
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(284, 648)
         Me.Panel1.TabIndex = 0
+        '
+        'txtContraseña
+        '
+        Me.txtContraseña.Location = New System.Drawing.Point(15, 277)
+        Me.txtContraseña.Name = "txtContraseña"
+        Me.txtContraseña.Size = New System.Drawing.Size(180, 20)
+        Me.txtContraseña.TabIndex = 10
+        Me.txtContraseña.UseSystemPasswordChar = True
+        '
+        'txtUsuario
+        '
+        Me.txtUsuario.Font = New System.Drawing.Font("DejaVu Sans", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsuario.Location = New System.Drawing.Point(15, 205)
+        Me.txtUsuario.Name = "txtUsuario"
+        Me.txtUsuario.Size = New System.Drawing.Size(177, 21)
+        Me.txtUsuario.TabIndex = 9
         '
         'Label6
         '
@@ -93,16 +109,16 @@ Partial Class LoginNew
         Me.btnEntrar.Text = "Entrar"
         Me.btnEntrar.UseVisualStyleBackColor = False
         '
-        'Label4
+        'labOlvidoPassword
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(12, 338)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(130, 13)
-        Me.Label4.TabIndex = 5
-        Me.Label4.Text = "¿Olvidaste tu contraseña?"
+        Me.labOlvidoPassword.AutoSize = True
+        Me.labOlvidoPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labOlvidoPassword.ForeColor = System.Drawing.Color.White
+        Me.labOlvidoPassword.Location = New System.Drawing.Point(12, 338)
+        Me.labOlvidoPassword.Name = "labOlvidoPassword"
+        Me.labOlvidoPassword.Size = New System.Drawing.Size(130, 13)
+        Me.labOlvidoPassword.TabIndex = 5
+        Me.labOlvidoPassword.Text = "¿Olvidaste tu contraseña?"
         '
         'Label3
         '
@@ -169,26 +185,12 @@ Partial Class LoginNew
         '
         Me.PictureBox1.Enabled = False
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(283, -3)
+        Me.PictureBox1.Location = New System.Drawing.Point(273, -1)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(707, 652)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
-        '
-        'txtUsuario
-        '
-        Me.txtUsuario.Location = New System.Drawing.Point(15, 205)
-        Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(177, 20)
-        Me.txtUsuario.TabIndex = 9
-        '
-        'txtContraseña
-        '
-        Me.txtContraseña.Location = New System.Drawing.Point(12, 277)
-        Me.txtContraseña.Name = "txtContraseña"
-        Me.txtContraseña.Size = New System.Drawing.Size(180, 20)
-        Me.txtContraseña.TabIndex = 10
         '
         'LoginNew
         '
@@ -205,6 +207,7 @@ Partial Class LoginNew
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(980, 645)
         Me.Name = "LoginNew"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LoginNew"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -215,7 +218,7 @@ Partial Class LoginNew
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnEntrar As Button
-    Friend WithEvents Label4 As Label
+    Friend WithEvents labOlvidoPassword As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label

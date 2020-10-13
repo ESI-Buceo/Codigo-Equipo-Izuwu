@@ -47,13 +47,14 @@ Public Class LoginGNew
 
         Try
             'Se toman los datos de los cuadros de texto CI y Contraseña
-            Dim gestor As Gestor = Instancia.loginGestor(txtUsuario.Text, txtContraseña.Text)
+            Dim login As Gestor = Instancia.loginGestor(txtUsuario.Text, txtContraseña.Text)
+            Dim menuGestor As New MenuGestorNew
+            menuGestor.gestor = login
 
-            MenuGestorNew.labNombre.Text = gestor.nombre + " " + gestor.apellido
-            MenuGestorNew.labIniciales.Text = gestor.nombre(0) + " " + gestor.apellido(0)
+
 
             Me.Hide()
-            MenuGestorNew.ShowDialog()
+            menuGestor.ShowDialog()
             Me.Close()
 
         Catch ex As Exception
@@ -71,9 +72,4 @@ Public Class LoginGNew
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub Label6_Click(sender As Object, e As EventArgs) 
-        Me.Hide()
-        'Registro.ShowDialog()
-        Me.Close()
-    End Sub
 End Class

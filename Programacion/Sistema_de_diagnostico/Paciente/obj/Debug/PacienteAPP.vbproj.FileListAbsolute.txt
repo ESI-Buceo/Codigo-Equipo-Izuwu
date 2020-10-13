@@ -38,7 +38,6 @@ C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\Git
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.vbprojAssemblyReference.cache
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.LoginNew.resources
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.MenuPacienteNew.resources
-C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.DiagnosticoOLD.resources
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.RegistroNew.resources
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.Resources.resources
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.vbproj.GenerateResource.cache

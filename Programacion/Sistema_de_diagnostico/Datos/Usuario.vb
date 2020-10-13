@@ -10,8 +10,11 @@
     Public Property contraseña As String
     Public Property telefono As String
     Public Property fechadenacimiento As String
+    Public Property sexo As String
 
-    Public Sub New(nombre As String, segundonombre As String, apellido As String, segundoapellido As String, email As String, id As String, direccion As String, ci As String, contraseña As String, telefono As String, fecha As String)
+    Public Sub New(nombre As String, segundonombre As String, apellido As String, segundoapellido As String, email As String, id As String,
+                   direccion As String, ci As String, contraseña As String, telefono As String, fecha As String, sexo As String)
+
         Me.nombre = nombre
         Me.segundonombre = segundonombre
         Me.apellido = apellido
@@ -23,6 +26,8 @@
         Me.contraseña = contraseña
         Me.telefono = telefono
         Me.fechadenacimiento = fecha
+        Me.sexo = sexo
+
     End Sub
 
 

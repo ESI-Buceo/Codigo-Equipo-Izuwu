@@ -1,4 +1,8 @@
-﻿Public Class MenuMedicoNew
+﻿Imports Datos, Logica
+
+Public Class MenuMedicoNew
+
+    Public medico As Medico
 
     Dim ex, ey As Integer
     Dim Arrastre As Boolean
@@ -37,17 +41,14 @@
 
     End Sub
 
-    Public Function nullvisible()
-        pConsultaPend.Visible = False
-        PHistCons.Visible = False
-        pPerfilPaciente.Visible = False
-    End Function
+
 
     Private Sub MenuPacienteNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btnConsPendientes.BackColor = Color.FromArgb(50, 174, 144)
         btnChats.BackColor = Color.FromArgb(50, 174, 144)
         btnHistorialdeConsultas.BackColor = Color.FromArgb(50, 174, 144)
-
+        labIniciales.Text = medico.nombre(0) + " " + medico.apellido(0)
+        labNombre.Text = medico.nombre + " " + medico.apellido
         nullvisible()
     End Sub
 
@@ -56,8 +57,9 @@
         btnChats.BackColor = Color.FromArgb(50, 174, 144)
         btnHistorialdeConsultas.BackColor = Color.FromArgb(50, 174, 144)
 
-        pConsultaPend.Visible = True
-        PHistCons.Visible = False
+        nullvisible()
+        panelConsultaPendiente.Visible = True
+
     End Sub
 
     Private Sub btnChats_Click(sender As Object, e As EventArgs) Handles btnChats.Click
@@ -65,8 +67,7 @@
         btnChats.BackColor = Color.FromArgb(38, 131, 108)
         btnHistorialdeConsultas.BackColor = Color.FromArgb(50, 174, 144)
 
-        pConsultaPend.Visible = False
-        PHistCons.Visible = False
+        nullvisible()
     End Sub
 
 
@@ -75,10 +76,10 @@
         btnChats.BackColor = Color.FromArgb(50, 174, 144)
         btnHistorialdeConsultas.BackColor = Color.FromArgb(38, 131, 108)
 
-        pConsultaPend.Visible = False
-        PHistCons.Visible = True
+        nullvisible()
+        panelHistorialConsulta.Visible = True
     End Sub
-    '-------------------------------------------------------------------------------------------------------------------------------------------------
+
 
     Private Sub Button1_MouseMove(sender As Object, e As MouseEventArgs) Handles Button1.MouseMove
         Button1.BackColor = Color.FromArgb(255, 96, 96)
@@ -93,11 +94,19 @@
     End Sub
 
     Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-        nullvisible()
+        panelPerfilPaciente.Visible = False
     End Sub
 
-    Private Sub lbNombre_Click(sender As Object, e As EventArgs) Handles lbNombre.Click
-        pPerfilPaciente.Visible = True
+    Private Sub lbNombre_Click(sender As Object, e As EventArgs) Handles labNombre.Click
+        labPerfilNombre.Text = medico.nombre
+        labPerfilID.Text = medico.ID
+        labPerfilLugarDeTrabajo.Text = medico.lugarDeTrabajo
+        labPerfilDireccion.Text = medico.Direccion
+        labPerfilEspecialidad.Text = medico.especializacion
+        labPerfilTelefono.Text = medico.telefono
+        labPerfilFechaDeNacimiento.Text = medico.telefono
+
+        panelPerfilPaciente.Visible = True
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -106,5 +115,13 @@
 
 
 
+
+
+    '-------------------------------------------------------------------------------------------------------------------------------------------------
+    Public Sub nullvisible()
+        panelConsultaPendiente.Visible = False
+        panelHistorialConsulta.Visible = False
+        panelPerfilPaciente.Visible = False
+    End Sub
 
 End Class
