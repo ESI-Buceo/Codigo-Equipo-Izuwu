@@ -8,11 +8,11 @@ Public Class ConexionConBD
         Dim connection As New Connection
         connection.ConnectionString = "" &
             "driver={MySQL ODBC 8.0 Unicode Driver};" &
-            "server=127.0.0.1;" &
+            "server=izuwuedb.co8sw6a5kje7.us-east-2.rds.amazonaws.com;" &
             "port=3306;" &
-            "database=proyecto_prueba;" &
-            "uid=root;" &
-            "pwd=1234;"
+            "database=izuwuDB;" &
+            "uid=admin;" &
+            "pwd=izuwuteam;"
 
         connection.Open()
         Return connection
@@ -138,7 +138,7 @@ Public Class ConexionConBD
         Dim connection As Connection = conectar()
         Dim ListaSintomas As New List(Of Sintoma)
 
-        Dim consulta As Recordset = connection.Execute("Select * from sintoma")
+        Dim consulta As Recordset = connection.Execute("select * from sintoma")
         Dim nombre, id As String
         While (Not consulta.EOF)
             nombre = TryCast(consulta.Fields("Nombre").Value, String)
@@ -155,7 +155,7 @@ Public Class ConexionConBD
         Dim connection As Connection = conectar()
         Dim ListaPatologia As New List(Of Patologia)
 
-        Dim consulta As Recordset = connection.Execute("Select * from patologia")
+        Dim consulta As Recordset = connection.Execute("select * from patologia")
         Dim nombre, prioridad, id As String
         While (Not consulta.EOF)
             nombre = TryCast(consulta.Fields("Nombre").Value, String)
@@ -176,7 +176,7 @@ Public Class ConexionConBD
         Dim connection As Connection = conectar()
         Dim listaReferencias As New List(Of Patologia)
 
-        Dim consulta As Recordset = connection.Execute("Select patologia.nombre, patologia.id_pat, patologia.prioridad " &
+        Dim consulta As Recordset = connection.Execute("select patologia.nombre, patologia.id_pat, patologia.prioridad " &
                                                         "from patologia inner join tiene on tiene.id_pat=patologia.id_pat " &
                                                         "inner join sintoma on tiene.id_sin=sintoma.id_sin " &
                                                         "where sintoma.id_sin = '" & ID & "';")
@@ -196,7 +196,7 @@ Public Class ConexionConBD
     Public Function ObtenerRefenciaPatologiaSintoma(ID As String) As List(Of Sintoma)
         Dim connection As Connection = conectar()
         Dim listaReferencias As New List(Of Sintoma)
-        Dim consulta As Recordset = connection.Execute("Select sintoma.nombre, sintoma.id_sin " &
+        Dim consulta As Recordset = connection.Execute("select sintoma.nombre, sintoma.id_sin " &
                                                         "from patologia inner join tiene on tiene.id_pat=patologia.id_pat " &
                                                         "inner join sintoma on tiene.id_sin=sintoma.id_sin " &
                                                         "where patologia.id_pat = '" & ID & "';")
@@ -219,7 +219,7 @@ Public Class ConexionConBD
 
     Public Function loginMedico(userCI As String, pass As String) As Medico
         Dim connection As Connection = conectar()
-        Dim existeUsuario As Recordset = connection.Execute("Select * from usuario;")
+        Dim existeUsuario As Recordset = connection.Execute("select * from usuario;")
 
         Dim existe As Boolean
         Do
@@ -232,12 +232,12 @@ Public Class ConexionConBD
             existeUsuario.MoveNext()
         Loop While (Not existe)
         If existe Then
-            Dim consultaUsuario As Recordset = connection.Execute("Select * from usuario where CI='" + userCI + "';")
+            Dim consultaUsuario As Recordset = connection.Execute("select * from usuario where CI='" + userCI + "';")
             Dim idUser As String = TryCast(consultaUsuario.Fields("ID_US").Value, String)
             Dim pasw As String
             pasw = TryCast(consultaUsuario.Fields("contraseña").Value, String)
 
-            Dim consultaMedico As Recordset = connection.Execute("Select * from medico where ID_MED='" + idUser + "';")
+            Dim consultaMedico As Recordset = connection.Execute("select * from medico where ID_MED='" + idUser + "';")
             Dim idMed As String
 
             idMed = TryCast(consultaMedico.Fields("ID_Med").Value, String)
@@ -272,7 +272,7 @@ Public Class ConexionConBD
     Public Function loginPaciente(userCI As String, pass As String) As Paciente
         Dim connection As Connection = conectar()
 
-        Dim existeUsuario As Recordset = connection.Execute("Select * from usuario;")
+        Dim existeUsuario As Recordset = connection.Execute("select * from usuario;")
 
         Dim existe As Boolean
         Do
@@ -287,7 +287,7 @@ Public Class ConexionConBD
         If existe Then
 
 
-            Dim consultaUsuario As Recordset = connection.Execute("Select * from usuario where CI='" + userCI + "';")
+            Dim consultaUsuario As Recordset = connection.Execute("select * from usuario where CI='" + userCI + "';")
 
 
 
@@ -295,7 +295,7 @@ Public Class ConexionConBD
             Dim pasw As String
             pasw = TryCast(consultaUsuario.Fields("contraseña").Value, String)
 
-            Dim consultaPaciente As Recordset = connection.Execute("Select * from paciente where ID_PAC='" + idUser + "';")
+            Dim consultaPaciente As Recordset = connection.Execute("select * from paciente where ID_PAC='" + idUser + "';")
             Dim idPac As String
 
             idPac = TryCast(consultaPaciente.Fields("ID_PAC").Value, String)
@@ -329,7 +329,7 @@ Public Class ConexionConBD
 
     Public Function loginGestor(userCI As String, pass As String) As Gestor
         Dim connection As Connection = conectar()
-        Dim existeUsuario As Recordset = connection.Execute("Select * from usuario;")
+        Dim existeUsuario As Recordset = connection.Execute("select * from usuario;")
 
         Dim existe As Boolean
         Do
@@ -343,12 +343,12 @@ Public Class ConexionConBD
         Loop While (Not existe)
         If existe Then
 
-            Dim consultaUsuario As Recordset = connection.Execute("Select * from usuario where CI='" + userCI + "';")
+            Dim consultaUsuario As Recordset = connection.Execute("select * from usuario where CI='" + userCI + "';")
             Dim idUser As String = TryCast(consultaUsuario.Fields("ID_US").Value, String)
             Dim pasw As String
             pasw = TryCast(consultaUsuario.Fields("contraseña").Value, String)
 
-            Dim consultaGestor As Recordset = connection.Execute("Select * from gestor where ID_GES='" + idUser + "';")
+            Dim consultaGestor As Recordset = connection.Execute("select * from gestor where ID_GES='" + idUser + "';")
             Dim idGes As String
 
             idGes = TryCast(consultaGestor.Fields("ID_GES").Value, String)
@@ -386,27 +386,27 @@ Public Class ConexionConBD
     Public Sub agregarPaciente(paciente As Paciente)
         Dim connection As Connection = conectar()
 
-        Dim agregarUsuario As Recordset = connection.Execute("insert into Usuario values('" + paciente.nombre + "','" + paciente.apellido + "','" + paciente.email + "','" + paciente.ID + "','" + paciente.Direccion + "','" + paciente.CI + "','" + paciente.contraseña + "','" + paciente.telefono + "','" + paciente.fechadenacimiento + "','" + paciente.segundoapellido + "','" + paciente.segundonombre + "','" + paciente.sexo + "');")
+        Dim agregarUsuario As Recordset = connection.Execute("insert into usuario values('" + paciente.nombre + "','" + paciente.apellido + "','" + paciente.email + "','" + paciente.ID + "','" + paciente.Direccion + "','" + paciente.CI + "','" + paciente.contraseña + "','" + paciente.telefono + "','" + paciente.fechadenacimiento + "','" + paciente.segundoapellido + "','" + paciente.segundonombre + "','" + paciente.sexo + "');")
         Dim agregarTelefonoUsuario As Recordset = connection.Execute("insert into telefono_us values('" + paciente.telefono + "','" + paciente.ID + "');")
-        Dim agregarPaciente As Recordset = connection.Execute("insert into Paciente values ('" + paciente.ID + "','" + paciente.altura + "','" + paciente.patologiaPrevia + "','" + paciente.peso + "');")
+        Dim agregarPaciente As Recordset = connection.Execute("insert into paciente values ('" + paciente.ID + "','" + paciente.altura + "','" + paciente.patologiaPrevia + "','" + paciente.peso + "');")
 
         connection.Close()
     End Sub
 
     Public Sub agregarMedico(medico As Medico)
         Dim connection As Connection = conectar()
-        Dim agregarUsuario As Recordset = connection.Execute("insert into Usuario values('" + medico.nombre + "','" + medico.apellido + "','" + medico.email + "','" + medico.ID + "','" + medico.Direccion + "','" + medico.CI + "','" + medico.contraseña + "','" + medico.telefono + "','" + medico.fechadenacimiento + "','" + medico.segundoapellido + "','" + medico.segundonombre + "','" + medico.sexo + "');")
+        Dim agregarUsuario As Recordset = connection.Execute("insert into usuario values('" + medico.nombre + "','" + medico.apellido + "','" + medico.email + "','" + medico.ID + "','" + medico.Direccion + "','" + medico.CI + "','" + medico.contraseña + "','" + medico.telefono + "','" + medico.fechadenacimiento + "','" + medico.segundoapellido + "','" + medico.segundonombre + "','" + medico.sexo + "');")
         Dim agregarTelefonoUsuario As Recordset = connection.Execute("insert into telefono_us values('" + medico.telefono + "','" + medico.ID + "');")
-        Dim agregarMedico As Recordset = connection.Execute("insert into Medico values ('" + medico.especializacion + "','" + medico.ID + "','" + medico.lugarDeTrabajo + "');")
+        Dim agregarMedico As Recordset = connection.Execute("insert into medico values ('" + medico.especializacion + "','" + medico.ID + "','" + medico.lugarDeTrabajo + "');")
 
         connection.Close()
     End Sub
 
     Public Sub agregarGestor(gestor As Gestor)
         Dim connection As Connection = conectar()
-        Dim agregarUsuario As Recordset = connection.Execute("insert into Usuario values('" + gestor.nombre + "','" + gestor.apellido + "','" + gestor.email + "','" + gestor.ID + "','" + gestor.Direccion + "','" + gestor.CI + "','" + gestor.contraseña + "','" + gestor.telefono + "','" + gestor.fechadenacimiento + "','" + gestor.segundoapellido + "','" + gestor.segundonombre + "','" + gestor.sexo + "');")
+        Dim agregarUsuario As Recordset = connection.Execute("insert into usuario values('" + gestor.nombre + "','" + gestor.apellido + "','" + gestor.email + "','" + gestor.ID + "','" + gestor.Direccion + "','" + gestor.CI + "','" + gestor.contraseña + "','" + gestor.telefono + "','" + gestor.fechadenacimiento + "','" + gestor.segundoapellido + "','" + gestor.segundonombre + "','" + gestor.sexo + "');")
         Dim agregarTelefonoUsuario As Recordset = connection.Execute("insert into telefono_us values('" + gestor.telefono + "','" + gestor.ID + "');")
-        Dim agregarGestor As Recordset = connection.Execute("insert into Gestor values ('" + gestor.ID + "','" + gestor.empresa + "');")
+        Dim agregarGestor As Recordset = connection.Execute("insert into gestor values ('" + gestor.ID + "','" + gestor.empresa + "');")
 
 
 
@@ -544,23 +544,23 @@ Public Class ConexionConBD
 
         Select Case num
             Case 0
-                consulta = connection.Execute("select ID_SIN from Sintoma ;")
+                consulta = connection.Execute("select ID_SIN from sintoma ;")
                 idConsulta = TryCast(consulta.Fields("id_sin").Value, String)
                 id = "SIN"
             Case 1
-                consulta = connection.Execute("select ID_MED from Medico ;")
+                consulta = connection.Execute("select ID_MED from medico ;")
                 idConsulta = TryCast(consulta.Fields("id_MED").Value, String)
                 id = "MED"
             Case 2
-                consulta = connection.Execute("select ID_Pat from Patologia ;")
+                consulta = connection.Execute("select ID_Pat from patologia ;")
                 idConsulta = TryCast(consulta.Fields("id_Pat").Value, String)
                 id = "PAT"
             Case 3
-                consulta = connection.Execute("select ID_Pac from Paciente ;")
+                consulta = connection.Execute("select ID_Pac from paciente ;")
                 idConsulta = TryCast(consulta.Fields("id_Pac").Value, String)
                 id = "PAC"
             Case 4
-                consulta = connection.Execute("select ID_ges from Gestor ;")
+                consulta = connection.Execute("select ID_ges from gestor ;")
                 idConsulta = TryCast(consulta.Fields("id_ges").Value, String)
                 id = "GES"
         End Select
