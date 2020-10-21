@@ -33,6 +33,7 @@ Partial Class MenuGestorNew
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.panelModificarEliminarMedico = New System.Windows.Forms.Panel()
+        Me.txtModDel_CI = New System.Windows.Forms.TextBox()
         Me.txtModDel_Segundoapellido = New System.Windows.Forms.TextBox()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
@@ -80,6 +81,9 @@ Partial Class MenuGestorNew
         Me.lstPatologia = New System.Windows.Forms.ListView()
         Me.lstSintomas = New System.Windows.Forms.ListView()
         Me.panelAgregarUsuario = New System.Windows.Forms.Panel()
+        Me.txtCI = New System.Windows.Forms.TextBox()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.cbxSexo = New System.Windows.Forms.ComboBox()
         Me.txtSegundoApellido = New System.Windows.Forms.TextBox()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
@@ -106,10 +110,6 @@ Partial Class MenuGestorNew
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
-        Me.cbxSexo = New System.Windows.Forms.ComboBox()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.txtCI = New System.Windows.Forms.TextBox()
-        Me.txtModDel_CI = New System.Windows.Forms.TextBox()
         Me.panelMenuInicio.SuspendLayout()
         Me.panelModificarEliminarMedico.SuspendLayout()
         Me.panelABMSintoma.SuspendLayout()
@@ -271,6 +271,13 @@ Partial Class MenuGestorNew
         Me.panelModificarEliminarMedico.Name = "panelModificarEliminarMedico"
         Me.panelModificarEliminarMedico.Size = New System.Drawing.Size(685, 617)
         Me.panelModificarEliminarMedico.TabIndex = 7
+        '
+        'txtModDel_CI
+        '
+        Me.txtModDel_CI.Location = New System.Drawing.Point(207, 230)
+        Me.txtModDel_CI.Name = "txtModDel_CI"
+        Me.txtModDel_CI.Size = New System.Drawing.Size(197, 20)
+        Me.txtModDel_CI.TabIndex = 51
         '
         'txtModDel_Segundoapellido
         '
@@ -767,6 +774,32 @@ Partial Class MenuGestorNew
         Me.panelAgregarUsuario.Size = New System.Drawing.Size(685, 617)
         Me.panelAgregarUsuario.TabIndex = 43
         '
+        'txtCI
+        '
+        Me.txtCI.Location = New System.Drawing.Point(207, 174)
+        Me.txtCI.Name = "txtCI"
+        Me.txtCI.Size = New System.Drawing.Size(240, 20)
+        Me.txtCI.TabIndex = 47
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label34.Location = New System.Drawing.Point(144, 214)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(56, 22)
+        Me.Label34.TabIndex = 46
+        Me.Label34.Text = "Sexo:"
+        '
+        'cbxSexo
+        '
+        Me.cbxSexo.FormattingEnabled = True
+        Me.cbxSexo.Items.AddRange(New Object() {"H", "M"})
+        Me.cbxSexo.Location = New System.Drawing.Point(206, 214)
+        Me.cbxSexo.Name = "cbxSexo"
+        Me.cbxSexo.Size = New System.Drawing.Size(49, 21)
+        Me.cbxSexo.TabIndex = 45
+        '
         'txtSegundoApellido
         '
         Me.txtSegundoApellido.Location = New System.Drawing.Point(206, 131)
@@ -989,44 +1022,11 @@ Partial Class MenuGestorNew
         '
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(65, 12)
+        Me.Label29.Location = New System.Drawing.Point(122, 12)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(78, 22)
         Me.Label29.TabIndex = 5
         Me.Label29.Text = "Nombre:"
-        '
-        'cbxSexo
-        '
-        Me.cbxSexo.FormattingEnabled = True
-        Me.cbxSexo.Items.AddRange(New Object() {"H", "M"})
-        Me.cbxSexo.Location = New System.Drawing.Point(206, 214)
-        Me.cbxSexo.Name = "cbxSexo"
-        Me.cbxSexo.Size = New System.Drawing.Size(49, 21)
-        Me.cbxSexo.TabIndex = 45
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(144, 214)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(56, 22)
-        Me.Label34.TabIndex = 46
-        Me.Label34.Text = "Sexo:"
-        '
-        'txtCI
-        '
-        Me.txtCI.Location = New System.Drawing.Point(207, 174)
-        Me.txtCI.Name = "txtCI"
-        Me.txtCI.Size = New System.Drawing.Size(240, 20)
-        Me.txtCI.TabIndex = 47
-        '
-        'txtModDel_CI
-        '
-        Me.txtModDel_CI.Location = New System.Drawing.Point(207, 230)
-        Me.txtModDel_CI.Name = "txtModDel_CI"
-        Me.txtModDel_CI.Size = New System.Drawing.Size(197, 20)
-        Me.txtModDel_CI.TabIndex = 51
         '
         'MenuGestorNew
         '
@@ -1038,9 +1038,9 @@ Partial Class MenuGestorNew
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.panelMenuInicio)
+        Me.Controls.Add(Me.panelABMSintoma)
         Me.Controls.Add(Me.panelModificarEliminarMedico)
         Me.Controls.Add(Me.panelAgregarUsuario)
-        Me.Controls.Add(Me.panelABMSintoma)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)

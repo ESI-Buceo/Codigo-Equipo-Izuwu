@@ -1,6 +1,4 @@
 ﻿Imports ADODB, Datos, System.Text
-Imports Microsoft.VisualBasic.ApplicationServices
-
 Public Class ConexionConBD
 
     'Funcion para conectarse a la base de datos
@@ -17,6 +15,7 @@ Public Class ConexionConBD
         connection.Open()
         Return connection
     End Function
+
 
     '///---------------------------------------------------------------------------------------------------------------
     'Funciones para obtener los datos de la base de datos y almacenarlos en listas
@@ -492,38 +491,38 @@ Public Class ConexionConBD
 
     Public Sub actualizarSintoma(sintoma As Sintoma)
         Dim connection As Connection = conectar()
-        Dim actualizar As Recordset = connection.Execute("UPDATE sintoma set nombre = '" + sintoma.nombre + "' where id_sin = '" + sintoma.id + "';")
+        Dim actualizar As Recordset = connection.Execute("update sintoma set nombre = '" + sintoma.nombre + "' where id_sin = '" + sintoma.id + "';")
         connection.Close()
     End Sub
 
     Public Sub actualizarPatologia(patologia As Patologia)
         Dim connection As Connection = conectar()
-        Dim actualizar As Recordset = connection.Execute("UPDATE patologia set nombre = '" + patologia.nombre + "', prioridad ='" + patologia.prioridad + "' where id_pat = '" + patologia.id + "';")
+        Dim actualizar As Recordset = connection.Execute("update patologia set nombre = '" + patologia.nombre + "', prioridad ='" + patologia.prioridad + "' where id_pat = '" + patologia.id + "';")
         connection.Close()
     End Sub
 
 
     Public Sub actualizarMedico(medico As Medico)
         Dim connection As Connection = conectar()
-        Dim actualizarUsuario As Recordset = connection.Execute("UPDATE usuario set nombre = '" + medico.nombre + "', apellido = '" + medico.apellido + "', email = '" + medico.email + "', direccion = '" + medico.Direccion + "', ci = '" + medico.CI + "', contraseña= '" + medico.contraseña + "', telefono ='" + medico.telefono + "', FDN ='" + medico.fechadenacimiento + "', segundo_nombre ='" + medico.segundonombre + "', segundo_apellido= '" + medico.segundoapellido + "', sexo ='" + medico.sexo + "' where id_us ='" + medico.ID + ";")
-        Dim actualizarTelefonoUsuario As Recordset = connection.Execute("UPDATE telefono_us set telefono ='" + medico.telefono + "', nombre ='" + medico.nombre + "' where id_us ='" + medico.ID + "';")
-        Dim actualizarMedico As Recordset = connection.Execute("UPDATE medico set especializacion ='" + medico.especializacion + "', Lugar_de_trabajo ='" + medico.lugarDeTrabajo + "' where id_med ='" + medico.ID + "';")
+        Dim actualizarUsuario As Recordset = connection.Execute("update usuario set nombre = '" + medico.nombre + "', apellido = '" + medico.apellido + "', email = '" + medico.email + "', direccion = '" + medico.Direccion + "', ci = '" + medico.CI + "', contraseña= '" + medico.contraseña + "', telefono ='" + medico.telefono + "', FDN ='" + medico.fechadenacimiento + "', segundo_nombre ='" + medico.segundonombre + "', segundo_apellido= '" + medico.segundoapellido + "', sexo ='" + medico.sexo + "' where id_us ='" + medico.ID + "';")
+        Dim actualizarTelefonoUsuario As Recordset = connection.Execute("update telefono_us set telefono ='" + medico.telefono + "', id_us ='" + medico.ID + "' where id_us ='" + medico.ID + "';")
+        Dim actualizarMedico As Recordset = connection.Execute("update medico set especializacion ='" + medico.especializacion + "', Lugar_de_trabajo ='" + medico.lugarDeTrabajo + "' where id_med ='" + medico.ID + "';")
         connection.Close()
     End Sub
 
     Public Sub actualizarPaciente(paciente As Paciente)
         Dim connection As Connection = conectar()
-        Dim actualizarUsuario As Recordset = connection.Execute("UPDATE usuario set nombre = '" + paciente.nombre + "', apellido = '" + paciente.apellido + "', email = '" + paciente.email + "', direccion = '" + paciente.Direccion + "', ci = '" + paciente.CI + "', contraseña= '" + paciente.contraseña + "', telefono ='" + paciente.telefono + "', FDN ='" + paciente.fechadenacimiento + "', segundo_nombre= '" + paciente.segundonombre + "', segundo_apellido= '" + paciente.segundoapellido + "', sexo ='" + paciente.sexo + " where id_us ='" + paciente.ID + "';")
-        Dim actualizarTelefonoUsuario As Recordset = connection.Execute("UPDATE telefono_us set telefono ='" + paciente.telefono + "', nombre ='" + paciente.nombre + "' where id_us ='" + paciente.ID + "';")
-        Dim actualizarPaciente As Recordset = connection.Execute("UPDATE paciente set peso = '" + paciente.peso + "', altura = '" + paciente.altura + "', Patologiasp = '" + paciente.patologiaPrevia + "' where id_pat = '" + paciente.ID + "';")
+        Dim actualizarUsuario As Recordset = connection.Execute("update usuario set nombre = '" + paciente.nombre + "', apellido = '" + paciente.apellido + "', email = '" + paciente.email + "', direccion = '" + paciente.Direccion + "', ci = '" + paciente.CI + "', contraseña= '" + paciente.contraseña + "', telefono ='" + paciente.telefono + "', FDN ='" + paciente.fechadenacimiento + "', segundo_nombre= '" + paciente.segundonombre + "', segundo_apellido= '" + paciente.segundoapellido + "', sexo ='" + paciente.sexo + " where id_us ='" + paciente.ID + "';")
+        Dim actualizarTelefonoUsuario As Recordset = connection.Execute("update telefono_us set telefono ='" + paciente.telefono + "', id_us ='" + paciente.ID + "' where id_us ='" + paciente.ID + "';")
+        Dim actualizarPaciente As Recordset = connection.Execute("update paciente set peso = '" + paciente.peso + "', altura = '" + paciente.altura + "', Patologiasp = '" + paciente.patologiaPrevia + "' where id_pat = '" + paciente.ID + "';")
         connection.Close()
     End Sub
 
     Public Sub actualizarGestor(gestor As Gestor)
         Dim connection As Connection = conectar()
-        Dim actualizarUsuario As Recordset = connection.Execute("UPDATE usuario set nombre = '" + gestor.nombre + "', apellido = '" + gestor.apellido + "', email = '" + gestor.email + "', direccion = '" + gestor.Direccion + "', ci = '" + gestor.CI + "', contraseña= '" + gestor.contraseña + "', telefono ='" + gestor.telefono + "', FDN ='" + gestor.fechadenacimiento + "', segundo_nombre= '" + gestor.segundonombre + "', segundo_apellido = '" + gestor.segundoapellido + "', sexo ='" + gestor.sexo + " where id_us ='" + gestor.ID + "';")
-        Dim actualizarTelefonoUsuario As Recordset = connection.Execute("UPDATE telefono_us set telefono ='" + gestor.telefono + "', nombre ='" + gestor.nombre + "' where id_us ='" + gestor.ID + "';")
-        Dim actualizarMedico As Recordset = connection.Execute("UPDATE gestor set empresa ='" + gestor.empresa + "' where id_ges ='" + gestor.ID + "';")
+        Dim actualizarUsuario As Recordset = connection.Execute("update usuario set nombre = '" + gestor.nombre + "', apellido = '" + gestor.apellido + "', email = '" + gestor.email + "', direccion = '" + gestor.Direccion + "', ci = '" + gestor.CI + "', contraseña= '" + gestor.contraseña + "', telefono ='" + gestor.telefono + "', FDN ='" + gestor.fechadenacimiento + "', segundo_nombre= '" + gestor.segundonombre + "', segundo_apellido = '" + gestor.segundoapellido + "', sexo ='" + gestor.sexo + " where id_us ='" + gestor.ID + "';")
+        Dim actualizarTelefonoUsuario As Recordset = connection.Execute("update telefono_us set telefono ='" + gestor.telefono + "', id_us ='" + gestor.ID + "' where id_us ='" + gestor.ID + "';")
+        Dim actualizarMedico As Recordset = connection.Execute("update gestor set empresa ='" + gestor.empresa + "' where id_ges ='" + gestor.ID + "';")
         connection.Close()
     End Sub
 
@@ -545,7 +544,7 @@ Public Class ConexionConBD
         Select Case num
             Case 0
                 consulta = connection.Execute("select ID_SIN from sintoma ;")
-                idConsulta = TryCast(consulta.Fields("id_sin").Value, String)
+                idConsulta = TryCast(consulta.Fields("ID_SIN").Value, String)
                 id = "SIN"
             Case 1
                 consulta = connection.Execute("select ID_MED from medico ;")
@@ -634,6 +633,7 @@ Public Class ConexionConBD
 
 
     '///------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     'Funcion para obtener diagnostico (esta sujeto a cambios)
     'Todavia no esta terminado
     'Public Function prueba(ByVal lista)
@@ -669,4 +669,8 @@ Public Class ConexionConBD
     'End Function
 
 
+
+
 End Class
+
+

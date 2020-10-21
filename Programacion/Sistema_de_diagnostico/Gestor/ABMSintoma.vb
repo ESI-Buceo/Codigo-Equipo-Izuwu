@@ -3,7 +3,7 @@ Public Class ABMSintoma
     Dim instancia As New LogicaAplicacion()
     Public sintoma As Sintoma
     Public confirmar As Integer
-    Dim listaPatologias As List(Of Patologia) = instancia.ObtenerPatologia()
+    Dim listaPatologias As List(Of Patologia)
     Dim sintomasDePatologias As List(Of Patologia)
 
 
@@ -68,13 +68,14 @@ Public Class ABMSintoma
     '---------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Funciones para cargar listas, textbox, etc.
     Public Sub cargarPantalla()
-
+        listaPatologias = instancia.ObtenerPatologia()
         txtNombre.Clear()
         chkListaPatologias.Items.Clear()
         For Each patologia As Patologia In listaPatologias
             chkListaPatologias.Items.Add(patologia.nombre)
         Next
     End Sub
+
     Public Sub cargarSintoma()
         txtNombre.Text = sintoma.nombre
         txtIDSintoma.Text = sintoma.id

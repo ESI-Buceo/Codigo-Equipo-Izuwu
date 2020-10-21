@@ -34,6 +34,8 @@ Partial Class ABMPatologia
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.chkListaSintomas = New System.Windows.Forms.CheckedListBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.numPrioridad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -42,7 +44,7 @@ Partial Class ABMPatologia
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(66, 122)
+        Me.Label13.Location = New System.Drawing.Point(71, 86)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(82, 17)
         Me.Label13.TabIndex = 6
@@ -65,7 +67,7 @@ Partial Class ABMPatologia
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(268, 3)
+        Me.Button1.Location = New System.Drawing.Point(281, 3)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(41, 26)
         Me.Button1.TabIndex = 9
@@ -79,7 +81,7 @@ Partial Class ABMPatologia
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(226, 3)
+        Me.Button2.Location = New System.Drawing.Point(237, 3)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(41, 26)
         Me.Button2.TabIndex = 10
@@ -88,7 +90,7 @@ Partial Class ABMPatologia
         '
         'txtIDPatologia
         '
-        Me.txtIDPatologia.Location = New System.Drawing.Point(154, 122)
+        Me.txtIDPatologia.Location = New System.Drawing.Point(159, 86)
         Me.txtIDPatologia.Name = "txtIDPatologia"
         Me.txtIDPatologia.ReadOnly = True
         Me.txtIDPatologia.Size = New System.Drawing.Size(134, 20)
@@ -98,7 +100,7 @@ Partial Class ABMPatologia
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(9, 163)
+        Me.Label2.Location = New System.Drawing.Point(14, 127)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(139, 17)
         Me.Label2.TabIndex = 12
@@ -106,7 +108,7 @@ Partial Class ABMPatologia
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(154, 160)
+        Me.txtNombre.Location = New System.Drawing.Point(159, 124)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(134, 20)
         Me.txtNombre.TabIndex = 13
@@ -115,7 +117,7 @@ Partial Class ABMPatologia
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(83, 206)
+        Me.Label3.Location = New System.Drawing.Point(88, 166)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(65, 17)
         Me.Label3.TabIndex = 14
@@ -123,7 +125,7 @@ Partial Class ABMPatologia
         '
         'numPrioridad
         '
-        Me.numPrioridad.Location = New System.Drawing.Point(154, 203)
+        Me.numPrioridad.Location = New System.Drawing.Point(159, 163)
         Me.numPrioridad.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
         Me.numPrioridad.Name = "numPrioridad"
         Me.numPrioridad.Size = New System.Drawing.Size(51, 20)
@@ -136,7 +138,7 @@ Partial Class ABMPatologia
         Me.btnAceptar.FlatAppearance.BorderSize = 0
         Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAceptar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnAceptar.Location = New System.Drawing.Point(98, 263)
+        Me.btnAceptar.Location = New System.Drawing.Point(104, 410)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(106, 28)
         Me.btnAceptar.TabIndex = 16
@@ -148,12 +150,14 @@ Partial Class ABMPatologia
         Me.Panel1.BackColor = System.Drawing.Color.Black
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(314, 24)
+        Me.Panel1.Size = New System.Drawing.Size(330, 24)
         Me.Panel1.TabIndex = 17
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.Controls.Add(Me.Label5)
+        Me.Panel2.Controls.Add(Me.chkListaSintomas)
         Me.Panel2.Controls.Add(Me.btnAceptar)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.numPrioridad)
@@ -164,15 +168,33 @@ Partial Class ABMPatologia
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Location = New System.Drawing.Point(4, 26)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(305, 322)
+        Me.Panel2.Size = New System.Drawing.Size(318, 449)
         Me.Panel2.TabIndex = 18
+        '
+        'chkListaSintomas
+        '
+        Me.chkListaSintomas.FormattingEnabled = True
+        Me.chkListaSintomas.Location = New System.Drawing.Point(36, 216)
+        Me.chkListaSintomas.Name = "chkListaSintomas"
+        Me.chkListaSintomas.Size = New System.Drawing.Size(238, 184)
+        Me.chkListaSintomas.TabIndex = 17
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(8, 196)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(141, 17)
+        Me.Label5.TabIndex = 19
+        Me.Label5.Text = "Sintoma perteneciente:"
         '
         'ABMPatologia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(312, 352)
+        Me.ClientSize = New System.Drawing.Size(326, 478)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Panel1)
@@ -201,4 +223,6 @@ Partial Class ABMPatologia
     Friend WithEvents btnAceptar As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents chkListaSintomas As CheckedListBox
+    Friend WithEvents Label5 As Label
 End Class

@@ -146,13 +146,32 @@ Public Class MenuGestorNew
     End Sub
 
     Private Sub lstSintomas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstSintomas.SelectedIndexChanged
-        limpiarListaPatologia()
-        Dim listaPatologiasDeSintomas As List(Of Patologia) = instancia.ObtenerReferenciaSintomaPatologia(listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).id)
-        For Each patologia As Patologia In listaPatologiasDeSintomas
-            lstPatologia.Items.Add(patologia.nombre)
-        Next
+
+        If lstSintomas.SelectedItems.Count = 0 Then
+            limpiarListaPatologia()
+            cargarListaPatologia()
+        Else
+            limpiarListaPatologia()
+            Dim listaPatologiasDeSintomas As List(Of Patologia) = instancia.ObtenerReferenciaSintomaPatologia(listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).id)
+            For Each patologia As Patologia In listaPatologiasDeSintomas
+                lstPatologia.Items.Add(patologia.nombre)
+            Next
+        End If
 
 
+
+    End Sub
+    Private Sub lstPatologia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstPatologia.SelectedIndexChanged
+        If lstPatologia.SelectedItems.Count = 0 Then
+            limpiarListaSintomas()
+            cargarListaSintoma()
+        Else
+            limpiarListaSintomas()
+            Dim listaSintomaDePatologia As List(Of Sintoma) = instancia.ObtenerReferenciaPatologiaSintoma(listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).id)
+            For Each sintoma As Sintoma In listaSintomaDePatologia
+                lstSintomas.Items.Add(sintoma.nombre)
+            Next
+        End If
     End Sub
 
     Private Sub btnAgregarMedico_Click(sender As Object, e As EventArgs) Handles btnAgregarMedico.Click
@@ -205,7 +224,7 @@ Public Class MenuGestorNew
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnModSintoma.Click
-        If lstSintomas.FocusedItem.Index = Nothing Then
+        If lstSintomas.SelectedItems.Count = 0 Then
             MsgBox("Ningun sintoma seleccionado")
         Else
             Dim sintoma As New Sintoma(listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).nombre, listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).id)
@@ -214,6 +233,11 @@ Public Class MenuGestorNew
 
 
             AltaModSintoma.ShowDialog()
+            limpiarListaSintomas()
+            cargarListaSintoma()
+            limpiarListaPatologia()
+            cargarListaPatologia()
+
         End If
 
     End Sub
@@ -222,18 +246,21 @@ Public Class MenuGestorNew
         AltaModSintoma.confirmar = -1
         AltaModSintoma.sintoma = Nothing
         AltaModSintoma.ShowDialog()
-
+        limpiarListaSintomas()
+        cargarListaSintoma()
 
     End Sub
 
     Private Sub btnAgregarPatologia_Click(sender As Object, e As EventArgs) Handles btnAgregarPatologia.Click
         AltaModPatologia.confirmar = -1
         AltaModPatologia.ShowDialog()
+        limpiarListaPatologia()
+        cargarListaPatologia()
 
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles btnModPatologia.Click
-        If lstSintomas.SelectedItems.Count = 0 Then
+        If lstPatologia.SelectedItems.Count = 0 Then
             MsgBox("Ninguna patologia seleccionada")
         Else
             Dim patologia As New Patologia(listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).nombre, listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).prioridad,
@@ -241,6 +268,8 @@ Public Class MenuGestorNew
             AltaModPatologia.patologia = patologia
             AltaModPatologia.confirmar = 0
             AltaModPatologia.ShowDialog()
+            limpiarListaPatologia()
+            cargarListaPatologia()
         End If
 
     End Sub
@@ -333,6 +362,11 @@ Public Class MenuGestorNew
 
     End Sub
 
+    Private Sub panelABMSintoma_MouseClick(sender As Object, e As MouseEventArgs) Handles panelABMSintoma.MouseClick
+        lstPatologia.SelectedItems.Clear()
+        lstSintomas.SelectedItems.Clear()
+    End Sub
+
     '-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Lista de funciones para limpiar diferentes areas de la pantalla (textbox, listbox, etc.)
 
@@ -396,6 +430,8 @@ Public Class MenuGestorNew
         txtModDel_ConfContraseña.Clear()
         lstModDel_Medicos.Items.Clear()
     End Sub
+
+
 
     Public Sub nullvisible()
         panelABMSintoma.Visible = False
