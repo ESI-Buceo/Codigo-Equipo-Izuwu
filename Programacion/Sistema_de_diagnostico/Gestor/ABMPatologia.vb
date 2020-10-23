@@ -91,7 +91,7 @@ Public Class ABMPatologia
 
         For i = 0 To chkListaSintomas.Items.Count - 1
             For Each sintoma As Sintoma In sintomasDePatologia
-                If chkListaSintomas.Items.Item(i) = patologia.nombre Then
+                If chkListaSintomas.Items.Item(i) = sintoma.nombre Then
                     chkListaSintomas.SetItemChecked(i, True)
                 End If
             Next

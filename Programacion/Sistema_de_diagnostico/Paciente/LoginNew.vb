@@ -39,7 +39,7 @@ Public Class LoginNew
 
 
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnEntrar.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         Try
 
             'Se toman los datos de los cuadros de texto CI y Contraseña
@@ -65,11 +65,11 @@ Public Class LoginNew
 
 
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) 
         Me.Close()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) 
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
@@ -79,6 +79,30 @@ Public Class LoginNew
 
     Private Sub Label6_MouseLeave(sender As Object, e As EventArgs) Handles Label6.MouseLeave
         Label6.ForeColor = Color.FromArgb(255, 255, 255)
+    End Sub
+
+    Private Sub btnEntrar_Click(sender As Object, e As EventArgs) Handles btnEntrar.Click
+        Try
+
+            'Se toman los datos de los cuadros de texto CI y Contraseña
+            Dim login As Paciente = Instancia.loginPaciente(txtUsuario.Text, txtContraseña.Text)
+
+            'Dim paciente As New Paciente(login.nombre, login.segundonombre, login.apellido, login.segundoapellido,
+            'login.email, login.ID, login.Direccion, login.CI, login.contraseña, login.telefono, login.fechadenacimiento, login.peso, login.altura, login.patologiaPrevia)
+
+            Dim menuPaciente As New MenuPacienteNew()
+
+            menuPaciente.paciente = login
+
+
+            Me.Hide()
+            menuPaciente.ShowDialog()
+            Me.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+        End Try
     End Sub
 
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click

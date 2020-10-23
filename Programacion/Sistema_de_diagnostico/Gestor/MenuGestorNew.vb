@@ -9,8 +9,8 @@ Public Class MenuGestorNew
     Dim instancia As New LogicaAplicacion()
 
     Dim listaMedicos As List(Of Medico)
-    Dim listaSintomas As List(Of Sintoma)
-    Dim listaPatologia As List(Of Patologia)
+    Dim listaSintomas As List(Of Sintoma) = instancia.ObtenerSintoma()
+    Dim listaPatologia As List(Of Patologia) = instancia.ObtenerPatologia()
 
     Dim AltaModSintoma As New ABMSintoma()
     Dim AltaModPatologia As New ABMPatologia()
@@ -53,9 +53,6 @@ Public Class MenuGestorNew
 
 
     Private Sub MenuGestor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        btnMenu_AgregarMedico.BackColor = Color.FromArgb(48, 48, 48)
-        btnMenu_ABMSintomas.BackColor = Color.FromArgb(48, 48, 48)
-        btnMenu_ModUsuario.BackColor = Color.FromArgb(48, 48, 48)
 
         labIniciales.Text = gestor.nombre(0) + " " + gestor.apellido(0)
         labNombre.Text = gestor.nombre + " " + gestor.apellido
@@ -70,59 +67,8 @@ Public Class MenuGestorNew
 
     End Sub
 
-    Private Sub btnMenu_AgregarMedico_Click(sender As Object, e As EventArgs) Handles btnMenu_AgregarMedico.Click
-        btnMenu_AgregarMedico.BackColor = Color.FromArgb(36, 36, 36)
-        btnMenu_ABMSintomas.BackColor = Color.FromArgb(48, 48, 48)
-        btnMenu_ModUsuario.BackColor = Color.FromArgb(48, 48, 48)
 
-        nullvisible()
-
-        panelAgregarUsuario.Visible = True
-
-
-
-    End Sub
-
-    Private Sub btnABMSintomas_Click(sender As Object, e As EventArgs) Handles btnMenu_ABMSintomas.Click
-        btnMenu_AgregarMedico.BackColor = Color.FromArgb(48, 48, 48)
-        btnMenu_ABMSintomas.BackColor = Color.FromArgb(36, 36, 36)
-        btnMenu_ModUsuario.BackColor = Color.FromArgb(48, 48, 48)
-        limpiarListaPatologia()
-        limpiarListaSintomas()
-        cargarListaSintoma()
-        cargarListaPatologia()
-        nullvisible()
-
-        panelABMSintoma.Visible = True
-    End Sub
-
-
-    Private Sub btnModUsuario_Click_1(sender As Object, e As EventArgs) Handles btnMenu_ModUsuario.Click
-        btnMenu_AgregarMedico.BackColor = Color.FromArgb(48, 48, 48)
-        btnMenu_ABMSintomas.BackColor = Color.FromArgb(48, 48, 48)
-        btnMenu_ModUsuario.BackColor = Color.FromArgb(36, 36, 36)
-        limpiarModDel_Medicos()
-        cargarListaMedicos()
-        nullvisible()
-
-        panelModificarEliminarMedico.Visible = True
-
-
-
-    End Sub
     '-------------------------------------------------------------------------------------------------------------------------------------------------
-
-    Private Sub Button1_MouseMove(sender As Object, e As MouseEventArgs) Handles Button1.MouseMove
-        Button1.BackColor = Color.FromArgb(255, 96, 96)
-    End Sub
-
-    Private Sub Button1_MouseLeave(sender As Object, e As EventArgs) Handles Button1.MouseLeave
-        Button1.BackColor = Color.FromArgb(255, 255, 255)
-    End Sub
-
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.Close()
-    End Sub
 
     Private Sub btnAceptarModificar_Click(sender As Object, e As EventArgs) Handles btnAceptarModificar.Click
         Try
@@ -141,7 +87,7 @@ Public Class MenuGestorNew
         End Try
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
@@ -152,7 +98,7 @@ Public Class MenuGestorNew
             cargarListaPatologia()
         Else
             limpiarListaPatologia()
-            Dim listaPatologiasDeSintomas As List(Of Patologia) = instancia.ObtenerReferenciaSintomaPatologia(listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).id)
+            Dim listaPatologiasDeSintomas As List(Of Patologia) = instancia.ObtenerReferenciaSintomaPatologia(filtroSintomas.ElementAt(lstSintomas.FocusedItem.Index).id)
             For Each patologia As Patologia In listaPatologiasDeSintomas
                 lstPatologia.Items.Add(patologia.nombre)
             Next
@@ -167,7 +113,7 @@ Public Class MenuGestorNew
             cargarListaSintoma()
         Else
             limpiarListaSintomas()
-            Dim listaSintomaDePatologia As List(Of Sintoma) = instancia.ObtenerReferenciaPatologiaSintoma(listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).id)
+            Dim listaSintomaDePatologia As List(Of Sintoma) = instancia.ObtenerReferenciaPatologiaSintoma(filtroPatologias.ElementAt(lstPatologia.FocusedItem.Index).id)
             For Each sintoma As Sintoma In listaSintomaDePatologia
                 lstSintomas.Items.Add(sintoma.nombre)
             Next
@@ -227,7 +173,7 @@ Public Class MenuGestorNew
         If lstSintomas.SelectedItems.Count = 0 Then
             MsgBox("Ningun sintoma seleccionado")
         Else
-            Dim sintoma As New Sintoma(listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).nombre, listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).id)
+            Dim sintoma As New Sintoma(filtroSintomas.ElementAt(lstSintomas.FocusedItem.Index).nombre, filtroSintomas.ElementAt(lstSintomas.FocusedItem.Index).id)
             AltaModSintoma.sintoma = sintoma
             AltaModSintoma.confirmar = 0
 
@@ -242,29 +188,20 @@ Public Class MenuGestorNew
 
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnAgregarSintoma.Click
-        AltaModSintoma.confirmar = -1
-        AltaModSintoma.sintoma = Nothing
-        AltaModSintoma.ShowDialog()
-        limpiarListaSintomas()
-        cargarListaSintoma()
 
-    End Sub
-
-    Private Sub btnAgregarPatologia_Click(sender As Object, e As EventArgs) Handles btnAgregarPatologia.Click
+    Private Sub btnAgregarPatologia_Click_1(sender As Object, e As EventArgs) Handles btnAgregarPatologia.Click
         AltaModPatologia.confirmar = -1
         AltaModPatologia.ShowDialog()
         limpiarListaPatologia()
         cargarListaPatologia()
-
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles btnModPatologia.Click
         If lstPatologia.SelectedItems.Count = 0 Then
             MsgBox("Ninguna patologia seleccionada")
         Else
-            Dim patologia As New Patologia(listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).nombre, listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).prioridad,
-                                           listaPatologia.ElementAt(lstPatologia.FocusedItem.Index).id)
+            Dim patologia As New Patologia(filtroPatologias.ElementAt(lstPatologia.FocusedItem.Index).nombre, filtroPatologias.ElementAt(lstPatologia.FocusedItem.Index).prioridad,
+                                          filtroPatologias.ElementAt(lstPatologia.FocusedItem.Index).id)
             AltaModPatologia.patologia = patologia
             AltaModPatologia.confirmar = 0
             AltaModPatologia.ShowDialog()
@@ -274,20 +211,7 @@ Public Class MenuGestorNew
 
     End Sub
 
-    Private Sub txtBuscarSintoma_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarSintoma.TextChanged
-        filtroSintomas.Clear()
-        For Each filtro As Sintoma In listaSintomas
-            If filtro.nombre.ToLower.StartsWith(txtBuscarSintoma.Text.ToLower) Then
-                filtroSintomas.Add(filtro)
-            End If
-        Next
-        lstSintomas.Clear()
-        For Each resultado As Sintoma In filtroSintomas
-            lstSintomas.Items.Add(resultado.nombre)
-        Next
-    End Sub
-
-    Private Sub txtBuscarPatologia_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarPatologia.TextChanged
+    Private Sub txtBuscarPatologia_TextChanged_1(sender As Object, e As EventArgs) Handles txtBuscarPatologia.TextChanged
         filtroPatologias.Clear()
         For Each filtro As Patologia In listaPatologia
             If filtro.nombre.ToLower.StartsWith(txtBuscarPatologia.Text.ToLower) Then
@@ -297,6 +221,19 @@ Public Class MenuGestorNew
         lstPatologia.Clear()
         For Each resultado As Patologia In filtroPatologias
             lstPatologia.Items.Add(resultado.nombre)
+        Next
+    End Sub
+
+    Private Sub txtBuscarSintoma_TextChanged_1(sender As Object, e As EventArgs) Handles txtBuscarSintoma.TextChanged
+        filtroSintomas.Clear()
+        For Each filtro As Sintoma In listaSintomas
+            If filtro.nombre.ToLower.StartsWith(txtBuscarSintoma.Text.ToLower) Then
+                filtroSintomas.Add(filtro)
+            End If
+        Next
+        lstSintomas.Clear()
+        For Each resultado As Sintoma In filtroSintomas
+            lstSintomas.Items.Add(resultado.nombre)
         Next
     End Sub
 
@@ -393,6 +330,8 @@ Public Class MenuGestorNew
             lstModDel_Medicos.Items.Add(medico.CI + " " + medico.nombre(0) + " " + medico.apellido(0))
         Next
     End Sub
+
+
     Public Sub limpiarListaPatologia()
         lstPatologia.Clear()
     End Sub
@@ -429,6 +368,49 @@ Public Class MenuGestorNew
         txtModDel_Contraseña.Clear()
         txtModDel_ConfContraseña.Clear()
         lstModDel_Medicos.Items.Clear()
+    End Sub
+
+    Private Sub btnMenu_AgregarMedico_Click_1(sender As Object, e As EventArgs) Handles btnMenu_AgregarMedico.Click
+        nullvisible()
+
+        panelAgregarUsuario.Visible = True
+        btnMenu_AgregarMedico.FillColor = Color.FromArgb(36, 36, 36)
+        btn_ABMSinPat.FillColor = Color.FromArgb(48, 48, 48)
+        btnMenu_ModUsuario.FillColor = Color.FromArgb(48, 48, 48)
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btn_ABMSinPat.Click
+        limpiarListaPatologia()
+        limpiarListaSintomas()
+        cargarListaSintoma()
+        cargarListaPatologia()
+        nullvisible()
+
+        btnMenu_AgregarMedico.FillColor = Color.FromArgb(48, 48, 48)
+        btn_ABMSinPat.FillColor = Color.FromArgb(36, 36, 36)
+        btnMenu_ModUsuario.FillColor = Color.FromArgb(48, 48, 48)
+
+        panelABMSintoma.Visible = True
+    End Sub
+
+    Private Sub btnMenu_ModUsuario_Click(sender As Object, e As EventArgs) Handles btnMenu_ModUsuario.Click
+        limpiarModDel_Medicos()
+        cargarListaMedicos()
+        nullvisible()
+
+        btnMenu_AgregarMedico.FillColor = Color.FromArgb(48, 48, 48)
+        btn_ABMSinPat.FillColor = Color.FromArgb(48, 48, 48)
+        btnMenu_ModUsuario.FillColor = Color.FromArgb(36, 36, 36)
+
+        panelModificarEliminarMedico.Visible = True
+    End Sub
+
+    Private Sub btnAgregarSintoma_Click(sender As Object, e As EventArgs) Handles btnAgregarSintoma.Click
+        AltaModSintoma.confirmar = -1
+        AltaModSintoma.sintoma = Nothing
+        AltaModSintoma.ShowDialog()
+        limpiarListaSintomas()
+        cargarListaSintoma()
     End Sub
 
 

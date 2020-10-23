@@ -24,62 +24,130 @@ Partial Class LoginNew
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginNew))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.txtContraseña = New System.Windows.Forms.TextBox()
-        Me.txtUsuario = New System.Windows.Forms.TextBox()
+        Me.btnEntrar = New Guna.UI2.WinForms.Guna2Button()
+        Me.txtContraseña = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtUsuario = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.btnEntrar = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
+        Me.Guna2ControlBox2 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(207, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Controls.Add(Me.btnEntrar)
         Me.Panel1.Controls.Add(Me.txtContraseña)
         Me.Panel1.Controls.Add(Me.txtUsuario)
+        Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.btnEntrar)
         Me.Panel1.Location = New System.Drawing.Point(0, -3)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(284, 648)
         Me.Panel1.TabIndex = 0
         '
+        'btnEntrar
+        '
+        Me.btnEntrar.Animated = True
+        Me.btnEntrar.AutoRoundedCorners = True
+        Me.btnEntrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnEntrar.BorderRadius = 18
+        Me.btnEntrar.CheckedState.Parent = Me.btnEntrar
+        Me.btnEntrar.CustomImages.Parent = Me.btnEntrar
+        Me.btnEntrar.FillColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(122, Byte), Integer))
+        Me.btnEntrar.Font = New System.Drawing.Font("Yu Gothic UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEntrar.ForeColor = System.Drawing.Color.White
+        Me.btnEntrar.HoverState.Parent = Me.btnEntrar
+        Me.btnEntrar.Location = New System.Drawing.Point(66, 427)
+        Me.btnEntrar.Name = "btnEntrar"
+        Me.btnEntrar.ShadowDecoration.Parent = Me.btnEntrar
+        Me.btnEntrar.Size = New System.Drawing.Size(107, 38)
+        Me.btnEntrar.TabIndex = 20
+        Me.btnEntrar.Text = "Entrar"
+        '
         'txtContraseña
         '
-        Me.txtContraseña.Location = New System.Drawing.Point(17, 274)
+        Me.txtContraseña.AutoRoundedCorners = True
+        Me.txtContraseña.BorderRadius = 11
+        Me.txtContraseña.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtContraseña.DefaultText = ""
+        Me.txtContraseña.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtContraseña.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtContraseña.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtContraseña.DisabledState.Parent = Me.txtContraseña
+        Me.txtContraseña.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtContraseña.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtContraseña.FocusedState.Parent = Me.txtContraseña
+        Me.txtContraseña.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtContraseña.ForeColor = System.Drawing.Color.Black
+        Me.txtContraseña.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtContraseña.HoverState.Parent = Me.txtContraseña
+        Me.txtContraseña.Location = New System.Drawing.Point(12, 292)
         Me.txtContraseña.Name = "txtContraseña"
-        Me.txtContraseña.Size = New System.Drawing.Size(192, 20)
-        Me.txtContraseña.TabIndex = 16
-        Me.txtContraseña.UseSystemPasswordChar = True
+        Me.txtContraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
+        Me.txtContraseña.PlaceholderForeColor = System.Drawing.Color.Gray
+        Me.txtContraseña.PlaceholderText = "Ingrese Contraseña..."
+        Me.txtContraseña.SelectedText = ""
+        Me.txtContraseña.ShadowDecoration.Parent = Me.txtContraseña
+        Me.txtContraseña.Size = New System.Drawing.Size(192, 25)
+        Me.txtContraseña.TabIndex = 19
         '
         'txtUsuario
         '
-        Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario.Location = New System.Drawing.Point(17, 202)
+        Me.txtUsuario.AutoRoundedCorners = True
+        Me.txtUsuario.BorderRadius = 11
+        Me.txtUsuario.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtUsuario.DefaultText = ""
+        Me.txtUsuario.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtUsuario.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtUsuario.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtUsuario.DisabledState.Parent = Me.txtUsuario
+        Me.txtUsuario.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtUsuario.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtUsuario.FocusedState.Parent = Me.txtUsuario
+        Me.txtUsuario.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtUsuario.ForeColor = System.Drawing.Color.Black
+        Me.txtUsuario.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtUsuario.HoverState.Parent = Me.txtUsuario
+        Me.txtUsuario.Location = New System.Drawing.Point(12, 215)
         Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(192, 21)
-        Me.txtUsuario.TabIndex = 15
+        Me.txtUsuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtUsuario.PlaceholderForeColor = System.Drawing.Color.Gray
+        Me.txtUsuario.PlaceholderText = "Ingrese CI..."
+        Me.txtUsuario.SelectedText = ""
+        Me.txtUsuario.ShadowDecoration.Parent = Me.txtUsuario
+        Me.txtUsuario.Size = New System.Drawing.Size(192, 25)
+        Me.txtUsuario.TabIndex = 18
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(284, 179)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 17
+        Me.PictureBox2.TabStop = False
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(14, 335)
+        Me.Label4.Location = New System.Drawing.Point(13, 320)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(130, 13)
         Me.Label4.TabIndex = 14
@@ -90,7 +158,7 @@ Partial Class LoginNew
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(14, 256)
+        Me.Label3.Location = New System.Drawing.Point(9, 274)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(70, 15)
         Me.Label3.TabIndex = 12
@@ -101,7 +169,7 @@ Partial Class LoginNew
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(14, 184)
+        Me.Label2.Location = New System.Drawing.Point(9, 197)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(69, 15)
         Me.Label2.TabIndex = 10
@@ -129,48 +197,6 @@ Partial Class LoginNew
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "Politicas de privacidad"
         '
-        'btnEntrar
-        '
-        Me.btnEntrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(122, Byte), Integer))
-        Me.btnEntrar.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnEntrar.FlatAppearance.BorderSize = 0
-        Me.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEntrar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnEntrar.Location = New System.Drawing.Point(63, 408)
-        Me.btnEntrar.Name = "btnEntrar"
-        Me.btnEntrar.Size = New System.Drawing.Size(106, 28)
-        Me.btnEntrar.TabIndex = 6
-        Me.btnEntrar.Text = "Entrar"
-        Me.btnEntrar.UseVisualStyleBackColor = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(939, 1)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(41, 26)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "X"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.LightGray
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(900, 1)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(41, 26)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "-"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
         'PictureBox1
         '
         Me.PictureBox1.Enabled = False
@@ -182,15 +208,32 @@ Partial Class LoginNew
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
-        'PictureBox2
+        'Guna2ControlBox1
         '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(12, 15)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(260, 82)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 17
-        Me.PictureBox2.TabStop = False
+        Me.Guna2ControlBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Guna2ControlBox1.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox
+        Me.Guna2ControlBox1.FillColor = System.Drawing.Color.Silver
+        Me.Guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.Gray
+        Me.Guna2ControlBox1.HoverState.Parent = Me.Guna2ControlBox1
+        Me.Guna2ControlBox1.IconColor = System.Drawing.Color.Black
+        Me.Guna2ControlBox1.Location = New System.Drawing.Point(890, 0)
+        Me.Guna2ControlBox1.Name = "Guna2ControlBox1"
+        Me.Guna2ControlBox1.ShadowDecoration.Parent = Me.Guna2ControlBox1
+        Me.Guna2ControlBox1.Size = New System.Drawing.Size(45, 29)
+        Me.Guna2ControlBox1.TabIndex = 45
+        '
+        'Guna2ControlBox2
+        '
+        Me.Guna2ControlBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Guna2ControlBox2.FillColor = System.Drawing.Color.IndianRed
+        Me.Guna2ControlBox2.HoverState.FillColor = System.Drawing.Color.Red
+        Me.Guna2ControlBox2.HoverState.Parent = Me.Guna2ControlBox2
+        Me.Guna2ControlBox2.IconColor = System.Drawing.Color.Black
+        Me.Guna2ControlBox2.Location = New System.Drawing.Point(935, 0)
+        Me.Guna2ControlBox2.Name = "Guna2ControlBox2"
+        Me.Guna2ControlBox2.ShadowDecoration.Parent = Me.Guna2ControlBox2
+        Me.Guna2ControlBox2.Size = New System.Drawing.Size(45, 29)
+        Me.Guna2ControlBox2.TabIndex = 46
         '
         'LoginNew
         '
@@ -198,8 +241,8 @@ Partial Class LoginNew
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ClientSize = New System.Drawing.Size(980, 645)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Guna2ControlBox1)
+        Me.Controls.Add(Me.Guna2ControlBox2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -211,8 +254,8 @@ Partial Class LoginNew
         Me.Text = "LoginNew"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -220,14 +263,14 @@ Partial Class LoginNew
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents btnEntrar As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents txtContraseña As TextBox
-    Friend WithEvents txtUsuario As TextBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents txtUsuario As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtContraseña As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents btnEntrar As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2ControlBox1 As Guna.UI2.WinForms.Guna2ControlBox
+    Friend WithEvents Guna2ControlBox2 As Guna.UI2.WinForms.Guna2ControlBox
 End Class

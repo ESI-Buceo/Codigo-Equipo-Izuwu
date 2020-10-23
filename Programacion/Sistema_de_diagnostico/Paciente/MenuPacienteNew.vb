@@ -71,14 +71,6 @@ Public Class MenuPacienteNew
     End Sub
 
 
-
-
-    Private Sub btnCerrarsesion_Click_1(sender As Object, e As EventArgs) Handles btnCerrarsesion.Click
-        devolverColorBotonesMenu()
-        btnCerrarsesion.BackColor = Color.FromArgb(24, 68, 122)
-
-        nullvisible()
-    End Sub
     '-------------------------------------------------------------------------------------------------------------------------------------------------
 
     Private Sub Button1_MouseMove(sender As Object, e As MouseEventArgs) Handles Button1.MouseMove
@@ -97,23 +89,12 @@ Public Class MenuPacienteNew
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        SintomasSeleccionados.Add(New Sintoma(listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).nombre, listaSintomas.ElementAt(lstSintomas.FocusedItem.Index).id))
-
-        lstSintomasSeleccionados.Clear()
-        For Each sintoma As Sintoma In SintomasSeleccionados
-            lstSintomasSeleccionados.Items.Add(sintoma.nombre)
-        Next
-    End Sub
 
     Private Sub Label13_Click(sender As Object, e As EventArgs) Handles labVolverDisgnostico.Click
         nullvisible()
         devolverColorBotonesMenu()
     End Sub
 
-    Private Sub txtBusquedaSintomas_TextChanged(sender As Object, e As EventArgs) Handles txtBusquedaSintomas.TextChanged
-        cargarListaSintomas()
-    End Sub
 
     Private Sub labNombre_Click(sender As Object, e As EventArgs) Handles labNombre.Click
         labPerfilNombre.Text = paciente.nombre
@@ -129,26 +110,18 @@ Public Class MenuPacienteNew
 
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnRdiag.Click
         labDiagnostico.Visible = True
+        labDiagnostico.Text = "GRIPE 100%"
 
-    End Sub
-    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        If lstSintomasSeleccionados.SelectedItems.Count = 0 Then
-            MsgBox("Ningun sintoma seleccionado.")
-
-        Else
-            SintomasSeleccionados.Remove(SintomasSeleccionados.ElementAt(lstSintomasSeleccionados.FocusedItem.Index))
-            lstSintomasSeleccionados.Items.Remove(lstSintomasSeleccionados.Items.Item(lstSintomasSeleccionados.FocusedItem.Index))
-        End If
     End Sub
     Private Sub Label5_Click_1(sender As Object, e As EventArgs) Handles labVolverPerfil.Click
         nullvisible()
     End Sub
-    Private Sub btnChats_Click(sender As Object, e As EventArgs) Handles btnChats.Click
+    Private Sub btnChats_Click(sender As Object, e As EventArgs) Handles btnChats1.Click
         btnRealizarDiagnostico.BackColor = Color.FromArgb(40, 117, 207)
-        btnChats.BackColor = Color.FromArgb(24, 68, 122)
-        btnCerrarsesion.BackColor = Color.FromArgb(40, 117, 207)
+        btnChats1.FillColor = Color.FromArgb(24, 68, 122)
+        btnCerrarSesion.FillColor = Color.FromArgb(40, 117, 207)
 
         nullvisible()
         Dim indice As Single = 1
@@ -176,6 +149,46 @@ Public Class MenuPacienteNew
 
     End Sub
 
+    Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
+        devolverColorBotonesMenu()
+        btnCerrarSesion.FillColor = Color.FromArgb(24, 68, 122)
+        nullvisible()
+    End Sub
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        If lstSintomas.SelectedItems.Count = 0 Then
+            MsgBox("No hay ningun sintoma seleccionado.")
+
+        Else
+            SintomasSeleccionados.Add(New Sintoma(filtroSintomas.ElementAt(lstSintomas.FocusedItem.Index).nombre, filtroSintomas.ElementAt(lstSintomas.FocusedItem.Index).id))
+
+            lstSintomasSeleccionados.Clear()
+            For Each sintoma As Sintoma In SintomasSeleccionados
+                lstSintomasSeleccionados.Items.Add(sintoma.nombre)
+            Next
+            lstSintomas.SelectedItems.Clear()
+        End If
+
+
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        If lstSintomasSeleccionados.SelectedItems.Count = 0 Then
+            MsgBox("Ningun sintoma seleccionado.")
+
+        Else
+            SintomasSeleccionados.Remove(SintomasSeleccionados.ElementAt(lstSintomasSeleccionados.FocusedItem.Index))
+            lstSintomasSeleccionados.Items.Remove(lstSintomasSeleccionados.Items.Item(lstSintomasSeleccionados.FocusedItem.Index))
+        End If
+    End Sub
+
+    Private Sub txtBusquedaSintomas_TextChanged_1(sender As Object, e As EventArgs) Handles txtBusquedaSintomas.TextChanged
+        cargarListaSintomas()
+    End Sub
+
+
+    '-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'Funciones para la aplicacion que se van a repetir (Cargar listas, hacer invisibles sectores de la ventana, etc.)
     Public Sub cargarListaSintomas()
 
         filtroSintomas.Clear()
@@ -197,10 +210,9 @@ Public Class MenuPacienteNew
         panelRealizarDiagnostico2.Visible = False
         panelPerfil.Visible = False
     End Sub
-
     Public Sub devolverColorBotonesMenu()
         btnRealizarDiagnostico.BackColor = Color.FromArgb(40, 117, 207)
-        btnChats.BackColor = Color.FromArgb(40, 117, 207)
-        btnCerrarsesion.BackColor = Color.FromArgb(40, 117, 207)
+        btnChats1.FillColor = Color.FromArgb(40, 117, 207)
+        btnCerrarSesion.FillColor = Color.FromArgb(40, 117, 207)
     End Sub
 End Class

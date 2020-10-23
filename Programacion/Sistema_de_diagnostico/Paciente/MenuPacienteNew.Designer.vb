@@ -25,33 +25,33 @@ Partial Class MenuPacienteNew
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MenuPacienteNew))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.panelRealizarDiagnostico = New System.Windows.Forms.Panel()
-        Me.labVolverDisgnostico = New System.Windows.Forms.Label()
-        Me.btnAgregar = New System.Windows.Forms.Button()
+        Me.paelRealizaDiagnostico2 = New System.Windows.Forms.Panel()
+        Me.txtBusquedaSintomas = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnAgregar = New Guna.UI2.WinForms.Guna2Button()
         Me.lstSintomas = New System.Windows.Forms.ListView()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.btnCerrarsesion = New System.Windows.Forms.Button()
+        Me.btnCerrarSesion = New Guna.UI2.WinForms.Guna2Button()
         Me.labIniciales = New System.Windows.Forms.Label()
         Me.labHistorialMedico = New System.Windows.Forms.Label()
         Me.labNombre = New System.Windows.Forms.Label()
-        Me.btnChats = New System.Windows.Forms.Button()
         Me.btnRealizarDiagnostico = New System.Windows.Forms.Button()
-        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnChats1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.labVolverDisgnostico = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.panelMenu_Chat = New System.Windows.Forms.Panel()
-        Me.paelRealizaDiagnostico2 = New System.Windows.Forms.Panel()
-        Me.txtBusquedaSintomas = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.panelChat = New System.Windows.Forms.Panel()
-        Me.btnEnviar = New System.Windows.Forms.Button()
         Me.txtMensaje = New System.Windows.Forms.TextBox()
         Me.txtChat = New System.Windows.Forms.TextBox()
+        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.panelRealizarDiagnostico2 = New System.Windows.Forms.Panel()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.labDiagnostico = New System.Windows.Forms.Label()
         Me.labTituloDiagnostico = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lstSintomasSeleccionados = New System.Windows.Forms.ListView()
+        Me.btnRdiag = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnEliminar = New Guna.UI2.WinForms.Guna2Button()
         Me.panelPerfil = New System.Windows.Forms.Panel()
         Me.panelDatosMedicos = New System.Windows.Forms.Panel()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -85,12 +85,12 @@ Partial Class MenuPacienteNew
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(207, Byte), Integer))
         Me.Panel1.Controls.Add(Me.panelRealizarDiagnostico)
-        Me.Panel1.Controls.Add(Me.btnCerrarsesion)
+        Me.Panel1.Controls.Add(Me.btnCerrarSesion)
         Me.Panel1.Controls.Add(Me.labIniciales)
         Me.Panel1.Controls.Add(Me.labHistorialMedico)
         Me.Panel1.Controls.Add(Me.labNombre)
-        Me.Panel1.Controls.Add(Me.btnChats)
         Me.Panel1.Controls.Add(Me.btnRealizarDiagnostico)
+        Me.Panel1.Controls.Add(Me.btnChats1)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(284, 648)
@@ -98,38 +98,83 @@ Partial Class MenuPacienteNew
         '
         'panelRealizarDiagnostico
         '
+        Me.panelRealizarDiagnostico.Controls.Add(Me.paelRealizaDiagnostico2)
         Me.panelRealizarDiagnostico.Controls.Add(Me.btnAgregar)
         Me.panelRealizarDiagnostico.Controls.Add(Me.lstSintomas)
         Me.panelRealizarDiagnostico.Controls.Add(Me.Label4)
-        Me.panelRealizarDiagnostico.Controls.Add(Me.paelRealizaDiagnostico2)
-        Me.panelRealizarDiagnostico.Location = New System.Drawing.Point(0, 65)
+        Me.panelRealizarDiagnostico.Location = New System.Drawing.Point(0, 71)
         Me.panelRealizarDiagnostico.Name = "panelRealizarDiagnostico"
         Me.panelRealizarDiagnostico.Size = New System.Drawing.Size(284, 582)
-        Me.panelRealizarDiagnostico.TabIndex = 12
+        Me.panelRealizarDiagnostico.TabIndex = 27
         '
-        'labVolverDisgnostico
+        'paelRealizaDiagnostico2
         '
-        Me.labVolverDisgnostico.AutoSize = True
-        Me.labVolverDisgnostico.Font = New System.Drawing.Font("Yu Gothic UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labVolverDisgnostico.Location = New System.Drawing.Point(1, 2)
-        Me.labVolverDisgnostico.Name = "labVolverDisgnostico"
-        Me.labVolverDisgnostico.Size = New System.Drawing.Size(39, 32)
-        Me.labVolverDisgnostico.TabIndex = 23
-        Me.labVolverDisgnostico.Text = "←"
+        Me.paelRealizaDiagnostico2.BackColor = System.Drawing.Color.Transparent
+        Me.paelRealizaDiagnostico2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.paelRealizaDiagnostico2.Controls.Add(Me.txtBusquedaSintomas)
+        Me.paelRealizaDiagnostico2.Controls.Add(Me.Label1)
+        Me.paelRealizaDiagnostico2.Location = New System.Drawing.Point(39, 13)
+        Me.paelRealizaDiagnostico2.Name = "paelRealizaDiagnostico2"
+        Me.paelRealizaDiagnostico2.Size = New System.Drawing.Size(206, 54)
+        Me.paelRealizaDiagnostico2.TabIndex = 8
+        '
+        'txtBusquedaSintomas
+        '
+        Me.txtBusquedaSintomas.Animated = True
+        Me.txtBusquedaSintomas.AutoRoundedCorners = True
+        Me.txtBusquedaSintomas.BorderRadius = 9
+        Me.txtBusquedaSintomas.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtBusquedaSintomas.DefaultText = ""
+        Me.txtBusquedaSintomas.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtBusquedaSintomas.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtBusquedaSintomas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtBusquedaSintomas.DisabledState.Parent = Me.txtBusquedaSintomas
+        Me.txtBusquedaSintomas.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtBusquedaSintomas.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtBusquedaSintomas.FocusedState.Parent = Me.txtBusquedaSintomas
+        Me.txtBusquedaSintomas.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtBusquedaSintomas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.txtBusquedaSintomas.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtBusquedaSintomas.HoverState.Parent = Me.txtBusquedaSintomas
+        Me.txtBusquedaSintomas.Location = New System.Drawing.Point(17, 25)
+        Me.txtBusquedaSintomas.Name = "txtBusquedaSintomas"
+        Me.txtBusquedaSintomas.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtBusquedaSintomas.PlaceholderText = ""
+        Me.txtBusquedaSintomas.SelectedText = ""
+        Me.txtBusquedaSintomas.ShadowDecoration.Parent = Me.txtBusquedaSintomas
+        Me.txtBusquedaSintomas.Size = New System.Drawing.Size(173, 20)
+        Me.txtBusquedaSintomas.TabIndex = 25
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label1.Location = New System.Drawing.Point(51, 6)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(109, 16)
+        Me.Label1.TabIndex = 19
+        Me.Label1.Text = "Busca tu sintoma"
         '
         'btnAgregar
         '
-        Me.btnAgregar.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(122, Byte), Integer))
-        Me.btnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnAgregar.FlatAppearance.BorderSize = 0
-        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAgregar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnAgregar.Location = New System.Drawing.Point(94, 484)
+        Me.btnAgregar.Animated = True
+        Me.btnAgregar.AutoRoundedCorners = True
+        Me.btnAgregar.BackColor = System.Drawing.Color.Transparent
+        Me.btnAgregar.BorderRadius = 13
+        Me.btnAgregar.CheckedState.Parent = Me.btnAgregar
+        Me.btnAgregar.CustomImages.Parent = Me.btnAgregar
+        Me.btnAgregar.FillColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(122, Byte), Integer))
+        Me.btnAgregar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnAgregar.ForeColor = System.Drawing.Color.White
+        Me.btnAgregar.HoverState.Parent = Me.btnAgregar
+        Me.btnAgregar.Location = New System.Drawing.Point(94, 492)
         Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.ShadowDecoration.Parent = Me.btnAgregar
         Me.btnAgregar.Size = New System.Drawing.Size(92, 28)
-        Me.btnAgregar.TabIndex = 13
+        Me.btnAgregar.TabIndex = 14
         Me.btnAgregar.Text = "Agregar"
-        Me.btnAgregar.UseVisualStyleBackColor = False
         '
         'lstSintomas
         '
@@ -137,6 +182,7 @@ Partial Class MenuPacienteNew
         Me.lstSintomas.Font = New System.Drawing.Font("Yu Gothic UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstSintomas.HideSelection = False
         Me.lstSintomas.Location = New System.Drawing.Point(4, 73)
+        Me.lstSintomas.MultiSelect = False
         Me.lstSintomas.Name = "lstSintomas"
         Me.lstSintomas.Size = New System.Drawing.Size(278, 390)
         Me.lstSintomas.TabIndex = 10
@@ -153,19 +199,22 @@ Partial Class MenuPacienteNew
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Politicas de privacidad"
         '
-        'btnCerrarsesion
+        'btnCerrarSesion
         '
-        Me.btnCerrarsesion.BackColor = System.Drawing.Color.Transparent
-        Me.btnCerrarsesion.FlatAppearance.BorderSize = 0
-        Me.btnCerrarsesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrarsesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCerrarsesion.ForeColor = System.Drawing.Color.White
-        Me.btnCerrarsesion.Location = New System.Drawing.Point(0, 392)
-        Me.btnCerrarsesion.Name = "btnCerrarsesion"
-        Me.btnCerrarsesion.Size = New System.Drawing.Size(291, 47)
-        Me.btnCerrarsesion.TabIndex = 11
-        Me.btnCerrarsesion.Text = "Cerrar sesion"
-        Me.btnCerrarsesion.UseVisualStyleBackColor = False
+        Me.btnCerrarSesion.Animated = True
+        Me.btnCerrarSesion.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrarSesion.CheckedState.Parent = Me.btnCerrarSesion
+        Me.btnCerrarSesion.CustomImages.Parent = Me.btnCerrarSesion
+        Me.btnCerrarSesion.FillColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(207, Byte), Integer))
+        Me.btnCerrarSesion.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnCerrarSesion.ForeColor = System.Drawing.Color.White
+        Me.btnCerrarSesion.HoverState.Parent = Me.btnCerrarSesion
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(0, 392)
+        Me.btnCerrarSesion.Name = "btnCerrarSesion"
+        Me.btnCerrarSesion.ShadowDecoration.Parent = Me.btnCerrarSesion
+        Me.btnCerrarSesion.Size = New System.Drawing.Size(291, 47)
+        Me.btnCerrarSesion.TabIndex = 24
+        Me.btnCerrarSesion.Text = "Cerrar sesion"
         '
         'labIniciales
         '
@@ -200,20 +249,6 @@ Partial Class MenuPacienteNew
         Me.labNombre.TabIndex = 5
         Me.labNombre.Text = "Nombre Usuario"
         '
-        'btnChats
-        '
-        Me.btnChats.BackColor = System.Drawing.Color.Transparent
-        Me.btnChats.FlatAppearance.BorderSize = 0
-        Me.btnChats.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnChats.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnChats.ForeColor = System.Drawing.Color.White
-        Me.btnChats.Location = New System.Drawing.Point(0, 286)
-        Me.btnChats.Name = "btnChats"
-        Me.btnChats.Size = New System.Drawing.Size(291, 47)
-        Me.btnChats.TabIndex = 2
-        Me.btnChats.Text = "Chats"
-        Me.btnChats.UseVisualStyleBackColor = False
-        '
         'btnRealizarDiagnostico
         '
         Me.btnRealizarDiagnostico.BackColor = System.Drawing.Color.Transparent
@@ -228,19 +263,32 @@ Partial Class MenuPacienteNew
         Me.btnRealizarDiagnostico.Text = "Realizar diagnostico"
         Me.btnRealizarDiagnostico.UseVisualStyleBackColor = False
         '
-        'btnEliminar
+        'btnChats1
         '
-        Me.btnEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnEliminar.FlatAppearance.BorderSize = 0
-        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnEliminar.Location = New System.Drawing.Point(32, 543)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(92, 28)
-        Me.btnEliminar.TabIndex = 14
-        Me.btnEliminar.Text = "Eliminar"
-        Me.btnEliminar.UseVisualStyleBackColor = False
+        Me.btnChats1.Animated = True
+        Me.btnChats1.BackColor = System.Drawing.Color.Transparent
+        Me.btnChats1.CheckedState.Parent = Me.btnChats1
+        Me.btnChats1.CustomImages.Parent = Me.btnChats1
+        Me.btnChats1.FillColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(207, Byte), Integer))
+        Me.btnChats1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnChats1.ForeColor = System.Drawing.Color.White
+        Me.btnChats1.HoverState.Parent = Me.btnChats1
+        Me.btnChats1.Location = New System.Drawing.Point(0, 286)
+        Me.btnChats1.Name = "btnChats1"
+        Me.btnChats1.ShadowDecoration.Parent = Me.btnChats1
+        Me.btnChats1.Size = New System.Drawing.Size(291, 47)
+        Me.btnChats1.TabIndex = 25
+        Me.btnChats1.Text = "Chats"
+        '
+        'labVolverDisgnostico
+        '
+        Me.labVolverDisgnostico.AutoSize = True
+        Me.labVolverDisgnostico.Font = New System.Drawing.Font("Yu Gothic UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labVolverDisgnostico.Location = New System.Drawing.Point(1, 2)
+        Me.labVolverDisgnostico.Name = "labVolverDisgnostico"
+        Me.labVolverDisgnostico.Size = New System.Drawing.Size(39, 32)
+        Me.labVolverDisgnostico.TabIndex = 23
+        Me.labVolverDisgnostico.Text = "←"
         '
         'Button2
         '
@@ -279,58 +327,15 @@ Partial Class MenuPacienteNew
         Me.panelMenu_Chat.Size = New System.Drawing.Size(71, 647)
         Me.panelMenu_Chat.TabIndex = 7
         '
-        'paelRealizaDiagnostico2
-        '
-        Me.paelRealizaDiagnostico2.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer))
-        Me.paelRealizaDiagnostico2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.paelRealizaDiagnostico2.Controls.Add(Me.txtBusquedaSintomas)
-        Me.paelRealizaDiagnostico2.Controls.Add(Me.Label1)
-        Me.paelRealizaDiagnostico2.Location = New System.Drawing.Point(39, 13)
-        Me.paelRealizaDiagnostico2.Name = "paelRealizaDiagnostico2"
-        Me.paelRealizaDiagnostico2.Size = New System.Drawing.Size(206, 54)
-        Me.paelRealizaDiagnostico2.TabIndex = 8
-        '
-        'txtBusquedaSintomas
-        '
-        Me.txtBusquedaSintomas.BackColor = System.Drawing.Color.White
-        Me.txtBusquedaSintomas.Location = New System.Drawing.Point(17, 27)
-        Me.txtBusquedaSintomas.Name = "txtBusquedaSintomas"
-        Me.txtBusquedaSintomas.Size = New System.Drawing.Size(173, 20)
-        Me.txtBusquedaSintomas.TabIndex = 9
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label1.Location = New System.Drawing.Point(51, 6)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(109, 16)
-        Me.Label1.TabIndex = 19
-        Me.Label1.Text = "Busca tu sintoma"
-        '
         'panelChat
         '
-        Me.panelChat.Controls.Add(Me.btnEnviar)
         Me.panelChat.Controls.Add(Me.txtMensaje)
         Me.panelChat.Controls.Add(Me.txtChat)
+        Me.panelChat.Controls.Add(Me.Guna2Button1)
         Me.panelChat.Location = New System.Drawing.Point(350, 31)
         Me.panelChat.Name = "panelChat"
         Me.panelChat.Size = New System.Drawing.Size(625, 611)
         Me.panelChat.TabIndex = 9
-        '
-        'btnEnviar
-        '
-        Me.btnEnviar.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(122, Byte), Integer))
-        Me.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEnviar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnEnviar.Location = New System.Drawing.Point(508, 540)
-        Me.btnEnviar.Name = "btnEnviar"
-        Me.btnEnviar.Size = New System.Drawing.Size(82, 34)
-        Me.btnEnviar.TabIndex = 2
-        Me.btnEnviar.Text = "Enviar"
-        Me.btnEnviar.UseVisualStyleBackColor = False
         '
         'txtMensaje
         '
@@ -351,39 +356,43 @@ Partial Class MenuPacienteNew
         Me.txtChat.Size = New System.Drawing.Size(560, 507)
         Me.txtChat.TabIndex = 0
         '
+        'Guna2Button1
+        '
+        Me.Guna2Button1.Animated = True
+        Me.Guna2Button1.AutoRoundedCorners = True
+        Me.Guna2Button1.BorderRadius = 16
+        Me.Guna2Button1.CheckedState.Parent = Me.Guna2Button1
+        Me.Guna2Button1.CustomImages.Parent = Me.Guna2Button1
+        Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(122, Byte), Integer))
+        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button1.HoverState.Parent = Me.Guna2Button1
+        Me.Guna2Button1.Location = New System.Drawing.Point(508, 540)
+        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.Guna2Button1.ShadowDecoration.Parent = Me.Guna2Button1
+        Me.Guna2Button1.Size = New System.Drawing.Size(82, 34)
+        Me.Guna2Button1.TabIndex = 3
+        Me.Guna2Button1.Text = "Enviar..."
+        '
         'panelRealizarDiagnostico2
         '
         Me.panelRealizarDiagnostico2.Controls.Add(Me.labVolverDisgnostico)
-        Me.panelRealizarDiagnostico2.Controls.Add(Me.Button4)
         Me.panelRealizarDiagnostico2.Controls.Add(Me.labDiagnostico)
         Me.panelRealizarDiagnostico2.Controls.Add(Me.labTituloDiagnostico)
-        Me.panelRealizarDiagnostico2.Controls.Add(Me.btnEliminar)
         Me.panelRealizarDiagnostico2.Controls.Add(Me.Label3)
         Me.panelRealizarDiagnostico2.Controls.Add(Me.lstSintomasSeleccionados)
+        Me.panelRealizarDiagnostico2.Controls.Add(Me.btnRdiag)
+        Me.panelRealizarDiagnostico2.Controls.Add(Me.btnEliminar)
         Me.panelRealizarDiagnostico2.Location = New System.Drawing.Point(305, 31)
         Me.panelRealizarDiagnostico2.Name = "panelRealizarDiagnostico2"
         Me.panelRealizarDiagnostico2.Size = New System.Drawing.Size(669, 611)
         Me.panelRealizarDiagnostico2.TabIndex = 10
         '
-        'Button4
-        '
-        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(122, Byte), Integer))
-        Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button4.Location = New System.Drawing.Point(301, 337)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(92, 49)
-        Me.Button4.TabIndex = 19
-        Me.Button4.Text = "Realizar Diagnostico"
-        Me.Button4.UseVisualStyleBackColor = False
-        '
         'labDiagnostico
         '
         Me.labDiagnostico.AutoSize = True
         Me.labDiagnostico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labDiagnostico.Location = New System.Drawing.Point(432, 254)
+        Me.labDiagnostico.Location = New System.Drawing.Point(432, 255)
         Me.labDiagnostico.Name = "labDiagnostico"
         Me.labDiagnostico.Size = New System.Drawing.Size(57, 20)
         Me.labDiagnostico.TabIndex = 18
@@ -414,11 +423,50 @@ Partial Class MenuPacienteNew
         Me.lstSintomasSeleccionados.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstSintomasSeleccionados.HideSelection = False
         Me.lstSintomasSeleccionados.Location = New System.Drawing.Point(32, 226)
+        Me.lstSintomasSeleccionados.MultiSelect = False
         Me.lstSintomasSeleccionados.Name = "lstSintomasSeleccionados"
-        Me.lstSintomasSeleccionados.Size = New System.Drawing.Size(241, 295)
+        Me.lstSintomasSeleccionados.Size = New System.Drawing.Size(263, 298)
         Me.lstSintomasSeleccionados.TabIndex = 15
         Me.lstSintomasSeleccionados.UseCompatibleStateImageBehavior = False
         Me.lstSintomasSeleccionados.View = System.Windows.Forms.View.Tile
+        '
+        'btnRdiag
+        '
+        Me.btnRdiag.Animated = True
+        Me.btnRdiag.AutoRoundedCorners = True
+        Me.btnRdiag.BackColor = System.Drawing.Color.Transparent
+        Me.btnRdiag.BorderRadius = 23
+        Me.btnRdiag.CheckedState.Parent = Me.btnRdiag
+        Me.btnRdiag.CustomImages.Parent = Me.btnRdiag
+        Me.btnRdiag.FillColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(122, Byte), Integer))
+        Me.btnRdiag.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnRdiag.ForeColor = System.Drawing.Color.White
+        Me.btnRdiag.HoverState.Parent = Me.btnRdiag
+        Me.btnRdiag.Location = New System.Drawing.Point(301, 337)
+        Me.btnRdiag.Name = "btnRdiag"
+        Me.btnRdiag.ShadowDecoration.Parent = Me.btnRdiag
+        Me.btnRdiag.Size = New System.Drawing.Size(92, 49)
+        Me.btnRdiag.TabIndex = 15
+        Me.btnRdiag.Text = "Relizar Diagnostico"
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.Animated = True
+        Me.btnEliminar.AutoRoundedCorners = True
+        Me.btnEliminar.BackColor = System.Drawing.Color.Transparent
+        Me.btnEliminar.BorderRadius = 13
+        Me.btnEliminar.CheckedState.Parent = Me.btnEliminar
+        Me.btnEliminar.CustomImages.Parent = Me.btnEliminar
+        Me.btnEliminar.FillColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.btnEliminar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnEliminar.ForeColor = System.Drawing.Color.White
+        Me.btnEliminar.HoverState.Parent = Me.btnEliminar
+        Me.btnEliminar.Location = New System.Drawing.Point(32, 543)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.ShadowDecoration.Parent = Me.btnEliminar
+        Me.btnEliminar.Size = New System.Drawing.Size(92, 28)
+        Me.btnEliminar.TabIndex = 24
+        Me.btnEliminar.Text = "Eliminar"
         '
         'panelPerfil
         '
@@ -629,13 +677,13 @@ Partial Class MenuPacienteNew
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(980, 645)
         Me.ControlBox = False
-        Me.Controls.Add(Me.panelRealizarDiagnostico2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.panelRealizarDiagnostico2)
         Me.Controls.Add(Me.panelChat)
-        Me.Controls.Add(Me.panelMenu_Chat)
         Me.Controls.Add(Me.panelPerfil)
+        Me.Controls.Add(Me.panelMenu_Chat)
+        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)
@@ -664,26 +712,15 @@ Partial Class MenuPacienteNew
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label4 As Label
     Friend WithEvents labIniciales As Label
     Friend WithEvents labHistorialMedico As Label
     Friend WithEvents labNombre As Label
-    Friend WithEvents btnChats As Button
     Friend WithEvents btnRealizarDiagnostico As Button
-    Friend WithEvents btnCerrarsesion As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents panelMenu_Chat As Panel
-    Friend WithEvents panelRealizarDiagnostico As Panel
-    Friend WithEvents lstSintomas As ListView
-    Friend WithEvents btnEliminar As Button
-    Friend WithEvents btnAgregar As Button
-    Friend WithEvents paelRealizaDiagnostico2 As Panel
-    Friend WithEvents Label1 As Label
     Friend WithEvents labVolverDisgnostico As Label
-    Friend WithEvents txtBusquedaSintomas As TextBox
     Friend WithEvents panelChat As Panel
-    Friend WithEvents btnEnviar As Button
     Friend WithEvents txtMensaje As TextBox
     Friend WithEvents txtChat As TextBox
     Friend WithEvents panelRealizarDiagnostico2 As Panel
@@ -706,8 +743,19 @@ Partial Class MenuPacienteNew
     Friend WithEvents txtPerfilPatologias As TextBox
     Friend WithEvents labDiagnostico As Label
     Friend WithEvents labTituloDiagnostico As Label
-    Friend WithEvents Button4 As Button
     Friend WithEvents labPerfilDireccion As Label
     Friend WithEvents labPerfilTelefono As Label
     Friend WithEvents labPerfilFechaDeNacimiento As Label
+    Friend WithEvents btnRdiag As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnEliminar As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnCerrarSesion As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnChats1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents panelRealizarDiagnostico As Panel
+    Friend WithEvents paelRealizaDiagnostico2 As Panel
+    Friend WithEvents txtBusquedaSintomas As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents btnAgregar As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents lstSintomas As ListView
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
 End Class
