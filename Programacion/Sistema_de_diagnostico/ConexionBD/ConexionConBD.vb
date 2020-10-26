@@ -6,11 +6,11 @@ Public Class ConexionConBD
         Dim connection As New Connection
         connection.ConnectionString = "" &
             "driver={MySQL ODBC 8.0 Unicode Driver};" &
-            "server=izuwuedb.co8sw6a5kje7.us-east-2.rds.amazonaws.com;" &
+            "server=127.0.0.1;" &
             "port=3306;" &
-            "database=izuwuDB;" &
-            "uid=admin;" &
-            "pwd=izuwuteam;"
+            "database=proyecto_prueba;" &
+            "uid=root;" &
+            "pwd=1234;"
 
         connection.Open()
         Return connection
@@ -573,6 +573,10 @@ Public Class ConexionConBD
                 consulta = connection.Execute("select ID_ges from gestor ;")
                 idConsulta = TryCast(consulta.Fields("id_ges").Value, String)
                 id = "GES"
+            Case 5
+                consulta = connection.Execute("select ID_DIAG from diagnostico ;")
+                idConsulta = TryCast(consulta.Fields("id_diag").Value, String)
+                id = "DIG"
         End Select
 
 
@@ -645,42 +649,55 @@ Public Class ConexionConBD
 
     '///------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    'Funcion para obtener diagnostico (esta sujeto a cambios)
-    'Todavia no esta terminado
-    'Public Function prueba(ByVal lista)
-    'Dim connection As Connection = conectar()
-    'Dim cadena As New StringBuilder()
-    'Try
-    'Dim consulta As String = "select p.Nombre " +
-    '                            "from sintoma s inner join tiene t on s.id_sin=t.id_sin " +
-    '                           "inner join patologia p on t.id_pat=p.id_pat " +
-    '                          "where"
-    '    cadena.Append(consulta)
-    'Dim listanom As New List(Of String)
-    '       listanom.AddRange(lista)
-    'Dim primero As Boolean = True
-    'For Each nombre As String In listanom
-    'If Not primero Then
-    '               cadena.Append(" OR")
-    'End If
-    '           primero = False
-    '          cadena.Append(" s.Nombre= '" + nombre + "'")
-    '
-    'Next
-    '       cadena.Append(" ;")
-    '
+    'Funcion para obtener diagnostico y agregarlo a la base de datos
 
+    Public Sub agregarSintomasPaciente(sintomas As List(Of Sintoma), paciente As Paciente, fecha As String)
+        Dim connection As Connection = conectar()
 
-    '   Dim consultaBD As Recordset = connection.Execute(consultaFinal)
-    'Catch ex As Exception
+        For Each sintoma As Sintoma In sintomas
+            Dim agregarSintomas As Recordset = connection.Execute("insert into posee values('" + fecha + "','" + sintoma.id + "','" + paciente.ID + "');")
+        Next
+        connection.Close()
+    End Sub
 
-    'End Try
-    '   connection.Close()
-    'Return Nothing
-    'End Function
+    Public Function Diagnostico(paciente As Paciente) As List(Of Diagnostico)
+        Dim connection As Connection = conectar()
+        Dim listaDiagnostico As New List(Of Diagnostico)
+        Dim consulta As Recordset = connection.Execute("select posee.fecha,posee.id_pac,count(posee.id_sin) as 'Posible_patologia',tiene.ID_pat,patologia.nombre,patologia.prioridad" +
+                                                       " From posee inner join tiene on " +
+                                                       " posee.id_sin = tiene.id_sin inner join patologia on" +
+                                                       " tiene.id_pat = patologia.ID_PAT inner join sintoma on" +
+                                                       " posee.ID_SIN = sintoma.id_sin" +
+                                                       " where id_pac = '" + paciente.ID + "'" +
+                                                       " group by patologia.nombre" +
+                                                       " order by count(posee.ID_SIN) desc" +
+                                                       " limit 4")
+        While (Not consulta.EOF)
+            Dim fechaBaseDatos As Date = Convert.ToDateTime(TryCast(consulta.Fields("fecha").Value, Object))
+            Dim fechaString As String = Format(fechaBaseDatos, "yyyy/MM/dd")
+            Dim idPaciente As String = DirectCast(consulta.Fields("id_pac").Value, String)
+            Dim probabilidadPatologia As Integer = Convert.ToInt32(TryCast(consulta.Fields("Posible_patologia").Value, Object))
+            Dim idPatologia As String = DirectCast(consulta.Fields("id_pat").Value, String)
+            Dim nombrePatologia As String = DirectCast(consulta.Fields("nombre").Value, String)
+            Dim prioridadPatologia As String = DirectCast(consulta.Fields("prioridad").Value, String)
+            listaDiagnostico.Add(New Diagnostico(nombrePatologia, prioridadPatologia, idPatologia, idPaciente, probabilidadPatologia, fechaString))
+            consulta.MoveNext()
+        End While
 
+        connection.Close()
+        Return listaDiagnostico
+    End Function
 
-
+    Public Sub agregarDiagnostico_A_BD(diagnosticos As List(Of Diagnostico), paciente As Paciente, fecha As String)
+        Dim connection As Connection = conectar()
+        Dim idDiagnostico As String = codigoRandom(5)
+        Dim agregar_A_Diagnostico As Recordset = connection.Execute("insert into diagnostico values('" + idDiagnostico + "');")
+        For Each diagnostico As Diagnostico In diagnosticos
+            Dim agregar_A_Resulta As Recordset = connection.Execute("insert into resulta values('" + idDiagnostico + "','" + diagnostico.id + "');")
+        Next
+        Dim agregar_a_dianosticoapp As Recordset = connection.Execute("insert into diagnostico_app values('" + idDiagnostico + "','" + paciente.ID + "','" + fecha + "');")
+        connection.Close()
+    End Sub
 
 End Class
 

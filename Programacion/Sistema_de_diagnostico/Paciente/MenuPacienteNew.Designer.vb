@@ -35,7 +35,7 @@ Partial Class MenuPacienteNew
         Me.labIniciales = New System.Windows.Forms.Label()
         Me.labHistorialMedico = New System.Windows.Forms.Label()
         Me.labNombre = New System.Windows.Forms.Label()
-        Me.btnRealizarDiagnostico = New System.Windows.Forms.Button()
+        Me.btnMenu_RealizarDiagnostico = New System.Windows.Forms.Button()
         Me.btnChats1 = New Guna.UI2.WinForms.Guna2Button()
         Me.labVolverDisgnostico = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -46,11 +46,11 @@ Partial Class MenuPacienteNew
         Me.txtChat = New System.Windows.Forms.TextBox()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.panelRealizarDiagnostico2 = New System.Windows.Forms.Panel()
-        Me.labDiagnostico = New System.Windows.Forms.Label()
+        Me.labDiagnostico1 = New System.Windows.Forms.Label()
         Me.labTituloDiagnostico = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lstSintomasSeleccionados = New System.Windows.Forms.ListView()
-        Me.btnRdiag = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnRealizardiagnostico = New Guna.UI2.WinForms.Guna2Button()
         Me.btnEliminar = New Guna.UI2.WinForms.Guna2Button()
         Me.panelPerfil = New System.Windows.Forms.Panel()
         Me.panelDatosMedicos = New System.Windows.Forms.Panel()
@@ -70,6 +70,10 @@ Partial Class MenuPacienteNew
         Me.label17 = New System.Windows.Forms.Label()
         Me.label16 = New System.Windows.Forms.Label()
         Me.label15 = New System.Windows.Forms.Label()
+        Me.labDiagnostico2 = New System.Windows.Forms.Label()
+        Me.labDiagnostico3 = New System.Windows.Forms.Label()
+        Me.labDiagnostico4 = New System.Windows.Forms.Label()
+        Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Panel1.SuspendLayout()
         Me.panelRealizarDiagnostico.SuspendLayout()
         Me.paelRealizaDiagnostico2.SuspendLayout()
@@ -79,6 +83,7 @@ Partial Class MenuPacienteNew
         Me.panelDatosMedicos.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pdatosPaciente.SuspendLayout()
+        Me.Guna2CustomGradientPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -89,7 +94,7 @@ Partial Class MenuPacienteNew
         Me.Panel1.Controls.Add(Me.labIniciales)
         Me.Panel1.Controls.Add(Me.labHistorialMedico)
         Me.Panel1.Controls.Add(Me.labNombre)
-        Me.Panel1.Controls.Add(Me.btnRealizarDiagnostico)
+        Me.Panel1.Controls.Add(Me.btnMenu_RealizarDiagnostico)
         Me.Panel1.Controls.Add(Me.btnChats1)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
@@ -249,19 +254,19 @@ Partial Class MenuPacienteNew
         Me.labNombre.TabIndex = 5
         Me.labNombre.Text = "Nombre Usuario"
         '
-        'btnRealizarDiagnostico
+        'btnMenu_RealizarDiagnostico
         '
-        Me.btnRealizarDiagnostico.BackColor = System.Drawing.Color.Transparent
-        Me.btnRealizarDiagnostico.FlatAppearance.BorderSize = 0
-        Me.btnRealizarDiagnostico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRealizarDiagnostico.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRealizarDiagnostico.ForeColor = System.Drawing.Color.White
-        Me.btnRealizarDiagnostico.Location = New System.Drawing.Point(0, 180)
-        Me.btnRealizarDiagnostico.Name = "btnRealizarDiagnostico"
-        Me.btnRealizarDiagnostico.Size = New System.Drawing.Size(291, 47)
-        Me.btnRealizarDiagnostico.TabIndex = 0
-        Me.btnRealizarDiagnostico.Text = "Realizar diagnostico"
-        Me.btnRealizarDiagnostico.UseVisualStyleBackColor = False
+        Me.btnMenu_RealizarDiagnostico.BackColor = System.Drawing.Color.Transparent
+        Me.btnMenu_RealizarDiagnostico.FlatAppearance.BorderSize = 0
+        Me.btnMenu_RealizarDiagnostico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMenu_RealizarDiagnostico.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMenu_RealizarDiagnostico.ForeColor = System.Drawing.Color.White
+        Me.btnMenu_RealizarDiagnostico.Location = New System.Drawing.Point(0, 180)
+        Me.btnMenu_RealizarDiagnostico.Name = "btnMenu_RealizarDiagnostico"
+        Me.btnMenu_RealizarDiagnostico.Size = New System.Drawing.Size(291, 47)
+        Me.btnMenu_RealizarDiagnostico.TabIndex = 0
+        Me.btnMenu_RealizarDiagnostico.Text = "Realizar diagnostico"
+        Me.btnMenu_RealizarDiagnostico.UseVisualStyleBackColor = False
         '
         'btnChats1
         '
@@ -376,33 +381,33 @@ Partial Class MenuPacienteNew
         '
         'panelRealizarDiagnostico2
         '
-        Me.panelRealizarDiagnostico2.Controls.Add(Me.labVolverDisgnostico)
-        Me.panelRealizarDiagnostico2.Controls.Add(Me.labDiagnostico)
         Me.panelRealizarDiagnostico2.Controls.Add(Me.labTituloDiagnostico)
+        Me.panelRealizarDiagnostico2.Controls.Add(Me.Guna2CustomGradientPanel1)
+        Me.panelRealizarDiagnostico2.Controls.Add(Me.labVolverDisgnostico)
         Me.panelRealizarDiagnostico2.Controls.Add(Me.Label3)
         Me.panelRealizarDiagnostico2.Controls.Add(Me.lstSintomasSeleccionados)
-        Me.panelRealizarDiagnostico2.Controls.Add(Me.btnRdiag)
+        Me.panelRealizarDiagnostico2.Controls.Add(Me.btnRealizardiagnostico)
         Me.panelRealizarDiagnostico2.Controls.Add(Me.btnEliminar)
         Me.panelRealizarDiagnostico2.Location = New System.Drawing.Point(305, 31)
         Me.panelRealizarDiagnostico2.Name = "panelRealizarDiagnostico2"
         Me.panelRealizarDiagnostico2.Size = New System.Drawing.Size(669, 611)
         Me.panelRealizarDiagnostico2.TabIndex = 10
         '
-        'labDiagnostico
+        'labDiagnostico1
         '
-        Me.labDiagnostico.AutoSize = True
-        Me.labDiagnostico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labDiagnostico.Location = New System.Drawing.Point(432, 255)
-        Me.labDiagnostico.Name = "labDiagnostico"
-        Me.labDiagnostico.Size = New System.Drawing.Size(57, 20)
-        Me.labDiagnostico.TabIndex = 18
-        Me.labDiagnostico.Text = "Label2"
+        Me.labDiagnostico1.AutoSize = True
+        Me.labDiagnostico1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labDiagnostico1.Location = New System.Drawing.Point(44, 43)
+        Me.labDiagnostico1.Name = "labDiagnostico1"
+        Me.labDiagnostico1.Size = New System.Drawing.Size(109, 20)
+        Me.labDiagnostico1.TabIndex = 18
+        Me.labDiagnostico1.Text = "labResutado1"
         '
         'labTituloDiagnostico
         '
         Me.labTituloDiagnostico.AutoSize = True
         Me.labTituloDiagnostico.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labTituloDiagnostico.Location = New System.Drawing.Point(432, 211)
+        Me.labTituloDiagnostico.Location = New System.Drawing.Point(410, 191)
         Me.labTituloDiagnostico.Name = "labTituloDiagnostico"
         Me.labTituloDiagnostico.Size = New System.Drawing.Size(125, 24)
         Me.labTituloDiagnostico.TabIndex = 17
@@ -430,24 +435,24 @@ Partial Class MenuPacienteNew
         Me.lstSintomasSeleccionados.UseCompatibleStateImageBehavior = False
         Me.lstSintomasSeleccionados.View = System.Windows.Forms.View.Tile
         '
-        'btnRdiag
+        'btnRealizardiagnostico
         '
-        Me.btnRdiag.Animated = True
-        Me.btnRdiag.AutoRoundedCorners = True
-        Me.btnRdiag.BackColor = System.Drawing.Color.Transparent
-        Me.btnRdiag.BorderRadius = 23
-        Me.btnRdiag.CheckedState.Parent = Me.btnRdiag
-        Me.btnRdiag.CustomImages.Parent = Me.btnRdiag
-        Me.btnRdiag.FillColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(122, Byte), Integer))
-        Me.btnRdiag.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnRdiag.ForeColor = System.Drawing.Color.White
-        Me.btnRdiag.HoverState.Parent = Me.btnRdiag
-        Me.btnRdiag.Location = New System.Drawing.Point(301, 337)
-        Me.btnRdiag.Name = "btnRdiag"
-        Me.btnRdiag.ShadowDecoration.Parent = Me.btnRdiag
-        Me.btnRdiag.Size = New System.Drawing.Size(92, 49)
-        Me.btnRdiag.TabIndex = 15
-        Me.btnRdiag.Text = "Relizar Diagnostico"
+        Me.btnRealizardiagnostico.Animated = True
+        Me.btnRealizardiagnostico.AutoRoundedCorners = True
+        Me.btnRealizardiagnostico.BackColor = System.Drawing.Color.Transparent
+        Me.btnRealizardiagnostico.BorderRadius = 23
+        Me.btnRealizardiagnostico.CheckedState.Parent = Me.btnRealizardiagnostico
+        Me.btnRealizardiagnostico.CustomImages.Parent = Me.btnRealizardiagnostico
+        Me.btnRealizardiagnostico.FillColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(122, Byte), Integer))
+        Me.btnRealizardiagnostico.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnRealizardiagnostico.ForeColor = System.Drawing.Color.White
+        Me.btnRealizardiagnostico.HoverState.Parent = Me.btnRealizardiagnostico
+        Me.btnRealizardiagnostico.Location = New System.Drawing.Point(301, 328)
+        Me.btnRealizardiagnostico.Name = "btnRealizardiagnostico"
+        Me.btnRealizardiagnostico.ShadowDecoration.Parent = Me.btnRealizardiagnostico
+        Me.btnRealizardiagnostico.Size = New System.Drawing.Size(92, 49)
+        Me.btnRealizardiagnostico.TabIndex = 15
+        Me.btnRealizardiagnostico.Text = "Relizar Diagnostico"
         '
         'btnEliminar
         '
@@ -670,6 +675,51 @@ Partial Class MenuPacienteNew
         Me.label15.TabIndex = 14
         Me.label15.Text = "Fecha de nacimiento:"
         '
+        'labDiagnostico2
+        '
+        Me.labDiagnostico2.AutoSize = True
+        Me.labDiagnostico2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labDiagnostico2.Location = New System.Drawing.Point(44, 102)
+        Me.labDiagnostico2.Name = "labDiagnostico2"
+        Me.labDiagnostico2.Size = New System.Drawing.Size(57, 20)
+        Me.labDiagnostico2.TabIndex = 25
+        Me.labDiagnostico2.Text = "Label2"
+        '
+        'labDiagnostico3
+        '
+        Me.labDiagnostico3.AutoSize = True
+        Me.labDiagnostico3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labDiagnostico3.Location = New System.Drawing.Point(44, 162)
+        Me.labDiagnostico3.Name = "labDiagnostico3"
+        Me.labDiagnostico3.Size = New System.Drawing.Size(57, 20)
+        Me.labDiagnostico3.TabIndex = 26
+        Me.labDiagnostico3.Text = "Label2"
+        '
+        'labDiagnostico4
+        '
+        Me.labDiagnostico4.AutoSize = True
+        Me.labDiagnostico4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labDiagnostico4.Location = New System.Drawing.Point(44, 222)
+        Me.labDiagnostico4.Name = "labDiagnostico4"
+        Me.labDiagnostico4.Size = New System.Drawing.Size(57, 20)
+        Me.labDiagnostico4.TabIndex = 27
+        Me.labDiagnostico4.Text = "Label2"
+        '
+        'Guna2CustomGradientPanel1
+        '
+        Me.Guna2CustomGradientPanel1.BorderColor = System.Drawing.Color.Transparent
+        Me.Guna2CustomGradientPanel1.Controls.Add(Me.labDiagnostico1)
+        Me.Guna2CustomGradientPanel1.Controls.Add(Me.labDiagnostico4)
+        Me.Guna2CustomGradientPanel1.Controls.Add(Me.labDiagnostico2)
+        Me.Guna2CustomGradientPanel1.Controls.Add(Me.labDiagnostico3)
+        Me.Guna2CustomGradientPanel1.CustomBorderColor = System.Drawing.Color.Black
+        Me.Guna2CustomGradientPanel1.CustomBorderThickness = New System.Windows.Forms.Padding(3)
+        Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(414, 226)
+        Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
+        Me.Guna2CustomGradientPanel1.ShadowDecoration.Parent = Me.Guna2CustomGradientPanel1
+        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(221, 298)
+        Me.Guna2CustomGradientPanel1.TabIndex = 29
+        '
         'MenuPacienteNew
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -677,13 +727,13 @@ Partial Class MenuPacienteNew
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(980, 645)
         Me.ControlBox = False
+        Me.Controls.Add(Me.panelRealizarDiagnostico2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.panelRealizarDiagnostico2)
-        Me.Controls.Add(Me.panelChat)
-        Me.Controls.Add(Me.panelPerfil)
         Me.Controls.Add(Me.panelMenu_Chat)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.panelChat)
+        Me.Controls.Add(Me.panelPerfil)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)
@@ -707,6 +757,8 @@ Partial Class MenuPacienteNew
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pdatosPaciente.ResumeLayout(False)
         Me.pdatosPaciente.PerformLayout()
+        Me.Guna2CustomGradientPanel1.ResumeLayout(False)
+        Me.Guna2CustomGradientPanel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -715,7 +767,7 @@ Partial Class MenuPacienteNew
     Friend WithEvents labIniciales As Label
     Friend WithEvents labHistorialMedico As Label
     Friend WithEvents labNombre As Label
-    Friend WithEvents btnRealizarDiagnostico As Button
+    Friend WithEvents btnMenu_RealizarDiagnostico As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents panelMenu_Chat As Panel
@@ -741,12 +793,12 @@ Partial Class MenuPacienteNew
     Friend WithEvents label16 As Label
     Friend WithEvents label15 As Label
     Friend WithEvents txtPerfilPatologias As TextBox
-    Friend WithEvents labDiagnostico As Label
+    Friend WithEvents labDiagnostico1 As Label
     Friend WithEvents labTituloDiagnostico As Label
     Friend WithEvents labPerfilDireccion As Label
     Friend WithEvents labPerfilTelefono As Label
     Friend WithEvents labPerfilFechaDeNacimiento As Label
-    Friend WithEvents btnRdiag As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnRealizardiagnostico As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnEliminar As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnCerrarSesion As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnChats1 As Guna.UI2.WinForms.Guna2Button
@@ -758,4 +810,8 @@ Partial Class MenuPacienteNew
     Friend WithEvents lstSintomas As ListView
     Friend WithEvents Label4 As Label
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents labDiagnostico4 As Label
+    Friend WithEvents labDiagnostico3 As Label
+    Friend WithEvents labDiagnostico2 As Label
+    Friend WithEvents Guna2CustomGradientPanel1 As Guna.UI2.WinForms.Guna2CustomGradientPanel
 End Class

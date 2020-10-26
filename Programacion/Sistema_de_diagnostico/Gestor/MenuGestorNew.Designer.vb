@@ -255,14 +255,14 @@ Partial Class MenuGestorNew
         Me.txtModDel_CI.Location = New System.Drawing.Point(207, 230)
         Me.txtModDel_CI.Name = "txtModDel_CI"
         Me.txtModDel_CI.Size = New System.Drawing.Size(197, 20)
-        Me.txtModDel_CI.TabIndex = 51
+        Me.txtModDel_CI.TabIndex = 45
         '
         'txtModDel_Segundoapellido
         '
         Me.txtModDel_Segundoapellido.Location = New System.Drawing.Point(206, 144)
         Me.txtModDel_Segundoapellido.Name = "txtModDel_Segundoapellido"
         Me.txtModDel_Segundoapellido.Size = New System.Drawing.Size(198, 20)
-        Me.txtModDel_Segundoapellido.TabIndex = 49
+        Me.txtModDel_Segundoapellido.TabIndex = 43
         '
         'Label32
         '
@@ -291,7 +291,7 @@ Partial Class MenuGestorNew
         Me.cbxModDel_Sexo.Location = New System.Drawing.Point(206, 186)
         Me.cbxModDel_Sexo.Name = "cbxModDel_Sexo"
         Me.cbxModDel_Sexo.Size = New System.Drawing.Size(49, 21)
-        Me.cbxModDel_Sexo.TabIndex = 46
+        Me.cbxModDel_Sexo.TabIndex = 44
         '
         'Label30
         '
@@ -311,7 +311,7 @@ Partial Class MenuGestorNew
         Me.lstModDel_Medicos.MultiSelect = False
         Me.lstModDel_Medicos.Name = "lstModDel_Medicos"
         Me.lstModDel_Medicos.Size = New System.Drawing.Size(225, 340)
-        Me.lstModDel_Medicos.TabIndex = 44
+        Me.lstModDel_Medicos.TabIndex = 56
         Me.lstModDel_Medicos.UseCompatibleStateImageBehavior = False
         Me.lstModDel_Medicos.View = System.Windows.Forms.View.Tile
         '
@@ -325,7 +325,7 @@ Partial Class MenuGestorNew
         Me.btnEliminarMedico.Location = New System.Drawing.Point(558, 520)
         Me.btnEliminarMedico.Name = "btnEliminarMedico"
         Me.btnEliminarMedico.Size = New System.Drawing.Size(106, 28)
-        Me.btnEliminarMedico.TabIndex = 43
+        Me.btnEliminarMedico.TabIndex = 54
         Me.btnEliminarMedico.Text = "Eliminar"
         Me.btnEliminarMedico.UseVisualStyleBackColor = False
         '
@@ -344,7 +344,7 @@ Partial Class MenuGestorNew
         Me.dateModDel_FechaNacimiento.Location = New System.Drawing.Point(206, 315)
         Me.dateModDel_FechaNacimiento.Name = "dateModDel_FechaNacimiento"
         Me.dateModDel_FechaNacimiento.Size = New System.Drawing.Size(198, 20)
-        Me.dateModDel_FechaNacimiento.TabIndex = 41
+        Me.dateModDel_FechaNacimiento.TabIndex = 47
         '
         'Label16
         '
@@ -361,7 +361,7 @@ Partial Class MenuGestorNew
         Me.txtModDel_Telefono.Location = New System.Drawing.Point(206, 359)
         Me.txtModDel_Telefono.Name = "txtModDel_Telefono"
         Me.txtModDel_Telefono.Size = New System.Drawing.Size(198, 20)
-        Me.txtModDel_Telefono.TabIndex = 39
+        Me.txtModDel_Telefono.TabIndex = 48
         '
         'Label15
         '
@@ -388,21 +388,21 @@ Partial Class MenuGestorNew
         Me.txtModDel_ConfContraseña.Location = New System.Drawing.Point(206, 575)
         Me.txtModDel_ConfContraseña.Name = "txtModDel_ConfContraseña"
         Me.txtModDel_ConfContraseña.Size = New System.Drawing.Size(198, 20)
-        Me.txtModDel_ConfContraseña.TabIndex = 36
+        Me.txtModDel_ConfContraseña.TabIndex = 53
         '
         'txtModDel_Contraseña
         '
         Me.txtModDel_Contraseña.Location = New System.Drawing.Point(206, 532)
         Me.txtModDel_Contraseña.Name = "txtModDel_Contraseña"
         Me.txtModDel_Contraseña.Size = New System.Drawing.Size(198, 20)
-        Me.txtModDel_Contraseña.TabIndex = 35
+        Me.txtModDel_Contraseña.TabIndex = 52
         '
         'txtModDel_SegundoNombre
         '
         Me.txtModDel_SegundoNombre.Location = New System.Drawing.Point(206, 57)
         Me.txtModDel_SegundoNombre.Name = "txtModDel_SegundoNombre"
         Me.txtModDel_SegundoNombre.Size = New System.Drawing.Size(198, 20)
-        Me.txtModDel_SegundoNombre.TabIndex = 34
+        Me.txtModDel_SegundoNombre.TabIndex = 41
         '
         'Label1
         '
@@ -419,7 +419,7 @@ Partial Class MenuGestorNew
         Me.txtModDel_Empresa.Location = New System.Drawing.Point(206, 487)
         Me.txtModDel_Empresa.Name = "txtModDel_Empresa"
         Me.txtModDel_Empresa.Size = New System.Drawing.Size(198, 20)
-        Me.txtModDel_Empresa.TabIndex = 32
+        Me.txtModDel_Empresa.TabIndex = 51
         '
         'Label10
         '
@@ -436,35 +436,35 @@ Partial Class MenuGestorNew
         Me.txtModDel_Email.Location = New System.Drawing.Point(206, 445)
         Me.txtModDel_Email.Name = "txtModDel_Email"
         Me.txtModDel_Email.Size = New System.Drawing.Size(198, 20)
-        Me.txtModDel_Email.TabIndex = 28
+        Me.txtModDel_Email.TabIndex = 50
         '
         'txtModDel_Especializacion
         '
         Me.txtModDel_Especializacion.Location = New System.Drawing.Point(206, 400)
         Me.txtModDel_Especializacion.Name = "txtModDel_Especializacion"
         Me.txtModDel_Especializacion.Size = New System.Drawing.Size(198, 20)
-        Me.txtModDel_Especializacion.TabIndex = 27
+        Me.txtModDel_Especializacion.TabIndex = 49
         '
         'txtModDel_Direccion
         '
         Me.txtModDel_Direccion.Location = New System.Drawing.Point(206, 272)
         Me.txtModDel_Direccion.Name = "txtModDel_Direccion"
         Me.txtModDel_Direccion.Size = New System.Drawing.Size(198, 20)
-        Me.txtModDel_Direccion.TabIndex = 25
+        Me.txtModDel_Direccion.TabIndex = 46
         '
         'txtModDel_Apellido
         '
         Me.txtModDel_Apellido.Location = New System.Drawing.Point(206, 101)
         Me.txtModDel_Apellido.Name = "txtModDel_Apellido"
         Me.txtModDel_Apellido.Size = New System.Drawing.Size(198, 20)
-        Me.txtModDel_Apellido.TabIndex = 24
+        Me.txtModDel_Apellido.TabIndex = 42
         '
         'txtModDel_PrimerNombre
         '
         Me.txtModDel_PrimerNombre.Location = New System.Drawing.Point(206, 16)
         Me.txtModDel_PrimerNombre.Name = "txtModDel_PrimerNombre"
         Me.txtModDel_PrimerNombre.Size = New System.Drawing.Size(198, 20)
-        Me.txtModDel_PrimerNombre.TabIndex = 23
+        Me.txtModDel_PrimerNombre.TabIndex = 40
         '
         'btnAceptarModificar
         '
@@ -476,7 +476,7 @@ Partial Class MenuGestorNew
         Me.btnAceptarModificar.Location = New System.Drawing.Point(558, 574)
         Me.btnAceptarModificar.Name = "btnAceptarModificar"
         Me.btnAceptarModificar.Size = New System.Drawing.Size(106, 28)
-        Me.btnAceptarModificar.TabIndex = 21
+        Me.btnAceptarModificar.TabIndex = 55
         Me.btnAceptarModificar.Text = "Aceptar"
         Me.btnAceptarModificar.UseVisualStyleBackColor = False
         '
@@ -570,7 +570,7 @@ Partial Class MenuGestorNew
         Me.btnEliminarPatologia.Location = New System.Drawing.Point(368, 569)
         Me.btnEliminarPatologia.Name = "btnEliminarPatologia"
         Me.btnEliminarPatologia.Size = New System.Drawing.Size(25, 21)
-        Me.btnEliminarPatologia.TabIndex = 16
+        Me.btnEliminarPatologia.TabIndex = 23
         Me.btnEliminarPatologia.UseVisualStyleBackColor = True
         '
         'btnEliminarSintoma
@@ -582,7 +582,7 @@ Partial Class MenuGestorNew
         Me.btnEliminarSintoma.Location = New System.Drawing.Point(9, 569)
         Me.btnEliminarSintoma.Name = "btnEliminarSintoma"
         Me.btnEliminarSintoma.Size = New System.Drawing.Size(25, 21)
-        Me.btnEliminarSintoma.TabIndex = 15
+        Me.btnEliminarSintoma.TabIndex = 21
         Me.btnEliminarSintoma.UseVisualStyleBackColor = True
         '
         'btnModPatologia
@@ -596,7 +596,7 @@ Partial Class MenuGestorNew
         Me.btnModPatologia.Location = New System.Drawing.Point(658, 570)
         Me.btnModPatologia.Name = "btnModPatologia"
         Me.btnModPatologia.Size = New System.Drawing.Size(22, 20)
-        Me.btnModPatologia.TabIndex = 14
+        Me.btnModPatologia.TabIndex = 24
         Me.btnModPatologia.UseVisualStyleBackColor = False
         '
         'btnModSintoma
@@ -610,7 +610,7 @@ Partial Class MenuGestorNew
         Me.btnModSintoma.Location = New System.Drawing.Point(299, 570)
         Me.btnModSintoma.Name = "btnModSintoma"
         Me.btnModSintoma.Size = New System.Drawing.Size(22, 20)
-        Me.btnModSintoma.TabIndex = 13
+        Me.btnModSintoma.TabIndex = 22
         Me.btnModSintoma.UseVisualStyleBackColor = False
         '
         'Label13
@@ -766,7 +766,7 @@ Partial Class MenuGestorNew
         Me.btnAgregarPatologia.Name = "btnAgregarPatologia"
         Me.btnAgregarPatologia.ShadowDecoration.Parent = Me.btnAgregarPatologia
         Me.btnAgregarPatologia.Size = New System.Drawing.Size(116, 29)
-        Me.btnAgregarPatologia.TabIndex = 21
+        Me.btnAgregarPatologia.TabIndex = 20
         Me.btnAgregarPatologia.Text = "Agregar patologia"
         '
         'panelAgregarUsuario
@@ -810,7 +810,7 @@ Partial Class MenuGestorNew
         Me.txtCI.Location = New System.Drawing.Point(207, 174)
         Me.txtCI.Name = "txtCI"
         Me.txtCI.Size = New System.Drawing.Size(240, 20)
-        Me.txtCI.TabIndex = 47
+        Me.txtCI.TabIndex = 27
         '
         'Label34
         '
@@ -829,14 +829,14 @@ Partial Class MenuGestorNew
         Me.cbxSexo.Location = New System.Drawing.Point(206, 214)
         Me.cbxSexo.Name = "cbxSexo"
         Me.cbxSexo.Size = New System.Drawing.Size(49, 21)
-        Me.cbxSexo.TabIndex = 45
+        Me.cbxSexo.TabIndex = 28
         '
         'txtSegundoApellido
         '
         Me.txtSegundoApellido.Location = New System.Drawing.Point(206, 131)
         Me.txtSegundoApellido.Name = "txtSegundoApellido"
         Me.txtSegundoApellido.Size = New System.Drawing.Size(241, 20)
-        Me.txtSegundoApellido.TabIndex = 44
+        Me.txtSegundoApellido.TabIndex = 26
         '
         'Label33
         '
@@ -863,7 +863,7 @@ Partial Class MenuGestorNew
         Me.dateFechaNacimiento.Location = New System.Drawing.Point(206, 300)
         Me.dateFechaNacimiento.Name = "dateFechaNacimiento"
         Me.dateFechaNacimiento.Size = New System.Drawing.Size(241, 20)
-        Me.dateFechaNacimiento.TabIndex = 41
+        Me.dateFechaNacimiento.TabIndex = 30
         '
         'Label19
         '
@@ -880,7 +880,7 @@ Partial Class MenuGestorNew
         Me.txtTelefono.Location = New System.Drawing.Point(206, 344)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(241, 20)
-        Me.txtTelefono.TabIndex = 39
+        Me.txtTelefono.TabIndex = 31
         '
         'Label20
         '
@@ -921,7 +921,7 @@ Partial Class MenuGestorNew
         Me.txtSegundoNombre.Location = New System.Drawing.Point(206, 53)
         Me.txtSegundoNombre.Name = "txtSegundoNombre"
         Me.txtSegundoNombre.Size = New System.Drawing.Size(241, 20)
-        Me.txtSegundoNombre.TabIndex = 34
+        Me.txtSegundoNombre.TabIndex = 24
         '
         'Label22
         '
@@ -938,7 +938,7 @@ Partial Class MenuGestorNew
         Me.txtEmpresa.Location = New System.Drawing.Point(206, 472)
         Me.txtEmpresa.Name = "txtEmpresa"
         Me.txtEmpresa.Size = New System.Drawing.Size(241, 20)
-        Me.txtEmpresa.TabIndex = 32
+        Me.txtEmpresa.TabIndex = 34
         '
         'Label23
         '
@@ -955,28 +955,28 @@ Partial Class MenuGestorNew
         Me.txtEmail.Location = New System.Drawing.Point(206, 430)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(241, 20)
-        Me.txtEmail.TabIndex = 28
+        Me.txtEmail.TabIndex = 33
         '
         'txtEspecializacion
         '
         Me.txtEspecializacion.Location = New System.Drawing.Point(206, 385)
         Me.txtEspecializacion.Name = "txtEspecializacion"
         Me.txtEspecializacion.Size = New System.Drawing.Size(241, 20)
-        Me.txtEspecializacion.TabIndex = 27
+        Me.txtEspecializacion.TabIndex = 32
         '
         'txtDireccion
         '
         Me.txtDireccion.Location = New System.Drawing.Point(206, 257)
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(241, 20)
-        Me.txtDireccion.TabIndex = 25
+        Me.txtDireccion.TabIndex = 29
         '
         'txtApellido
         '
         Me.txtApellido.Location = New System.Drawing.Point(206, 93)
         Me.txtApellido.Name = "txtApellido"
         Me.txtApellido.Size = New System.Drawing.Size(241, 20)
-        Me.txtApellido.TabIndex = 24
+        Me.txtApellido.TabIndex = 25
         '
         'txtPrimerNombre
         '
@@ -995,7 +995,7 @@ Partial Class MenuGestorNew
         Me.btnAgregarMedico.Location = New System.Drawing.Point(558, 576)
         Me.btnAgregarMedico.Name = "btnAgregarMedico"
         Me.btnAgregarMedico.Size = New System.Drawing.Size(106, 28)
-        Me.btnAgregarMedico.TabIndex = 21
+        Me.btnAgregarMedico.TabIndex = 37
         Me.btnAgregarMedico.Text = "Agregar"
         Me.btnAgregarMedico.UseVisualStyleBackColor = False
         '
@@ -1096,9 +1096,9 @@ Partial Class MenuGestorNew
         Me.Controls.Add(Me.Guna2ControlBox1)
         Me.Controls.Add(Me.Guna2ControlBox2)
         Me.Controls.Add(Me.panelMenuInicio)
+        Me.Controls.Add(Me.panelABMSintoma)
         Me.Controls.Add(Me.panelModificarEliminarMedico)
         Me.Controls.Add(Me.panelAgregarUsuario)
-        Me.Controls.Add(Me.panelABMSintoma)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)

@@ -67,6 +67,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Diagnostico.vb" />
     <Compile Include="Gestor.vb" />
     <Compile Include="Medico.vb" />
     <Compile Include="Paciente.vb" />

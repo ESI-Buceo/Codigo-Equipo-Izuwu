@@ -99,6 +99,7 @@ Partial Class LoginGNew
         Me.txtContraseña.ShadowDecoration.Parent = Me.txtContraseña
         Me.txtContraseña.Size = New System.Drawing.Size(192, 25)
         Me.txtContraseña.TabIndex = 20
+        Me.txtContraseña.UseSystemPasswordChar = True
         '
         'txtUsuario
         '

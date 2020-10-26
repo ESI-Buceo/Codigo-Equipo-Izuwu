@@ -104,7 +104,7 @@ Public Class MenuMedicoNew
         labPerfilDireccion.Text = medico.Direccion
         labPerfilEspecialidad.Text = medico.especializacion
         labPerfilTelefono.Text = medico.telefono
-        labPerfilFechaDeNacimiento.Text = medico.telefono
+        labPerfilFechaDeNacimiento.Text = medico.fechadenacimiento
 
         panelPerfilPaciente.Visible = True
     End Sub

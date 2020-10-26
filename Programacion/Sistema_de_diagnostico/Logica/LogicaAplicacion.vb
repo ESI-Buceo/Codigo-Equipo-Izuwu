@@ -193,4 +193,13 @@ Public Class LogicaAplicacion
         Return instancia.codigoRandom(num)
     End Function
 
+    Public Sub agregarSintomasPaciente(sintomas As List(Of Sintoma), paciente As Paciente, fecha As String)
+        instancia.agregarSintomasPaciente(sintomas, paciente, fecha)
+    End Sub
+    Public Function diagnostico(paciente As Paciente) As List(Of Diagnostico)
+        Return instancia.Diagnostico(paciente)
+    End Function
+    Public Sub agregarDiagnostico_A_BD(diagnosticos As List(Of Diagnostico), paciente As Paciente, fecha As String)
+        instancia.agregarDiagnostico_A_BD(diagnosticos, paciente, fecha)
+    End Sub
 End Class
