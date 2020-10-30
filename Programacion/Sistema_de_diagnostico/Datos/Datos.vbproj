@@ -72,7 +72,6 @@
     <Compile Include="Medico.vb" />
     <Compile Include="Paciente.vb" />
     <Compile Include="Patologia.vb" />
-    <Compile Include="ReferenciaSintomaPatologia.vb" />
     <Compile Include="Sintoma.vb" />
     <Compile Include="Usuario.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

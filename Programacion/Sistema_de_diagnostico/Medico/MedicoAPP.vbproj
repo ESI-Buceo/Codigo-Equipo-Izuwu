@@ -76,16 +76,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginNew.Designer.vb">
-      <DependentUpon>LoginNew.vb</DependentUpon>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
     </Compile>
-    <Compile Include="LoginNew.vb">
+    <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuMedicoNew.Designer.vb">
-      <DependentUpon>MenuMedicoNew.vb</DependentUpon>
+    <Compile Include="MenuMedico.Designer.vb">
+      <DependentUpon>MenuMedico.vb</DependentUpon>
     </Compile>
-    <Compile Include="MenuMedicoNew.vb">
+    <Compile Include="MenuMedico.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -106,11 +106,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LoginNew.resx">
-      <DependentUpon>LoginNew.vb</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuMedicoNew.resx">
-      <DependentUpon>MenuMedicoNew.vb</DependentUpon>
+    <EmbeddedResource Include="MenuMedico.resx">
+      <DependentUpon>MenuMedico.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

@@ -76,16 +76,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginNew.Designer.vb">
-      <DependentUpon>LoginNew.vb</DependentUpon>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
     </Compile>
-    <Compile Include="LoginNew.vb">
+    <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuPacienteNew.Designer.vb">
-      <DependentUpon>MenuPacienteNew.vb</DependentUpon>
+    <Compile Include="MenuPaciente.Designer.vb">
+      <DependentUpon>MenuPaciente.vb</DependentUpon>
     </Compile>
-    <Compile Include="MenuPacienteNew.vb">
+    <Compile Include="MenuPaciente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
@@ -93,10 +93,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RegistroNew.Designer.vb">
-      <DependentUpon>RegistroNew.vb</DependentUpon>
+    <Compile Include="Registro.Designer.vb">
+      <DependentUpon>Registro.vb</DependentUpon>
     </Compile>
-    <Compile Include="RegistroNew.vb">
+    <Compile Include="Registro.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -112,14 +112,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LoginNew.resx">
-      <DependentUpon>LoginNew.vb</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuPacienteNew.resx">
-      <DependentUpon>MenuPacienteNew.vb</DependentUpon>
+    <EmbeddedResource Include="MenuPaciente.resx">
+      <DependentUpon>MenuPaciente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistroNew.resx">
-      <DependentUpon>RegistroNew.vb</DependentUpon>
+    <EmbeddedResource Include="Registro.resx">
+      <DependentUpon>Registro.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

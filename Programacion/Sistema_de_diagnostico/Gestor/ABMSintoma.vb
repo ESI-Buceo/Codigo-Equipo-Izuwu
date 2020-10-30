@@ -55,10 +55,10 @@ Public Class ABMSintoma
 
             End If
 
-            MenuGestorNew.limpiarListaPatologia()
-            MenuGestorNew.limpiarListaSintomas()
-            MenuGestorNew.cargarListaSintoma()
-            MenuGestorNew.cargarListaPatologia()
+            MenuGestor.limpiarListaPatologia()
+            MenuGestor.limpiarListaSintomas()
+            MenuGestor.cargarListaSintoma()
+            MenuGestor.cargarListaPatologia()
             Me.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -89,5 +89,9 @@ Public Class ABMSintoma
                 End If
             Next
         Next
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
     End Sub
 End Class

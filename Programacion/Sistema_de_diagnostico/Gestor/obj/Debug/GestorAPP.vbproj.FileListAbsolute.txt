@@ -50,3 +50,29 @@ C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\Git
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.ABMSintoma.resources
 C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\bin\Debug\Guna.UI2.dll
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\bin\Debug\Guna.UI2.dll
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\bin\Debug\GestorAPP.exe.config
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\bin\Debug\GestorAPP.exe
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\bin\Debug\GestorAPP.pdb
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\bin\Debug\GestorAPP.xml
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\bin\Debug\Datos.dll
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\bin\Debug\Guna.UI2.dll
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\bin\Debug\Logica.dll
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\bin\Debug\ConexionBD.dll
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\bin\Debug\Datos.pdb
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\bin\Debug\Datos.xml
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\bin\Debug\Logica.pdb
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\bin\Debug\Logica.xml
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\bin\Debug\ConexionBD.pdb
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\bin\Debug\ConexionBD.xml
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.vbprojAssemblyReference.cache
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.ABMPatologia.resources
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.ABMSintoma.resources
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.LoginGNew.resources
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.MenuGestorNew.resources
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.Resources.resources
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.vbproj.GenerateResource.cache
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.vbproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.vbproj.CopyComplete
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.exe
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.xml
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.pdb

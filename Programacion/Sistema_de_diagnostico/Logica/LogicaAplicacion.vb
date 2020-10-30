@@ -36,7 +36,7 @@ Public Class LogicaAplicacion
 
     Public Function loginMedico(userCI As String, pass As String) As Medico
         If userCI.Length = 0 Or pass.Length = 0 Then
-            Throw New Exception("Usuario y/o contraseña vacio/s")
+            Throw New Exception("Usuario y/o contraseña vacío/s")
         Else
             Return instancia.loginMedico(userCI, pass)
         End If
@@ -44,7 +44,7 @@ Public Class LogicaAplicacion
 
     Public Function loginPaciente(userCI As String, pass As String) As Paciente
         If userCI.Length = 0 Or pass.Length = 0 Then
-            Throw New Exception("Usuario y/o contraseña vacio/s")
+            Throw New Exception("Usuario y/o contraseña vacío/s")
         Else
             Return instancia.loginPaciente(userCI, pass)
         End If
@@ -52,7 +52,7 @@ Public Class LogicaAplicacion
 
     Public Function loginGestor(userCI As String, pass As String) As Gestor
         If userCI.Length = 0 Or pass.Length = 0 Then
-            Throw New Exception("Usuario y/o contraseña vacio/s")
+            Throw New Exception("Usuario y/o contraseña vacío/s")
         Else
             Return instancia.loginGestor(userCI, pass)
         End If
@@ -119,7 +119,7 @@ Public Class LogicaAplicacion
 
     Public Sub agregarSintomaDePatologia(IDsintoma As String, IDpatologia As String)
         If IDpatologia.Length = 0 Then
-            Throw New Exception("Ninguna patologia seleccionada.")
+            Throw New Exception("Ninguna patología seleccionada.")
         Else
             instancia.agregarSintomaDePatologia(IDsintoma, IDpatologia)
         End If
@@ -150,14 +150,14 @@ Public Class LogicaAplicacion
 
     Public Sub actualizarSintoma(sintoma As Sintoma)
         If sintoma.nombre.Length = 0 Then
-            Throw New Exception("Nombre vacio.")
+            Throw New Exception("Nombre vacío.")
         Else
             instancia.actualizarSintoma(sintoma)
         End If
     End Sub
     Public Sub actualizarPatologia(patologia As Patologia)
         If patologia.nombre.Length = 0 Then
-            Throw New Exception("Nombre vacio.")
+            Throw New Exception("Nombre vacío.")
         Else
             instancia.actualizarPatologia(patologia)
         End If
@@ -165,7 +165,7 @@ Public Class LogicaAplicacion
 
     Public Sub actualizarMedico(medico As Medico)
         If medico.nombre.Length = 0 Or medico.apellido.Length = 0 Or medico.email.Length = 0 Or medico.Direccion.Length = 0 Or medico.CI.Length = 0 Or medico.contraseña.Length = 0 Or medico.telefono.Length = 0 Or medico.fechadenacimiento.Length = 0 Or medico.especializacion.Length = 0 Or medico.segundonombre.Length = 0 Or medico.segundoapellido.Length = 0 Or medico.lugarDeTrabajo.Length = 0 Then
-            Throw New Exception("Datos vacios.")
+            Throw New Exception("Datos vacíos.")
         Else
             instancia.actualizarMedico(medico)
         End If
@@ -173,7 +173,7 @@ Public Class LogicaAplicacion
 
     Public Sub actualizarPaciente(paciente As Paciente)
         If paciente.nombre.Length = 0 Or paciente.apellido.Length = 0 Or paciente.email.Length = 0 Or paciente.Direccion.Length = 0 Or paciente.CI.Length = 0 Or paciente.contraseña.Length = 0 Or paciente.telefono.Length = 0 Or paciente.fechadenacimiento.Length = 0 Or paciente.segundonombre.Length = 0 Or paciente.segundoapellido.Length = 0 Or paciente.altura.Length = 0 Or paciente.peso.Length = 0 Or paciente.patologiaPrevia.Length = 0 Then
-            Throw New Exception("Datos vacios.")
+            Throw New Exception("Datos vacíos.")
         Else
             instancia.actualizarPaciente(paciente)
         End If
@@ -181,7 +181,7 @@ Public Class LogicaAplicacion
 
     Public Sub actualizarGestor(gestor As Gestor)
         If gestor.nombre.Length = 0 Or gestor.apellido.Length = 0 Or gestor.email.Length = 0 Or gestor.Direccion.Length = 0 Or gestor.CI.Length = 0 Or gestor.contraseña.Length = 0 Or gestor.telefono.Length = 0 Or gestor.fechadenacimiento.Length = 0 Or gestor.empresa.Length = 0 Or gestor.segundonombre.Length = 0 Or gestor.segundoapellido.Length = 0 Then
-            Throw New Exception("Datos vacios.")
+            Throw New Exception("Datos vacíos.")
         Else
             instancia.actualizarGestor(gestor)
         End If
@@ -194,7 +194,13 @@ Public Class LogicaAplicacion
     End Function
 
     Public Sub agregarSintomasPaciente(sintomas As List(Of Sintoma), paciente As Paciente, fecha As String)
-        instancia.agregarSintomasPaciente(sintomas, paciente, fecha)
+        If sintomas.Count = 0 Then
+            Throw New Exception("No hay síntomas seleccionados.")
+        ElseIf sintomas.Count = 1 Or sintomas.Count = 2 Then
+            Throw New Exception("Seleccione mas síntomas para ser mas preciso.")
+        Else
+            instancia.agregarSintomasPaciente(sintomas, paciente, fecha)
+        End If
     End Sub
     Public Function diagnostico(paciente As Paciente) As List(Of Diagnostico)
         Return instancia.Diagnostico(paciente)

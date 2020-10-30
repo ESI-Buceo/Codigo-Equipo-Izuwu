@@ -48,3 +48,28 @@ C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\Git
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.pdb
 C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\bin\Debug\Guna.UI2.dll
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\bin\Debug\Guna.UI2.dll
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\bin\Debug\PacienteAPP.exe.config
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\bin\Debug\PacienteAPP.exe
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\bin\Debug\PacienteAPP.pdb
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\bin\Debug\PacienteAPP.xml
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\bin\Debug\Datos.dll
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\bin\Debug\Guna.UI2.dll
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\bin\Debug\Logica.dll
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\bin\Debug\ConexionBD.dll
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\bin\Debug\Datos.pdb
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\bin\Debug\Datos.xml
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\bin\Debug\Logica.pdb
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\bin\Debug\Logica.xml
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\bin\Debug\ConexionBD.pdb
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\bin\Debug\ConexionBD.xml
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.vbprojAssemblyReference.cache
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.LoginNew.resources
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.MenuPacienteNew.resources
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.RegistroNew.resources
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.Resources.resources
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.vbproj.GenerateResource.cache
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.vbproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.vbproj.CopyComplete
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.exe
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.xml
+C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.pdb

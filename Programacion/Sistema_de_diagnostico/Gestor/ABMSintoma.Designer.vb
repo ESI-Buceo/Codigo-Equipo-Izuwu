@@ -46,7 +46,7 @@ Partial Class ABMSintoma
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(132, 17)
         Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Nombre del sintoma:"
+        Me.Label3.Text = "Nombre del síntoma:"
         '
         'txtNombre
         '
@@ -63,7 +63,7 @@ Partial Class ABMSintoma
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(171, 36)
         Me.Label1.TabIndex = 5
-        Me.Label1.Text = "ABM Sintoma"
+        Me.Label1.Text = "ABM Síntoma"
         '
         'Button1
         '
@@ -123,7 +123,7 @@ Partial Class ABMSintoma
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(149, 17)
         Me.Label2.TabIndex = 13
-        Me.Label2.Text = "Patologia perteneciente:"
+        Me.Label2.Text = "Patología perteneciente:"
         '
         'txtIDSintoma
         '

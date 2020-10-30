@@ -34,8 +34,8 @@ Partial Class ABMPatologia
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.chkListaSintomas = New System.Windows.Forms.CheckedListBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.chkListaSintomas = New System.Windows.Forms.CheckedListBox()
         CType(Me.numPrioridad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -48,7 +48,7 @@ Partial Class ABMPatologia
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(82, 17)
         Me.Label13.TabIndex = 6
-        Me.Label13.Text = "ID Patologia:"
+        Me.Label13.Text = "ID Patología:"
         '
         'Label1
         '
@@ -58,7 +58,7 @@ Partial Class ABMPatologia
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(183, 36)
         Me.Label1.TabIndex = 7
-        Me.Label1.Text = "ABM Patologia"
+        Me.Label1.Text = "ABM Patología"
         '
         'Button1
         '
@@ -104,7 +104,7 @@ Partial Class ABMPatologia
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(139, 17)
         Me.Label2.TabIndex = 12
-        Me.Label2.Text = "Nombre de patologia:"
+        Me.Label2.Text = "Nombre de patología:"
         '
         'txtNombre
         '
@@ -171,14 +171,6 @@ Partial Class ABMPatologia
         Me.Panel2.Size = New System.Drawing.Size(318, 449)
         Me.Panel2.TabIndex = 18
         '
-        'chkListaSintomas
-        '
-        Me.chkListaSintomas.FormattingEnabled = True
-        Me.chkListaSintomas.Location = New System.Drawing.Point(36, 216)
-        Me.chkListaSintomas.Name = "chkListaSintomas"
-        Me.chkListaSintomas.Size = New System.Drawing.Size(238, 184)
-        Me.chkListaSintomas.TabIndex = 17
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -187,7 +179,15 @@ Partial Class ABMPatologia
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(141, 17)
         Me.Label5.TabIndex = 19
-        Me.Label5.Text = "Sintoma perteneciente:"
+        Me.Label5.Text = "Síntoma perteneciente:"
+        '
+        'chkListaSintomas
+        '
+        Me.chkListaSintomas.FormattingEnabled = True
+        Me.chkListaSintomas.Location = New System.Drawing.Point(36, 216)
+        Me.chkListaSintomas.Name = "chkListaSintomas"
+        Me.chkListaSintomas.Size = New System.Drawing.Size(238, 184)
+        Me.chkListaSintomas.TabIndex = 17
         '
         'ABMPatologia
         '
