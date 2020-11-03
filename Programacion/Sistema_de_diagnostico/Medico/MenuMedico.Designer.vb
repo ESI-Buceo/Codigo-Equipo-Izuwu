@@ -32,7 +32,7 @@ Partial Class MenuMedico
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.panelConsultaPendiente = New System.Windows.Forms.Panel()
-        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.lstConsultasPendientes = New System.Windows.Forms.ListView()
         Me.panelHistorialConsulta = New System.Windows.Forms.Panel()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.ListView2 = New System.Windows.Forms.ListView()
@@ -178,20 +178,20 @@ Partial Class MenuMedico
         '
         'panelConsultaPendiente
         '
-        Me.panelConsultaPendiente.Controls.Add(Me.ListView1)
+        Me.panelConsultaPendiente.Controls.Add(Me.lstConsultasPendientes)
         Me.panelConsultaPendiente.Location = New System.Drawing.Point(297, 32)
         Me.panelConsultaPendiente.Name = "panelConsultaPendiente"
         Me.panelConsultaPendiente.Size = New System.Drawing.Size(671, 601)
         Me.panelConsultaPendiente.TabIndex = 7
         '
-        'ListView1
+        'lstConsultasPendientes
         '
-        Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(3, 3)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(261, 595)
-        Me.ListView1.TabIndex = 0
-        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.lstConsultasPendientes.HideSelection = False
+        Me.lstConsultasPendientes.Location = New System.Drawing.Point(3, 3)
+        Me.lstConsultasPendientes.Name = "lstConsultasPendientes"
+        Me.lstConsultasPendientes.Size = New System.Drawing.Size(261, 595)
+        Me.lstConsultasPendientes.TabIndex = 0
+        Me.lstConsultasPendientes.UseCompatibleStateImageBehavior = False
         '
         'panelHistorialConsulta
         '
@@ -516,7 +516,7 @@ Partial Class MenuMedico
         Me.label13.TabIndex = 14
         Me.label13.Text = "Fecha de nacimiento:"
         '
-        'MenuMedicoNew
+        'MenuMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -526,13 +526,13 @@ Partial Class MenuMedico
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.panelConsultaPendiente)
         Me.Controls.Add(Me.panelPerfilPaciente)
         Me.Controls.Add(Me.panelHistorialConsulta)
-        Me.Controls.Add(Me.panelConsultaPendiente)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)
-        Me.Name = "MenuMedicoNew"
+        Me.Name = "MenuMedico"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MenuPacienteNew"
         Me.Panel1.ResumeLayout(False)
@@ -560,7 +560,7 @@ Partial Class MenuMedico
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents panelConsultaPendiente As Panel
-    Friend WithEvents ListView1 As ListView
+    Friend WithEvents lstConsultasPendientes As ListView
     Friend WithEvents panelHistorialConsulta As Panel
     Friend WithEvents ListView2 As ListView
     Friend WithEvents TextBox1 As TextBox

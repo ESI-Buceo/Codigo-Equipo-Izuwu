@@ -42,7 +42,7 @@ Partial Class ABMSintoma
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(5, 68)
+        Me.Label3.Location = New System.Drawing.Point(1, 102)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(132, 17)
         Me.Label3.TabIndex = 3
@@ -50,7 +50,7 @@ Partial Class ABMSintoma
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(143, 65)
+        Me.txtNombre.Location = New System.Drawing.Point(139, 99)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(134, 20)
         Me.txtNombre.TabIndex = 4
@@ -128,7 +128,7 @@ Partial Class ABMSintoma
         'txtIDSintoma
         '
         Me.txtIDSintoma.BackColor = System.Drawing.Color.White
-        Me.txtIDSintoma.Location = New System.Drawing.Point(143, 103)
+        Me.txtIDSintoma.Location = New System.Drawing.Point(139, 61)
         Me.txtIDSintoma.Name = "txtIDSintoma"
         Me.txtIDSintoma.ReadOnly = True
         Me.txtIDSintoma.Size = New System.Drawing.Size(92, 20)
@@ -138,7 +138,7 @@ Partial Class ABMSintoma
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(114, 103)
+        Me.Label4.Location = New System.Drawing.Point(110, 61)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(23, 17)
         Me.Label4.TabIndex = 15

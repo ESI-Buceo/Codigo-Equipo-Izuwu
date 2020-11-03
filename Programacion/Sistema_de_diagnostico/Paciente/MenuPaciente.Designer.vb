@@ -58,6 +58,7 @@ Partial Class MenuPaciente
         Me.btnRealizardiagnostico = New Guna.UI2.WinForms.Guna2Button()
         Me.btnEliminar = New Guna.UI2.WinForms.Guna2Button()
         Me.panelPerfil = New System.Windows.Forms.Panel()
+        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.labPerfilID = New System.Windows.Forms.Label()
         Me.labPerfilNombre = New System.Windows.Forms.Label()
         Me.labVolverPerfil = New System.Windows.Forms.Label()
@@ -542,6 +543,7 @@ Partial Class MenuPaciente
         'panelPerfil
         '
         Me.panelPerfil.BackColor = System.Drawing.Color.White
+        Me.panelPerfil.Controls.Add(Me.Guna2Button2)
         Me.panelPerfil.Controls.Add(Me.labPerfilID)
         Me.panelPerfil.Controls.Add(Me.labPerfilNombre)
         Me.panelPerfil.Controls.Add(Me.labVolverPerfil)
@@ -553,11 +555,27 @@ Partial Class MenuPaciente
         Me.panelPerfil.Size = New System.Drawing.Size(682, 608)
         Me.panelPerfil.TabIndex = 11
         '
+        'Guna2Button2
+        '
+        Me.Guna2Button2.BorderThickness = 1
+        Me.Guna2Button2.CheckedState.Parent = Me.Guna2Button2
+        Me.Guna2Button2.CustomImages.Parent = Me.Guna2Button2
+        Me.Guna2Button2.FillColor = System.Drawing.Color.White
+        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.Black
+        Me.Guna2Button2.HoverState.Parent = Me.Guna2Button2
+        Me.Guna2Button2.Location = New System.Drawing.Point(615, 17)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.ShadowDecoration.Parent = Me.Guna2Button2
+        Me.Guna2Button2.Size = New System.Drawing.Size(52, 46)
+        Me.Guna2Button2.TabIndex = 27
+        Me.Guna2Button2.Text = "Editar perfil"
+        '
         'labPerfilID
         '
         Me.labPerfilID.Font = New System.Drawing.Font("Yu Gothic UI Semilight", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labPerfilID.ForeColor = System.Drawing.Color.Black
-        Me.labPerfilID.Location = New System.Drawing.Point(15, 226)
+        Me.labPerfilID.Location = New System.Drawing.Point(53, 226)
         Me.labPerfilID.Name = "labPerfilID"
         Me.labPerfilID.Size = New System.Drawing.Size(590, 25)
         Me.labPerfilID.TabIndex = 13
@@ -568,7 +586,7 @@ Partial Class MenuPaciente
         '
         Me.labPerfilNombre.Font = New System.Drawing.Font("Yu Gothic UI", 24.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labPerfilNombre.ForeColor = System.Drawing.Color.Black
-        Me.labPerfilNombre.Location = New System.Drawing.Point(7, 179)
+        Me.labPerfilNombre.Location = New System.Drawing.Point(45, 179)
         Me.labPerfilNombre.Name = "labPerfilNombre"
         Me.labPerfilNombre.Size = New System.Drawing.Size(615, 45)
         Me.labPerfilNombre.TabIndex = 13
@@ -588,7 +606,7 @@ Partial Class MenuPaciente
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(232, 29)
+        Me.PictureBox1.Location = New System.Drawing.Point(270, 29)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(159, 147)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -742,7 +760,7 @@ Partial Class MenuPaciente
         Me.labLugardeTrabajoMED.TabIndex = 15
         Me.labLugardeTrabajoMED.Text = "Lugar de Trabajo:"
         '
-        'MenuPacienteNew
+        'MenuPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -752,14 +770,14 @@ Partial Class MenuPaciente
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.panelPerfil)
-        Me.Controls.Add(Me.panelMenu_Chat)
         Me.Controls.Add(Me.panelRealizarDiagnostico2)
         Me.Controls.Add(Me.panelChat)
+        Me.Controls.Add(Me.panelMenu_Chat)
+        Me.Controls.Add(Me.panelPerfil)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)
-        Me.Name = "MenuPacienteNew"
+        Me.Name = "MenuPaciente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MenuPacienteNew"
         Me.Panel1.ResumeLayout(False)
@@ -837,4 +855,5 @@ Partial Class MenuPaciente
     Friend WithEvents labDiagnostico2 As Label
     Friend WithEvents Guna2CustomGradientPanel1 As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents btnFinalizarConsulta As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
 End Class

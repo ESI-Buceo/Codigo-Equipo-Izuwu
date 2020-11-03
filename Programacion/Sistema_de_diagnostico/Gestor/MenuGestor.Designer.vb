@@ -52,7 +52,6 @@ Partial Class MenuGestor
         Me.txtModDel_Empresa = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtModDel_Email = New System.Windows.Forms.TextBox()
-        Me.txtModDel_Especializacion = New System.Windows.Forms.TextBox()
         Me.txtModDel_Direccion = New System.Windows.Forms.TextBox()
         Me.txtModDel_Apellido = New System.Windows.Forms.TextBox()
         Me.txtModDel_PrimerNombre = New System.Windows.Forms.TextBox()
@@ -97,7 +96,6 @@ Partial Class MenuGestor
         Me.txtEmpresa = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.txtEmail = New System.Windows.Forms.TextBox()
-        Me.txtEspecializacion = New System.Windows.Forms.TextBox()
         Me.txtDireccion = New System.Windows.Forms.TextBox()
         Me.txtApellido = New System.Windows.Forms.TextBox()
         Me.txtPrimerNombre = New System.Windows.Forms.TextBox()
@@ -110,6 +108,8 @@ Partial Class MenuGestor
         Me.Label29 = New System.Windows.Forms.Label()
         Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2ControlBox2 = New Guna.UI2.WinForms.Guna2ControlBox()
+        Me.cbxModDel_Especializacion = New System.Windows.Forms.ComboBox()
+        Me.cbxEspecializacion = New System.Windows.Forms.ComboBox()
         Me.panelMenuInicio.SuspendLayout()
         Me.panelModificarEliminarMedico.SuspendLayout()
         Me.panelABMSintoma.SuspendLayout()
@@ -213,6 +213,7 @@ Partial Class MenuGestor
         '
         'panelModificarEliminarMedico
         '
+        Me.panelModificarEliminarMedico.Controls.Add(Me.cbxModDel_Especializacion)
         Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_CI)
         Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_Segundoapellido)
         Me.panelModificarEliminarMedico.Controls.Add(Me.Label32)
@@ -234,7 +235,6 @@ Partial Class MenuGestor
         Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_Empresa)
         Me.panelModificarEliminarMedico.Controls.Add(Me.Label10)
         Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_Email)
-        Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_Especializacion)
         Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_Direccion)
         Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_Apellido)
         Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_PrimerNombre)
@@ -437,13 +437,6 @@ Partial Class MenuGestor
         Me.txtModDel_Email.Name = "txtModDel_Email"
         Me.txtModDel_Email.Size = New System.Drawing.Size(198, 20)
         Me.txtModDel_Email.TabIndex = 50
-        '
-        'txtModDel_Especializacion
-        '
-        Me.txtModDel_Especializacion.Location = New System.Drawing.Point(206, 400)
-        Me.txtModDel_Especializacion.Name = "txtModDel_Especializacion"
-        Me.txtModDel_Especializacion.Size = New System.Drawing.Size(198, 20)
-        Me.txtModDel_Especializacion.TabIndex = 49
         '
         'txtModDel_Direccion
         '
@@ -771,6 +764,7 @@ Partial Class MenuGestor
         '
         'panelAgregarUsuario
         '
+        Me.panelAgregarUsuario.Controls.Add(Me.cbxEspecializacion)
         Me.panelAgregarUsuario.Controls.Add(Me.txtCI)
         Me.panelAgregarUsuario.Controls.Add(Me.Label34)
         Me.panelAgregarUsuario.Controls.Add(Me.cbxSexo)
@@ -789,7 +783,6 @@ Partial Class MenuGestor
         Me.panelAgregarUsuario.Controls.Add(Me.txtEmpresa)
         Me.panelAgregarUsuario.Controls.Add(Me.Label23)
         Me.panelAgregarUsuario.Controls.Add(Me.txtEmail)
-        Me.panelAgregarUsuario.Controls.Add(Me.txtEspecializacion)
         Me.panelAgregarUsuario.Controls.Add(Me.txtDireccion)
         Me.panelAgregarUsuario.Controls.Add(Me.txtApellido)
         Me.panelAgregarUsuario.Controls.Add(Me.txtPrimerNombre)
@@ -957,13 +950,6 @@ Partial Class MenuGestor
         Me.txtEmail.Size = New System.Drawing.Size(241, 20)
         Me.txtEmail.TabIndex = 33
         '
-        'txtEspecializacion
-        '
-        Me.txtEspecializacion.Location = New System.Drawing.Point(206, 385)
-        Me.txtEspecializacion.Name = "txtEspecializacion"
-        Me.txtEspecializacion.Size = New System.Drawing.Size(241, 20)
-        Me.txtEspecializacion.TabIndex = 32
-        '
         'txtDireccion
         '
         Me.txtDireccion.Location = New System.Drawing.Point(206, 257)
@@ -1086,7 +1072,23 @@ Partial Class MenuGestor
         Me.Guna2ControlBox2.Size = New System.Drawing.Size(45, 29)
         Me.Guna2ControlBox2.TabIndex = 44
         '
-        'MenuGestorNew
+        'cbxModDel_Especializacion
+        '
+        Me.cbxModDel_Especializacion.FormattingEnabled = True
+        Me.cbxModDel_Especializacion.Location = New System.Drawing.Point(206, 400)
+        Me.cbxModDel_Especializacion.Name = "cbxModDel_Especializacion"
+        Me.cbxModDel_Especializacion.Size = New System.Drawing.Size(198, 21)
+        Me.cbxModDel_Especializacion.TabIndex = 57
+        '
+        'cbxEspecializacion
+        '
+        Me.cbxEspecializacion.FormattingEnabled = True
+        Me.cbxEspecializacion.Location = New System.Drawing.Point(206, 385)
+        Me.cbxEspecializacion.Name = "cbxEspecializacion"
+        Me.cbxEspecializacion.Size = New System.Drawing.Size(241, 21)
+        Me.cbxEspecializacion.TabIndex = 47
+        '
+        'MenuGestor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -1096,13 +1098,13 @@ Partial Class MenuGestor
         Me.Controls.Add(Me.Guna2ControlBox1)
         Me.Controls.Add(Me.Guna2ControlBox2)
         Me.Controls.Add(Me.panelMenuInicio)
+        Me.Controls.Add(Me.panelAgregarUsuario)
         Me.Controls.Add(Me.panelABMSintoma)
         Me.Controls.Add(Me.panelModificarEliminarMedico)
-        Me.Controls.Add(Me.panelAgregarUsuario)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)
-        Me.Name = "MenuGestorNew"
+        Me.Name = "MenuGestor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MenuPacienteNew"
         Me.panelMenuInicio.ResumeLayout(False)
@@ -1132,7 +1134,6 @@ Partial Class MenuGestor
     Friend WithEvents txtModDel_PrimerNombre As TextBox
     Friend WithEvents btnAceptarModificar As Button
     Friend WithEvents txtModDel_Email As TextBox
-    Friend WithEvents txtModDel_Especializacion As TextBox
     Friend WithEvents txtModDel_Empresa As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents Label2 As Label
@@ -1169,7 +1170,6 @@ Partial Class MenuGestor
     Friend WithEvents txtEmpresa As TextBox
     Friend WithEvents Label23 As Label
     Friend WithEvents txtEmail As TextBox
-    Friend WithEvents txtEspecializacion As TextBox
     Friend WithEvents txtDireccion As TextBox
     Friend WithEvents txtApellido As TextBox
     Friend WithEvents txtPrimerNombre As TextBox
@@ -1204,4 +1204,6 @@ Partial Class MenuGestor
     Friend WithEvents txtBuscarPatologia As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents btnAgregarSintoma As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnAgregarPatologia As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents cbxModDel_Especializacion As ComboBox
+    Friend WithEvents cbxEspecializacion As ComboBox
 End Class

@@ -76,6 +76,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditarPerfil.Designer.vb">
+      <DependentUpon>EditarPerfil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditarPerfil.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -110,8 +116,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SolicitudChat.Designer.vb">
+      <DependentUpon>SolicitudChat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudChat.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="EditarPerfil.resx">
+      <DependentUpon>EditarPerfil.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +141,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SolicitudChat.resx">
+      <DependentUpon>SolicitudChat.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

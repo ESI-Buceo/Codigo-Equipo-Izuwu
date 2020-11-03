@@ -10,6 +10,7 @@ Public Class MenuPaciente
     Dim SintomasSeleccionados As New List(Of Sintoma)
     Dim listaSintomas As List(Of Sintoma) = instancia.ObtenerSintoma()
     Dim filtroSintomas As New List(Of Sintoma)
+    Dim listaResultadoDiag As List(Of Diagnostico)
 
 
     'Definir variables globales; estas van despues de la linea de inherits
@@ -119,22 +120,22 @@ Public Class MenuPaciente
             Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
 
             instancia.agregarSintomasPaciente(SintomasSeleccionados, paciente, fechaString)
-            Dim listaResultadoDiag As List(Of Diagnostico) = instancia.diagnostico(paciente)
+            listaResultadoDiag = instancia.diagnostico()
 
             labDiagnostico1.Text = listaResultadoDiag.ElementAt(0).nombre
             labDiagnostico1.Visible = True
 
-            If listaResultadoDiag.ElementAt(1).nombre IsNot Nothing Then
+            If listaResultadoDiag.Count = 2 Then
                 labDiagnostico2.Text = listaResultadoDiag.ElementAt(1).nombre
                 labDiagnostico2.Visible = True
             End If
 
-            If listaResultadoDiag.ElementAt(2).nombre IsNot Nothing Then
+            If listaResultadoDiag.Count = 3 Then
                 labDiagnostico3.Text = listaResultadoDiag.ElementAt(2).nombre
                 labDiagnostico3.Visible = True
             End If
 
-            If listaResultadoDiag.ElementAt(3).nombre IsNot Nothing Then
+            If listaResultadoDiag.Count = 4 Then
                 labDiagnostico4.Text = listaResultadoDiag.ElementAt(3).nombre
                 labDiagnostico4.Visible = True
             End If
@@ -143,6 +144,8 @@ Public Class MenuPaciente
 
             lstSintomasSeleccionados.Enabled = False
             btnAgregar.Enabled = False
+            btnEliminar.Enabled = False
+            btnRealizardiagnostico.Enabled = False
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -226,12 +229,24 @@ Public Class MenuPaciente
         Dim pregunta As DialogResult = MessageBox.Show("Consulta finalizada. ¿Desea comunicarse con un médico?", "Finalizar consulta", MessageBoxButtons.YesNo)
 
         If pregunta = DialogResult.Yes Then
+            Dim solicitudchat As New SolicitudChat()
+            Dim ResultadoPatologia As New Patologia(listaResultadoDiag.ElementAt(0).nombre, listaResultadoDiag.ElementAt(0).prioridad, listaResultadoDiag.ElementAt(0).id, listaResultadoDiag.ElementAt(0).especialidad)
+            solicitudchat.patologia = ResultadoPatologia
+            solicitudchat.ShowDialog()
 
         ElseIf pregunta = DialogResult.No Then
-
+            panelRealizarDiagnostico.Visible = False
+            panelRealizarDiagnostico2.Visible = False
+            limpiarDiagnostico()
         End If
     End Sub
 
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        Dim editarperfil As New EditarPerfil
+        editarperfil.paciente = paciente
+        editarperfil.ShowDialog()
+
+    End Sub
 
     '-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Funciones para la aplicacion que se van a repetir (Cargar listas, hacer invisibles sectores de la ventana, etc.)
@@ -257,13 +272,22 @@ Public Class MenuPaciente
         panelPerfil.Visible = False
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
-
     Public Sub devolverColorBotonesMenu()
         btnMenu_RealizarDiagnostico.BackColor = Color.FromArgb(40, 117, 207)
         btnChats1.FillColor = Color.FromArgb(40, 117, 207)
         btnCerrarSesion.FillColor = Color.FromArgb(40, 117, 207)
+    End Sub
+
+    Public Sub limpiarDiagnostico()
+        cargarListaSintomas()
+        lstSintomasSeleccionados.Clear()
+        labDiagnostico1.Visible = False
+        labDiagnostico2.Visible = False
+        labDiagnostico3.Visible = False
+        labDiagnostico4.Visible = False
+        lstSintomasSeleccionados.Enabled = True
+        btnAgregar.Enabled = True
+        btnEliminar.Enabled = True
+        btnRealizardiagnostico.Enabled = True
     End Sub
 End Class
