@@ -22,8 +22,6 @@ C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagno
 C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.pdb
 C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.MenuGestorNew.resources
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.vbprojAssemblyReference.cache
-C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.LoginGNew.resources
-C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.MenuGestorNew.resources
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.Resources.resources
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.vbproj.GenerateResource.cache
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.vbproj.CoreCompileInputs.cache
@@ -102,3 +100,5 @@ C:\Users\user\source\repos\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_di
 C:\Users\user\source\repos\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.exe
 C:\Users\user\source\repos\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.xml
 C:\Users\user\source\repos\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.pdb
+C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.Login.resources
+C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.MenuGestor.resources

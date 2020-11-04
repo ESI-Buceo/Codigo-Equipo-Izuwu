@@ -80,6 +80,14 @@ Public Class MenuPaciente
         labDiagnostico3.Visible = False
         labDiagnostico4.Visible = False
 
+        cargarListaSintomas()
+        lstSintomasSeleccionados.Enabled = True
+        btnAgregar.Enabled = True
+        btnEliminar.Enabled = True
+        btnRealizardiagnostico.Enabled = True
+        btnFinalizarConsulta.Enabled = True
+
+
     End Sub
 
 
@@ -266,6 +274,8 @@ Public Class MenuPaciente
             Dim ResultadoPatologia As New Patologia(listaResultadoDiag.ElementAt(0).nombre, listaResultadoDiag.ElementAt(0).prioridad, listaResultadoDiag.ElementAt(0).id, listaResultadoDiag.ElementAt(0).especialidad)
             solicitudchat.patologia = ResultadoPatologia
             solicitudchat.paciente = paciente
+
+            btnFinalizarConsulta.Enabled = False
             solicitudchat.ShowDialog()
 
         ElseIf pregunta = DialogResult.No Then
@@ -300,11 +310,15 @@ Public Class MenuPaciente
     End Sub
     Private Sub txtMensaje_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMensaje.KeyPress
         If e.KeyChar = ChrW(Keys.Enter) And salaActiva = True Then
-            Dim fechaActual As Date = Date.Now
-            Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
-            instancia.enviarMensaje(txtMensaje.Text, id_sala, fechaString, paciente.ID)
-            txtMensaje.Clear()
-            cargarMensajes()
+            If txtMensaje.Text.Count = 0 Then
+
+            Else
+                Dim fechaActual As Date = Date.Now
+                Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
+                instancia.enviarMensaje(txtMensaje.Text, id_sala, fechaString, paciente.ID)
+                txtMensaje.Clear()
+                cargarMensajes()
+            End If
         End If
     End Sub
 

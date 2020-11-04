@@ -186,11 +186,15 @@ Public Class MenuMedico
 
     Private Sub txtMensaje_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMensaje.KeyPress
         If e.KeyChar = ChrW(Keys.Enter) And salaActiva = True Then
-            Dim fechaActual As Date = Date.Now
-            Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
-            instancia.enviarMensaje(txtMensaje.Text, id_sala, fechaString, medico.ID)
-            txtMensaje.Clear()
-            cargarMensajes()
+            If txtMensaje.Text.Count = 0 Then
+
+            Else
+                Dim fechaActual As Date = Date.Now
+                Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
+                instancia.enviarMensaje(txtMensaje.Text, id_sala, fechaString, medico.ID)
+                txtMensaje.Clear()
+                cargarMensajes()
+            End If
         End If
     End Sub
 
