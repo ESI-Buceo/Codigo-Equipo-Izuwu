@@ -22,6 +22,7 @@ Partial Class MenuPaciente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MenuPaciente))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.panelRealizarDiagnostico = New System.Windows.Forms.Panel()
@@ -40,11 +41,11 @@ Partial Class MenuPaciente
         Me.labVolverDisgnostico = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.panelMenu_Chat = New System.Windows.Forms.Panel()
+        Me.panelListaChats = New System.Windows.Forms.Panel()
         Me.panelChat = New System.Windows.Forms.Panel()
         Me.txtMensaje = New System.Windows.Forms.TextBox()
         Me.txtChat = New System.Windows.Forms.TextBox()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnEnviar = New Guna.UI2.WinForms.Guna2Button()
         Me.panelRealizarDiagnostico2 = New System.Windows.Forms.Panel()
         Me.btnFinalizarConsulta = New Guna.UI2.WinForms.Guna2Button()
         Me.labTituloDiagnostico = New System.Windows.Forms.Label()
@@ -76,6 +77,7 @@ Partial Class MenuPaciente
         Me.Button3 = New System.Windows.Forms.Button()
         Me.labEspecialidadMED = New System.Windows.Forms.Label()
         Me.labLugardeTrabajoMED = New System.Windows.Forms.Label()
+        Me.refrescarChat = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         Me.panelRealizarDiagnostico.SuspendLayout()
         Me.paelRealizaDiagnostico2.SuspendLayout()
@@ -325,23 +327,23 @@ Partial Class MenuPaciente
         Me.Button1.Text = "X"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'panelMenu_Chat
+        'panelListaChats
         '
-        Me.panelMenu_Chat.AutoScroll = True
-        Me.panelMenu_Chat.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(122, Byte), Integer))
-        Me.panelMenu_Chat.Location = New System.Drawing.Point(284, 0)
-        Me.panelMenu_Chat.Name = "panelMenu_Chat"
-        Me.panelMenu_Chat.Size = New System.Drawing.Size(71, 647)
-        Me.panelMenu_Chat.TabIndex = 7
+        Me.panelListaChats.AutoScroll = True
+        Me.panelListaChats.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(122, Byte), Integer))
+        Me.panelListaChats.Location = New System.Drawing.Point(284, 0)
+        Me.panelListaChats.Name = "panelListaChats"
+        Me.panelListaChats.Size = New System.Drawing.Size(71, 647)
+        Me.panelListaChats.TabIndex = 7
         '
         'panelChat
         '
         Me.panelChat.Controls.Add(Me.txtMensaje)
         Me.panelChat.Controls.Add(Me.txtChat)
-        Me.panelChat.Controls.Add(Me.Guna2Button1)
-        Me.panelChat.Location = New System.Drawing.Point(350, 31)
+        Me.panelChat.Controls.Add(Me.btnEnviar)
+        Me.panelChat.Location = New System.Drawing.Point(355, 31)
         Me.panelChat.Name = "panelChat"
-        Me.panelChat.Size = New System.Drawing.Size(625, 611)
+        Me.panelChat.Size = New System.Drawing.Size(620, 611)
         Me.panelChat.TabIndex = 9
         '
         'txtMensaje
@@ -363,23 +365,23 @@ Partial Class MenuPaciente
         Me.txtChat.Size = New System.Drawing.Size(560, 507)
         Me.txtChat.TabIndex = 0
         '
-        'Guna2Button1
+        'btnEnviar
         '
-        Me.Guna2Button1.Animated = True
-        Me.Guna2Button1.AutoRoundedCorners = True
-        Me.Guna2Button1.BorderRadius = 16
-        Me.Guna2Button1.CheckedState.Parent = Me.Guna2Button1
-        Me.Guna2Button1.CustomImages.Parent = Me.Guna2Button1
-        Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(122, Byte), Integer))
-        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.HoverState.Parent = Me.Guna2Button1
-        Me.Guna2Button1.Location = New System.Drawing.Point(508, 540)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.ShadowDecoration.Parent = Me.Guna2Button1
-        Me.Guna2Button1.Size = New System.Drawing.Size(82, 34)
-        Me.Guna2Button1.TabIndex = 3
-        Me.Guna2Button1.Text = "Enviar..."
+        Me.btnEnviar.Animated = True
+        Me.btnEnviar.AutoRoundedCorners = True
+        Me.btnEnviar.BorderRadius = 16
+        Me.btnEnviar.CheckedState.Parent = Me.btnEnviar
+        Me.btnEnviar.CustomImages.Parent = Me.btnEnviar
+        Me.btnEnviar.FillColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(122, Byte), Integer))
+        Me.btnEnviar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnEnviar.ForeColor = System.Drawing.Color.White
+        Me.btnEnviar.HoverState.Parent = Me.btnEnviar
+        Me.btnEnviar.Location = New System.Drawing.Point(508, 540)
+        Me.btnEnviar.Name = "btnEnviar"
+        Me.btnEnviar.ShadowDecoration.Parent = Me.btnEnviar
+        Me.btnEnviar.Size = New System.Drawing.Size(82, 34)
+        Me.btnEnviar.TabIndex = 3
+        Me.btnEnviar.Text = "Enviar"
         '
         'panelRealizarDiagnostico2
         '
@@ -760,6 +762,10 @@ Partial Class MenuPaciente
         Me.labLugardeTrabajoMED.TabIndex = 15
         Me.labLugardeTrabajoMED.Text = "Lugar de Trabajo:"
         '
+        'refrescarChat
+        '
+        Me.refrescarChat.Interval = 3000
+        '
         'MenuPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -770,10 +776,10 @@ Partial Class MenuPaciente
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.panelRealizarDiagnostico2)
         Me.Controls.Add(Me.panelChat)
-        Me.Controls.Add(Me.panelMenu_Chat)
+        Me.Controls.Add(Me.panelListaChats)
         Me.Controls.Add(Me.panelPerfil)
+        Me.Controls.Add(Me.panelRealizarDiagnostico2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)
@@ -810,7 +816,7 @@ Partial Class MenuPaciente
     Friend WithEvents btnMenu_RealizarDiagnostico As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents panelMenu_Chat As Panel
+    Friend WithEvents panelListaChats As Panel
     Friend WithEvents labVolverDisgnostico As Label
     Friend WithEvents panelChat As Panel
     Friend WithEvents txtMensaje As TextBox
@@ -849,11 +855,12 @@ Partial Class MenuPaciente
     Friend WithEvents btnAgregar As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents lstSintomas As ListView
     Friend WithEvents Label4 As Label
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnEnviar As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents labDiagnostico4 As Label
     Friend WithEvents labDiagnostico3 As Label
     Friend WithEvents labDiagnostico2 As Label
     Friend WithEvents Guna2CustomGradientPanel1 As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents btnFinalizarConsulta As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents refrescarChat As Timer
 End Class

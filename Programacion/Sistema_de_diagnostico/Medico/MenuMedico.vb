@@ -3,13 +3,16 @@
 Public Class MenuMedico
 
     Public medico As Medico
-
+    Dim instancia As New LogicaAplicacion()
     Dim ex, ey As Integer
     Dim Arrastre As Boolean
 
+    Dim listaConsultas_Pendientes As List(Of Sala_Chat)
+    Dim listaConsultas_EnCurso As List(Of Sala_Chat)
+    Dim listaMensajes As List(Of Mensaje)
 
+    Dim id_sala As String
 
-    'Definir variables globales; estas van despues de la linea de inherits
 
     'Estas tres subrutinas permiten desplazar el formulario. 
 
@@ -50,24 +53,58 @@ Public Class MenuMedico
         labIniciales.Text = medico.nombre(0) + " " + medico.apellido(0)
         labNombre.Text = medico.nombre + " " + medico.apellido
         nullvisible()
+        refrescarChat.Start()
     End Sub
 
-    Private Sub btnRealizarDiagnostico_Click(sender As Object, e As EventArgs) Handles btnConsPendientes.Click
+    Private Sub btnConsPendientes_Click(sender As Object, e As EventArgs) Handles btnConsPendientes.Click
         btnConsPendientes.BackColor = Color.FromArgb(38, 131, 108)
         btnChats.BackColor = Color.FromArgb(50, 174, 144)
         btnHistorialdeConsultas.BackColor = Color.FromArgb(50, 174, 144)
-
         nullvisible()
+        cargarConsultasPendientes()
         panelConsultaPendiente.Visible = True
-
     End Sub
 
     Private Sub btnChats_Click(sender As Object, e As EventArgs) Handles btnChats.Click
         btnConsPendientes.BackColor = Color.FromArgb(50, 174, 144)
         btnChats.BackColor = Color.FromArgb(38, 131, 108)
         btnHistorialdeConsultas.BackColor = Color.FromArgb(50, 174, 144)
-
         nullvisible()
+
+        listaConsultas_EnCurso = instancia.obtenerSolicitudesChat_EnCurso(medico)
+        Dim separacion As Single = 1
+        Dim indice As Integer = 1
+        Do
+            Dim botonChat As New Guna.UI2.WinForms.Guna2CircleButton()
+            With botonChat
+
+                .Font = New Font("Segoe UI", 16.0!)
+                .ForeColor = Color.White
+                .Animated = True
+                .Location = New Point(11, separacion * 16)
+                .Name = listaConsultas_EnCurso.ElementAt(indice - 1).id_sala
+                .ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+                .FillColor = Color.FromArgb(3, 187, 133)
+                .Size = New Size(55, 57)
+                .TabIndex = 0
+                .Text = listaConsultas_EnCurso.ElementAt(indice - 1).nombre_usuario(0) + " " + listaConsultas_EnCurso.ElementAt(indice - 1).apellido_usuario(0)
+                AddHandler botonChat.Click, AddressOf btnChatsActivos_click
+            End With
+            panelListaChats.Controls.Add(botonChat)
+            separacion = separacion + 4.2
+            indice = indice + 1
+
+        Loop While (indice < listaConsultas_EnCurso.Count + 1)
+        panelChat.Visible = True
+        panelListaChats.Visible = True
+    End Sub
+
+    Private Sub btnChatsActivos_click(sender As Object, e As EventArgs)
+        Dim boton As Guna.UI2.WinForms.Guna2CircleButton = DirectCast(sender, Guna.UI2.WinForms.Guna2CircleButton)
+
+        id_sala = boton.Name
+        cargarMensajes()
+
     End Sub
 
 
@@ -113,7 +150,22 @@ Public Class MenuMedico
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
+    Private Sub btnAceptarSolicitud_Click(sender As Object, e As EventArgs) Handles btnAceptarSolicitud.Click
+        instancia.aceptarSolicitud_De_Chat(listaConsultas_Pendientes.ElementAt(lstConsultasPendientes.FocusedItem.Index).id_sala)
+        MsgBox("Se acepto la solicitud con exito. Las solicitudes aceptadas se podran visualizar en la opcion de chat.")
+        cargarConsultasPendientes()
+    End Sub
 
+    Private Sub refrescarChat_Tick(sender As Object, e As EventArgs) Handles refrescarChat.Tick
+        cargarMensajes()
+    End Sub
+
+    Private Sub txtEnviarMensaje_Click(sender As Object, e As EventArgs) Handles txtEnviarMensaje.Click
+        Dim fechaActual As Date = Date.Now
+        Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
+        instancia.enviarMensaje(txtMensaje.Text, id_sala, fechaString, medico.ID)
+        cargarMensajes()
+    End Sub
 
 
 
@@ -122,6 +174,36 @@ Public Class MenuMedico
         panelConsultaPendiente.Visible = False
         panelHistorialConsulta.Visible = False
         panelPerfilPaciente.Visible = False
+        panelChat.Visible = False
+        panelListaChats.Visible = False
     End Sub
 
+
+
+    Public Sub cargarConsultasPendientes()
+        lstConsultasPendientes.Clear()
+        listaConsultas_Pendientes = instancia.obtenerSolicitudesChatPendientes(medico)
+        For Each chat As Sala_Chat In listaConsultas_Pendientes
+            lstConsultasPendientes.Items.Add(chat.nombre_usuario + " " + chat.apellido_usuario + " - " + chat.fecha)
+        Next
+    End Sub
+
+
+
+    Public Sub cargarMensajes()
+        txtChat.Clear()
+        Dim mensajesCompletos As String = ""
+        If id_sala = Nothing Then
+
+        Else
+            listaMensajes = instancia.obtenerMensajes(id_sala)
+            For Each mensaje As Mensaje In listaMensajes
+                Dim lineaMensaje As String = mensaje.emisor & ": " & mensaje.contenido & Environment.NewLine
+                mensajesCompletos = mensajesCompletos & lineaMensaje
+
+            Next
+            txtChat.Text = mensajesCompletos
+        End If
+
+    End Sub
 End Class

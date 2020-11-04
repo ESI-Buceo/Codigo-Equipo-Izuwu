@@ -8,11 +8,11 @@ Public Class ConexionConBD
         If connection.State = 0 Then
             connection.ConnectionString = "" &
             "driver={MySQL ODBC 8.0 Unicode Driver};" &
-            "server=127.0.0.1;" &
+            "server=izuwuedb.co8sw6a5kje7.us-east-2.rds.amazonaws.com;" &
             "port=3306;" &
-            "database=proyecto_izuwup;" &
-            "uid=root;" &
-            "pwd=1234;"
+            "database=izuwuDB;" &
+            "uid=admin;" &
+            "pwd=izuwuteam;"
 
             connection.Open()
         End If
@@ -246,6 +246,72 @@ Public Class ConexionConBD
         Return listaEspecializacion
     End Function
 
+
+    Public Function obtenerUnPaciente(ID_paciente As String) As Paciente
+        Dim connection As Connection = conectar()
+        Dim fechaBaseDatos As Date
+        Dim fechaString As String
+        Dim nombre, segundonombre, apellido, segundoapellido, email, direccion, ci, contraseña, telefono, sexo, peso, altura, patologiaprevia As String
+        Dim obtenerPaciente As Recordset = connection.Execute("select * " +
+                                                       "from usuario inner join paciente " +
+                                                       "on usuario.id_us = paciente.id_pac " +
+                                                       "where id_pac = '" + ID_paciente + "';")
+
+        nombre = TryCast(obtenerPaciente.Fields("Nombre").Value, String)
+        apellido = TryCast(obtenerPaciente.Fields("Apellido").Value, String)
+        email = TryCast(obtenerPaciente.Fields("Email").Value, String)
+        direccion = TryCast(obtenerPaciente.Fields("Direccion").Value, String)
+        ci = TryCast(obtenerPaciente.Fields("CI").Value, String)
+        contraseña = TryCast(obtenerPaciente.Fields("Contrasenia").Value, String)
+        Dim consultaTelefono As Recordset = connection.Execute("select telefono from telefono_us where id_us ='" + ID_paciente + "';")
+        telefono = TryCast(consultaTelefono.Fields("Telefono").Value, String)
+        fechaBaseDatos = TryCast(obtenerPaciente.Fields("FDN").Value, Object)
+        fechaString = Format(fechaBaseDatos, "yyyy/MM/dd")
+        peso = TryCast(obtenerPaciente.Fields("peso").Value, String)
+        altura = TryCast(obtenerPaciente.Fields("altura").Value, String)
+        patologiaprevia = TryCast(obtenerPaciente.Fields("patologiasp").Value, String)
+        segundonombre = TryCast(obtenerPaciente.Fields("segundo_nombre").Value, String)
+        segundoapellido = TryCast(obtenerPaciente.Fields("segundo_apellido").Value, String)
+        sexo = TryCast(obtenerPaciente.Fields("Sexo").Value, String)
+        Dim paciente As New Paciente(nombre, segundonombre, apellido, segundoapellido, email, ID_paciente, direccion, ci, contraseña, telefono, fechaString, sexo, peso, altura, patologiaprevia)
+
+        Return paciente
+    End Function
+
+
+    Public Function obtenerUnMedico(ID_medico As String) As Medico
+        Dim connection As Connection = conectar()
+        Dim fechaBaseDatos As Date
+        Dim fechaString As String
+        Dim id, nombre, segundonombre, apellido, segundoapellido, email, direccion, ci, contraseña, especializacion, telefono, sexo, lugardetrabajo As String
+        Dim obtenerMedico As Recordset = connection.Execute("select usuario.* ,medico.* ,telefono_us.Telefono,campo_medico.nombre as 'Campo',campo_medico.id_campomedico " +
+                                                            "from usuario inner join medico on " +
+                                                            "usuario.id_us = medico.id_med inner join especializado on " +
+                                                            "medico.ID_MED = especializado.id_medE inner join campo_medico on " +
+                                                            "especializado.id_campomedicoE = campo_medico.id_campomedico inner join telefono_us on " +
+                                                            "usuario.id_us = telefono_us.ID_US " +
+                                                            "where id_us ='" + ID_medico + "' " +
+                                                            "group by id_us;")
+
+        ci = TryCast(obtenerMedico.Fields("CI").Value, String)
+        nombre = TryCast(obtenerMedico.Fields("nombre").Value, String)
+        apellido = TryCast(obtenerMedico.Fields("apellido").Value, String)
+        email = TryCast(obtenerMedico.Fields("email").Value, String)
+        direccion = TryCast(obtenerMedico.Fields("direccion").Value, String)
+        Dim consultaTelefono As Recordset = connection.Execute("select telefono from telefono_us where id_us ='" + ID_medico + "';")
+        telefono = TryCast(consultaTelefono.Fields("Telefono").Value, String)
+        fechaBaseDatos = TryCast(obtenerMedico.Fields("FDN").Value, Object)
+        fechaString = Format(fechaBaseDatos, "yyyy/MM/dd")
+        especializacion = TryCast(obtenerMedico.Fields("Campo").Value, String)
+        segundonombre = TryCast(obtenerMedico.Fields("segundo_nombre").Value, String)
+        segundoapellido = TryCast(obtenerMedico.Fields("segundo_apellido").Value, String)
+        lugardetrabajo = TryCast(obtenerMedico.Fields("Lugar_de_trabajo").Value, String)
+        sexo = TryCast(obtenerMedico.Fields("Sexo").Value, String)
+        contraseña = TryCast(obtenerMedico.Fields("contrasenia").Value, String)
+        Dim medico As New Medico(nombre, segundonombre, apellido, segundoapellido, email, ID_medico, direccion, ci, contraseña, especializacion, telefono, fechaString, sexo, lugardetrabajo)
+        Return medico
+    End Function
+
     '-----------------------------------------------------------------------------------------------------------////
     'Funcion de logeo a la aplicacion
 
@@ -257,8 +323,7 @@ Public Class ConexionConBD
                                                        "medico.ID_MED = especializado.id_medE inner join campo_medico on " +
                                                        "especializado.id_campomedicoE = campo_medico.id_campomedico inner join telefono_us on " +
                                                        "usuario.id_us = telefono_us.ID_US " +
-                                                       "where CI ='" + UserCi + "' " +
-                                                       "group by id_us;")
+                                                       "where CI ='" + UserCi + "';")
 
         If consulta.EOF = True Then
             Throw New Exception("Cedula y/o contraseña incorrecta.")
@@ -560,7 +625,7 @@ Public Class ConexionConBD
                 End If
                 id = "DIG"
             Case 6
-                consulta = connection.Execute("select id_sala from mensaje;")
+                consulta = connection.Execute("select id_sala from sala;")
                 If consulta.EOF = False Then
                     idConsulta = TryCast(consulta.Fields("id_sala").Value, String)
                 End If
@@ -690,16 +755,17 @@ Public Class ConexionConBD
         Dim connection As Connection = conectar()
         Dim idDiagnostico As String = codigoRandom(5)
         Dim agregar_A_Diagnostico As Recordset = connection.Execute("insert into diagnostico values('" + idDiagnostico + "');")
-        For Each diagnostico As Diagnostico In diagnosticos
-            Dim agregar_A_Resulta As Recordset = connection.Execute("insert into resulta values('" + idDiagnostico + "','" + diagnostico.id + "');")
-        Next
+        Dim diagnostico As String = diagnosticos.ElementAt(0).id
+        Dim agregar_A_Resulta As Recordset = connection.Execute("insert into resulta values('" + idDiagnostico + "','" + diagnostico + "');")
+
         Dim patologia_Mas_probable As String = diagnosticos.ElementAt(0).nombre
-        Dim agregar_a_dianosticoapp As Recordset = connection.Execute("insert into diagnostico_app values('" + idDiagnostico + "','" + paciente.ID + "','" + fecha + "','" + patologia_Mas_probable + "');")
+        Dim agregar_a_dianosticoapp As Recordset = connection.Execute("insert into diagnostico_app values('" + idDiagnostico + "','" + paciente.ID + "','" + fecha + "');")
 
     End Sub
 
     '---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------/////
-    'Funciones para realizar el chat medico - paciente
+    'Funciones para realizar el chat medico - paciente 
+    'Se compone de dos partes
 
     'Parte del paciente
 
@@ -750,24 +816,131 @@ Public Class ConexionConBD
 
     End Sub
 
-    '------------------------------------------------------------
-    'Parte del medico
-
-    Public Function obtenerSolicitudesChat(medico As Medico) As List(Of Sala_Chat)
+    Public Function obtenerSolicitudesAceptadas(paciente As Paciente) As List(Of Sala_Chat)
         Dim connection As Connection = conectar()
-        Dim obtenerSolicitudes As Recordset = connection.Execute("select * from atiende where Aid_medico = " + medico.ID + ";")
+        Dim obtenerSolicitudes As Recordset = connection.Execute("select Cid_sala,sala.estado,sala.fecha,usuario.Nombre,usuario.Apellido,atiende.Aid_medico " +
+                                                                 "from paciente inner join chatea on paciente.id_pac = chatea.Cid_pac inner join sala on " +
+                                                                 "chatea.Cid_sala = sala.id_sala inner join atiende on sala.id_sala = atiende.Aid_sala inner join medico on " +
+                                                                 "atiende.Aid_medico = medico.ID_MED inner join usuario on " +
+                                                                 "Medico.ID_MED = usuario.ID_US where Cid_pac = '" + paciente.ID + "' and sala.estado ='C';")
         Dim listaSalas As New List(Of Sala_Chat)
 
         While (Not obtenerSolicitudes.EOF)
-            Dim id_sala As String = TryCast(obtenerSolicitudes.Fields("Aid_sala").Value, String)
-            Dim idMedico As String = TryCast(obtenerSolicitudes.Fields("Aid_medico").Value, String)
-            listaSalas.Add(New Sala_Chat(id_sala, idMedico))
+            Dim id_sala As String = TryCast(obtenerSolicitudes.Fields("Cid_sala").Value, String)
+            Dim fechaBaseDatos As Date = TryCast(obtenerSolicitudes.Fields("fecha").Value, Object)
+            Dim fechaString As String = Format(fechaBaseDatos, "yyyy/MM/dd")
+            Dim estado As String = TryCast(obtenerSolicitudes.Fields("estado").Value, String)
+            Dim id_usuario As String = TryCast(obtenerSolicitudes.Fields("Aid_medico").Value, String)
+            Dim nombre_usuario As String = TryCast(obtenerSolicitudes.Fields("nombre").Value, String)
+            Dim apellido_usuario As String = TryCast(obtenerSolicitudes.Fields("apellido").Value, String)
+            listaSalas.Add(New Sala_Chat(id_sala, fechaString, estado, id_usuario, nombre_usuario, apellido_usuario))
             obtenerSolicitudes.MoveNext()
         End While
         Return listaSalas
     End Function
 
+    '------------------------------------------------------------
+    'Parte del medico
 
+    Public Function obtenerSolicitudesChatPendientes(medico As Medico) As List(Of Sala_Chat)
+        Dim connection As Connection = conectar()
+        Dim obtenerSolicitudes As Recordset = connection.Execute("select usuario.nombre,usuario.apellido,sala.*,chatea.Cid_pac " +
+                                                                 "from sala inner join atiende on sala.id_sala = atiende.Aid_sala inner join chatea on " +
+                                                                 "chatea.Cid_sala = sala.id_sala inner join paciente on chatea.Cid_pac = paciente.ID_PAC inner join usuario on " +
+                                                                 "paciente.id_pac = usuario.id_us where Aid_medico = '" + medico.ID + "' and estado = 'P' " +
+                                                                 "order by fecha desc;")
+        Dim listaSalas As New List(Of Sala_Chat)
+
+        While (Not obtenerSolicitudes.EOF)
+            Dim id_sala As String = TryCast(obtenerSolicitudes.Fields("id_sala").Value, String)
+            Dim fechaBaseDatos As Date = TryCast(obtenerSolicitudes.Fields("fecha").Value, Object)
+            Dim fechaString As String = Format(fechaBaseDatos, "yyyy/MM/dd")
+            Dim estado As String = TryCast(obtenerSolicitudes.Fields("estado").Value, String)
+            Dim id_usuario As String = TryCast(obtenerSolicitudes.Fields("Cid_pac").Value, String)
+            Dim nombre_usuario As String = TryCast(obtenerSolicitudes.Fields("nombre").Value, String)
+            Dim apellido_usuario As String = TryCast(obtenerSolicitudes.Fields("apellido").Value, String)
+            listaSalas.Add(New Sala_Chat(id_sala, fechaString, estado, id_usuario, nombre_usuario, apellido_usuario))
+            obtenerSolicitudes.MoveNext()
+        End While
+        Return listaSalas
+    End Function
+
+    Public Sub aceptarSolicitud_De_Chat(id_sala As String)
+        Dim connection As Connection = conectar()
+        Dim cambiarEstado As Recordset = connection.Execute("update sala set estado ='C' where id_sala ='" + id_sala + "';")
+    End Sub
+
+    Public Function obtenerSolicitudesChat_EnCurso(medico As Medico) As List(Of Sala_Chat)
+        Dim connection As Connection = conectar()
+        Dim obtenerSolicitudes As Recordset = connection.Execute("select usuario.nombre,usuario.apellido,sala.*,atiende.Aid_medico,chatea.Cid_pac " +
+                                                                 "from sala inner join atiende on sala.id_sala = atiende.Aid_sala inner join chatea on " +
+                                                                 "chatea.Cid_sala = sala.id_sala inner join paciente on chatea.Cid_pac = paciente.ID_PAC inner join usuario on " +
+                                                                 "paciente.id_pac = usuario.id_us where Aid_medico = '" + medico.ID + "' and estado = 'C' ")
+        Dim listaSalas As New List(Of Sala_Chat)
+
+        While (Not obtenerSolicitudes.EOF)
+            Dim id_sala As String = TryCast(obtenerSolicitudes.Fields("id_sala").Value, String)
+            Dim fechaBaseDatos As Date = TryCast(obtenerSolicitudes.Fields("fecha").Value, Object)
+            Dim fechaString As String = Format(fechaBaseDatos, "yyyy/MM/dd")
+            Dim estado As String = TryCast(obtenerSolicitudes.Fields("estado").Value, String)
+            Dim id_usuario As String = TryCast(obtenerSolicitudes.Fields("Cid_pac").Value, String)
+            Dim nombre_usuario As String = TryCast(obtenerSolicitudes.Fields("nombre").Value, String)
+            Dim apellido_usuario As String = TryCast(obtenerSolicitudes.Fields("apellido").Value, String)
+            listaSalas.Add(New Sala_Chat(id_sala, fechaString, estado, id_usuario, nombre_usuario, apellido_usuario))
+            obtenerSolicitudes.MoveNext()
+        End While
+        Return listaSalas
+    End Function
+
+    '---------------------------------------------------------------------------------------------------------
+    'Funciones para obtener los mensajes y mandar nuevos
+
+
+    'enviar mensaje
+    Public Sub enviarMensajePaciente(contenido As String, id_sala As String, fecha As String)
+        Dim connection As Connection = conectar()
+        Dim numeroMensaje As Recordset = connection.Execute("select nro_msg from mensaje where Sid_sala ='" + id_sala + "' order by nro_msg desc limit 1;")
+        Dim numero As Integer
+        If numeroMensaje.EOF = True Then
+            numero = 1
+        Else
+            Dim numeroBD As Integer = DirectCast(numeroMensaje.Fields("nro_msg").Value, Integer)
+            numero = numeroBD + 1
+        End If
+        Dim mensaje As Recordset = connection.Execute("insert into mensaje values(" + numero.ToString + ",'" + contenido + "','" + fecha + "','paciente','" + id_sala + "');")
+
+    End Sub
+
+    Public Sub enviarMensajeMedico(contenido As String, id_sala As String, fecha As String)
+        Dim connection As Connection = conectar()
+        Dim numeroMensaje As Recordset = connection.Execute("select nro_msg from mensaje where Sid_sala ='" + id_sala + "' order by nro_msg desc limit 1;")
+        Dim numero As Integer
+        If numeroMensaje.EOF = True Then
+            numero = 1
+        Else
+            Dim numeroBD As Integer = DirectCast(numeroMensaje.Fields("nro_msg").Value, Integer)
+            numero = numeroBD + 1
+        End If
+        Dim mensaje As Recordset = connection.Execute("insert into mensaje values(" + numero.ToString + ",'" + contenido + "','" + fecha + "','medico','" + id_sala + "');")
+
+    End Sub
+
+    'Recibir mensajes (Todos)
+    Public Function obtenerMensajes(id_sala As String) As List(Of Mensaje)
+        Dim connection As Connection = conectar()
+        Dim listaMensajes As New List(Of Mensaje)
+        Dim mensajes As Recordset = connection.Execute("select contenido,quienEnvia,fechaM from mensaje where Sid_sala ='" + id_sala + "';")
+
+        While (Not mensajes.EOF)
+            Dim contenido As String = TryCast(mensajes.Fields("contenido").Value, String)
+            Dim emisor As String = TryCast(mensajes.Fields("quienEnvia").Value, String)
+            Dim fechaBaseDatos As Date = TryCast(mensajes.Fields("fechaM").Value, Object)
+            Dim fechaString As String = Format(fechaBaseDatos, "yyyy/MM/dd")
+            listaMensajes.Add(New Mensaje(contenido, emisor, fechaString))
+            mensajes.MoveNext()
+        End While
+        Return listaMensajes
+    End Function
 
 End Class
 

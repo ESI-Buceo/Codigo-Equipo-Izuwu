@@ -219,7 +219,36 @@ Public Class LogicaAplicacion
         Return instancia.medicosEspecializados(patologia)
     End Function
 
-    Public Sub crearSalaChat(fecha As String, medico As Medico)
-        '    instancia.crearSalaChat(fecha, medico)
+    Public Sub crearSalaChat(fecha As String, medico As Medico, paciente As Paciente)
+        instancia.crearSalaChat(fecha, medico, paciente)
     End Sub
+
+
+    Public Function obtenerSolicitudesChatPendientes(medico As Medico) As List(Of Sala_Chat)
+        Return instancia.obtenerSolicitudesChatPendientes(medico)
+    End Function
+    Public Sub aceptarSolicitud_De_Chat(id_sala As String)
+        instancia.aceptarSolicitud_De_Chat(id_sala)
+    End Sub
+    Public Function obtenerSolicitudesChat_EnCurso(medico As Medico) As List(Of Sala_Chat)
+        Return instancia.obtenerSolicitudesChat_EnCurso(medico)
+    End Function
+
+    Public Function obtenerSolicitudesAceptadas(paciente As Paciente) As List(Of Sala_Chat)
+        Return instancia.obtenerSolicitudesAceptadas(paciente)
+    End Function
+
+    '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    Public Sub enviarMensaje(contenido As String, id_sala As String, fecha As String, id_emisor As String)
+        If id_emisor(0) = "P" Then
+            instancia.enviarMensajePaciente(contenido, id_sala, fecha)
+        ElseIf id_emisor(0) = "M" Then
+            instancia.enviarMensajeMedico(contenido, id_sala, fecha)
+        End If
+    End Sub
+
+    Public Function obtenerMensajes(id_sala As String) As List(Of Mensaje)
+        Return instancia.obtenerMensajes(id_sala)
+    End Function
 End Class

@@ -13,6 +13,12 @@ Public Class MenuPaciente
     Dim listaResultadoDiag As List(Of Diagnostico)
 
 
+    Dim listaChatsAceptados As List(Of Sala_Chat)
+    Dim listaMensajes As List(Of Mensaje)
+
+    Dim id_sala As String
+
+
     'Definir variables globales; estas van despues de la linea de inherits
 
     'Estas tres subrutinas permiten desplazar el formulario. 
@@ -160,28 +166,43 @@ Public Class MenuPaciente
         btnCerrarSesion.FillColor = Color.FromArgb(40, 117, 207)
 
         nullvisible()
-        Dim indice As Single = 1
+        listaChatsAceptados = instancia.obtenerSolicitudesAceptadas(paciente)
+        Dim separacion As Single = 1
+        Dim indice As Integer = 1
         Do
+            Dim botonChat As New Guna.UI2.WinForms.Guna2CircleButton()
+            With botonChat
 
-            Dim chatLabel As New Label
-            With chatLabel
-                .Text = "A B"
-                .Parent = Me
-                .Location = New Point(5, indice * 14)
-                .Font = New Font("Microsoft Sans Serif", 15.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                .Font = New Font("Segoe UI", 16.0!)
                 .ForeColor = Color.White
-                .AutoSize = True
-                .BackColor = Color.FromArgb(117, 117, 117)
+                .Animated = True
+                .Location = New Point(11, separacion * 16)
+                .Name = listaChatsAceptados.ElementAt(indice - 1).id_sala
+                .ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+                .FillColor = Color.FromArgb(3, 187, 133)
+                .Size = New Size(55, 57)
+                .TabIndex = 0
+                .Text = listaChatsAceptados.ElementAt(indice - 1).nombre_usuario(0) + " " + listaChatsAceptados.ElementAt(indice - 1).apellido_usuario(0)
+                AddHandler botonChat.Click, AddressOf btnChatsActivos_click
             End With
+            panelListaChats.Controls.Add(botonChat)
+            separacion = separacion + 4.2
+            indice = indice + 1
 
-            panelMenu_Chat.Controls.Add(chatLabel)
-            indice = indice + 3.2
-        Loop While (indice < 50)
+        Loop While (indice < listaChatsAceptados.Count + 1)
 
 
         panelChat.Visible = True
-        panelMenu_Chat.Visible = True
+        panelListaChats.Visible = True
 
+
+    End Sub
+
+    Private Sub btnChatsActivos_click(sender As Object, e As EventArgs)
+        Dim boton As Guna.UI2.WinForms.Guna2CircleButton = DirectCast(sender, Guna.UI2.WinForms.Guna2CircleButton)
+
+        id_sala = boton.Name
+        cargarMensajes()
 
     End Sub
 
@@ -232,6 +253,7 @@ Public Class MenuPaciente
             Dim solicitudchat As New SolicitudChat()
             Dim ResultadoPatologia As New Patologia(listaResultadoDiag.ElementAt(0).nombre, listaResultadoDiag.ElementAt(0).prioridad, listaResultadoDiag.ElementAt(0).id, listaResultadoDiag.ElementAt(0).especialidad)
             solicitudchat.patologia = ResultadoPatologia
+            solicitudchat.paciente = paciente
             solicitudchat.ShowDialog()
 
         ElseIf pregunta = DialogResult.No Then
@@ -247,6 +269,18 @@ Public Class MenuPaciente
         editarperfil.ShowDialog()
 
     End Sub
+
+    Private Sub refrescarChat_Tick(sender As Object, e As EventArgs) Handles refrescarChat.Tick
+        cargarMensajes()
+    End Sub
+
+    Private Sub btnEnviar_Click(sender As Object, e As EventArgs) Handles btnEnviar.Click
+        Dim fechaActual As Date = Date.Now
+        Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
+        instancia.enviarMensaje(txtMensaje.Text, id_sala, fechaString, paciente.ID)
+        cargarMensajes()
+    End Sub
+
 
     '-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Funciones para la aplicacion que se van a repetir (Cargar listas, hacer invisibles sectores de la ventana, etc.)
@@ -265,7 +299,7 @@ Public Class MenuPaciente
     End Sub
 
     Public Sub nullvisible()
-        panelMenu_Chat.Visible = False
+        panelListaChats.Visible = False
         panelChat.Visible = False
         panelRealizarDiagnostico.Visible = False
         panelRealizarDiagnostico2.Visible = False
@@ -289,5 +323,24 @@ Public Class MenuPaciente
         btnAgregar.Enabled = True
         btnEliminar.Enabled = True
         btnRealizardiagnostico.Enabled = True
+    End Sub
+
+
+
+    Public Sub cargarMensajes()
+        txtChat.Clear()
+        Dim mensajesCompletos As String = ""
+        If id_sala = Nothing Then
+
+        Else
+            listaMensajes = instancia.obtenerMensajes(id_sala)
+            For Each mensaje As Mensaje In listaMensajes
+                Dim lineaMensaje As String = mensaje.emisor & ": " & mensaje.contenido & Environment.NewLine
+                mensajesCompletos = mensajesCompletos & lineaMensaje
+
+            Next
+            txtChat.Text = mensajesCompletos
+        End If
+
     End Sub
 End Class

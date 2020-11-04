@@ -32,6 +32,7 @@ Partial Class MenuMedico
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.panelConsultaPendiente = New System.Windows.Forms.Panel()
+        Me.btnAceptarSolicitud = New Guna.UI2.WinForms.Guna2Button()
         Me.lstConsultasPendientes = New System.Windows.Forms.ListView()
         Me.panelHistorialConsulta = New System.Windows.Forms.Panel()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -62,6 +63,12 @@ Partial Class MenuMedico
         Me.label16 = New System.Windows.Forms.Label()
         Me.label15 = New System.Windows.Forms.Label()
         Me.label13 = New System.Windows.Forms.Label()
+        Me.panelChat = New System.Windows.Forms.Panel()
+        Me.txtEnviarMensaje = New Guna.UI2.WinForms.Guna2Button()
+        Me.txtMensaje = New System.Windows.Forms.TextBox()
+        Me.txtChat = New System.Windows.Forms.TextBox()
+        Me.panelListaChats = New System.Windows.Forms.Panel()
+        Me.refrescarChat = New System.Windows.Forms.Timer()
         Me.Panel1.SuspendLayout()
         Me.panelConsultaPendiente.SuspendLayout()
         Me.panelHistorialConsulta.SuspendLayout()
@@ -69,6 +76,7 @@ Partial Class MenuMedico
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelDatosMedicos.SuspendLayout()
         Me.paneldatosPaciente.SuspendLayout()
+        Me.panelChat.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -178,28 +186,46 @@ Partial Class MenuMedico
         '
         'panelConsultaPendiente
         '
+        Me.panelConsultaPendiente.Controls.Add(Me.btnAceptarSolicitud)
         Me.panelConsultaPendiente.Controls.Add(Me.lstConsultasPendientes)
         Me.panelConsultaPendiente.Location = New System.Drawing.Point(297, 32)
         Me.panelConsultaPendiente.Name = "panelConsultaPendiente"
         Me.panelConsultaPendiente.Size = New System.Drawing.Size(671, 601)
         Me.panelConsultaPendiente.TabIndex = 7
         '
+        'btnAceptarSolicitud
+        '
+        Me.btnAceptarSolicitud.CheckedState.Parent = Me.btnAceptarSolicitud
+        Me.btnAceptarSolicitud.CustomImages.Parent = Me.btnAceptarSolicitud
+        Me.btnAceptarSolicitud.FillColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.btnAceptarSolicitud.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAceptarSolicitud.ForeColor = System.Drawing.Color.White
+        Me.btnAceptarSolicitud.HoverState.Parent = Me.btnAceptarSolicitud
+        Me.btnAceptarSolicitud.Location = New System.Drawing.Point(453, 492)
+        Me.btnAceptarSolicitud.Name = "btnAceptarSolicitud"
+        Me.btnAceptarSolicitud.ShadowDecoration.Parent = Me.btnAceptarSolicitud
+        Me.btnAceptarSolicitud.Size = New System.Drawing.Size(112, 47)
+        Me.btnAceptarSolicitud.TabIndex = 1
+        Me.btnAceptarSolicitud.Text = "Aceptar Solicitud"
+        '
         'lstConsultasPendientes
         '
+        Me.lstConsultasPendientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstConsultasPendientes.HideSelection = False
         Me.lstConsultasPendientes.Location = New System.Drawing.Point(3, 3)
         Me.lstConsultasPendientes.Name = "lstConsultasPendientes"
-        Me.lstConsultasPendientes.Size = New System.Drawing.Size(261, 595)
+        Me.lstConsultasPendientes.Size = New System.Drawing.Size(368, 595)
         Me.lstConsultasPendientes.TabIndex = 0
         Me.lstConsultasPendientes.UseCompatibleStateImageBehavior = False
+        Me.lstConsultasPendientes.View = System.Windows.Forms.View.Tile
         '
         'panelHistorialConsulta
         '
         Me.panelHistorialConsulta.Controls.Add(Me.TextBox1)
         Me.panelHistorialConsulta.Controls.Add(Me.ListView2)
-        Me.panelHistorialConsulta.Location = New System.Drawing.Point(294, 35)
+        Me.panelHistorialConsulta.Location = New System.Drawing.Point(353, 35)
         Me.panelHistorialConsulta.Name = "panelHistorialConsulta"
-        Me.panelHistorialConsulta.Size = New System.Drawing.Size(671, 601)
+        Me.panelHistorialConsulta.Size = New System.Drawing.Size(612, 601)
         Me.panelHistorialConsulta.TabIndex = 8
         '
         'TextBox1
@@ -516,6 +542,63 @@ Partial Class MenuMedico
         Me.label13.TabIndex = 14
         Me.label13.Text = "Fecha de nacimiento:"
         '
+        'panelChat
+        '
+        Me.panelChat.Controls.Add(Me.txtEnviarMensaje)
+        Me.panelChat.Controls.Add(Me.txtMensaje)
+        Me.panelChat.Controls.Add(Me.txtChat)
+        Me.panelChat.Location = New System.Drawing.Point(353, 32)
+        Me.panelChat.Name = "panelChat"
+        Me.panelChat.Size = New System.Drawing.Size(624, 601)
+        Me.panelChat.TabIndex = 13
+        '
+        'txtEnviarMensaje
+        '
+        Me.txtEnviarMensaje.AutoRoundedCorners = True
+        Me.txtEnviarMensaje.BorderRadius = 11
+        Me.txtEnviarMensaje.CheckedState.Parent = Me.txtEnviarMensaje
+        Me.txtEnviarMensaje.CustomImages.Parent = Me.txtEnviarMensaje
+        Me.txtEnviarMensaje.FillColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.txtEnviarMensaje.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtEnviarMensaje.ForeColor = System.Drawing.Color.White
+        Me.txtEnviarMensaje.HoverState.Parent = Me.txtEnviarMensaje
+        Me.txtEnviarMensaje.Location = New System.Drawing.Point(531, 556)
+        Me.txtEnviarMensaje.Name = "txtEnviarMensaje"
+        Me.txtEnviarMensaje.ShadowDecoration.Parent = Me.txtEnviarMensaje
+        Me.txtEnviarMensaje.Size = New System.Drawing.Size(84, 24)
+        Me.txtEnviarMensaje.TabIndex = 2
+        Me.txtEnviarMensaje.Text = "Enviar"
+        '
+        'txtMensaje
+        '
+        Me.txtMensaje.Location = New System.Drawing.Point(15, 559)
+        Me.txtMensaje.Name = "txtMensaje"
+        Me.txtMensaje.Size = New System.Drawing.Size(506, 20)
+        Me.txtMensaje.TabIndex = 1
+        '
+        'txtChat
+        '
+        Me.txtChat.BackColor = System.Drawing.Color.White
+        Me.txtChat.Location = New System.Drawing.Point(15, 20)
+        Me.txtChat.Multiline = True
+        Me.txtChat.Name = "txtChat"
+        Me.txtChat.ReadOnly = True
+        Me.txtChat.Size = New System.Drawing.Size(563, 517)
+        Me.txtChat.TabIndex = 0
+        '
+        'panelListaChats
+        '
+        Me.panelListaChats.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.panelListaChats.ForeColor = System.Drawing.Color.Black
+        Me.panelListaChats.Location = New System.Drawing.Point(278, 0)
+        Me.panelListaChats.Name = "panelListaChats"
+        Me.panelListaChats.Size = New System.Drawing.Size(77, 647)
+        Me.panelListaChats.TabIndex = 14
+        '
+        'refrescarChat
+        '
+        Me.refrescarChat.Interval = 3000
+        '
         'MenuMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -523,9 +606,11 @@ Partial Class MenuMedico
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(980, 645)
         Me.ControlBox = False
+        Me.Controls.Add(Me.panelListaChats)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.panelChat)
         Me.Controls.Add(Me.panelConsultaPendiente)
         Me.Controls.Add(Me.panelPerfilPaciente)
         Me.Controls.Add(Me.panelHistorialConsulta)
@@ -547,6 +632,8 @@ Partial Class MenuMedico
         Me.panelDatosMedicos.PerformLayout()
         Me.paneldatosPaciente.ResumeLayout(False)
         Me.paneldatosPaciente.PerformLayout()
+        Me.panelChat.ResumeLayout(False)
+        Me.panelChat.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -590,4 +677,11 @@ Partial Class MenuMedico
     Friend WithEvents labPerfilDireccion As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents btnAceptarSolicitud As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents panelChat As Panel
+    Friend WithEvents txtEnviarMensaje As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents txtMensaje As TextBox
+    Friend WithEvents txtChat As TextBox
+    Friend WithEvents panelListaChats As Panel
+    Friend WithEvents refrescarChat As Timer
 End Class

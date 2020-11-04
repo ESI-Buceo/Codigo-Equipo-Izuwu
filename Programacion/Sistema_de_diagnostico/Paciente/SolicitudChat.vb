@@ -3,6 +3,7 @@
 Public Class SolicitudChat
     Dim instancia As New LogicaAplicacion()
     Public patologia As Patologia
+    Public paciente As Paciente
     Dim listaMedicos As List(Of Medico)
 
     Private Sub Guna2CircleButton1_Click(sender As Object, e As EventArgs) Handles Guna2CircleButton1.Click
@@ -20,7 +21,7 @@ Public Class SolicitudChat
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         Dim fechaActual As Date = Date.Now
         Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
-        instancia.crearSalaChat(fechaActual, listaMedicos.ElementAt(lstMedicos.FocusedItem.Index))
+        instancia.crearSalaChat(fechaString, listaMedicos.ElementAt(lstMedicos.FocusedItem.Index), paciente)
         MsgBox("Su solicitud se completo con exito. Un medico le atendera en la brevedad.")
         Me.Close()
     End Sub
