@@ -60,7 +60,7 @@ Public Class MenuPaciente
         devolverColorBotonesMenu()
         labIniciales.Text = paciente.nombre(0) + " " + paciente.apellido(0)
         labNombre.Text = paciente.nombre + " " + paciente.apellido
-
+        refrescarChat.Start()
         nullvisible()
 
     End Sub
@@ -286,6 +286,7 @@ Public Class MenuPaciente
         Dim fechaActual As Date = Date.Now
         Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
         instancia.enviarMensaje(txtMensaje.Text, id_sala, fechaString, paciente.ID)
+        txtMensaje.Clear()
         cargarMensajes()
     End Sub
 
@@ -344,7 +345,7 @@ Public Class MenuPaciente
             listaMensajes = instancia.obtenerMensajes(id_sala)
             For Each mensaje As Mensaje In listaMensajes
                 Dim lineaMensaje As String = mensaje.emisor & ": " & mensaje.contenido & Environment.NewLine
-                mensajesCompletos = mensajesCompletos & lineaMensaje
+                mensajesCompletos = mensajesCompletos & Environment.NewLine & lineaMensaje
 
             Next
             txtChat.Text = mensajesCompletos

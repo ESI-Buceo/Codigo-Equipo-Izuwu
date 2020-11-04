@@ -168,6 +168,7 @@ Public Class MenuMedico
         Dim fechaActual As Date = Date.Now
         Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
         instancia.enviarMensaje(txtMensaje.Text, id_sala, fechaString, medico.ID)
+        txtMensaje.Clear()
         cargarMensajes()
     End Sub
 

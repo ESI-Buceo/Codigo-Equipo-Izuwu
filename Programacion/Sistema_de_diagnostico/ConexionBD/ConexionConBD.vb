@@ -924,7 +924,7 @@ Public Class ConexionConBD
             Dim numeroBD As Integer = DirectCast(numeroMensaje.Fields("nro_msg").Value, Integer)
             numero = numeroBD + 1
         End If
-        Dim mensaje As Recordset = connection.Execute("insert into mensaje values(" + numero.ToString + ",'" + contenido + "','" + fecha + "','paciente','" + id_sala + "');")
+        Dim mensaje As Recordset = connection.Execute("insert into mensaje values(" + numero.ToString + ",'" + contenido + "','" + fecha + "','Paciente','" + id_sala + "');")
 
     End Sub
 
@@ -938,7 +938,7 @@ Public Class ConexionConBD
             Dim numeroBD As Integer = DirectCast(numeroMensaje.Fields("nro_msg").Value, Integer)
             numero = numeroBD + 1
         End If
-        Dim mensaje As Recordset = connection.Execute("insert into mensaje values(" + numero.ToString + ",'" + contenido + "','" + fecha + "','medico','" + id_sala + "');")
+        Dim mensaje As Recordset = connection.Execute("insert into mensaje values(" + numero.ToString + ",'" + contenido + "','" + fecha + "','Medico','" + id_sala + "');")
 
     End Sub
 

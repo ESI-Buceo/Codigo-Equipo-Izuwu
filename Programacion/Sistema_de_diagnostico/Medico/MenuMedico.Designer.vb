@@ -580,11 +580,12 @@ Partial Class MenuMedico
         'txtChat
         '
         Me.txtChat.BackColor = System.Drawing.Color.White
-        Me.txtChat.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtChat.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtChat.Location = New System.Drawing.Point(15, 20)
         Me.txtChat.Multiline = True
         Me.txtChat.Name = "txtChat"
         Me.txtChat.ReadOnly = True
+        Me.txtChat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtChat.Size = New System.Drawing.Size(563, 517)
         Me.txtChat.TabIndex = 0
         '
