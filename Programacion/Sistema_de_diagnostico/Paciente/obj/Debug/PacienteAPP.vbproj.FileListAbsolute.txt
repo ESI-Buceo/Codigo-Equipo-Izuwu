@@ -1,7 +1,4 @@
 C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.vbprojAssemblyReference.cache
-C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.LoginNew.resources
-C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.MenuPacienteNew.resources
-C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.RegistroNew.resources
 C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.vbproj.GenerateResource.cache
 C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.Resources.resources
 C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.vbproj.CoreCompileInputs.cache
@@ -100,3 +97,8 @@ C:\Users\user\source\repos\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_di
 C:\Users\user\source\repos\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.pdb
 C:\Users\user\source\repos\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.EditarPerfil.resources
 C:\Users\user\source\repos\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.SolicitudChat.resources
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.EditarPerfil.resources
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.Login.resources
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.MenuPaciente.resources
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.Registro.resources
+C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Paciente\obj\Debug\PacienteAPP.SolicitudChat.resources

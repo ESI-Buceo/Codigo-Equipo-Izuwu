@@ -131,12 +131,12 @@ Public Class MenuPaciente
             labDiagnostico1.Text = listaResultadoDiag.ElementAt(0).nombre
             labDiagnostico1.Visible = True
 
-            If listaResultadoDiag.Count = 2 Then
+            If listaResultadoDiag.Count >= 2 Then
                 labDiagnostico2.Text = listaResultadoDiag.ElementAt(1).nombre
                 labDiagnostico2.Visible = True
             End If
 
-            If listaResultadoDiag.Count = 3 Then
+            If listaResultadoDiag.Count >= 3 Then
                 labDiagnostico3.Text = listaResultadoDiag.ElementAt(2).nombre
                 labDiagnostico3.Visible = True
             End If

@@ -685,7 +685,9 @@ Public Class ConexionConBD
                 Next b
                 codigoRandoms = sb2.ToString()
             End If
-            consulta.MoveNext()
+            If consulta.EOF = False Then
+                consulta.MoveNext()
+            End If
         Loop While (Not consulta.EOF)
 
 
@@ -700,7 +702,7 @@ Public Class ConexionConBD
 
     Public Sub agregarSintomasPaciente(sintomas As List(Of Sintoma), paciente As Paciente, fecha As String)
         Dim connection As Connection = conectar()
-        Dim nTest As Recordset = connection.Execute("SELECT nro_test FROM proyecto_izuwup.test " +
+        Dim nTest As Recordset = connection.Execute("SELECT nro_test FROM test " +
                                                     "order by nro_test desc " +
                                                     "limit 1;")
         Dim numeroTest As Integer
@@ -718,10 +720,15 @@ Public Class ConexionConBD
     Public Function Diagnostico() As List(Of Diagnostico)
         Dim connection As Connection = conectar()
         Dim listaDiagnostico As New List(Of Diagnostico)
-        Dim nTest As Recordset = connection.Execute("SELECT nro_test FROM proyecto_izuwup.test " +
+        Dim nTest As Recordset = connection.Execute("SELECT nro_test FROM test " +
                                                     "order by nro_test desc " +
                                                     "limit 1;")
-        Dim numeroTest As Integer = DirectCast(nTest.Fields("nro_test").Value, Integer)
+        Dim numeroTest As Integer
+        If nTest.EOF = True Then
+            numeroTest = 1
+        Else
+            numeroTest = DirectCast(nTest.Fields("nro_test").Value, Integer)
+        End If
 
         Dim consulta As Recordset = connection.Execute("select test.fecha as 'Fecha_test',test.nro_test,test.Tid_pac,count(posee.Pid_sin) as 'Coincidencia'" +
                                                        ",patologia.id_pat,patologia.nombre as 'Nombre_patologia', patologia.Prioridad,campo_medico.nombre as  'especialidad' " +
@@ -822,7 +829,7 @@ Public Class ConexionConBD
                                                                  "from paciente inner join chatea on paciente.id_pac = chatea.Cid_pac inner join sala on " +
                                                                  "chatea.Cid_sala = sala.id_sala inner join atiende on sala.id_sala = atiende.Aid_sala inner join medico on " +
                                                                  "atiende.Aid_medico = medico.ID_MED inner join usuario on " +
-                                                                 "Medico.ID_MED = usuario.ID_US where Cid_pac = '" + paciente.ID + "' and sala.estado ='C';")
+                                                                 "medico.ID_MED = usuario.ID_US where Cid_pac = '" + paciente.ID + "' and sala.estado ='C';")
         If obtenerSolicitudes.EOF = True Then
             Throw New Exception("No hay ninguna solicitud aceptada por un medico.")
         Else
