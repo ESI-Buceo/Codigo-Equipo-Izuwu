@@ -823,20 +823,25 @@ Public Class ConexionConBD
                                                                  "chatea.Cid_sala = sala.id_sala inner join atiende on sala.id_sala = atiende.Aid_sala inner join medico on " +
                                                                  "atiende.Aid_medico = medico.ID_MED inner join usuario on " +
                                                                  "Medico.ID_MED = usuario.ID_US where Cid_pac = '" + paciente.ID + "' and sala.estado ='C';")
-        Dim listaSalas As New List(Of Sala_Chat)
+        If obtenerSolicitudes.EOF = True Then
+            Throw New Exception("No hay ninguna solicitud aceptada por un medico.")
+        Else
+            Dim listaSalas As New List(Of Sala_Chat)
 
-        While (Not obtenerSolicitudes.EOF)
-            Dim id_sala As String = TryCast(obtenerSolicitudes.Fields("Cid_sala").Value, String)
-            Dim fechaBaseDatos As Date = TryCast(obtenerSolicitudes.Fields("fecha").Value, Object)
-            Dim fechaString As String = Format(fechaBaseDatos, "yyyy/MM/dd")
-            Dim estado As String = TryCast(obtenerSolicitudes.Fields("estado").Value, String)
-            Dim id_usuario As String = TryCast(obtenerSolicitudes.Fields("Aid_medico").Value, String)
-            Dim nombre_usuario As String = TryCast(obtenerSolicitudes.Fields("nombre").Value, String)
-            Dim apellido_usuario As String = TryCast(obtenerSolicitudes.Fields("apellido").Value, String)
-            listaSalas.Add(New Sala_Chat(id_sala, fechaString, estado, id_usuario, nombre_usuario, apellido_usuario))
-            obtenerSolicitudes.MoveNext()
-        End While
-        Return listaSalas
+            While (Not obtenerSolicitudes.EOF)
+                Dim id_sala As String = TryCast(obtenerSolicitudes.Fields("Cid_sala").Value, String)
+                Dim fechaBaseDatos As Date = TryCast(obtenerSolicitudes.Fields("fecha").Value, Object)
+                Dim fechaString As String = Format(fechaBaseDatos, "yyyy/MM/dd")
+                Dim estado As String = TryCast(obtenerSolicitudes.Fields("estado").Value, String)
+                Dim id_usuario As String = TryCast(obtenerSolicitudes.Fields("Aid_medico").Value, String)
+                Dim nombre_usuario As String = TryCast(obtenerSolicitudes.Fields("nombre").Value, String)
+                Dim apellido_usuario As String = TryCast(obtenerSolicitudes.Fields("apellido").Value, String)
+                listaSalas.Add(New Sala_Chat(id_sala, fechaString, estado, id_usuario, nombre_usuario, apellido_usuario))
+                obtenerSolicitudes.MoveNext()
+            End While
+            Return listaSalas
+        End If
+
     End Function
 
     '------------------------------------------------------------
@@ -849,20 +854,25 @@ Public Class ConexionConBD
                                                                  "chatea.Cid_sala = sala.id_sala inner join paciente on chatea.Cid_pac = paciente.ID_PAC inner join usuario on " +
                                                                  "paciente.id_pac = usuario.id_us where Aid_medico = '" + medico.ID + "' and estado = 'P' " +
                                                                  "order by fecha desc;")
-        Dim listaSalas As New List(Of Sala_Chat)
+        If obtenerSolicitudes.EOF = True Then
+            Throw New Exception("No hay ninguna solicitud nueva.")
+        Else
+            Dim listaSalas As New List(Of Sala_Chat)
 
-        While (Not obtenerSolicitudes.EOF)
-            Dim id_sala As String = TryCast(obtenerSolicitudes.Fields("id_sala").Value, String)
-            Dim fechaBaseDatos As Date = TryCast(obtenerSolicitudes.Fields("fecha").Value, Object)
-            Dim fechaString As String = Format(fechaBaseDatos, "yyyy/MM/dd")
-            Dim estado As String = TryCast(obtenerSolicitudes.Fields("estado").Value, String)
-            Dim id_usuario As String = TryCast(obtenerSolicitudes.Fields("Cid_pac").Value, String)
-            Dim nombre_usuario As String = TryCast(obtenerSolicitudes.Fields("nombre").Value, String)
-            Dim apellido_usuario As String = TryCast(obtenerSolicitudes.Fields("apellido").Value, String)
-            listaSalas.Add(New Sala_Chat(id_sala, fechaString, estado, id_usuario, nombre_usuario, apellido_usuario))
-            obtenerSolicitudes.MoveNext()
-        End While
-        Return listaSalas
+            While (Not obtenerSolicitudes.EOF)
+                Dim id_sala As String = TryCast(obtenerSolicitudes.Fields("id_sala").Value, String)
+                Dim fechaBaseDatos As Date = TryCast(obtenerSolicitudes.Fields("fecha").Value, Object)
+                Dim fechaString As String = Format(fechaBaseDatos, "yyyy/MM/dd")
+                Dim estado As String = TryCast(obtenerSolicitudes.Fields("estado").Value, String)
+                Dim id_usuario As String = TryCast(obtenerSolicitudes.Fields("Cid_pac").Value, String)
+                Dim nombre_usuario As String = TryCast(obtenerSolicitudes.Fields("nombre").Value, String)
+                Dim apellido_usuario As String = TryCast(obtenerSolicitudes.Fields("apellido").Value, String)
+                listaSalas.Add(New Sala_Chat(id_sala, fechaString, estado, id_usuario, nombre_usuario, apellido_usuario))
+                obtenerSolicitudes.MoveNext()
+            End While
+            Return listaSalas
+        End If
+
     End Function
 
     Public Sub aceptarSolicitud_De_Chat(id_sala As String)

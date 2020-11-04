@@ -72,29 +72,33 @@ Public Class MenuMedico
         nullvisible()
 
         listaConsultas_EnCurso = instancia.obtenerSolicitudesChat_EnCurso(medico)
-        Dim separacion As Single = 1
-        Dim indice As Integer = 1
-        Do
-            Dim botonChat As New Guna.UI2.WinForms.Guna2CircleButton()
-            With botonChat
+        If listaConsultas_EnCurso.Count > 0 Then
 
-                .Font = New Font("Segoe UI", 16.0!)
-                .ForeColor = Color.White
-                .Animated = True
-                .Location = New Point(11, separacion * 16)
-                .Name = listaConsultas_EnCurso.ElementAt(indice - 1).id_sala
-                .ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-                .FillColor = Color.FromArgb(3, 187, 133)
-                .Size = New Size(55, 57)
-                .TabIndex = 0
-                .Text = listaConsultas_EnCurso.ElementAt(indice - 1).nombre_usuario(0) + " " + listaConsultas_EnCurso.ElementAt(indice - 1).apellido_usuario(0)
-                AddHandler botonChat.Click, AddressOf btnChatsActivos_click
-            End With
-            panelListaChats.Controls.Add(botonChat)
-            separacion = separacion + 4.2
-            indice = indice + 1
 
-        Loop While (indice < listaConsultas_EnCurso.Count + 1)
+            Dim separacion As Single = 1
+            Dim indice As Integer = 1
+            Do
+                Dim botonChat As New Guna.UI2.WinForms.Guna2CircleButton()
+                With botonChat
+
+                    .Font = New Font("Segoe UI", 16.0!)
+                    .ForeColor = Color.White
+                    .Animated = True
+                    .Location = New Point(11, separacion * 16)
+                    .Name = listaConsultas_EnCurso.ElementAt(indice - 1).id_sala
+                    .ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+                    .FillColor = Color.FromArgb(3, 187, 133)
+                    .Size = New Size(55, 57)
+                    .TabIndex = 0
+                    .Text = listaConsultas_EnCurso.ElementAt(indice - 1).nombre_usuario(0) + " " + listaConsultas_EnCurso.ElementAt(indice - 1).apellido_usuario(0)
+                    AddHandler botonChat.Click, AddressOf btnChatsActivos_click
+                End With
+                panelListaChats.Controls.Add(botonChat)
+                separacion = separacion + 4.2
+                indice = indice + 1
+
+            Loop While (indice < listaConsultas_EnCurso.Count + 1)
+        End If
         panelChat.Visible = True
         panelListaChats.Visible = True
     End Sub
@@ -182,10 +186,21 @@ Public Class MenuMedico
 
     Public Sub cargarConsultasPendientes()
         lstConsultasPendientes.Clear()
-        listaConsultas_Pendientes = instancia.obtenerSolicitudesChatPendientes(medico)
-        For Each chat As Sala_Chat In listaConsultas_Pendientes
-            lstConsultasPendientes.Items.Add(chat.nombre_usuario + " " + chat.apellido_usuario + " - " + chat.fecha)
-        Next
+        Try
+
+
+            listaConsultas_Pendientes = instancia.obtenerSolicitudesChatPendientes(medico)
+
+
+
+            For Each chat As Sala_Chat In listaConsultas_Pendientes
+                    lstConsultasPendientes.Items.Add(chat.nombre_usuario + " " + chat.apellido_usuario + " - " + chat.fecha)
+                Next
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 
 

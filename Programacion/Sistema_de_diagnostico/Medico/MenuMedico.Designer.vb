@@ -22,6 +22,7 @@ Partial Class MenuMedico
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MenuMedico))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnHistorialdeConsultas = New System.Windows.Forms.Button()
@@ -68,7 +69,7 @@ Partial Class MenuMedico
         Me.txtMensaje = New System.Windows.Forms.TextBox()
         Me.txtChat = New System.Windows.Forms.TextBox()
         Me.panelListaChats = New System.Windows.Forms.Panel()
-        Me.refrescarChat = New System.Windows.Forms.Timer()
+        Me.refrescarChat = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         Me.panelConsultaPendiente.SuspendLayout()
         Me.panelHistorialConsulta.SuspendLayout()
@@ -579,6 +580,7 @@ Partial Class MenuMedico
         'txtChat
         '
         Me.txtChat.BackColor = System.Drawing.Color.White
+        Me.txtChat.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtChat.Location = New System.Drawing.Point(15, 20)
         Me.txtChat.Multiline = True
         Me.txtChat.Name = "txtChat"
