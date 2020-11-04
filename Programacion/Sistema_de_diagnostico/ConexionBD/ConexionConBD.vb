@@ -166,15 +166,15 @@ Public Class ConexionConBD
         Dim connection As Connection = conectar()
         Dim ListaPatologia As New List(Of Patologia)
 
-        Dim consulta As Recordset = connection.Execute("select campo_medico.nombre as 'especialidad' ,patologia.* " +
+        Dim consulta As Recordset = connection.Execute("select campo_medico.nombre as 'especialidad',patologia.* " +
                                                        "from patologia inner join trata on " +
-                                                       "Patologia.ID_PAT = trata.id_patT inner join campo_medico on " +
+                                                       "patologia.id_pat = trata.id_patT inner join campo_medico on " +
                                                        "trata.id_campomedicoT = campo_medico.id_campomedico order by nombre asc;")
         Dim nombre, prioridad, id, especialidad As String
         While (Not consulta.EOF)
             nombre = TryCast(consulta.Fields("Nombre").Value, String)
             prioridad = TryCast(consulta.Fields("Prioridad").Value, String)
-            id = TryCast(consulta.Fields("ID_PAT").Value, String)
+            id = TryCast(consulta.Fields("id_pat").Value, String)
             especialidad = TryCast(consulta.Fields("especialidad").Value, String)
             ListaPatologia.Add(New Patologia(nombre, prioridad, id, especialidad))
             consulta.MoveNext()
