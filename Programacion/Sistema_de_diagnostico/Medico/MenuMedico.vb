@@ -13,7 +13,7 @@ Public Class MenuMedico
 
     Dim id_sala As String
 
-    Dim salaSeleccionada As Boolean = False
+    Dim salaActiva As Boolean = False
 
 
     'Estas tres subrutinas permiten desplazar el formulario. 
@@ -112,6 +112,7 @@ Public Class MenuMedico
 
         id_sala = boton.Name
         btnEnviar.Enabled = True
+        salaActiva = True
         cargarMensajes()
 
     End Sub
@@ -184,7 +185,7 @@ Public Class MenuMedico
     End Sub
 
     Private Sub txtMensaje_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMensaje.KeyPress
-        If e.KeyChar = ChrW(Keys.Enter) Then
+        If e.KeyChar = ChrW(Keys.Enter) And salaActiva = True Then
             Dim fechaActual As Date = Date.Now
             Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
             instancia.enviarMensaje(txtMensaje.Text, id_sala, fechaString, medico.ID)

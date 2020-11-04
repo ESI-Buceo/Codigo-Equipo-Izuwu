@@ -17,6 +17,7 @@ Public Class MenuPaciente
     Dim listaMensajes As List(Of Mensaje)
 
     Dim id_sala As String
+    Dim salaActiva As Boolean = False
 
 
     'Definir variables globales; estas van despues de la linea de inherits
@@ -211,6 +212,7 @@ Public Class MenuPaciente
         Dim boton As Guna.UI2.WinForms.Guna2CircleButton = DirectCast(sender, Guna.UI2.WinForms.Guna2CircleButton)
 
         id_sala = boton.Name
+        salaActiva = True
         btnEnviar.Enabled = True
         cargarMensajes()
 
@@ -297,7 +299,7 @@ Public Class MenuPaciente
 
     End Sub
     Private Sub txtMensaje_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMensaje.KeyPress
-        If e.KeyChar = ChrW(Keys.Enter) Then
+        If e.KeyChar = ChrW(Keys.Enter) And salaActiva = True Then
             Dim fechaActual As Date = Date.Now
             Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
             instancia.enviarMensaje(txtMensaje.Text, id_sala, fechaString, paciente.ID)
