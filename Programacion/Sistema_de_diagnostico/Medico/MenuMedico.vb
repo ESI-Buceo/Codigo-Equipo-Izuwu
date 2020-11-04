@@ -55,7 +55,7 @@ Public Class MenuMedico
         labIniciales.Text = medico.nombre(0) + " " + medico.apellido(0)
         labNombre.Text = medico.nombre + " " + medico.apellido
         nullvisible()
-        refrescarChat.Start()
+
         btnEnviar.Enabled = False
     End Sub
 
@@ -66,6 +66,16 @@ Public Class MenuMedico
         nullvisible()
         cargarConsultasPendientes()
         panelConsultaPendiente.Visible = True
+        refrescarChat.Stop()
+    End Sub
+    Private Sub btnHistorialdeConsultas_Click_1(sender As Object, e As EventArgs) Handles btnHistorialdeConsultas.Click
+        btnConsPendientes.BackColor = Color.FromArgb(50, 174, 144)
+        btnChats.BackColor = Color.FromArgb(50, 174, 144)
+        btnHistorialdeConsultas.BackColor = Color.FromArgb(38, 131, 108)
+
+        nullvisible()
+        panelHistorialConsulta.Visible = True
+        refrescarChat.Stop()
     End Sub
 
     Private Sub btnChats_Click(sender As Object, e As EventArgs) Handles btnChats.Click
@@ -113,19 +123,12 @@ Public Class MenuMedico
         id_sala = boton.Name
         btnEnviar.Enabled = True
         salaActiva = True
+        refrescarChat.Start()
         cargarMensajes()
-
     End Sub
 
 
-    Private Sub btnHistorialdeConsultas_Click_1(sender As Object, e As EventArgs) Handles btnHistorialdeConsultas.Click
-        btnConsPendientes.BackColor = Color.FromArgb(50, 174, 144)
-        btnChats.BackColor = Color.FromArgb(50, 174, 144)
-        btnHistorialdeConsultas.BackColor = Color.FromArgb(38, 131, 108)
 
-        nullvisible()
-        panelHistorialConsulta.Visible = True
-    End Sub
 
 
     Private Sub Button1_MouseMove(sender As Object, e As MouseEventArgs) Handles Button1.MouseMove
@@ -153,6 +156,7 @@ Public Class MenuMedico
         labPerfilTelefono.Text = medico.telefono
         labPerfilFechaDeNacimiento.Text = medico.fechadenacimiento
 
+        refrescarChat.Stop()
         panelPerfilPaciente.Visible = True
     End Sub
 
@@ -167,7 +171,12 @@ Public Class MenuMedico
     End Sub
 
     Private Sub refrescarChat_Tick(sender As Object, e As EventArgs) Handles refrescarChat.Tick
-        cargarMensajes()
+        Dim cantidadMensajes As Integer = instancia.obtenerMensajes(id_sala).Count
+        If listaMensajes.Count = cantidadMensajes Then
+
+        Else
+            cargarMensajes()
+        End If
     End Sub
 
     Private Sub btnEnviar_Click(sender As Object, e As EventArgs) Handles btnEnviar.Click
@@ -233,7 +242,10 @@ Public Class MenuMedico
     Public Sub cargarMensajes()
         txtChat.Clear()
         Dim mensajesCompletos As String = ""
+
         If id_sala = Nothing Then
+
+
 
         Else
             listaMensajes = instancia.obtenerMensajes(id_sala)
@@ -243,6 +255,8 @@ Public Class MenuMedico
 
             Next
             txtChat.Text = mensajesCompletos
+            txtChat.SelectionStart = txtChat.TextLength
+            txtChat.ScrollToCaret()
         End If
 
     End Sub

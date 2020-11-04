@@ -959,6 +959,15 @@ Public Class ConexionConBD
         Return listaMensajes
     End Function
 
+    '------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'Funciones para el historial de consulta y ingresar nuevas consultas al historial.
+
+    Public Sub finalizarConsultaMedico()
+        Dim connection As Connection = conectar()
+
+
+    End Sub
+
 End Class
 
 

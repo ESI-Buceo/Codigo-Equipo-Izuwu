@@ -93,3 +93,4 @@ C:\Users\user\source\repos\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_di
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\bin\Debug\Guna.UI2.dll
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.Login.resources
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.MenuMedico.resources
+C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.FinalizarConsulta.resources
