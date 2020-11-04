@@ -87,8 +87,6 @@ Public Class Login
             'Se toman los datos de los cuadros de texto CI y Contraseña
             Dim login As Paciente = Instancia.loginPaciente(txtUsuario.Text, txtContraseña.Text)
 
-            'Dim paciente As New Paciente(login.nombre, login.segundonombre, login.apellido, login.segundoapellido,
-            'login.email, login.ID, login.Direccion, login.CI, login.contraseña, login.telefono, login.fechadenacimiento, login.peso, login.altura, login.patologiaPrevia)
 
             Dim menuPaciente As New MenuPaciente()
 
@@ -104,6 +102,29 @@ Public Class Login
 
         End Try
     End Sub
+    Private Sub txtContraseña_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtContraseña.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            Try
+
+                'Se toman los datos de los cuadros de texto CI y Contraseña
+                Dim login As Paciente = Instancia.loginPaciente(txtUsuario.Text, txtContraseña.Text)
+
+
+                Dim menuPaciente As New MenuPaciente()
+
+                menuPaciente.paciente = login
+
+
+                Me.Hide()
+                menuPaciente.ShowDialog()
+                Me.Close()
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+
+            End Try
+        End If
+    End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
 
@@ -112,6 +133,8 @@ Public Class Login
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
+
+
 
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
         Me.Hide()

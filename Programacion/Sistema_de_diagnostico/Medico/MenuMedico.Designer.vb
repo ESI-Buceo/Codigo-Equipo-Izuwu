@@ -65,7 +65,7 @@ Partial Class MenuMedico
         Me.label15 = New System.Windows.Forms.Label()
         Me.label13 = New System.Windows.Forms.Label()
         Me.panelChat = New System.Windows.Forms.Panel()
-        Me.txtEnviarMensaje = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnEnviar = New Guna.UI2.WinForms.Guna2Button()
         Me.txtMensaje = New System.Windows.Forms.TextBox()
         Me.txtChat = New System.Windows.Forms.TextBox()
         Me.panelListaChats = New System.Windows.Forms.Panel()
@@ -545,7 +545,7 @@ Partial Class MenuMedico
         '
         'panelChat
         '
-        Me.panelChat.Controls.Add(Me.txtEnviarMensaje)
+        Me.panelChat.Controls.Add(Me.btnEnviar)
         Me.panelChat.Controls.Add(Me.txtMensaje)
         Me.panelChat.Controls.Add(Me.txtChat)
         Me.panelChat.Location = New System.Drawing.Point(353, 32)
@@ -553,22 +553,22 @@ Partial Class MenuMedico
         Me.panelChat.Size = New System.Drawing.Size(624, 601)
         Me.panelChat.TabIndex = 13
         '
-        'txtEnviarMensaje
+        'btnEnviar
         '
-        Me.txtEnviarMensaje.AutoRoundedCorners = True
-        Me.txtEnviarMensaje.BorderRadius = 11
-        Me.txtEnviarMensaje.CheckedState.Parent = Me.txtEnviarMensaje
-        Me.txtEnviarMensaje.CustomImages.Parent = Me.txtEnviarMensaje
-        Me.txtEnviarMensaje.FillColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.txtEnviarMensaje.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtEnviarMensaje.ForeColor = System.Drawing.Color.White
-        Me.txtEnviarMensaje.HoverState.Parent = Me.txtEnviarMensaje
-        Me.txtEnviarMensaje.Location = New System.Drawing.Point(531, 556)
-        Me.txtEnviarMensaje.Name = "txtEnviarMensaje"
-        Me.txtEnviarMensaje.ShadowDecoration.Parent = Me.txtEnviarMensaje
-        Me.txtEnviarMensaje.Size = New System.Drawing.Size(84, 24)
-        Me.txtEnviarMensaje.TabIndex = 2
-        Me.txtEnviarMensaje.Text = "Enviar"
+        Me.btnEnviar.AutoRoundedCorners = True
+        Me.btnEnviar.BorderRadius = 11
+        Me.btnEnviar.CheckedState.Parent = Me.btnEnviar
+        Me.btnEnviar.CustomImages.Parent = Me.btnEnviar
+        Me.btnEnviar.FillColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.btnEnviar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnEnviar.ForeColor = System.Drawing.Color.White
+        Me.btnEnviar.HoverState.Parent = Me.btnEnviar
+        Me.btnEnviar.Location = New System.Drawing.Point(531, 556)
+        Me.btnEnviar.Name = "btnEnviar"
+        Me.btnEnviar.ShadowDecoration.Parent = Me.btnEnviar
+        Me.btnEnviar.Size = New System.Drawing.Size(84, 24)
+        Me.btnEnviar.TabIndex = 2
+        Me.btnEnviar.Text = "Enviar"
         '
         'txtMensaje
         '
@@ -682,7 +682,7 @@ Partial Class MenuMedico
     Friend WithEvents Label2 As Label
     Friend WithEvents btnAceptarSolicitud As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents panelChat As Panel
-    Friend WithEvents txtEnviarMensaje As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnEnviar As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtMensaje As TextBox
     Friend WithEvents txtChat As TextBox
     Friend WithEvents panelListaChats As Panel

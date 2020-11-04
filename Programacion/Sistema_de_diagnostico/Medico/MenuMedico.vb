@@ -13,6 +13,8 @@ Public Class MenuMedico
 
     Dim id_sala As String
 
+    Dim salaSeleccionada As Boolean = False
+
 
     'Estas tres subrutinas permiten desplazar el formulario. 
 
@@ -54,6 +56,7 @@ Public Class MenuMedico
         labNombre.Text = medico.nombre + " " + medico.apellido
         nullvisible()
         refrescarChat.Start()
+        btnEnviar.Enabled = False
     End Sub
 
     Private Sub btnConsPendientes_Click(sender As Object, e As EventArgs) Handles btnConsPendientes.Click
@@ -98,6 +101,7 @@ Public Class MenuMedico
                 indice = indice + 1
 
             Loop While (indice < listaConsultas_EnCurso.Count + 1)
+
         End If
         panelChat.Visible = True
         panelListaChats.Visible = True
@@ -107,6 +111,7 @@ Public Class MenuMedico
         Dim boton As Guna.UI2.WinForms.Guna2CircleButton = DirectCast(sender, Guna.UI2.WinForms.Guna2CircleButton)
 
         id_sala = boton.Name
+        btnEnviar.Enabled = True
         cargarMensajes()
 
     End Sub
@@ -164,8 +169,10 @@ Public Class MenuMedico
         cargarMensajes()
     End Sub
 
-    Private Sub txtEnviarMensaje_Click(sender As Object, e As EventArgs) Handles txtEnviarMensaje.Click
-        If txtMensaje.Text.Count > 0 Then
+    Private Sub btnEnviar_Click(sender As Object, e As EventArgs) Handles btnEnviar.Click
+        If txtMensaje.Text.Count = 0 Then
+
+        Else
             Dim fechaActual As Date = Date.Now
             Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
             instancia.enviarMensaje(txtMensaje.Text, id_sala, fechaString, medico.ID)

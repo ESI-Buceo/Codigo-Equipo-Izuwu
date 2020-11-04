@@ -62,6 +62,7 @@ Public Class MenuPaciente
         labNombre.Text = paciente.nombre + " " + paciente.apellido
         refrescarChat.Start()
         nullvisible()
+        btnEnviar.Enabled = False
 
     End Sub
 
@@ -210,6 +211,7 @@ Public Class MenuPaciente
         Dim boton As Guna.UI2.WinForms.Guna2CircleButton = DirectCast(sender, Guna.UI2.WinForms.Guna2CircleButton)
 
         id_sala = boton.Name
+        btnEnviar.Enabled = True
         cargarMensajes()
 
     End Sub
@@ -283,7 +285,9 @@ Public Class MenuPaciente
     End Sub
 
     Private Sub btnEnviar_Click(sender As Object, e As EventArgs) Handles btnEnviar.Click
-        If txtMensaje.Text.Count > 0 Then
+        If txtMensaje.Text.Count = 0 Then
+
+        Else
             Dim fechaActual As Date = Date.Now
             Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
             instancia.enviarMensaje(txtMensaje.Text, id_sala, fechaString, paciente.ID)
