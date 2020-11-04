@@ -34,7 +34,6 @@ C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\Git
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\bin\Debug\ConexionBD.pdb
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\bin\Debug\ConexionBD.xml
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.vbprojAssemblyReference.cache
-C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.MenuMedicoNew.resources
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.Resources.resources
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.vbproj.GenerateResource.cache
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.vbproj.CoreCompileInputs.cache
@@ -42,7 +41,6 @@ C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\Git
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.exe
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.xml
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.pdb
-C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.LoginNew.resources
 C:\Users\pinto\Desktop\Github\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.LoginNew.resources
 C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Medico\bin\Debug\MedicoAPP.exe.config
 C:\Users\Usuario\source\repos\Sistema_de_diagnostico\Medico\bin\Debug\MedicoAPP.exe
@@ -92,3 +90,6 @@ C:\Users\user\source\repos\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_di
 C:\Users\user\source\repos\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.exe
 C:\Users\user\source\repos\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.xml
 C:\Users\user\source\repos\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.pdb
+C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\bin\Debug\Guna.UI2.dll
+C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.Login.resources
+C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Medico\obj\Debug\MedicoAPP.MenuMedico.resources

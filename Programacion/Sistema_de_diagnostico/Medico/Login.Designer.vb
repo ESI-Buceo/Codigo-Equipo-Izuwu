@@ -192,7 +192,7 @@ Partial Class Login
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
-        'LoginNew
+        'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -206,7 +206,7 @@ Partial Class Login
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(980, 645)
-        Me.Name = "LoginNew"
+        Me.Name = "Login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LoginNew"
         Me.Panel1.ResumeLayout(False)

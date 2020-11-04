@@ -60,9 +60,24 @@ Public Class Login
             MsgBox(ex.Message)
         End Try
 
+    End Sub
+    Private Sub txtContraseña_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtContraseña.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            Try
+                'Se toman los datos de los cuadros de texto CI y Contraseña
+                Dim medico As Medico = Instancia.loginMedico(txtUsuario.Text, txtContraseña.Text)
+                Dim menuPaciente As New MenuMedico()
+                menuPaciente.medico = medico
 
 
+                Me.Hide()
+                menuPaciente.ShowDialog()
+                Me.Close()
 
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
     End Sub
 
 
@@ -82,13 +97,7 @@ Public Class Login
         Label6.ForeColor = Color.FromArgb(255, 255, 255)
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
-    End Sub
 
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
         Me.Hide()

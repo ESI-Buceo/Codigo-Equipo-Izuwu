@@ -165,14 +165,26 @@ Public Class MenuMedico
     End Sub
 
     Private Sub txtEnviarMensaje_Click(sender As Object, e As EventArgs) Handles txtEnviarMensaje.Click
-        Dim fechaActual As Date = Date.Now
-        Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
-        instancia.enviarMensaje(txtMensaje.Text, id_sala, fechaString, medico.ID)
-        txtMensaje.Clear()
-        cargarMensajes()
+        If txtMensaje.Text.Count > 0 Then
+            Dim fechaActual As Date = Date.Now
+            Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
+            instancia.enviarMensaje(txtMensaje.Text, id_sala, fechaString, medico.ID)
+            txtMensaje.Clear()
+            cargarMensajes()
+        End If
+
+
     End Sub
 
-
+    Private Sub txtMensaje_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMensaje.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            Dim fechaActual As Date = Date.Now
+            Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
+            instancia.enviarMensaje(txtMensaje.Text, id_sala, fechaString, medico.ID)
+            txtMensaje.Clear()
+            cargarMensajes()
+        End If
+    End Sub
 
     '-------------------------------------------------------------------------------------------------------------------------------------------------
     Public Sub nullvisible()
@@ -215,7 +227,7 @@ Public Class MenuMedico
             listaMensajes = instancia.obtenerMensajes(id_sala)
             For Each mensaje As Mensaje In listaMensajes
                 Dim lineaMensaje As String = mensaje.emisor & ": " & mensaje.contenido & Environment.NewLine
-                mensajesCompletos = mensajesCompletos & lineaMensaje
+                mensajesCompletos = mensajesCompletos & Environment.NewLine & lineaMensaje
 
             Next
             txtChat.Text = mensajesCompletos

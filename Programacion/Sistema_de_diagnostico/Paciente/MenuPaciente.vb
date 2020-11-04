@@ -283,13 +283,24 @@ Public Class MenuPaciente
     End Sub
 
     Private Sub btnEnviar_Click(sender As Object, e As EventArgs) Handles btnEnviar.Click
-        Dim fechaActual As Date = Date.Now
-        Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
-        instancia.enviarMensaje(txtMensaje.Text, id_sala, fechaString, paciente.ID)
-        txtMensaje.Clear()
-        cargarMensajes()
-    End Sub
+        If txtMensaje.Text.Count > 0 Then
+            Dim fechaActual As Date = Date.Now
+            Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
+            instancia.enviarMensaje(txtMensaje.Text, id_sala, fechaString, paciente.ID)
+            txtMensaje.Clear()
+            cargarMensajes()
+        End If
 
+    End Sub
+    Private Sub txtMensaje_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMensaje.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            Dim fechaActual As Date = Date.Now
+            Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
+            instancia.enviarMensaje(txtMensaje.Text, id_sala, fechaString, paciente.ID)
+            txtMensaje.Clear()
+            cargarMensajes()
+        End If
+    End Sub
 
     '-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Funciones para la aplicacion que se van a repetir (Cargar listas, hacer invisibles sectores de la ventana, etc.)
