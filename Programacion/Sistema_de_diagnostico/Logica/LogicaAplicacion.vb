@@ -81,11 +81,11 @@ Public Class LogicaAplicacion
         End If
     End Sub
 
-    Public Sub AMpatologia(conf As Integer, patologia As Patologia)
+    Public Sub AMpatologia(conf As Integer, patologia As Patologia, id_campoMedico As String)
         If conf = -1 Then
-            agregarPatologia(patologia)
+            agregarPatologia(patologia, id_campoMedico)
         ElseIf conf = 0 Then
-            actualizarPatologia(patologia)
+            actualizarPatologia(patologia, id_campoMedico)
         End If
     End Sub
     '-----------------------------------------------------------------------------------------------------------------------------------------------
@@ -121,11 +121,11 @@ Public Class LogicaAplicacion
         End If
     End Sub
 
-    Public Sub agregarPatologia(patologia As Patologia)
+    Public Sub agregarPatologia(patologia As Patologia, id_campoMedico As String)
         If patologia.nombre.Length = 0 Or patologia.id.Length = 0 Or patologia.prioridad.Length = 0 Then
             Throw New Exception("Datos incompletos.")
         Else
-            instancia.agregarPatologia(patologia)
+            instancia.agregarPatologia(patologia, id_campoMedico)
         End If
     End Sub
 
@@ -167,11 +167,11 @@ Public Class LogicaAplicacion
             instancia.actualizarSintoma(sintoma)
         End If
     End Sub
-    Public Sub actualizarPatologia(patologia As Patologia)
+    Public Sub actualizarPatologia(patologia As Patologia, id_campoMedico As String)
         If patologia.nombre.Length = 0 Then
             Throw New Exception("Nombre vacío.")
         Else
-            instancia.actualizarPatologia(patologia)
+            instancia.actualizarPatologia(patologia, id_campoMedico)
         End If
     End Sub
 
@@ -184,7 +184,7 @@ Public Class LogicaAplicacion
     End Sub
 
     Public Sub actualizarPaciente(paciente As Paciente)
-        If Or paciente.email.Length = 0 Or paciente.Direccion.Length = 0 Or paciente.contraseña.Length = 0 Or paciente.telefono.Length = 0 Or paciente.altura.Length = 0 Or paciente.peso.Length = 0 Then
+        If paciente.email.Length = 0 Or paciente.Direccion.Length = 0 Or paciente.contraseña.Length = 0 Or paciente.telefono.Length = 0 Or paciente.altura.Length = 0 Or paciente.peso.Length = 0 Then
             Throw New Exception("Datos vacíos.")
         Else
             instancia.actualizarPaciente(paciente)

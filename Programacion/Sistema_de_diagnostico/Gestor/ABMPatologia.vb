@@ -27,7 +27,7 @@ Public Class ABMPatologia
         Try
 
             If confirmar = -1 Then
-                instancia.AMpatologia(confirmar, New Patologia(txtNombre.Text, numPrioridad.Value.ToString, txtIDPatologia.Text, cbxEspecialidad.Text))
+                instancia.AMpatologia(confirmar, New Patologia(txtNombre.Text, numPrioridad.Value.ToString, txtIDPatologia.Text, cbxEspecialidad.Text), listaEspecialidad.ElementAt(cbxEspecialidad.SelectedIndex).id)
 
                 For i = 1 To chkListaSintomas.Items.Count
                     If chkListaSintomas.GetItemChecked(i - 1) Then
@@ -36,7 +36,7 @@ Public Class ABMPatologia
                 Next
 
             ElseIf confirmar = 0 Then
-                instancia.AMpatologia(confirmar, New Patologia(txtNombre.Text, numPrioridad.Value.ToString, txtIDPatologia.Text, cbxEspecialidad.Text))
+                instancia.AMpatologia(confirmar, New Patologia(txtNombre.Text, numPrioridad.Value.ToString, txtIDPatologia.Text, cbxEspecialidad.Text), listaEspecialidad.ElementAt(cbxEspecialidad.SelectedIndex).id)
 
                 For Each sintoma As Sintoma In sintomasDePatologia
                     instancia.eliminarReferenciaPatologiaSintoma(sintoma.id, patologia.id)
@@ -68,6 +68,8 @@ Public Class ABMPatologia
     Public Sub cargarPantalla()
         listaSintomas = instancia.ObtenerSintoma()
         txtNombre.Clear()
+        cbxEspecialidad.Items.Clear()
+        cbxEspecialidad.ResetText()
         txtIDPatologia.Clear()
         numPrioridad.Value = 1
         chkListaSintomas.Items.Clear()

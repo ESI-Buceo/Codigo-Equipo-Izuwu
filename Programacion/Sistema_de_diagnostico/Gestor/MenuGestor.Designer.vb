@@ -1123,9 +1123,9 @@ Partial Class MenuGestor
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnMinimizar)
         Me.Controls.Add(Me.panelMenuInicio)
-        Me.Controls.Add(Me.panelAgregarUsuario)
         Me.Controls.Add(Me.panelABMSintoma)
         Me.Controls.Add(Me.panelModificarEliminarMedico)
+        Me.Controls.Add(Me.panelAgregarUsuario)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)

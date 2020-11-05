@@ -208,12 +208,25 @@ Public Class MenuGestor
 
     End Sub
 
+    Private Sub btnAgregarSintoma_Click(sender As Object, e As EventArgs) Handles btnAgregarSintoma.Click
+        AltaModSintoma.confirmar = -1
+        AltaModSintoma.sintoma = Nothing
+        AltaModSintoma.ShowDialog()
+
+        limpiarListaSintomas()
+        cargarListaSintoma()
+        cargarFiltroPatologia()
+        cargarFiltroSintomas()
+    End Sub
 
     Private Sub btnAgregarPatologia_Click_1(sender As Object, e As EventArgs) Handles btnAgregarPatologia.Click
         AltaModPatologia.confirmar = -1
         AltaModPatologia.ShowDialog()
+
         limpiarListaPatologia()
         cargarListaPatologia()
+        cargarFiltroPatologia()
+        cargarFiltroSintomas()
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles btnModPatologia.Click
@@ -234,29 +247,11 @@ Public Class MenuGestor
     End Sub
 
     Private Sub txtBuscarPatologia_TextChanged_1(sender As Object, e As EventArgs) Handles txtBuscarPatologia.TextChanged
-        filtroPatologias.Clear()
-        For Each filtro As Patologia In listaPatologia
-            If filtro.nombre.ToLower.StartsWith(txtBuscarPatologia.Text.ToLower) Then
-                filtroPatologias.Add(filtro)
-            End If
-        Next
-        lstPatologia.Clear()
-        For Each resultado As Patologia In filtroPatologias
-            lstPatologia.Items.Add(resultado.nombre)
-        Next
+        cargarFiltroPatologia()
     End Sub
 
     Private Sub txtBuscarSintoma_TextChanged_1(sender As Object, e As EventArgs) Handles txtBuscarSintoma.TextChanged
-        filtroSintomas.Clear()
-        For Each filtro As Sintoma In listaSintomas
-            If filtro.nombre.ToLower.StartsWith(txtBuscarSintoma.Text.ToLower) Then
-                filtroSintomas.Add(filtro)
-            End If
-        Next
-        lstSintomas.Clear()
-        For Each resultado As Sintoma In filtroSintomas
-            lstSintomas.Items.Add(resultado.nombre)
-        Next
+        cargarFiltroSintomas()
     End Sub
 
     Private Sub btnEliminarSintoma_Click(sender As Object, e As EventArgs) Handles btnEliminarSintoma.Click
@@ -353,13 +348,7 @@ Public Class MenuGestor
         panelModificarEliminarMedico.Visible = True
     End Sub
 
-    Private Sub btnAgregarSintoma_Click(sender As Object, e As EventArgs) Handles btnAgregarSintoma.Click
-        AltaModSintoma.confirmar = -1
-        AltaModSintoma.sintoma = Nothing
-        AltaModSintoma.ShowDialog()
-        limpiarListaSintomas()
-        cargarListaSintoma()
-    End Sub
+
 
     Private Sub btnMenu_AgregarMedico_Click_1(sender As Object, e As EventArgs) Handles btnMenu_AgregarMedico.Click
         nullvisible()
@@ -440,6 +429,32 @@ Public Class MenuGestor
         For Each especialidad As campo_medico In listaEspecialidad
             cbxEspecializacion.Items.Add(especialidad.nombre)
             cbxModDel_Especializacion.Items.Add(especialidad.nombre)
+        Next
+    End Sub
+
+    Public Sub cargarFiltroPatologia()
+        filtroPatologias.Clear()
+        For Each filtro As Patologia In listaPatologia
+            If filtro.nombre.ToLower.StartsWith(txtBuscarPatologia.Text.ToLower) Then
+                filtroPatologias.Add(filtro)
+            End If
+        Next
+        lstPatologia.Clear()
+        For Each resultado As Patologia In filtroPatologias
+            lstPatologia.Items.Add(resultado.nombre)
+        Next
+    End Sub
+
+    Public Sub cargarFiltroSintomas()
+        filtroSintomas.Clear()
+        For Each filtro As Sintoma In listaSintomas
+            If filtro.nombre.ToLower.StartsWith(txtBuscarSintoma.Text.ToLower) Then
+                filtroSintomas.Add(filtro)
+            End If
+        Next
+        lstSintomas.Clear()
+        For Each resultado As Sintoma In filtroSintomas
+            lstSintomas.Items.Add(resultado.nombre)
         Next
     End Sub
 
