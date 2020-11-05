@@ -71,6 +71,7 @@
     <Compile Include="campo_medico.vb" />
     <Compile Include="Diagnostico.vb" />
     <Compile Include="Gestor.vb" />
+    <Compile Include="Historial_Medico.vb" />
     <Compile Include="Medico.vb" />
     <Compile Include="Mensaje.vb" />
     <Compile Include="Paciente.vb" />

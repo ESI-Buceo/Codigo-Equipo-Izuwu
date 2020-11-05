@@ -8,11 +8,11 @@ Public Class ConexionConBD
         Dim connection As New Connection
         connection.ConnectionString = "" &
             "driver={MySQL ODBC 8.0 Unicode Driver};" &
-            "server=izuwuedb.co8sw6a5kje7.us-east-2.rds.amazonaws.com;" &
+            "server=192.168.5.50;" &
             "port=3306;" &
-            "database=izuwuDB;" &
-            "uid=admin;" &
-            "pwd=izuwuteam;"
+            "database=bruno_pintos;" &
+            "uid=bruno.pintos;" &
+            "pwd=5650516;"
         connection.Open()
 
         Return Connection
@@ -597,7 +597,7 @@ Public Class ConexionConBD
             Case 7
                 consulta = connection.Execute("select id_tratamiento from tratamiento;")
                 If consulta.EOF = False Then
-                    idConsulta = TryCast(consulta.Fields("id_trt").Value, String)
+                    idConsulta = TryCast(consulta.Fields("id_tratamiento").Value, String)
                 End If
                 id = "TRT"
         End Select
@@ -1032,6 +1032,13 @@ Public Class ConexionConBD
         Return medico
     End Function
 
+    Public Function obtenerHistorialMedico_Medico()
+
+    End Function
+
+    Public Function obtenerHistorialMedico_Paciente()
+
+    End Function
 
 
 End Class

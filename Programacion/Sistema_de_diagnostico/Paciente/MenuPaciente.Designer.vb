@@ -98,6 +98,7 @@ Partial Class MenuPaciente
         Me.Panel1.Controls.Add(Me.labIniciales)
         Me.Panel1.Controls.Add(Me.labHistorialMedico)
         Me.Panel1.Controls.Add(Me.labNombre)
+        Me.Panel1.Controls.Add(Me.btnMenu_RealizarDiagnostico)
         Me.Panel1.Controls.Add(Me.btnChats1)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
@@ -110,7 +111,6 @@ Partial Class MenuPaciente
         Me.panelRealizarDiagnostico.Controls.Add(Me.btnAgregar)
         Me.panelRealizarDiagnostico.Controls.Add(Me.lstSintomas)
         Me.panelRealizarDiagnostico.Controls.Add(Me.Label4)
-        Me.panelRealizarDiagnostico.Controls.Add(Me.btnMenu_RealizarDiagnostico)
         Me.panelRealizarDiagnostico.Location = New System.Drawing.Point(0, 71)
         Me.panelRealizarDiagnostico.Name = "panelRealizarDiagnostico"
         Me.panelRealizarDiagnostico.Size = New System.Drawing.Size(284, 582)
@@ -218,7 +218,7 @@ Partial Class MenuPaciente
         Me.btnMenu_RealizarDiagnostico.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnMenu_RealizarDiagnostico.ForeColor = System.Drawing.Color.White
         Me.btnMenu_RealizarDiagnostico.HoverState.Parent = Me.btnMenu_RealizarDiagnostico
-        Me.btnMenu_RealizarDiagnostico.Location = New System.Drawing.Point(0, 109)
+        Me.btnMenu_RealizarDiagnostico.Location = New System.Drawing.Point(4, 176)
         Me.btnMenu_RealizarDiagnostico.Name = "btnMenu_RealizarDiagnostico"
         Me.btnMenu_RealizarDiagnostico.ShadowDecoration.Parent = Me.btnMenu_RealizarDiagnostico
         Me.btnMenu_RealizarDiagnostico.Size = New System.Drawing.Size(291, 47)
