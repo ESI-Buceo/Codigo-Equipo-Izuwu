@@ -26,4 +26,8 @@ Public Class SolicitudChat
         MsgBox("Su solicitud se completo con exito. Un medico le atendera en la brevedad.")
         Me.Close()
     End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Me.Close()
+    End Sub
 End Class

@@ -28,6 +28,9 @@ Partial Class MenuMedico
         Me.labVerPerfil = New System.Windows.Forms.Label()
         Me.labIniciales = New System.Windows.Forms.Label()
         Me.labNombre = New System.Windows.Forms.Label()
+        Me.btnConsPendientes = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnChats = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnHistorialdeConsultas = New Guna.UI2.WinForms.Guna2Button()
         Me.panelConsultaPendiente = New System.Windows.Forms.Panel()
         Me.btnAceptarSolicitud = New Guna.UI2.WinForms.Guna2Button()
         Me.lstConsultasPendientes = New System.Windows.Forms.ListView()
@@ -69,9 +72,6 @@ Partial Class MenuMedico
         Me.refrescarChat = New System.Windows.Forms.Timer(Me.components)
         Me.btnMinimizar = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.btnCerrar = New Guna.UI2.WinForms.Guna2CircleButton()
-        Me.btnConsPendientes = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnChats = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnHistorialdeConsultas = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel1.SuspendLayout()
         Me.panelConsultaPendiente.SuspendLayout()
         Me.panelHistorialConsulta.SuspendLayout()
@@ -129,6 +129,54 @@ Partial Class MenuMedico
         Me.labNombre.TabIndex = 5
         Me.labNombre.Text = "Nicolas Perez"
         '
+        'btnConsPendientes
+        '
+        Me.btnConsPendientes.Animated = True
+        Me.btnConsPendientes.CheckedState.Parent = Me.btnConsPendientes
+        Me.btnConsPendientes.CustomImages.Parent = Me.btnConsPendientes
+        Me.btnConsPendientes.FillColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(144, Byte), Integer))
+        Me.btnConsPendientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.btnConsPendientes.ForeColor = System.Drawing.Color.White
+        Me.btnConsPendientes.HoverState.Parent = Me.btnConsPendientes
+        Me.btnConsPendientes.Location = New System.Drawing.Point(0, 180)
+        Me.btnConsPendientes.Name = "btnConsPendientes"
+        Me.btnConsPendientes.ShadowDecoration.Parent = Me.btnConsPendientes
+        Me.btnConsPendientes.Size = New System.Drawing.Size(280, 47)
+        Me.btnConsPendientes.TabIndex = 13
+        Me.btnConsPendientes.Text = "Consultas Pendientes"
+        '
+        'btnChats
+        '
+        Me.btnChats.Animated = True
+        Me.btnChats.CheckedState.Parent = Me.btnChats
+        Me.btnChats.CustomImages.Parent = Me.btnChats
+        Me.btnChats.FillColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(144, Byte), Integer))
+        Me.btnChats.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.btnChats.ForeColor = System.Drawing.Color.White
+        Me.btnChats.HoverState.Parent = Me.btnChats
+        Me.btnChats.Location = New System.Drawing.Point(0, 286)
+        Me.btnChats.Name = "btnChats"
+        Me.btnChats.ShadowDecoration.Parent = Me.btnChats
+        Me.btnChats.Size = New System.Drawing.Size(280, 47)
+        Me.btnChats.TabIndex = 14
+        Me.btnChats.Text = "Chats"
+        '
+        'btnHistorialdeConsultas
+        '
+        Me.btnHistorialdeConsultas.Animated = True
+        Me.btnHistorialdeConsultas.CheckedState.Parent = Me.btnHistorialdeConsultas
+        Me.btnHistorialdeConsultas.CustomImages.Parent = Me.btnHistorialdeConsultas
+        Me.btnHistorialdeConsultas.FillColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(144, Byte), Integer))
+        Me.btnHistorialdeConsultas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.btnHistorialdeConsultas.ForeColor = System.Drawing.Color.White
+        Me.btnHistorialdeConsultas.HoverState.Parent = Me.btnHistorialdeConsultas
+        Me.btnHistorialdeConsultas.Location = New System.Drawing.Point(0, 392)
+        Me.btnHistorialdeConsultas.Name = "btnHistorialdeConsultas"
+        Me.btnHistorialdeConsultas.ShadowDecoration.Parent = Me.btnHistorialdeConsultas
+        Me.btnHistorialdeConsultas.Size = New System.Drawing.Size(280, 47)
+        Me.btnHistorialdeConsultas.TabIndex = 15
+        Me.btnHistorialdeConsultas.Text = "Historial de Consultas"
+        '
         'panelConsultaPendiente
         '
         Me.panelConsultaPendiente.Controls.Add(Me.btnAceptarSolicitud)
@@ -140,10 +188,13 @@ Partial Class MenuMedico
         '
         'btnAceptarSolicitud
         '
+        Me.btnAceptarSolicitud.Animated = True
+        Me.btnAceptarSolicitud.AutoRoundedCorners = True
+        Me.btnAceptarSolicitud.BorderRadius = 22
         Me.btnAceptarSolicitud.CheckedState.Parent = Me.btnAceptarSolicitud
         Me.btnAceptarSolicitud.CustomImages.Parent = Me.btnAceptarSolicitud
         Me.btnAceptarSolicitud.FillColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.btnAceptarSolicitud.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAceptarSolicitud.Font = New System.Drawing.Font("Segoe UI", 11.25!)
         Me.btnAceptarSolicitud.ForeColor = System.Drawing.Color.White
         Me.btnAceptarSolicitud.HoverState.Parent = Me.btnAceptarSolicitud
         Me.btnAceptarSolicitud.Location = New System.Drawing.Point(453, 492)
@@ -609,54 +660,6 @@ Partial Class MenuMedico
         Me.btnCerrar.Text = "X"
         Me.btnCerrar.UseTransparentBackground = True
         '
-        'btnConsPendientes
-        '
-        Me.btnConsPendientes.Animated = True
-        Me.btnConsPendientes.CheckedState.Parent = Me.btnConsPendientes
-        Me.btnConsPendientes.CustomImages.Parent = Me.btnConsPendientes
-        Me.btnConsPendientes.FillColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(144, Byte), Integer))
-        Me.btnConsPendientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.btnConsPendientes.ForeColor = System.Drawing.Color.White
-        Me.btnConsPendientes.HoverState.Parent = Me.btnConsPendientes
-        Me.btnConsPendientes.Location = New System.Drawing.Point(0, 180)
-        Me.btnConsPendientes.Name = "btnConsPendientes"
-        Me.btnConsPendientes.ShadowDecoration.Parent = Me.btnConsPendientes
-        Me.btnConsPendientes.Size = New System.Drawing.Size(280, 47)
-        Me.btnConsPendientes.TabIndex = 13
-        Me.btnConsPendientes.Text = "Consultas Pendientes"
-        '
-        'btnChats
-        '
-        Me.btnChats.Animated = True
-        Me.btnChats.CheckedState.Parent = Me.btnChats
-        Me.btnChats.CustomImages.Parent = Me.btnChats
-        Me.btnChats.FillColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(144, Byte), Integer))
-        Me.btnChats.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.btnChats.ForeColor = System.Drawing.Color.White
-        Me.btnChats.HoverState.Parent = Me.btnChats
-        Me.btnChats.Location = New System.Drawing.Point(0, 286)
-        Me.btnChats.Name = "btnChats"
-        Me.btnChats.ShadowDecoration.Parent = Me.btnChats
-        Me.btnChats.Size = New System.Drawing.Size(280, 47)
-        Me.btnChats.TabIndex = 14
-        Me.btnChats.Text = "Chats"
-        '
-        'btnHistorialdeConsultas
-        '
-        Me.btnHistorialdeConsultas.Animated = True
-        Me.btnHistorialdeConsultas.CheckedState.Parent = Me.btnHistorialdeConsultas
-        Me.btnHistorialdeConsultas.CustomImages.Parent = Me.btnHistorialdeConsultas
-        Me.btnHistorialdeConsultas.FillColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(144, Byte), Integer))
-        Me.btnHistorialdeConsultas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.btnHistorialdeConsultas.ForeColor = System.Drawing.Color.White
-        Me.btnHistorialdeConsultas.HoverState.Parent = Me.btnHistorialdeConsultas
-        Me.btnHistorialdeConsultas.Location = New System.Drawing.Point(0, 392)
-        Me.btnHistorialdeConsultas.Name = "btnHistorialdeConsultas"
-        Me.btnHistorialdeConsultas.ShadowDecoration.Parent = Me.btnHistorialdeConsultas
-        Me.btnHistorialdeConsultas.Size = New System.Drawing.Size(280, 47)
-        Me.btnHistorialdeConsultas.TabIndex = 15
-        Me.btnHistorialdeConsultas.Text = "Historial de Consultas"
-        '
         'MenuMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -668,10 +671,10 @@ Partial Class MenuMedico
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.panelListaChats)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.panelHistorialConsulta)
         Me.Controls.Add(Me.panelChat)
         Me.Controls.Add(Me.panelConsultaPendiente)
         Me.Controls.Add(Me.panelPerfil)
-        Me.Controls.Add(Me.panelHistorialConsulta)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)

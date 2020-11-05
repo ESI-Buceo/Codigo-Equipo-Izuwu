@@ -30,13 +30,13 @@ Partial Class ABMPatologia
         Me.Label3 = New System.Windows.Forms.Label()
         Me.numPrioridad = New System.Windows.Forms.NumericUpDown()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnCerrar = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cbxEspecialidad = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.chkListaSintomas = New System.Windows.Forms.CheckedListBox()
         Me.btnAceptar = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnCerrar = New Guna.UI2.WinForms.Guna2CircleButton()
         CType(Me.numPrioridad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -114,6 +114,22 @@ Partial Class ABMPatologia
         Me.Panel1.Size = New System.Drawing.Size(330, 24)
         Me.Panel1.TabIndex = 17
         '
+        'btnCerrar
+        '
+        Me.btnCerrar.CheckedState.Parent = Me.btnCerrar
+        Me.btnCerrar.CustomImages.Parent = Me.btnCerrar
+        Me.btnCerrar.FillColor = System.Drawing.Color.White
+        Me.btnCerrar.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.btnCerrar.ForeColor = System.Drawing.Color.Black
+        Me.btnCerrar.HoverState.Parent = Me.btnCerrar
+        Me.btnCerrar.Location = New System.Drawing.Point(293, 2)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnCerrar.ShadowDecoration.Parent = Me.btnCerrar
+        Me.btnCerrar.Size = New System.Drawing.Size(23, 23)
+        Me.btnCerrar.TabIndex = 18
+        Me.btnCerrar.Text = "X"
+        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
@@ -187,22 +203,6 @@ Partial Class ABMPatologia
         Me.btnAceptar.Size = New System.Drawing.Size(106, 28)
         Me.btnAceptar.TabIndex = 22
         Me.btnAceptar.Text = "Aceptar"
-        '
-        'btnCerrar
-        '
-        Me.btnCerrar.CheckedState.Parent = Me.btnCerrar
-        Me.btnCerrar.CustomImages.Parent = Me.btnCerrar
-        Me.btnCerrar.FillColor = System.Drawing.Color.White
-        Me.btnCerrar.Font = New System.Drawing.Font("Segoe UI", 11.0!)
-        Me.btnCerrar.ForeColor = System.Drawing.Color.Black
-        Me.btnCerrar.HoverState.Parent = Me.btnCerrar
-        Me.btnCerrar.Location = New System.Drawing.Point(293, 2)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.btnCerrar.ShadowDecoration.Parent = Me.btnCerrar
-        Me.btnCerrar.Size = New System.Drawing.Size(23, 23)
-        Me.btnCerrar.TabIndex = 18
-        Me.btnCerrar.Text = "X"
         '
         'ABMPatologia
         '

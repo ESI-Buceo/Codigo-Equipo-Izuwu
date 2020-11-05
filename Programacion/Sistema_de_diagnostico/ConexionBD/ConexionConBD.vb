@@ -500,9 +500,9 @@ Public Class ConexionConBD
 
     Public Sub actualizarPaciente(paciente As Paciente)
         Dim connection As Connection = conectar()
-        Dim actualizarUsuario As Recordset = connection.Execute("update usuario set nombre = '" + paciente.nombre + "', apellido = '" + paciente.apellido + "', email = '" + paciente.email + "', direccion = '" + paciente.Direccion + "', ci = '" + paciente.CI + "', contrasenia= '" + paciente.contraseña + "', FDN ='" + paciente.fechadenacimiento + "', segundo_nombre= '" + paciente.segundonombre + "', segundo_apellido= '" + paciente.segundoapellido + "', sexo ='" + paciente.sexo + " where id_us ='" + paciente.ID + "';")
+        Dim actualizarUsuario As Recordset = connection.Execute("update usuario set email = '" + paciente.email + "', direccion = '" + paciente.Direccion + "', contrasenia= '" + paciente.contraseña + "', where id_us ='" + paciente.ID + "';")
         Dim actualizarTelefonoUsuario As Recordset = connection.Execute("update telefono_us set telefono ='" + paciente.telefono + "', id_us ='" + paciente.ID + "' where id_us ='" + paciente.ID + "';")
-        Dim actualizarPaciente As Recordset = connection.Execute("update paciente set peso = '" + paciente.peso + "', altura = '" + paciente.altura + "', Patologiasp = '" + paciente.patologiaPrevia + "' where id_pat = '" + paciente.ID + "';")
+        Dim actualizarPaciente As Recordset = connection.Execute("update paciente set peso = '" + paciente.peso + "', altura = '" + paciente.altura + "' where id_pat = '" + paciente.ID + "';")
 
     End Sub
 
@@ -568,7 +568,7 @@ Public Class ConexionConBD
                 End If
                 id = "SAL"
             Case 7
-                consulta = connection.Execute("select id_trt from tratamiento;")
+                consulta = connection.Execute("select id_tratamiento from tratamiento;")
                 If consulta.EOF = False Then
                     idConsulta = TryCast(consulta.Fields("id_trt").Value, String)
                 End If
@@ -762,7 +762,7 @@ Public Class ConexionConBD
         Dim crearsala As Recordset = connection.Execute("insert into sala values('" + idsala + "','" + fecha + "','P');")
         Dim insetarPacienteEnSala As Recordset = connection.Execute("insert into chatea values('" + paciente.ID + "','" + idsala + "');")
         Dim insertarMedico As Recordset = connection.Execute("insert into atiende values('" + idsala + "','" + medico.ID + "');")
-        Dim crearDiagnostico_medico As Recordset = connection.Execute("insert into diagnostico_med values('" + idDiagnostico + "','" + medico.ID + "')")
+        Dim crearDiagnostico_medico As Recordset = connection.Execute("insert into diagnostico_med values('" + idDiagnostico + "','" + fecha + "','" + medico.ID + "')")
 
     End Sub
 
@@ -904,11 +904,24 @@ Public Class ConexionConBD
 
     '------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Funciones para el historial de consulta y ingresar nuevas consultas al historial.
+    Public Function obtenerIDDiagnostico(idmedico As String) As String
+        Dim connection As Connection = conectar()
+        Dim consulta As Recordset = connection.Execute("select diagnostico_med.id_Dmed " +
+                                                        "from paciente inner join chatea on " +
+                                                        "paciente.ID_PAC = chatea.Cid_pac inner join sala on " +
+                                                        "chatea.Cid_sala = sala.id_sala inner join atiende on " +
+                                                        "sala.id_sala = atiende.Aid_sala inner join medico on " +
+                                                        "atiende.Aid_medico = medico.ID_MED inner join diagnostico_med on " +
+                                                        "medico.ID_MED = diagnostico_med.Did_med " +
+                                                        "where medico.id_med = '" + idmedico + "';")
+        Dim idDiag As String = TryCast(consulta.Fields("id_Dmed").Value, String)
+        Return idDiag
+    End Function
 
-    Public Sub finalizarConsultaMedico(contenido As String, id_tratamiento As String, id_medico As String, id_diag As String)
+    Public Sub finalizarConsultaMedico(contenido As String, id_tratamiento As String, id_medico As String, id_diag As String, id_sala As String)
         Dim connection As Connection = conectar()
         Dim consulta As Recordset = connection.Execute("insert into tratamiento values('" + id_tratamiento + "','" + contenido + "','" + id_medico + "','" + id_diag + "')")
-
+        Dim cambiarEstado As Recordset = connection.Execute("update sala set estado ='F' where id_sala ='" + id_sala + "';")
     End Sub
 
     '-----------------------------------------------------------------------------------------------------------------------------------------------------------

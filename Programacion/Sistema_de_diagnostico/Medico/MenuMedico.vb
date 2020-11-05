@@ -59,26 +59,26 @@ Public Class MenuMedico
         btnFinalizarConsulta.Enabled = False
     End Sub
 
-    Private Sub btnConsPendientes_Click(sender As Object, e As EventArgs) 
+    Private Sub btnConsPendientes_Click(sender As Object, e As EventArgs) Handles btnConsPendientes.Click
         devolverColorBotonesMenu()
-        btnConsPendientes.BackColor = Color.FromArgb(38, 131, 108)
+        btnConsPendientes.FillColor = Color.FromArgb(38, 131, 108)
         nullvisible()
         cargarConsultasPendientes()
         panelConsultaPendiente.Visible = True
         refrescarChat.Stop()
     End Sub
-    Private Sub btnHistorialdeConsultas_Click_1(sender As Object, e As EventArgs) 
+    Private Sub btnHistorialdeConsultas_Click_1(sender As Object, e As EventArgs) Handles btnHistorialdeConsultas.Click
         devolverColorBotonesMenu()
-        btnHistorialdeConsultas.BackColor = Color.FromArgb(38, 131, 108)
+        btnHistorialdeConsultas.FillColor = Color.FromArgb(38, 131, 108)
 
         nullvisible()
         panelHistorialConsulta.Visible = True
         refrescarChat.Stop()
     End Sub
 
-    Private Sub btnChats_Click(sender As Object, e As EventArgs) 
+    Private Sub btnChats_Click(sender As Object, e As EventArgs) Handles btnChats.Click
         devolverColorBotonesMenu()
-        btnChats.BackColor = Color.FromArgb(38, 131, 108)
+        btnChats.FillColor = Color.FromArgb(38, 131, 108)
 
         nullvisible()
 
@@ -119,6 +119,7 @@ Public Class MenuMedico
         Dim boton As Guna.UI2.WinForms.Guna2CircleButton = DirectCast(sender, Guna.UI2.WinForms.Guna2CircleButton)
 
         id_sala = boton.Name
+        paciente = instancia.obtenerUnPaciente(id_sala)
         btnEnviar.Enabled = True
         btnVerPerfilPaciente.Enabled = True
         btnFinalizarConsulta.Enabled = True
@@ -228,7 +229,7 @@ Public Class MenuMedico
     End Sub
 
     Private Sub btnVerPerfilPaciente_Click(sender As Object, e As EventArgs) Handles btnVerPerfilPaciente.Click
-        paciente = instancia.obtenerUnPaciente(id_sala)
+
 
         panelPerfil.Visible = True
         paneldatosPaciente.Visible = True
@@ -246,7 +247,10 @@ Public Class MenuMedico
     Private Sub btnFinalizarConsulta_Click(sender As Object, e As EventArgs) Handles btnFinalizarConsulta.Click
         Dim finalizarConsulta As New FinalizarConsulta()
         finalizarConsulta.paciente = paciente
+        finalizarConsulta.medico = medico
+        finalizarConsulta.sala = id_sala
 
+        finalizarConsulta.ShowDialog()
 
     End Sub
 
@@ -286,7 +290,6 @@ Public Class MenuMedico
         End Try
 
     End Sub
-
 
 
     Public Sub cargarMensajes()

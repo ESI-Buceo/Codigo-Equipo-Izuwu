@@ -23,7 +23,7 @@ Partial Class SolicitudChat
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnCancelar = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
@@ -40,7 +40,7 @@ Partial Class SolicitudChat
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.Guna2Button2)
+        Me.Panel1.Controls.Add(Me.btnCancelar)
         Me.Panel1.Controls.Add(Me.Guna2Button1)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Guna2Panel2)
@@ -50,23 +50,29 @@ Partial Class SolicitudChat
         Me.Panel1.Size = New System.Drawing.Size(500, 617)
         Me.Panel1.TabIndex = 0
         '
-        'Guna2Button2
+        'btnCancelar
         '
-        Me.Guna2Button2.CheckedState.Parent = Me.Guna2Button2
-        Me.Guna2Button2.CustomImages.Parent = Me.Guna2Button2
-        Me.Guna2Button2.FillColor = System.Drawing.Color.Red
-        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.HoverState.Parent = Me.Guna2Button2
-        Me.Guna2Button2.Location = New System.Drawing.Point(52, 568)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.ShadowDecoration.Parent = Me.Guna2Button2
-        Me.Guna2Button2.Size = New System.Drawing.Size(119, 36)
-        Me.Guna2Button2.TabIndex = 20
-        Me.Guna2Button2.Text = "Cancelar"
+        Me.btnCancelar.Animated = True
+        Me.btnCancelar.AutoRoundedCorners = True
+        Me.btnCancelar.BorderRadius = 17
+        Me.btnCancelar.CheckedState.Parent = Me.btnCancelar
+        Me.btnCancelar.CustomImages.Parent = Me.btnCancelar
+        Me.btnCancelar.FillColor = System.Drawing.Color.Red
+        Me.btnCancelar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnCancelar.ForeColor = System.Drawing.Color.White
+        Me.btnCancelar.HoverState.Parent = Me.btnCancelar
+        Me.btnCancelar.Location = New System.Drawing.Point(52, 568)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.ShadowDecoration.Parent = Me.btnCancelar
+        Me.btnCancelar.Size = New System.Drawing.Size(119, 36)
+        Me.btnCancelar.TabIndex = 20
+        Me.btnCancelar.Text = "Cancelar"
         '
         'Guna2Button1
         '
+        Me.Guna2Button1.Animated = True
+        Me.Guna2Button1.AutoRoundedCorners = True
+        Me.Guna2Button1.BorderRadius = 17
         Me.Guna2Button1.CheckedState.Parent = Me.Guna2Button1
         Me.Guna2Button1.CustomImages.Parent = Me.Guna2Button1
         Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(122, Byte), Integer))
@@ -191,7 +197,7 @@ Partial Class SolicitudChat
     Friend WithEvents lstMedicos As ListView
     Friend WithEvents labPatologia As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnCancelar As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2CircleButton1 As Guna.UI2.WinForms.Guna2CircleButton
 End Class

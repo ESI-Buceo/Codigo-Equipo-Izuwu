@@ -23,6 +23,11 @@ Partial Class FinalizarConsulta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.cbxPatologiaFinal = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.dateFechaDiagnostico = New System.Windows.Forms.DateTimePicker()
+        Me.labCedulaPaciente = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.labNombrePaciente = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.btnFinalizarConsulta = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -30,11 +35,6 @@ Partial Class FinalizarConsulta
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.txtContenido = New Guna.UI2.WinForms.Guna2TextBox()
         Me.btnCerrar = New Guna.UI2.WinForms.Guna2CircleButton()
-        Me.btnFinalizarConsulta = New Guna.UI2.WinForms.Guna2Button()
-        Me.labNombrePaciente = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.labCedulaPaciente = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.dateFechaDiagnostico = New System.Windows.Forms.DateTimePicker()
-        Me.cbxPatologiaFinal = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -57,6 +57,69 @@ Partial Class FinalizarConsulta
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(558, 542)
         Me.Panel1.TabIndex = 0
+        '
+        'cbxPatologiaFinal
+        '
+        Me.cbxPatologiaFinal.BackColor = System.Drawing.Color.Transparent
+        Me.cbxPatologiaFinal.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cbxPatologiaFinal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxPatologiaFinal.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbxPatologiaFinal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbxPatologiaFinal.FocusedState.Parent = Me.cbxPatologiaFinal
+        Me.cbxPatologiaFinal.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cbxPatologiaFinal.ForeColor = System.Drawing.Color.Black
+        Me.cbxPatologiaFinal.HoverState.Parent = Me.cbxPatologiaFinal
+        Me.cbxPatologiaFinal.ItemHeight = 30
+        Me.cbxPatologiaFinal.ItemsAppearance.Parent = Me.cbxPatologiaFinal
+        Me.cbxPatologiaFinal.Location = New System.Drawing.Point(164, 107)
+        Me.cbxPatologiaFinal.Name = "cbxPatologiaFinal"
+        Me.cbxPatologiaFinal.ShadowDecoration.Parent = Me.cbxPatologiaFinal
+        Me.cbxPatologiaFinal.Size = New System.Drawing.Size(144, 36)
+        Me.cbxPatologiaFinal.TabIndex = 15
+        '
+        'dateFechaDiagnostico
+        '
+        Me.dateFechaDiagnostico.Location = New System.Drawing.Point(197, 167)
+        Me.dateFechaDiagnostico.Name = "dateFechaDiagnostico"
+        Me.dateFechaDiagnostico.Size = New System.Drawing.Size(200, 20)
+        Me.dateFechaDiagnostico.TabIndex = 14
+        '
+        'labCedulaPaciente
+        '
+        Me.labCedulaPaciente.BackColor = System.Drawing.Color.Transparent
+        Me.labCedulaPaciente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labCedulaPaciente.Location = New System.Drawing.Point(60, 61)
+        Me.labCedulaPaciente.Name = "labCedulaPaciente"
+        Me.labCedulaPaciente.Size = New System.Drawing.Size(101, 22)
+        Me.labCedulaPaciente.TabIndex = 12
+        Me.labCedulaPaciente.Text = "Texto ejemplo"
+        '
+        'labNombrePaciente
+        '
+        Me.labNombrePaciente.BackColor = System.Drawing.Color.Transparent
+        Me.labNombrePaciente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labNombrePaciente.Location = New System.Drawing.Point(197, 19)
+        Me.labNombrePaciente.Name = "labNombrePaciente"
+        Me.labNombrePaciente.Size = New System.Drawing.Size(101, 22)
+        Me.labNombrePaciente.TabIndex = 11
+        Me.labNombrePaciente.Text = "Texto ejemplo"
+        '
+        'btnFinalizarConsulta
+        '
+        Me.btnFinalizarConsulta.AutoRoundedCorners = True
+        Me.btnFinalizarConsulta.BorderRadius = 19
+        Me.btnFinalizarConsulta.CheckedState.Parent = Me.btnFinalizarConsulta
+        Me.btnFinalizarConsulta.CustomImages.Parent = Me.btnFinalizarConsulta
+        Me.btnFinalizarConsulta.FillColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.btnFinalizarConsulta.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnFinalizarConsulta.ForeColor = System.Drawing.Color.White
+        Me.btnFinalizarConsulta.HoverState.Parent = Me.btnFinalizarConsulta
+        Me.btnFinalizarConsulta.Location = New System.Drawing.Point(403, 487)
+        Me.btnFinalizarConsulta.Name = "btnFinalizarConsulta"
+        Me.btnFinalizarConsulta.ShadowDecoration.Parent = Me.btnFinalizarConsulta
+        Me.btnFinalizarConsulta.Size = New System.Drawing.Size(132, 41)
+        Me.btnFinalizarConsulta.TabIndex = 10
+        Me.btnFinalizarConsulta.Text = "Finalizar consulta"
         '
         'Guna2HtmlLabel6
         '
@@ -123,9 +186,11 @@ Partial Class FinalizarConsulta
         Me.txtContenido.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtContenido.FocusedState.Parent = Me.txtContenido
         Me.txtContenido.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtContenido.ForeColor = System.Drawing.Color.Black
         Me.txtContenido.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtContenido.HoverState.Parent = Me.txtContenido
         Me.txtContenido.Location = New System.Drawing.Point(18, 289)
+        Me.txtContenido.Multiline = True
         Me.txtContenido.Name = "txtContenido"
         Me.txtContenido.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtContenido.PlaceholderText = ""
@@ -133,6 +198,7 @@ Partial Class FinalizarConsulta
         Me.txtContenido.ShadowDecoration.Parent = Me.txtContenido
         Me.txtContenido.Size = New System.Drawing.Size(517, 174)
         Me.txtContenido.TabIndex = 0
+        Me.txtContenido.WordWrap = False
         '
         'btnCerrar
         '
@@ -149,69 +215,6 @@ Partial Class FinalizarConsulta
         Me.btnCerrar.Size = New System.Drawing.Size(29, 26)
         Me.btnCerrar.TabIndex = 0
         Me.btnCerrar.Text = "X"
-        '
-        'btnFinalizarConsulta
-        '
-        Me.btnFinalizarConsulta.AutoRoundedCorners = True
-        Me.btnFinalizarConsulta.BorderRadius = 19
-        Me.btnFinalizarConsulta.CheckedState.Parent = Me.btnFinalizarConsulta
-        Me.btnFinalizarConsulta.CustomImages.Parent = Me.btnFinalizarConsulta
-        Me.btnFinalizarConsulta.FillColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.btnFinalizarConsulta.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnFinalizarConsulta.ForeColor = System.Drawing.Color.White
-        Me.btnFinalizarConsulta.HoverState.Parent = Me.btnFinalizarConsulta
-        Me.btnFinalizarConsulta.Location = New System.Drawing.Point(403, 487)
-        Me.btnFinalizarConsulta.Name = "btnFinalizarConsulta"
-        Me.btnFinalizarConsulta.ShadowDecoration.Parent = Me.btnFinalizarConsulta
-        Me.btnFinalizarConsulta.Size = New System.Drawing.Size(132, 41)
-        Me.btnFinalizarConsulta.TabIndex = 10
-        Me.btnFinalizarConsulta.Text = "Finalizar consulta"
-        '
-        'labNombrePaciente
-        '
-        Me.labNombrePaciente.BackColor = System.Drawing.Color.Transparent
-        Me.labNombrePaciente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labNombrePaciente.Location = New System.Drawing.Point(197, 19)
-        Me.labNombrePaciente.Name = "labNombrePaciente"
-        Me.labNombrePaciente.Size = New System.Drawing.Size(101, 22)
-        Me.labNombrePaciente.TabIndex = 11
-        Me.labNombrePaciente.Text = "Texto ejemplo"
-        '
-        'labCedulaPaciente
-        '
-        Me.labCedulaPaciente.BackColor = System.Drawing.Color.Transparent
-        Me.labCedulaPaciente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labCedulaPaciente.Location = New System.Drawing.Point(60, 61)
-        Me.labCedulaPaciente.Name = "labCedulaPaciente"
-        Me.labCedulaPaciente.Size = New System.Drawing.Size(101, 22)
-        Me.labCedulaPaciente.TabIndex = 12
-        Me.labCedulaPaciente.Text = "Texto ejemplo"
-        '
-        'dateFechaDiagnostico
-        '
-        Me.dateFechaDiagnostico.Location = New System.Drawing.Point(197, 167)
-        Me.dateFechaDiagnostico.Name = "dateFechaDiagnostico"
-        Me.dateFechaDiagnostico.Size = New System.Drawing.Size(200, 20)
-        Me.dateFechaDiagnostico.TabIndex = 14
-        '
-        'cbxPatologiaFinal
-        '
-        Me.cbxPatologiaFinal.BackColor = System.Drawing.Color.Transparent
-        Me.cbxPatologiaFinal.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cbxPatologiaFinal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbxPatologiaFinal.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cbxPatologiaFinal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cbxPatologiaFinal.FocusedState.Parent = Me.cbxPatologiaFinal
-        Me.cbxPatologiaFinal.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cbxPatologiaFinal.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cbxPatologiaFinal.HoverState.Parent = Me.cbxPatologiaFinal
-        Me.cbxPatologiaFinal.ItemHeight = 30
-        Me.cbxPatologiaFinal.ItemsAppearance.Parent = Me.cbxPatologiaFinal
-        Me.cbxPatologiaFinal.Location = New System.Drawing.Point(164, 107)
-        Me.cbxPatologiaFinal.Name = "cbxPatologiaFinal"
-        Me.cbxPatologiaFinal.ShadowDecoration.Parent = Me.cbxPatologiaFinal
-        Me.cbxPatologiaFinal.Size = New System.Drawing.Size(140, 36)
-        Me.cbxPatologiaFinal.TabIndex = 15
         '
         'FinalizarConsulta
         '

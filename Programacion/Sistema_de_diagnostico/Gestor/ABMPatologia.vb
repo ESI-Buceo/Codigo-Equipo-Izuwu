@@ -23,7 +23,7 @@ Public Class ABMPatologia
         End If
     End Sub
 
-    Private Sub btnAceptar_Click(sender As Object, e As EventArgs)
+    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         Try
 
             If confirmar = -1 Then

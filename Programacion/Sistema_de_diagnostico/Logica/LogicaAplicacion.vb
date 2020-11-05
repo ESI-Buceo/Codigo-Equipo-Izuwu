@@ -184,7 +184,7 @@ Public Class LogicaAplicacion
     End Sub
 
     Public Sub actualizarPaciente(paciente As Paciente)
-        If paciente.nombre.Length = 0 Or paciente.apellido.Length = 0 Or paciente.email.Length = 0 Or paciente.Direccion.Length = 0 Or paciente.CI.Length = 0 Or paciente.contraseña.Length = 0 Or paciente.telefono.Length = 0 Or paciente.fechadenacimiento.Length = 0 Or paciente.segundoapellido.Length = 0 Or paciente.altura.Length = 0 Or paciente.peso.Length = 0 Or paciente.patologiaPrevia.Length = 0 Then
+        If Or paciente.email.Length = 0 Or paciente.Direccion.Length = 0 Or paciente.contraseña.Length = 0 Or paciente.telefono.Length = 0 Or paciente.altura.Length = 0 Or paciente.peso.Length = 0 Then
             Throw New Exception("Datos vacíos.")
         Else
             instancia.actualizarPaciente(paciente)
@@ -231,6 +231,9 @@ Public Class LogicaAplicacion
         instancia.crearSalaChat(fecha, medico, paciente, idDiagnostico)
     End Sub
 
+    Public Function obtenerIDDiagnostico(idmedico As String) As String
+        Return instancia.obtenerIDDiagnostico(idmedico)
+    End Function
 
     Public Function obtenerSolicitudesChatPendientes(medico As Medico) As List(Of Sala_Chat)
         Return instancia.obtenerSolicitudesChatPendientes(medico)
@@ -262,8 +265,8 @@ Public Class LogicaAplicacion
 
     '----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    Public Sub finalizarConsultaMedico(contenido As String, id_consulta As String, id_medico As String, id_diagnostico As String)
-        instancia.finalizarConsultaMedico(contenido, id_consulta, id_medico, id_diagnostico)
+    Public Sub finalizarConsultaMedico(contenido As String, id_consulta As String, id_medico As String, id_diagnostico As String, id_sala As String)
+        instancia.finalizarConsultaMedico(contenido, id_consulta, id_medico, id_diagnostico, id_sala)
     End Sub
 
 

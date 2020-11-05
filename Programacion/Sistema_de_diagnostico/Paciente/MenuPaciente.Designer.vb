@@ -57,7 +57,7 @@ Partial Class MenuPaciente
         Me.btnRealizardiagnostico = New Guna.UI2.WinForms.Guna2Button()
         Me.btnEliminar = New Guna.UI2.WinForms.Guna2Button()
         Me.panelPerfil = New System.Windows.Forms.Panel()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnEditarPerfil = New Guna.UI2.WinForms.Guna2Button()
         Me.labPerfilID = New System.Windows.Forms.Label()
         Me.labPerfilNombre = New System.Windows.Forms.Label()
         Me.labVolverPerfil = New System.Windows.Forms.Label()
@@ -518,7 +518,7 @@ Partial Class MenuPaciente
         'panelPerfil
         '
         Me.panelPerfil.BackColor = System.Drawing.Color.White
-        Me.panelPerfil.Controls.Add(Me.Guna2Button2)
+        Me.panelPerfil.Controls.Add(Me.btnEditarPerfil)
         Me.panelPerfil.Controls.Add(Me.labPerfilID)
         Me.panelPerfil.Controls.Add(Me.labPerfilNombre)
         Me.panelPerfil.Controls.Add(Me.labVolverPerfil)
@@ -530,21 +530,24 @@ Partial Class MenuPaciente
         Me.panelPerfil.Size = New System.Drawing.Size(682, 608)
         Me.panelPerfil.TabIndex = 11
         '
-        'Guna2Button2
+        'btnEditarPerfil
         '
-        Me.Guna2Button2.BorderThickness = 1
-        Me.Guna2Button2.CheckedState.Parent = Me.Guna2Button2
-        Me.Guna2Button2.CustomImages.Parent = Me.Guna2Button2
-        Me.Guna2Button2.FillColor = System.Drawing.Color.White
-        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.Black
-        Me.Guna2Button2.HoverState.Parent = Me.Guna2Button2
-        Me.Guna2Button2.Location = New System.Drawing.Point(615, 17)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.ShadowDecoration.Parent = Me.Guna2Button2
-        Me.Guna2Button2.Size = New System.Drawing.Size(52, 46)
-        Me.Guna2Button2.TabIndex = 27
-        Me.Guna2Button2.Text = "Editar perfil"
+        Me.btnEditarPerfil.Animated = True
+        Me.btnEditarPerfil.AutoRoundedCorners = True
+        Me.btnEditarPerfil.BorderRadius = 22
+        Me.btnEditarPerfil.BorderThickness = 1
+        Me.btnEditarPerfil.CheckedState.Parent = Me.btnEditarPerfil
+        Me.btnEditarPerfil.CustomImages.Parent = Me.btnEditarPerfil
+        Me.btnEditarPerfil.FillColor = System.Drawing.Color.White
+        Me.btnEditarPerfil.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnEditarPerfil.ForeColor = System.Drawing.Color.Black
+        Me.btnEditarPerfil.HoverState.Parent = Me.btnEditarPerfil
+        Me.btnEditarPerfil.Location = New System.Drawing.Point(615, 17)
+        Me.btnEditarPerfil.Name = "btnEditarPerfil"
+        Me.btnEditarPerfil.ShadowDecoration.Parent = Me.btnEditarPerfil
+        Me.btnEditarPerfil.Size = New System.Drawing.Size(52, 46)
+        Me.btnEditarPerfil.TabIndex = 27
+        Me.btnEditarPerfil.Text = "Editar perfil"
         '
         'labPerfilID
         '
@@ -787,10 +790,10 @@ Partial Class MenuPaciente
         Me.Controls.Add(Me.btnMinimizar)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnCerrar)
-        Me.Controls.Add(Me.panelRealizarDiagnostico2)
+        Me.Controls.Add(Me.panelListaChats)
         Me.Controls.Add(Me.panelChat)
         Me.Controls.Add(Me.panelPerfil)
-        Me.Controls.Add(Me.panelListaChats)
+        Me.Controls.Add(Me.panelRealizarDiagnostico2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)
@@ -870,7 +873,7 @@ Partial Class MenuPaciente
     Friend WithEvents labDiagnostico2 As Label
     Friend WithEvents Guna2CustomGradientPanel1 As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents btnFinalizarConsulta As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnEditarPerfil As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents refrescarChat As Timer
     Friend WithEvents btnMinimizar As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents btnCerrar As Guna.UI2.WinForms.Guna2CircleButton

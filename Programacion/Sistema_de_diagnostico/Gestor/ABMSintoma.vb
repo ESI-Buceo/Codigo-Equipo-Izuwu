@@ -25,7 +25,7 @@ Public Class ABMSintoma
 
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs)
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         Try
 
             If confirmar = -1 Then
@@ -87,5 +87,6 @@ Public Class ABMSintoma
             Next
         Next
     End Sub
+
 
 End Class

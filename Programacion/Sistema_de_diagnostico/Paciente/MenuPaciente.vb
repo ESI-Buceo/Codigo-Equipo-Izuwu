@@ -293,7 +293,7 @@ Public Class MenuPaciente
         End If
     End Sub
 
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles btnEditarPerfil.Click
         Dim editarperfil As New EditarPerfil
         editarperfil.paciente = paciente
         editarperfil.ShowDialog()
