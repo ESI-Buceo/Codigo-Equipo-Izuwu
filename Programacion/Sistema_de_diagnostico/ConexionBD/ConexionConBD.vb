@@ -2,21 +2,20 @@
 Imports Microsoft.VisualBasic.ApplicationServices
 
 Public Class ConexionConBD
-    Private Shared Property connection As New Connection
+
     'Funcion para conectarse a la base de datos
     Private Function conectar() As Connection
-        If connection.State = 0 Then
-            connection.ConnectionString = "" &
+        Dim connection As New Connection
+        connection.ConnectionString = "" &
             "driver={MySQL ODBC 8.0 Unicode Driver};" &
-            "server=izuwuedb.co8sw6a5kje7.us-east-2.rds.amazonaws.com;" &
+            "server=192.168.5.50;" &
             "port=3306;" &
-            "database=izuwuDB;" &
-            "uid=admin;" &
-            "pwd=izuwuteam;"
+            "database=bruno_pintos;" &
+            "uid=bruno.pintos;" &
+            "pwd=56505181;"
+        connection.Open()
 
-            connection.Open()
-        End If
-        Return connection
+        Return Connection
     End Function
 
     '///---------------------------------------------------------------------------------------------------------------
@@ -61,7 +60,7 @@ Public Class ConexionConBD
             consulta.MoveNext()
         End While
 
-
+        connection.Close()
         Return ListaPaciente
     End Function
 
@@ -105,7 +104,7 @@ Public Class ConexionConBD
         End While
 
 
-
+        connection.Close()
         Return ListaMedico
     End Function
 
@@ -141,7 +140,7 @@ Public Class ConexionConBD
             consulta.MoveNext()
         End While
 
-
+        connection.Close()
         Return ListaGestor
     End Function
 
@@ -158,7 +157,7 @@ Public Class ConexionConBD
             consulta.MoveNext()
         End While
 
-
+        connection.Close()
         Return ListaSintomas
     End Function
 
@@ -180,7 +179,7 @@ Public Class ConexionConBD
             consulta.MoveNext()
         End While
 
-
+        connection.Close()
         Return ListaPatologia
     End Function
 
@@ -207,7 +206,7 @@ Public Class ConexionConBD
             listaReferencias.Add(New Patologia(nombre, prioridad, IDpatologia, especialidad))
             consulta.MoveNext()
         End While
-
+        connection.Close()
         Return listaReferencias
     End Function
 
@@ -227,7 +226,7 @@ Public Class ConexionConBD
             listaReferencias.Add(New Sintoma(nombre, IDsintoma))
             consulta.MoveNext()
         End While
-
+        connection.Close()
         Return listaReferencias
     End Function
 
@@ -243,6 +242,7 @@ Public Class ConexionConBD
             listaEspecializacion.Add(New campo_medico(id, nombre))
             consulta.MoveNext()
         End While
+        connection.Close()
         Return listaEspecializacion
     End Function
 
@@ -263,6 +263,7 @@ Public Class ConexionConBD
                                                        "where CI ='" + UserCi + "';")
 
         If consulta.EOF = True Then
+            connection.Close()
             Throw New Exception("Cedula y/o contraseña incorrecta.")
         Else
 
@@ -284,11 +285,14 @@ Public Class ConexionConBD
                 Dim lugardetrabajo As String = TryCast(consulta.Fields("Lugar_de_trabajo").Value, String)
                 Dim sexo As String = TryCast(consulta.Fields("Sexo").Value, String)
                 Dim medico As New Medico(nombre, segundonombre, apellido, segundoapellido, email, ID_user, direccion, UserCi, pasw, especializacion, telefono, fechaString, sexo, lugardetrabajo)
+                connection.Close()
                 Return medico
             Else
+                connection.Close()
                 Throw New Exception("Cedula y/o contraseña incorrecta.")
             End If
         End If
+
     End Function
 
     Public Function LoginPaciente(UserCI As String, pass As String) As Paciente
@@ -301,6 +305,7 @@ Public Class ConexionConBD
                                                        "on usuario.id_us = paciente.id_pac " +
                                                        "where CI = '" + UserCI + "';")
         If consulta.EOF = True Then
+            connection.Close()
             Throw New Exception("Cedula y/o contraseña incorrecta.")
         Else
             Dim pasw As String = TryCast(consulta.Fields("contrasenia").Value, String)
@@ -325,8 +330,10 @@ Public Class ConexionConBD
                 segundoapellido = TryCast(consulta.Fields("segundo_apellido").Value, String)
                 sexo = TryCast(consulta.Fields("Sexo").Value, String)
                 Dim paciente As New Paciente(nombre, segundonombre, apellido, segundoapellido, email, id, direccion, ci, contraseña, telefono, fechaString, sexo, peso, altura, patologiaprevia)
+                connection.Close()
                 Return paciente
             Else
+                connection.Close()
                 Throw New Exception("Cedula y/o contraseña incorrecta.")
             End If
         End If
@@ -343,6 +350,7 @@ Public Class ConexionConBD
                                                       "on usuario.id_us = gestor.id_ges " +
                                                       "where CI = '" + UserCI + "';")
         If consulta.EOF = True Then
+            connection.Close()
             Throw New Exception("Cedula y/o contraseña incorrecta.")
         Else
             Dim pasw As String = TryCast(consulta.Fields("contrasenia").Value, String)
@@ -363,8 +371,10 @@ Public Class ConexionConBD
                 segundoapellido = TryCast(consulta.Fields("segundo_apellido").Value, String)
                 sexo = TryCast(consulta.Fields("Sexo").Value, String)
                 Dim gestor As New Gestor(nombre, segundonombre, apellido, segundoapellido, email, id, direccion, ci, contraseña, telefono, fechaString, sexo, empresa)
+                connection.Close()
                 Return gestor
             Else
+                connection.Close()
                 Throw New Exception("Cedula y/o contraseña incorrecta.")
             End If
         End If
@@ -382,7 +392,7 @@ Public Class ConexionConBD
         Dim agregarTelefonoUsuario As Recordset = connection.Execute("insert into telefono_us values('" + paciente.telefono + "','" + paciente.ID + "');")
         Dim agregarPaciente As Recordset = connection.Execute("insert into paciente values ('" + paciente.ID + "','" + paciente.altura + "','" + paciente.patologiaPrevia + "','" + paciente.peso + "');")
 
-
+        connection.Close()
     End Sub
 
     Public Sub agregarMedico(medico As Medico, idcampo As String)
@@ -391,6 +401,7 @@ Public Class ConexionConBD
         Dim agregarTelefonoUsuario As Recordset = connection.Execute("insert into telefono_us values('" + medico.telefono + "','" + medico.ID + "');")
         Dim agregarMedico As Recordset = connection.Execute("insert into medico values ('" + medico.ID + "','" + medico.lugarDeTrabajo + "');")
         Dim agregarEspecialidad As Recordset = connection.Execute("insert into especializado values('" + medico.ID + "','" + idcampo + "');")
+        connection.Close()
     End Sub
 
     Public Sub agregarGestor(gestor As Gestor)
@@ -398,19 +409,20 @@ Public Class ConexionConBD
         Dim agregarUsuario As Recordset = connection.Execute("insert into usuario values('" + gestor.nombre + "','" + gestor.apellido + "','" + gestor.email + "','" + gestor.ID + "','" + gestor.Direccion + "','" + gestor.CI + "','" + gestor.contraseña + "','" + gestor.fechadenacimiento + "','" + gestor.segundoapellido + "','" + gestor.segundonombre + "','" + gestor.sexo + "');")
         Dim agregarTelefonoUsuario As Recordset = connection.Execute("insert into telefono_us values('" + gestor.telefono + "','" + gestor.ID + "');")
         Dim agregarGestor As Recordset = connection.Execute("insert into gestor values ('" + gestor.ID + "','" + gestor.empresa + "');")
+        connection.Close()
     End Sub
 
     Public Sub agregarSintoma(sintoma As Sintoma)
         Dim connection As Connection = conectar()
         Dim agregar As Recordset = connection.Execute("insert into sintoma values('" + sintoma.nombre + "','" + sintoma.id + "');")
-
+        connection.Close()
     End Sub
 
     Public Sub agregarPatologia(patologia As Patologia, id_campoMedico As String)
         Dim connection As Connection = conectar()
         Dim agregar As Recordset = connection.Execute("insert into patologia values('" + patologia.nombre + "','" + patologia.prioridad + "','" + patologia.id + "');")
         Dim agregarEspecialidad As Recordset = connection.Execute("insert into trata values('" + patologia.id + "','" + id_campoMedico + "')")
-
+        connection.Close()
     End Sub
 
     Public Sub agregarSintomaDePatologia(IDSintoma As String, IDPatologia As String)
@@ -418,7 +430,7 @@ Public Class ConexionConBD
 
         Dim agregar As Recordset = connection.Execute("insert into tiene values ('" + IDPatologia + "','" + IDSintoma + "');")
 
-
+        connection.Close()
     End Sub
 
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------////
@@ -431,7 +443,7 @@ Public Class ConexionConBD
         Dim eliminarTelefonoUsuario As Recordset = connection.Execute("delete from telefono_us where id_us ='" + ID + "';")
         Dim eliminarPaciente As Recordset = connection.Execute("delete from paciente where id_pac = '" + ID + "';")
         Dim eliminarUsuario As Recordset = connection.Execute("delete from usuario where id_us = '" + ID + "';")
-
+        connection.Close()
     End Sub
 
     Public Sub eliminarMedico(ID As String)
@@ -440,7 +452,7 @@ Public Class ConexionConBD
         Dim eliminarTelefonoUsuario As Recordset = connection.Execute("delete from telefono_us where id_us ='" + ID + "';")
         Dim eliminarMedico As Recordset = connection.Execute("delete from medico where id_med = '" + ID + "';")
         Dim eliminarUsuario As Recordset = connection.Execute("delete from usuario where id_us = '" + ID + "';")
-
+        connection.Close()
     End Sub
 
     Public Sub eliminarGestor(ID As String)
@@ -448,14 +460,14 @@ Public Class ConexionConBD
         Dim eliminarTelefonoUsuario As Recordset = connection.Execute("delete from telefono_us where id_us ='" + ID + "';")
         Dim eliminarGestor As Recordset = connection.Execute("delete from gestor where id_ges = '" + ID + "';")
         Dim eliminarUsuario As Recordset = connection.Execute("delete from usuario where id_us = '" + ID + "';")
-
+        connection.Close()
     End Sub
 
     Public Sub eliminarSintoma(ID As String)
         Dim connection As Connection = conectar()
         Dim eliminarRef As Recordset = connection.Execute("delete from tiene where id_sin = '" + ID + "';")
         Dim eliminarSintoma As Recordset = connection.Execute("delete from sintoma where id_sin = '" + ID + "';")
-
+        connection.Close()
     End Sub
 
     Public Sub eliminarPatologia(ID As String)
@@ -463,13 +475,13 @@ Public Class ConexionConBD
         Dim eliminarCampo As Recordset = connection.Execute("delete from trata where id_patT ='" + ID + "';")
         Dim eliminarRef As Recordset = connection.Execute("delete from tiene where id_pat = '" + ID + "';")
         Dim eliminarPatologia As Recordset = connection.Execute("delete from patologia where id_pat = '" + ID + "';")
-
+        connection.Close()
     End Sub
 
     Public Sub eliminarReferenciaPatologiaSintoma(IDsin As String, IDpat As String)
         Dim connection As Connection = conectar()
         Dim eliminarRef As Recordset = connection.Execute("delete from tiene where ID_Sin = '" + IDsin + "' And ID_pat = '" + IDpat + "';")
-
+        connection.Close()
     End Sub
 
     '------------------------------------------------------------------------------------------------------------------------------------------------------------/////
@@ -481,13 +493,14 @@ Public Class ConexionConBD
     Public Sub actualizarSintoma(sintoma As Sintoma)
         Dim connection As Connection = conectar()
         Dim actualizar As Recordset = connection.Execute("update sintoma set nombre = '" + sintoma.nombre + "' where id_sin = '" + sintoma.id + "';")
-
+        connection.Close()
     End Sub
 
     Public Sub actualizarPatologia(patologia As Patologia, id_campoMedico As String)
         Dim connection As Connection = conectar()
         Dim actualizar As Recordset = connection.Execute("update patologia set nombre = '" + patologia.nombre + "', prioridad ='" + patologia.prioridad + "' where id_pat = '" + patologia.id + "';")
         Dim actualizarCampoMedico As Recordset = connection.Execute("update trata set id_campomedicoT ='" + id_campoMedico + "' where id_patT ='" + patologia.id + "';")
+        connection.Close()
     End Sub
 
 
@@ -497,6 +510,7 @@ Public Class ConexionConBD
         Dim actualizarTelefonoUsuario As Recordset = connection.Execute("update telefono_us set telefono ='" + medico.telefono + "', id_us ='" + medico.ID + "' where id_us ='" + medico.ID + "';")
         Dim actualizarMedico As Recordset = connection.Execute("update medico set Lugar_de_trabajo ='" + medico.lugarDeTrabajo + "' where id_med ='" + medico.ID + "';")
         Dim actualizarEspecialidad As Recordset = connection.Execute("update especializado set id_campomedicoE = '" + idcampo + "' where id_medE= '" + medico.ID + "';")
+        connection.Close()
     End Sub
 
     Public Sub actualizarPaciente(paciente As Paciente)
@@ -504,7 +518,7 @@ Public Class ConexionConBD
         Dim actualizarUsuario As Recordset = connection.Execute("update usuario set email = '" + paciente.email + "', direccion = '" + paciente.Direccion + "', contrasenia= '" + paciente.contraseña + "', where id_us ='" + paciente.ID + "';")
         Dim actualizarTelefonoUsuario As Recordset = connection.Execute("update telefono_us set telefono ='" + paciente.telefono + "', id_us ='" + paciente.ID + "' where id_us ='" + paciente.ID + "';")
         Dim actualizarPaciente As Recordset = connection.Execute("update paciente set peso = '" + paciente.peso + "', altura = '" + paciente.altura + "' where id_pat = '" + paciente.ID + "';")
-
+        connection.Close()
     End Sub
 
     Public Sub actualizarGestor(gestor As Gestor)
@@ -512,7 +526,7 @@ Public Class ConexionConBD
         Dim actualizarUsuario As Recordset = connection.Execute("update usuario set nombre = '" + gestor.nombre + "', apellido = '" + gestor.apellido + "', email = '" + gestor.email + "', direccion = '" + gestor.Direccion + "', ci = '" + gestor.CI + "', contrasenia= '" + gestor.contraseña + "', FDN ='" + gestor.fechadenacimiento + "', segundo_nombre= '" + gestor.segundonombre + "', segundo_apellido = '" + gestor.segundoapellido + "', sexo ='" + gestor.sexo + " where id_us ='" + gestor.ID + "';")
         Dim actualizarTelefonoUsuario As Recordset = connection.Execute("update telefono_us set telefono ='" + gestor.telefono + "', id_us ='" + gestor.ID + "' where id_us ='" + gestor.ID + "';")
         Dim actualizarMedico As Recordset = connection.Execute("update gestor set empresa ='" + gestor.empresa + "' where id_ges ='" + gestor.ID + "';")
-
+        connection.Close()
     End Sub
 
 
@@ -634,7 +648,7 @@ Public Class ConexionConBD
             End If
         Loop While (Not consulta.EOF)
 
-
+        connection.Close()
         Return codigoRandoms
     End Function
 
@@ -659,6 +673,7 @@ Public Class ConexionConBD
         For Each sintoma As Sintoma In sintomas
             Dim agregarSintomas As Recordset = connection.Execute("insert into posee values('" + sintoma.id + "','" + paciente.ID + "'," + numeroTest.ToString + ");")
         Next
+        connection.Close()
     End Sub
 
     Public Function Diagnostico() As List(Of Diagnostico)
@@ -698,7 +713,7 @@ Public Class ConexionConBD
             consulta.MoveNext()
         End While
 
-
+        connection.Close()
         Return listaDiagnostico
     End Function
 
@@ -710,7 +725,7 @@ Public Class ConexionConBD
         Dim agregar_A_Resulta As Recordset = connection.Execute("insert into resulta values('" + idDiagnostico + "','" + diagnostico + "');")
         Dim patologia_Mas_probable As String = diagnosticos.ElementAt(0).nombre
         Dim agregar_a_dianosticoapp As Recordset = connection.Execute("insert into diagnostico_app values('" + idDiagnostico + "','" + paciente.ID + "','" + fecha + "');")
-
+        connection.Close()
     End Sub
 
     '---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------/////
@@ -754,6 +769,7 @@ Public Class ConexionConBD
                                         especialidad, telefono, fechaString, sexo, lugardetrabajo))
             obtenerMedicos.MoveNext()
         End While
+        connection.Close()
         Return listaMedicos
     End Function
 
@@ -764,7 +780,7 @@ Public Class ConexionConBD
         Dim insetarPacienteEnSala As Recordset = connection.Execute("insert into chatea values('" + paciente.ID + "','" + idsala + "');")
         Dim insertarMedico As Recordset = connection.Execute("insert into atiende values('" + idsala + "','" + medico.ID + "');")
         Dim crearDiagnostico_medico As Recordset = connection.Execute("insert into diagnostico_med values('" + idDiagnostico + "','" + fecha + "','" + medico.ID + "')")
-
+        connection.Close()
     End Sub
 
     Public Function obtenerSolicitudesAceptadas(paciente As Paciente) As List(Of Sala_Chat)
@@ -775,6 +791,7 @@ Public Class ConexionConBD
                                                                  "atiende.Aid_medico = medico.ID_MED inner join usuario on " +
                                                                  "medico.ID_MED = usuario.ID_US where Cid_pac = '" + paciente.ID + "' and sala.estado ='C';")
         If obtenerSolicitudes.EOF = True Then
+            connection.Close()
             Throw New Exception("No hay ninguna solicitud aceptada por un medico.")
         Else
             Dim listaSalas As New List(Of Sala_Chat)
@@ -790,6 +807,7 @@ Public Class ConexionConBD
                 listaSalas.Add(New Sala_Chat(id_sala, fechaString, estado, id_usuario, nombre_usuario, apellido_usuario))
                 obtenerSolicitudes.MoveNext()
             End While
+            connection.Close()
             Return listaSalas
         End If
 
@@ -806,6 +824,7 @@ Public Class ConexionConBD
                                                                  "paciente.id_pac = usuario.id_us where Aid_medico = '" + medico.ID + "' and estado = 'P' " +
                                                                  "order by fecha desc;")
         If obtenerSolicitudes.EOF = True Then
+            connection.Close()
             Throw New Exception("No hay ninguna solicitud nueva.")
         Else
             Dim listaSalas As New List(Of Sala_Chat)
@@ -821,6 +840,7 @@ Public Class ConexionConBD
                 listaSalas.Add(New Sala_Chat(id_sala, fechaString, estado, id_usuario, nombre_usuario, apellido_usuario))
                 obtenerSolicitudes.MoveNext()
             End While
+            connection.Close()
             Return listaSalas
         End If
 
@@ -829,6 +849,7 @@ Public Class ConexionConBD
     Public Sub aceptarSolicitud_De_Chat(id_sala As String)
         Dim connection As Connection = conectar()
         Dim cambiarEstado As Recordset = connection.Execute("update sala set estado ='C' where id_sala ='" + id_sala + "';")
+        connection.Close()
     End Sub
 
     Public Function obtenerSolicitudesChat_EnCurso(medico As Medico) As List(Of Sala_Chat)
@@ -850,6 +871,7 @@ Public Class ConexionConBD
             listaSalas.Add(New Sala_Chat(id_sala, fechaString, estado, id_usuario, nombre_usuario, apellido_usuario))
             obtenerSolicitudes.MoveNext()
         End While
+        connection.Close()
         Return listaSalas
     End Function
 
@@ -869,7 +891,7 @@ Public Class ConexionConBD
             numero = numeroBD + 1
         End If
         Dim mensaje As Recordset = connection.Execute("insert into mensaje values(" + numero.ToString + ",'" + contenido + "','" + fecha + "','Paciente','" + id_sala + "');")
-
+        connection.Close()
     End Sub
 
     Public Sub enviarMensajeMedico(contenido As String, id_sala As String, fecha As String)
@@ -883,7 +905,7 @@ Public Class ConexionConBD
             numero = numeroBD + 1
         End If
         Dim mensaje As Recordset = connection.Execute("insert into mensaje values(" + numero.ToString + ",'" + contenido + "','" + fecha + "','Medico','" + id_sala + "');")
-
+        connection.Close()
     End Sub
 
     'Recibir mensajes (Todos)
@@ -900,6 +922,7 @@ Public Class ConexionConBD
             listaMensajes.Add(New Mensaje(contenido, emisor, fechaString))
             mensajes.MoveNext()
         End While
+        connection.Close()
         Return listaMensajes
     End Function
 
@@ -916,6 +939,7 @@ Public Class ConexionConBD
                                                         "medico.ID_MED = diagnostico_med.Did_med " +
                                                         "where medico.id_med = '" + idmedico + "';")
         Dim idDiag As String = TryCast(consulta.Fields("id_Dmed").Value, String)
+        connection.Close()
         Return idDiag
     End Function
 
@@ -923,6 +947,7 @@ Public Class ConexionConBD
         Dim connection As Connection = conectar()
         Dim consulta As Recordset = connection.Execute("insert into tratamiento values('" + id_tratamiento + "','" + contenido + "','" + id_medico + "','" + id_diag + "')")
         Dim cambiarEstado As Recordset = connection.Execute("update sala set estado ='F' where id_sala ='" + id_sala + "';")
+        connection.Close()
     End Sub
 
     '-----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -958,7 +983,7 @@ Public Class ConexionConBD
         segundoapellido = TryCast(obtenerPaciente.Fields("segundo_apellido").Value, String)
         sexo = TryCast(obtenerPaciente.Fields("Sexo").Value, String)
         Dim paciente As New Paciente(nombre, segundonombre, apellido, segundoapellido, email, id, direccion, ci, contraseña, telefono, fechaString, sexo, peso, altura, patologiaprevia)
-
+        connection.Close()
         Return paciente
     End Function
 
@@ -991,6 +1016,7 @@ Public Class ConexionConBD
         sexo = TryCast(obtenerMedico.Fields("Sexo").Value, String)
         contraseña = TryCast(obtenerMedico.Fields("contrasenia").Value, String)
         Dim medico As New Medico(nombre, segundonombre, apellido, segundoapellido, email, id, direccion, ci, contraseña, especializacion, telefono, fechaString, sexo, lugardetrabajo)
+        connection.Close()
         Return medico
     End Function
 
