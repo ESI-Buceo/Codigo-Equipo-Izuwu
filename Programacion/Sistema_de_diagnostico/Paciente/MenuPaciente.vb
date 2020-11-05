@@ -221,6 +221,7 @@ Public Class MenuPaciente
         salaActiva = True
         btnEnviar.Enabled = True
 
+
         cargarMensajes()
         refrescarChat.Start()
 
@@ -383,13 +384,10 @@ Public Class MenuPaciente
         If id_sala = Nothing Then
 
         Else
-            Dim listaNuevaMensajes As List(Of Mensaje) = instancia.obtenerMensajes(id_sala)
 
-            If listaMensajes.Count <> listaNuevaMensajes.Count Then
 
-            Else
-                listaMensajes = listaNuevaMensajes
-                For Each mensaje As Mensaje In listaMensajes
+            listaMensajes = instancia.obtenerMensajes(id_sala)
+            For Each mensaje As Mensaje In listaMensajes
                     Dim lineaMensaje As String = mensaje.emisor & ": " & mensaje.contenido & Environment.NewLine
                     mensajesCompletos = mensajesCompletos & Environment.NewLine & lineaMensaje
 
@@ -397,7 +395,7 @@ Public Class MenuPaciente
                 txtChat.Text = mensajesCompletos
                 txtChat.SelectionStart = txtChat.TextLength
                 txtChat.ScrollToCaret()
-            End If
+
 
         End If
 
