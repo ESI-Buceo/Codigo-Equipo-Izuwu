@@ -24,10 +24,10 @@ Partial Class Login
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnMostrarContraseña = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.txtContraseña = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtUsuario = New Guna.UI2.WinForms.Guna2TextBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.labOlvidoPassword = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -44,10 +44,10 @@ Partial Class Login
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(144, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.btnMostrarContraseña)
         Me.Panel1.Controls.Add(Me.txtContraseña)
         Me.Panel1.Controls.Add(Me.txtUsuario)
         Me.Panel1.Controls.Add(Me.PictureBox2)
-        Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.labOlvidoPassword)
         Me.Panel1.Controls.Add(Me.Label3)
@@ -57,6 +57,21 @@ Partial Class Login
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(284, 648)
         Me.Panel1.TabIndex = 0
+        '
+        'btnMostrarContraseña
+        '
+        Me.btnMostrarContraseña.CheckedState.Parent = Me.btnMostrarContraseña
+        Me.btnMostrarContraseña.CustomImages.Parent = Me.btnMostrarContraseña
+        Me.btnMostrarContraseña.FillColor = System.Drawing.Color.Green
+        Me.btnMostrarContraseña.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnMostrarContraseña.ForeColor = System.Drawing.Color.White
+        Me.btnMostrarContraseña.HoverState.Parent = Me.btnMostrarContraseña
+        Me.btnMostrarContraseña.Location = New System.Drawing.Point(213, 277)
+        Me.btnMostrarContraseña.Name = "btnMostrarContraseña"
+        Me.btnMostrarContraseña.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnMostrarContraseña.ShadowDecoration.Parent = Me.btnMostrarContraseña
+        Me.btnMostrarContraseña.Size = New System.Drawing.Size(21, 22)
+        Me.btnMostrarContraseña.TabIndex = 26
         '
         'txtContraseña
         '
@@ -120,17 +135,6 @@ Partial Class Login
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 18
         Me.PictureBox2.TabStop = False
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(12, 587)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(59, 13)
-        Me.Label6.TabIndex = 8
-        Me.Label6.Text = "Registrarse"
         '
         'Label5
         '
@@ -272,7 +276,6 @@ Partial Class Login
     Friend WithEvents labOlvidoPassword As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
@@ -281,4 +284,5 @@ Partial Class Login
     Friend WithEvents txtUsuario As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents btnMinimizar As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents btnCerrar As Guna.UI2.WinForms.Guna2CircleButton
+    Friend WithEvents btnMostrarContraseña As Guna.UI2.WinForms.Guna2CircleButton
 End Class

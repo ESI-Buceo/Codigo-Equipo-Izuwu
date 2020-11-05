@@ -23,13 +23,15 @@ Partial Class EditarPerfil
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnMostrarContraseña = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.btnAceptar = New Guna.UI2.WinForms.Guna2Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.numAltura = New System.Windows.Forms.NumericUpDown()
         Me.numPeso = New System.Windows.Forms.NumericUpDown()
+        Me.numAltura = New System.Windows.Forms.NumericUpDown()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -40,20 +42,22 @@ Partial Class EditarPerfil
         Me.txtDireccion = New System.Windows.Forms.TextBox()
         Me.Guna2CircleButton1 = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.Panel1.SuspendLayout()
-        CType(Me.numAltura, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.numPeso, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numAltura, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.Guna2Button1)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.btnMostrarContraseña)
+        Me.Panel1.Controls.Add(Me.btnAceptar)
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Controls.Add(Me.numAltura)
         Me.Panel1.Controls.Add(Me.numPeso)
+        Me.Panel1.Controls.Add(Me.numAltura)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label5)
@@ -67,22 +71,48 @@ Partial Class EditarPerfil
         Me.Panel1.Size = New System.Drawing.Size(657, 320)
         Me.Panel1.TabIndex = 0
         '
-        'Guna2Button1
+        'Label1
         '
-        Me.Guna2Button1.Animated = True
-        Me.Guna2Button1.AutoRoundedCorners = True
-        Me.Guna2Button1.BorderRadius = 21
-        Me.Guna2Button1.CheckedState.Parent = Me.Guna2Button1
-        Me.Guna2Button1.CustomImages.Parent = Me.Guna2Button1
-        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 13.0!)
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.HoverState.Parent = Me.Guna2Button1
-        Me.Guna2Button1.Location = New System.Drawing.Point(489, 235)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.ShadowDecoration.Parent = Me.Guna2Button1
-        Me.Guna2Button1.Size = New System.Drawing.Size(146, 44)
-        Me.Guna2Button1.TabIndex = 23
-        Me.Guna2Button1.Text = "Aceptar"
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Gray
+        Me.Label1.Location = New System.Drawing.Point(367, 195)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(98, 13)
+        Me.Label1.TabIndex = 25
+        Me.Label1.Text = "Mostrar contraseña"
+        '
+        'btnMostrarContraseña
+        '
+        Me.btnMostrarContraseña.CheckedState.Parent = Me.btnMostrarContraseña
+        Me.btnMostrarContraseña.CustomImages.Parent = Me.btnMostrarContraseña
+        Me.btnMostrarContraseña.FillColor = System.Drawing.Color.Green
+        Me.btnMostrarContraseña.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnMostrarContraseña.ForeColor = System.Drawing.Color.White
+        Me.btnMostrarContraseña.HoverState.Parent = Me.btnMostrarContraseña
+        Me.btnMostrarContraseña.Location = New System.Drawing.Point(345, 190)
+        Me.btnMostrarContraseña.Name = "btnMostrarContraseña"
+        Me.btnMostrarContraseña.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnMostrarContraseña.ShadowDecoration.Parent = Me.btnMostrarContraseña
+        Me.btnMostrarContraseña.Size = New System.Drawing.Size(21, 22)
+        Me.btnMostrarContraseña.TabIndex = 24
+        '
+        'btnAceptar
+        '
+        Me.btnAceptar.Animated = True
+        Me.btnAceptar.AutoRoundedCorners = True
+        Me.btnAceptar.BorderRadius = 21
+        Me.btnAceptar.CheckedState.Parent = Me.btnAceptar
+        Me.btnAceptar.CustomImages.Parent = Me.btnAceptar
+        Me.btnAceptar.Font = New System.Drawing.Font("Segoe UI", 13.0!)
+        Me.btnAceptar.ForeColor = System.Drawing.Color.White
+        Me.btnAceptar.HoverState.Parent = Me.btnAceptar
+        Me.btnAceptar.Location = New System.Drawing.Point(489, 235)
+        Me.btnAceptar.Name = "btnAceptar"
+        Me.btnAceptar.ShadowDecoration.Parent = Me.btnAceptar
+        Me.btnAceptar.Size = New System.Drawing.Size(146, 44)
+        Me.btnAceptar.TabIndex = 23
+        Me.btnAceptar.Text = "Aceptar"
         '
         'Label11
         '
@@ -108,7 +138,7 @@ Partial Class EditarPerfil
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(88, 142)
+        Me.Label9.Location = New System.Drawing.Point(91, 90)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(62, 22)
         Me.Label9.TabIndex = 20
@@ -118,26 +148,27 @@ Partial Class EditarPerfil
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(94, 87)
+        Me.Label8.Location = New System.Drawing.Point(91, 145)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(56, 22)
         Me.Label8.TabIndex = 19
         Me.Label8.Text = "Peso:"
         '
-        'numAltura
-        '
-        Me.numAltura.Location = New System.Drawing.Point(159, 145)
-        Me.numAltura.Name = "numAltura"
-        Me.numAltura.Size = New System.Drawing.Size(62, 20)
-        Me.numAltura.TabIndex = 18
-        '
         'numPeso
         '
-        Me.numPeso.DecimalPlaces = 2
-        Me.numPeso.Location = New System.Drawing.Point(159, 90)
+        Me.numPeso.DecimalPlaces = 1
+        Me.numPeso.Location = New System.Drawing.Point(159, 145)
         Me.numPeso.Name = "numPeso"
         Me.numPeso.Size = New System.Drawing.Size(62, 20)
-        Me.numPeso.TabIndex = 17
+        Me.numPeso.TabIndex = 18
+        '
+        'numAltura
+        '
+        Me.numAltura.DecimalPlaces = 2
+        Me.numAltura.Location = New System.Drawing.Point(159, 90)
+        Me.numAltura.Name = "numAltura"
+        Me.numAltura.Size = New System.Drawing.Size(62, 20)
+        Me.numAltura.TabIndex = 17
         '
         'Label7
         '
@@ -175,6 +206,7 @@ Partial Class EditarPerfil
         Me.txtConfirmarContraseña.Name = "txtConfirmarContraseña"
         Me.txtConfirmarContraseña.Size = New System.Drawing.Size(175, 20)
         Me.txtConfirmarContraseña.TabIndex = 9
+        Me.txtConfirmarContraseña.UseSystemPasswordChar = True
         '
         'txtContraseña
         '
@@ -182,6 +214,7 @@ Partial Class EditarPerfil
         Me.txtContraseña.Name = "txtContraseña"
         Me.txtContraseña.Size = New System.Drawing.Size(175, 20)
         Me.txtContraseña.TabIndex = 7
+        Me.txtContraseña.UseSystemPasswordChar = True
         '
         'txtTelefono
         '
@@ -233,8 +266,8 @@ Partial Class EditarPerfil
         Me.Text = "EditarPerfil"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.numAltura, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.numPeso, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numAltura, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -249,11 +282,13 @@ Partial Class EditarPerfil
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents numPeso As NumericUpDown
+    Friend WithEvents numAltura As NumericUpDown
     Friend WithEvents Label11 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents numAltura As NumericUpDown
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents numPeso As NumericUpDown
+    Friend WithEvents btnAceptar As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnMostrarContraseña As Guna.UI2.WinForms.Guna2CircleButton
+    Friend WithEvents Label1 As Label
 End Class

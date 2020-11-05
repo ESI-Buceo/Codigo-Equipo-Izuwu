@@ -49,6 +49,19 @@ Public Class Login
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
+    Dim mostrarContraseña As Boolean = True
+    Private Sub btnMostrarContraseña_Click(sender As Object, e As EventArgs) Handles btnMostrarContraseña.Click
+        If mostrarContraseña Then
+            mostrarContraseña = False
+            txtContraseña.UseSystemPasswordChar = False
+            btnMostrarContraseña.FillColor = Color.Red
+        Else
+            mostrarContraseña = True
+            txtContraseña.UseSystemPasswordChar = True
+            btnMostrarContraseña.FillColor = Color.Green
+        End If
+    End Sub
+
     Private Sub btnEntrar_Click_1(sender As Object, e As EventArgs) Handles btnEntrar.Click
         Try
             'Se toman los datos de los cuadros de texto CI y Contraseña

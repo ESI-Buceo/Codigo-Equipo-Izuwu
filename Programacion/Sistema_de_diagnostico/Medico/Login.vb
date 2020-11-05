@@ -89,18 +89,19 @@ Public Class Login
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub Label6_MouseMove(sender As Object, e As MouseEventArgs) Handles Label6.MouseMove
-        Label6.ForeColor = Color.FromArgb(0, 0, 255)
+
+    Dim mostrarContraseña As Boolean = True
+    Private Sub btnMostrarContraseña_Click(sender As Object, e As EventArgs) Handles btnMostrarContraseña.Click
+        If mostrarContraseña Then
+            mostrarContraseña = False
+            txtContraseña.UseSystemPasswordChar = False
+            btnMostrarContraseña.FillColor = Color.Red
+        Else
+            mostrarContraseña = True
+            txtContraseña.UseSystemPasswordChar = True
+            btnMostrarContraseña.FillColor = Color.Green
+        End If
     End Sub
 
-    Private Sub Label6_MouseLeave(sender As Object, e As EventArgs) Handles Label6.MouseLeave
-        Label6.ForeColor = Color.FromArgb(255, 255, 255)
-    End Sub
 
-
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-        Me.Hide()
-        'Registro.ShowDialog()
-        Me.Close()
-    End Sub
 End Class

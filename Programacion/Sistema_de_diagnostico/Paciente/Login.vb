@@ -70,6 +70,7 @@ Public Class Login
             menuPaciente.paciente = login
 
 
+
             Me.Hide()
             menuPaciente.ShowDialog()
             Me.Close()
@@ -109,5 +110,19 @@ Public Class Login
         Me.Hide()
         Registro.ShowDialog()
         Me.Show()
+    End Sub
+
+
+    Dim mostrarContraseña As Boolean = True
+    Private Sub btnMostrarContraseña_Click(sender As Object, e As EventArgs) Handles btnMostrarContraseña.Click
+        If mostrarContraseña Then
+            mostrarContraseña = False
+            txtContraseña.UseSystemPasswordChar = False
+            btnMostrarContraseña.FillColor = Color.Red
+        Else
+            mostrarContraseña = True
+            txtContraseña.UseSystemPasswordChar = True
+            btnMostrarContraseña.FillColor = Color.Green
+        End If
     End Sub
 End Class

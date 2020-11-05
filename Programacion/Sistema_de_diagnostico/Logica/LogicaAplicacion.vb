@@ -182,6 +182,9 @@ Public Class LogicaAplicacion
             instancia.actualizarMedico(medico, idcampo)
         End If
     End Sub
+    Public Sub actualizarContraseñaMedico(contraseña As String, id_medico As String)
+        instancia.actualizarContraseñaMedico(contraseña, id_medico)
+    End Sub
 
     Public Sub actualizarPaciente(paciente As Paciente)
         If paciente.email.Length = 0 Or paciente.Direccion.Length = 0 Or paciente.contraseña.Length = 0 Or paciente.telefono.Length = 0 Or paciente.altura.Length = 0 Or paciente.peso.Length = 0 Then
@@ -197,6 +200,9 @@ Public Class LogicaAplicacion
         Else
             instancia.actualizarGestor(gestor)
         End If
+    End Sub
+    Public Sub actualizarContraseñaGestor(contraseña As String, id_gestor As String)
+        instancia.actualizarContraseñaGestor(contraseña, id_gestor)
     End Sub
 
     '------------------------------------------------------------------------------------------------------------------------------------------------------------------

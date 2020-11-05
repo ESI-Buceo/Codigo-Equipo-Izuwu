@@ -62,6 +62,7 @@ Partial Class Registro
         Me.txtPatologiaPrevia = New System.Windows.Forms.TextBox()
         Me.btnMinimizar = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.btnCerrar = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.btnMostrarContraseña = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -446,12 +447,28 @@ Partial Class Registro
         Me.btnCerrar.Text = "X"
         Me.btnCerrar.UseTransparentBackground = True
         '
+        'btnMostrarContraseña
+        '
+        Me.btnMostrarContraseña.CheckedState.Parent = Me.btnMostrarContraseña
+        Me.btnMostrarContraseña.CustomImages.Parent = Me.btnMostrarContraseña
+        Me.btnMostrarContraseña.FillColor = System.Drawing.Color.Green
+        Me.btnMostrarContraseña.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnMostrarContraseña.ForeColor = System.Drawing.Color.White
+        Me.btnMostrarContraseña.HoverState.Parent = Me.btnMostrarContraseña
+        Me.btnMostrarContraseña.Location = New System.Drawing.Point(618, 495)
+        Me.btnMostrarContraseña.Name = "btnMostrarContraseña"
+        Me.btnMostrarContraseña.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnMostrarContraseña.ShadowDecoration.Parent = Me.btnMostrarContraseña
+        Me.btnMostrarContraseña.Size = New System.Drawing.Size(21, 22)
+        Me.btnMostrarContraseña.TabIndex = 53
+        '
         'Registro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(980, 645)
+        Me.Controls.Add(Me.btnMostrarContraseña)
         Me.Controls.Add(Me.btnMinimizar)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.txtPatologiaPrevia)
@@ -541,4 +558,5 @@ Partial Class Registro
     Friend WithEvents txtPatologiaPrevia As TextBox
     Friend WithEvents btnMinimizar As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents btnCerrar As Guna.UI2.WinForms.Guna2CircleButton
+    Friend WithEvents btnMostrarContraseña As Guna.UI2.WinForms.Guna2CircleButton
 End Class

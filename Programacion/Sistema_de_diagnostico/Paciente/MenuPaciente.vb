@@ -70,7 +70,7 @@ Public Class MenuPaciente
 
     Private Sub btnRealizarDiagnostico_Click(sender As Object, e As EventArgs) Handles btnMenu_RealizarDiagnostico.Click
         devolverColorBotonesMenu()
-        btnMenu_RealizarDiagnostico.BackColor = Color.FromArgb(24, 68, 122)
+        btnMenu_RealizarDiagnostico.FillColor = Color.FromArgb(24, 68, 122)
 
         nullvisible()
 
@@ -358,7 +358,7 @@ Public Class MenuPaciente
     End Sub
 
     Public Sub devolverColorBotonesMenu()
-        btnMenu_RealizarDiagnostico.BackColor = Color.FromArgb(40, 117, 207)
+        btnMenu_RealizarDiagnostico.FillColor = Color.FromArgb(40, 117, 207)
         btnChats1.FillColor = Color.FromArgb(40, 117, 207)
         btnCerrarSesion.FillColor = Color.FromArgb(40, 117, 207)
     End Sub
@@ -375,6 +375,7 @@ Public Class MenuPaciente
         btnEliminar.Enabled = True
         btnRealizardiagnostico.Enabled = True
     End Sub
+
 
     Public Sub cargarMensajes()
         txtChat.Clear()

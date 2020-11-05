@@ -101,9 +101,11 @@ Partial Class ABMPatologia
         '
         Me.numPrioridad.Location = New System.Drawing.Point(159, 131)
         Me.numPrioridad.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
+        Me.numPrioridad.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.numPrioridad.Name = "numPrioridad"
         Me.numPrioridad.Size = New System.Drawing.Size(51, 20)
         Me.numPrioridad.TabIndex = 15
+        Me.numPrioridad.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Panel1
         '

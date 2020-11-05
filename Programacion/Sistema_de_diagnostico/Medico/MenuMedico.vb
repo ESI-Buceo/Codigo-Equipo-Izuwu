@@ -16,6 +16,8 @@ Public Class MenuMedico
     Dim salaActiva As Boolean = False
 
     Dim paciente As Paciente
+
+    Dim cambiarContraseña As Boolean = False
     'Estas tres subrutinas permiten desplazar el formulario. 
 
     Private Sub LoginNew_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseDown
@@ -136,7 +138,7 @@ Public Class MenuMedico
         Me.Close()
     End Sub
 
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles labVolver.Click
         panelPerfil.Visible = False
         paneldatosPaciente.Visible = False
         panelDatosMedicos.Visible = False
@@ -145,22 +147,6 @@ Public Class MenuMedico
             panelListaChats.Visible = True
         End If
     End Sub
-
-    Private Sub lbNombre_Click(sender As Object, e As EventArgs) Handles labNombre.Click
-        labPerfilNombre.Text = medico.nombre
-        labPerfilID.Text = medico.ID
-        labLugarDeTrabajoMED.Text = medico.lugarDeTrabajo
-        labDireccionMED.Text = medico.Direccion
-        labEspecialidadMED.Text = medico.especializacion
-        labTelefonoMED.Text = medico.telefono
-        labFechaDeNacimientoMED.Text = medico.fechadenacimiento
-
-        refrescarChat.Stop()
-        panelPerfil.Visible = True
-    End Sub
-
-
-
     Private Sub btnAceptarSolicitud_Click(sender As Object, e As EventArgs) Handles btnAceptarSolicitud.Click
         instancia.aceptarSolicitud_De_Chat(listaConsultas_Pendientes.ElementAt(lstConsultasPendientes.FocusedItem.Index).id_sala)
         MsgBox("Se acepto la solicitud con exito. Las solicitudes aceptadas se podran visualizar en la opcion de chat.")
@@ -216,6 +202,11 @@ Public Class MenuMedico
     Private Sub labVerPerfil_Click(sender As Object, e As EventArgs) Handles labVerPerfil.Click
         nullvisible()
         devolverColorBotonesMenu()
+        cambiarContraseña = True
+        If cambiarContraseña Then
+            btnCambiarContraseña.Visible = True
+        End If
+        paneldatosPaciente.Visible = False
         panelPerfil.Visible = True
         panelDatosMedicos.Visible = True
         labFechaDeNacimientoMED.Text = medico.fechadenacimiento
@@ -225,12 +216,16 @@ Public Class MenuMedico
         labTelefonoMED.Text = medico.telefono
         labPerfilNombre.Text = medico.nombre + " " + medico.apellido + " " + medico.segundoapellido
         labPerfilID.Text = medico.ID
+        refrescarChat.Stop()
         perfilChat = False
     End Sub
 
     Private Sub btnVerPerfilPaciente_Click(sender As Object, e As EventArgs) Handles btnVerPerfilPaciente.Click
-
-
+        cambiarContraseña = False
+        If cambiarContraseña = False Then
+            btnCambiarContraseña.Visible = False
+        End If
+        panelDatosMedicos.Visible = False
         panelPerfil.Visible = True
         paneldatosPaciente.Visible = True
         labFechaDeNacimientoPAC.Text = paciente.fechadenacimiento
@@ -266,9 +261,9 @@ Public Class MenuMedico
     End Sub
 
     Public Sub devolverColorBotonesMenu()
-        btnConsPendientes.BackColor = Color.FromArgb(50, 174, 144)
-        btnChats.BackColor = Color.FromArgb(50, 174, 144)
-        btnHistorialdeConsultas.BackColor = Color.FromArgb(50, 174, 144)
+        btnConsPendientes.FillColor = Color.FromArgb(50, 174, 144)
+        btnChats.FillColor = Color.FromArgb(50, 174, 144)
+        btnHistorialdeConsultas.FillColor = Color.FromArgb(50, 174, 144)
     End Sub
 
 
@@ -291,6 +286,11 @@ Public Class MenuMedico
 
     End Sub
 
+    Private Sub btnCambiarContraseña_Click(sender As Object, e As EventArgs) Handles btnCambiarContraseña.Click
+        Dim cambiarContraseña As New CambiarContraseña
+        cambiarContraseña.medico = medico
+        cambiarContraseña.ShowDialog()
+    End Sub
 
     Public Sub cargarMensajes()
         txtChat.Clear()

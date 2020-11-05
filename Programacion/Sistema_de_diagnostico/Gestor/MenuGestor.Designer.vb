@@ -24,6 +24,7 @@ Partial Class MenuGestor
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MenuGestor))
         Me.panelMenuInicio = New System.Windows.Forms.Panel()
+        Me.labCambiarContraseña = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.labIniciales = New System.Windows.Forms.Label()
         Me.labNombre = New System.Windows.Forms.Label()
@@ -119,6 +120,7 @@ Partial Class MenuGestor
         'panelMenuInicio
         '
         Me.panelMenuInicio.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer))
+        Me.panelMenuInicio.Controls.Add(Me.labCambiarContraseña)
         Me.panelMenuInicio.Controls.Add(Me.Label2)
         Me.panelMenuInicio.Controls.Add(Me.labIniciales)
         Me.panelMenuInicio.Controls.Add(Me.labNombre)
@@ -129,6 +131,17 @@ Partial Class MenuGestor
         Me.panelMenuInicio.Name = "panelMenuInicio"
         Me.panelMenuInicio.Size = New System.Drawing.Size(284, 648)
         Me.panelMenuInicio.TabIndex = 1
+        '
+        'labCambiarContraseña
+        '
+        Me.labCambiarContraseña.AutoSize = True
+        Me.labCambiarContraseña.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labCambiarContraseña.ForeColor = System.Drawing.Color.White
+        Me.labCambiarContraseña.Location = New System.Drawing.Point(105, 47)
+        Me.labCambiarContraseña.Name = "labCambiarContraseña"
+        Me.labCambiarContraseña.Size = New System.Drawing.Size(129, 16)
+        Me.labCambiarContraseña.TabIndex = 39
+        Me.labCambiarContraseña.Text = "Cambiar contraseña"
         '
         'Label2
         '
@@ -1231,4 +1244,5 @@ Partial Class MenuGestor
     Friend WithEvents btnAgregarMedico As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnMinimizar As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents btnCerrar As Guna.UI2.WinForms.Guna2CircleButton
+    Friend WithEvents labCambiarContraseña As Label
 End Class

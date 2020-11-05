@@ -38,9 +38,10 @@ Partial Class MenuMedico
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.ListView2 = New System.Windows.Forms.ListView()
         Me.panelPerfil = New System.Windows.Forms.Panel()
+        Me.btnCambiarContraseña = New Guna.UI2.WinForms.Guna2Button()
         Me.labPerfilID = New System.Windows.Forms.Label()
         Me.labPerfilNombre = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.labVolver = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.paneldatosPaciente = New System.Windows.Forms.Panel()
         Me.txtPatologiasPreviasPAC = New System.Windows.Forms.TextBox()
@@ -245,16 +246,36 @@ Partial Class MenuMedico
         'panelPerfil
         '
         Me.panelPerfil.BackColor = System.Drawing.Color.White
+        Me.panelPerfil.Controls.Add(Me.btnCambiarContraseña)
         Me.panelPerfil.Controls.Add(Me.labPerfilID)
         Me.panelPerfil.Controls.Add(Me.labPerfilNombre)
-        Me.panelPerfil.Controls.Add(Me.Label5)
+        Me.panelPerfil.Controls.Add(Me.labVolver)
         Me.panelPerfil.Controls.Add(Me.PictureBox1)
-        Me.panelPerfil.Controls.Add(Me.paneldatosPaciente)
         Me.panelPerfil.Controls.Add(Me.panelDatosMedicos)
+        Me.panelPerfil.Controls.Add(Me.paneldatosPaciente)
         Me.panelPerfil.Location = New System.Drawing.Point(286, 29)
         Me.panelPerfil.Name = "panelPerfil"
         Me.panelPerfil.Size = New System.Drawing.Size(691, 607)
         Me.panelPerfil.TabIndex = 12
+        '
+        'btnCambiarContraseña
+        '
+        Me.btnCambiarContraseña.Animated = True
+        Me.btnCambiarContraseña.AutoRoundedCorners = True
+        Me.btnCambiarContraseña.BorderRadius = 22
+        Me.btnCambiarContraseña.BorderThickness = 1
+        Me.btnCambiarContraseña.CheckedState.Parent = Me.btnCambiarContraseña
+        Me.btnCambiarContraseña.CustomImages.Parent = Me.btnCambiarContraseña
+        Me.btnCambiarContraseña.FillColor = System.Drawing.Color.White
+        Me.btnCambiarContraseña.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnCambiarContraseña.ForeColor = System.Drawing.Color.Black
+        Me.btnCambiarContraseña.HoverState.Parent = Me.btnCambiarContraseña
+        Me.btnCambiarContraseña.Location = New System.Drawing.Point(598, 15)
+        Me.btnCambiarContraseña.Name = "btnCambiarContraseña"
+        Me.btnCambiarContraseña.ShadowDecoration.Parent = Me.btnCambiarContraseña
+        Me.btnCambiarContraseña.Size = New System.Drawing.Size(78, 46)
+        Me.btnCambiarContraseña.TabIndex = 28
+        Me.btnCambiarContraseña.Text = "Cambiar contraseña"
         '
         'labPerfilID
         '
@@ -278,15 +299,15 @@ Partial Class MenuMedico
         Me.labPerfilNombre.Text = "Nombre Usuario"
         Me.labPerfilNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label5
+        'labVolver
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Yu Gothic UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(3, 3)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(31, 25)
-        Me.Label5.TabIndex = 24
-        Me.Label5.Text = "←"
+        Me.labVolver.AutoSize = True
+        Me.labVolver.Font = New System.Drawing.Font("Yu Gothic UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labVolver.Location = New System.Drawing.Point(3, 3)
+        Me.labVolver.Name = "labVolver"
+        Me.labVolver.Size = New System.Drawing.Size(31, 25)
+        Me.labVolver.TabIndex = 24
+        Me.labVolver.Text = "←"
         '
         'PictureBox1
         '
@@ -671,10 +692,10 @@ Partial Class MenuMedico
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.panelListaChats)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.panelHistorialConsulta)
         Me.Controls.Add(Me.panelChat)
-        Me.Controls.Add(Me.panelConsultaPendiente)
         Me.Controls.Add(Me.panelPerfil)
+        Me.Controls.Add(Me.panelHistorialConsulta)
+        Me.Controls.Add(Me.panelConsultaPendiente)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)
@@ -710,7 +731,7 @@ Partial Class MenuMedico
     Friend WithEvents panelPerfil As Panel
     Friend WithEvents labPerfilID As Label
     Friend WithEvents labPerfilNombre As Label
-    Friend WithEvents Label5 As Label
+    Friend WithEvents labVolver As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents paneldatosPaciente As Panel
     Friend WithEvents Label11 As Label
@@ -747,4 +768,5 @@ Partial Class MenuMedico
     Friend WithEvents btnConsPendientes As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnChats As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnHistorialdeConsultas As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnCambiarContraseña As Guna.UI2.WinForms.Guna2Button
 End Class

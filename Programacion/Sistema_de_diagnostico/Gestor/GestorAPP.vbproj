@@ -11,9 +11,10 @@
     <AssemblyName>GestorAPP</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -88,6 +89,12 @@
     <Compile Include="ABMSintoma.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CambiarContraseña.Designer.vb">
+      <DependentUpon>CambiarContraseña.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CambiarContraseña.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -123,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABMSintoma.resx">
       <DependentUpon>ABMSintoma.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CambiarContraseña.resx">
+      <DependentUpon>CambiarContraseña.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

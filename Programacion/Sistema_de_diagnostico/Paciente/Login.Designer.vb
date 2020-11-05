@@ -36,6 +36,7 @@ Partial Class Login
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnMinimizar = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.btnCerrar = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.btnMostrarContraseña = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,6 +45,7 @@ Partial Class Login
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(207, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.btnMostrarContraseña)
         Me.Panel1.Controls.Add(Me.btnEntrar)
         Me.Panel1.Controls.Add(Me.txtContraseña)
         Me.Panel1.Controls.Add(Me.txtUsuario)
@@ -247,6 +249,21 @@ Partial Class Login
         Me.btnCerrar.Text = "X"
         Me.btnCerrar.UseTransparentBackground = True
         '
+        'btnMostrarContraseña
+        '
+        Me.btnMostrarContraseña.CheckedState.Parent = Me.btnMostrarContraseña
+        Me.btnMostrarContraseña.CustomImages.Parent = Me.btnMostrarContraseña
+        Me.btnMostrarContraseña.FillColor = System.Drawing.Color.Green
+        Me.btnMostrarContraseña.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnMostrarContraseña.ForeColor = System.Drawing.Color.White
+        Me.btnMostrarContraseña.HoverState.Parent = Me.btnMostrarContraseña
+        Me.btnMostrarContraseña.Location = New System.Drawing.Point(214, 292)
+        Me.btnMostrarContraseña.Name = "btnMostrarContraseña"
+        Me.btnMostrarContraseña.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnMostrarContraseña.ShadowDecoration.Parent = Me.btnMostrarContraseña
+        Me.btnMostrarContraseña.Size = New System.Drawing.Size(21, 22)
+        Me.btnMostrarContraseña.TabIndex = 25
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -285,4 +302,5 @@ Partial Class Login
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnMinimizar As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents btnCerrar As Guna.UI2.WinForms.Guna2CircleButton
+    Friend WithEvents btnMostrarContraseña As Guna.UI2.WinForms.Guna2CircleButton
 End Class

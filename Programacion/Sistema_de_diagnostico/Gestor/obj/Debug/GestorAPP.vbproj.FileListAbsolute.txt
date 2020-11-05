@@ -102,3 +102,4 @@ C:\Users\user\source\repos\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_di
 C:\Users\user\source\repos\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.pdb
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.Login.resources
 C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.MenuGestor.resources
+C:\Users\user\Desktop\Cosas\Libros y Trabajos de UTU\3er Año\Proyecto Final\GitHub\Codigo-Equipo-Izuwu\Programacion\Sistema_de_diagnostico\Gestor\obj\Debug\GestorAPP.CambiarContraseña.resources

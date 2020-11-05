@@ -71,13 +71,27 @@ Public Class Registro
             txtTelefono.Clear()
             txtContraseña.Clear()
             txtConfContraseña.Clear()
+
+            Me.Hide()
+            Login.ShowDialog()
             Me.Close()
         Else
             MsgBox("Las contraseñas no coincides.")
         End If
     End Sub
 
-
+    Dim mostrarContraseña As Boolean = True
+    Private Sub btnMostrarContraseña_Click(sender As Object, e As EventArgs) Handles btnMostrarContraseña.Click
+        If mostrarContraseña Then
+            mostrarContraseña = False
+            txtContraseña.UseSystemPasswordChar = False
+            btnMostrarContraseña.FillColor = Color.Red
+        Else
+            mostrarContraseña = True
+            txtContraseña.UseSystemPasswordChar = True
+            btnMostrarContraseña.FillColor = Color.Green
+        End If
+    End Sub
 
     Private Sub Label13_Click(sender As Object, e As EventArgs) Handles labAtras.Click
         Me.Hide()

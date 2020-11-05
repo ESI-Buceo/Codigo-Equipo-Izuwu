@@ -64,10 +64,13 @@ Public Class MenuGestor
         cargarListaPatologia()
         cargarListaMedicos()
 
-
-
     End Sub
-
+    Private Sub labCambiarContraseña_MouseMove(sender As Object, e As MouseEventArgs) Handles labCambiarContraseña.MouseMove
+        labCambiarContraseña.ForeColor = Color.FromArgb(0, 0, 255)
+    End Sub
+    Private Sub labCambiarContraseña_MouseLeave(sender As Object, e As EventArgs) Handles labCambiarContraseña.MouseLeave
+        labCambiarContraseña.ForeColor = Color.FromArgb(255, 255, 255)
+    End Sub
 
     '-------------------------------------------------------------------------------------------------------------------------------------------------
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
@@ -76,7 +79,11 @@ Public Class MenuGestor
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
     End Sub
-
+    Private Sub labCambiarContraseña_Click(sender As Object, e As EventArgs) Handles labCambiarContraseña.Click
+        Dim cambiarContraseña As New CambiarContraseña()
+        cambiarContraseña.gestor = gestor
+        cambiarContraseña.ShowDialog()
+    End Sub
     Private Sub btnAceptarModificar_Click(sender As Object, e As EventArgs) Handles btnAceptarModificar.Click
         Try
 
@@ -457,6 +464,7 @@ Public Class MenuGestor
             lstSintomas.Items.Add(resultado.nombre)
         Next
     End Sub
+
 
 
 
