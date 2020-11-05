@@ -39,37 +39,13 @@ Public Class Login
 
 
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        Try
-
-            'Se toman los datos de los cuadros de texto CI y Contraseña
-            Dim login As Paciente = Instancia.loginPaciente(txtUsuario.Text, txtContraseña.Text)
-
-            'Dim paciente As New Paciente(login.nombre, login.segundonombre, login.apellido, login.segundoapellido,
-            'login.email, login.ID, login.Direccion, login.CI, login.contraseña, login.telefono, login.fechadenacimiento, login.peso, login.altura, login.patologiaPrevia)
-
-            Dim menuPaciente As New MenuPaciente()
-
-            menuPaciente.paciente = login
 
 
-            Me.Hide()
-            menuPaciente.ShowDialog()
-            Me.Close()
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-
-        End Try
-    End Sub
-
-
-
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) 
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
@@ -86,7 +62,8 @@ Public Class Login
 
             'Se toman los datos de los cuadros de texto CI y Contraseña
             Dim login As Paciente = Instancia.loginPaciente(txtUsuario.Text, txtContraseña.Text)
-
+            txtContraseña.Text = ""
+            txtUsuario.Text = ""
 
             Dim menuPaciente As New MenuPaciente()
 
@@ -124,14 +101,6 @@ Public Class Login
 
             End Try
         End If
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
     End Sub
 
 

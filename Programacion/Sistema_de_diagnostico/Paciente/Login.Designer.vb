@@ -34,8 +34,8 @@ Partial Class Login
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
-        Me.Guna2ControlBox2 = New Guna.UI2.WinForms.Guna2ControlBox()
+        Me.btnMinimizar = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.btnCerrar = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,13 +96,14 @@ Partial Class Login
         Me.txtContraseña.HoverState.Parent = Me.txtContraseña
         Me.txtContraseña.Location = New System.Drawing.Point(12, 292)
         Me.txtContraseña.Name = "txtContraseña"
-        Me.txtContraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
+        Me.txtContraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtContraseña.PlaceholderForeColor = System.Drawing.Color.Gray
         Me.txtContraseña.PlaceholderText = "Ingrese Contraseña..."
         Me.txtContraseña.SelectedText = ""
         Me.txtContraseña.ShadowDecoration.Parent = Me.txtContraseña
         Me.txtContraseña.Size = New System.Drawing.Size(192, 25)
         Me.txtContraseña.TabIndex = 19
+        Me.txtContraseña.UseSystemPasswordChar = True
         '
         'txtUsuario
         '
@@ -121,11 +122,11 @@ Partial Class Login
         Me.txtUsuario.ForeColor = System.Drawing.Color.Black
         Me.txtUsuario.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtUsuario.HoverState.Parent = Me.txtUsuario
-        Me.txtUsuario.Location = New System.Drawing.Point(12, 215)
+        Me.txtUsuario.Location = New System.Drawing.Point(12, 219)
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtUsuario.PlaceholderForeColor = System.Drawing.Color.Gray
-        Me.txtUsuario.PlaceholderText = "Ingrese CI..."
+        Me.txtUsuario.PlaceholderText = "Ingrese su CI, sin puntos ni guiones..."
         Me.txtUsuario.SelectedText = ""
         Me.txtUsuario.ShadowDecoration.Parent = Me.txtUsuario
         Me.txtUsuario.Size = New System.Drawing.Size(192, 25)
@@ -169,7 +170,7 @@ Partial Class Login
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(9, 197)
+        Me.Label2.Location = New System.Drawing.Point(9, 201)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(69, 15)
         Me.Label2.TabIndex = 10
@@ -208,32 +209,43 @@ Partial Class Login
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
-        'Guna2ControlBox1
+        'btnMinimizar
         '
-        Me.Guna2ControlBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Guna2ControlBox1.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox
-        Me.Guna2ControlBox1.FillColor = System.Drawing.Color.Silver
-        Me.Guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.Gray
-        Me.Guna2ControlBox1.HoverState.Parent = Me.Guna2ControlBox1
-        Me.Guna2ControlBox1.IconColor = System.Drawing.Color.Black
-        Me.Guna2ControlBox1.Location = New System.Drawing.Point(890, 0)
-        Me.Guna2ControlBox1.Name = "Guna2ControlBox1"
-        Me.Guna2ControlBox1.ShadowDecoration.Parent = Me.Guna2ControlBox1
-        Me.Guna2ControlBox1.Size = New System.Drawing.Size(45, 29)
-        Me.Guna2ControlBox1.TabIndex = 45
+        Me.btnMinimizar.Animated = True
+        Me.btnMinimizar.BackColor = System.Drawing.Color.Transparent
+        Me.btnMinimizar.CheckedState.Parent = Me.btnMinimizar
+        Me.btnMinimizar.CustomImages.Parent = Me.btnMinimizar
+        Me.btnMinimizar.FillColor = System.Drawing.Color.Gray
+        Me.btnMinimizar.Font = New System.Drawing.Font("Segoe UI", 25.0!)
+        Me.btnMinimizar.ForeColor = System.Drawing.Color.White
+        Me.btnMinimizar.HoverState.Parent = Me.btnMinimizar
+        Me.btnMinimizar.Location = New System.Drawing.Point(915, 1)
+        Me.btnMinimizar.Name = "btnMinimizar"
+        Me.btnMinimizar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnMinimizar.ShadowDecoration.Parent = Me.btnMinimizar
+        Me.btnMinimizar.Size = New System.Drawing.Size(29, 30)
+        Me.btnMinimizar.TabIndex = 50
+        Me.btnMinimizar.Text = "-"
+        Me.btnMinimizar.UseTransparentBackground = True
         '
-        'Guna2ControlBox2
+        'btnCerrar
         '
-        Me.Guna2ControlBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Guna2ControlBox2.FillColor = System.Drawing.Color.IndianRed
-        Me.Guna2ControlBox2.HoverState.FillColor = System.Drawing.Color.Red
-        Me.Guna2ControlBox2.HoverState.Parent = Me.Guna2ControlBox2
-        Me.Guna2ControlBox2.IconColor = System.Drawing.Color.Black
-        Me.Guna2ControlBox2.Location = New System.Drawing.Point(935, 0)
-        Me.Guna2ControlBox2.Name = "Guna2ControlBox2"
-        Me.Guna2ControlBox2.ShadowDecoration.Parent = Me.Guna2ControlBox2
-        Me.Guna2ControlBox2.Size = New System.Drawing.Size(45, 29)
-        Me.Guna2ControlBox2.TabIndex = 46
+        Me.btnCerrar.Animated = True
+        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrar.CheckedState.Parent = Me.btnCerrar
+        Me.btnCerrar.CustomImages.Parent = Me.btnCerrar
+        Me.btnCerrar.FillColor = System.Drawing.Color.DarkRed
+        Me.btnCerrar.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.btnCerrar.ForeColor = System.Drawing.Color.White
+        Me.btnCerrar.HoverState.Parent = Me.btnCerrar
+        Me.btnCerrar.Location = New System.Drawing.Point(950, 1)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnCerrar.ShadowDecoration.Parent = Me.btnCerrar
+        Me.btnCerrar.Size = New System.Drawing.Size(29, 30)
+        Me.btnCerrar.TabIndex = 49
+        Me.btnCerrar.Text = "X"
+        Me.btnCerrar.UseTransparentBackground = True
         '
         'Login
         '
@@ -241,9 +253,9 @@ Partial Class Login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ClientSize = New System.Drawing.Size(980, 645)
-        Me.Controls.Add(Me.Guna2ControlBox1)
-        Me.Controls.Add(Me.Guna2ControlBox2)
+        Me.Controls.Add(Me.btnMinimizar)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
@@ -263,7 +275,6 @@ Partial Class Login
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
@@ -271,6 +282,7 @@ Partial Class Login
     Friend WithEvents txtUsuario As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtContraseña As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents btnEntrar As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2ControlBox1 As Guna.UI2.WinForms.Guna2ControlBox
-    Friend WithEvents Guna2ControlBox2 As Guna.UI2.WinForms.Guna2ControlBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents btnMinimizar As Guna.UI2.WinForms.Guna2CircleButton
+    Friend WithEvents btnCerrar As Guna.UI2.WinForms.Guna2CircleButton
 End Class

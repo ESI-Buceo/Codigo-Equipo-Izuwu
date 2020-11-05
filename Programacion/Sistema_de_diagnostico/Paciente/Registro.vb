@@ -40,19 +40,13 @@ Public Class Registro
     End Sub
 
 
-    Private Sub Button1_MouseMove(sender As Object, e As MouseEventArgs) Handles Button1.MouseMove
-        Button1.BackColor = Color.FromArgb(255, 96, 96)
-    End Sub
 
-    Private Sub Button1_MouseLeave(sender As Object, e As EventArgs) Handles Button1.MouseLeave
-        Button1.BackColor = Color.FromArgb(255, 255, 255)
-    End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
@@ -83,13 +77,7 @@ Public Class Registro
         End If
     End Sub
 
-    Private Sub RegistroNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
 
     Private Sub Label13_Click(sender As Object, e As EventArgs) Handles labAtras.Click
         Me.Hide()

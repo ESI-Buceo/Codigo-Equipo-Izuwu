@@ -8,12 +8,8 @@ Public Class ABMPatologia
     Dim instancia As New LogicaAplicacion()
     Dim listaEspecialidad As List(Of campo_medico) = instancia.ObtenerEspecializacionMedico()
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Me.Hide()
     End Sub
 
     Private Sub ABMPatologia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -27,7 +23,7 @@ Public Class ABMPatologia
         End If
     End Sub
 
-    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+    Private Sub btnAceptar_Click(sender As Object, e As EventArgs)
         Try
 
             If confirmar = -1 Then

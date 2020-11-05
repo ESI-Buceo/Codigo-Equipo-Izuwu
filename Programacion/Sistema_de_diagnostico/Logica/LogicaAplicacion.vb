@@ -36,6 +36,14 @@ Public Class LogicaAplicacion
         Return instancia.ObtenerEspecializacionesMedicos
     End Function
 
+    Public Function obtenerUnPaciente(ID_sala As String) As Paciente
+        Return instancia.obtenerUnPaciente(ID_sala)
+    End Function
+
+    Public Function obtenerUnMedico(ID_sala As String) As Medico
+        Return instancia.obtenerUnMedico(ID_sala)
+    End Function
+
     '----------------------------------------------------------------------------------------------------------------------------------------------
 
     Public Function loginMedico(userCI As String, pass As String) As Medico
@@ -209,8 +217,8 @@ Public Class LogicaAplicacion
     Public Function diagnostico() As List(Of Diagnostico)
         Return instancia.Diagnostico()
     End Function
-    Public Sub agregarDiagnostico_A_BD(diagnosticos As List(Of Diagnostico), paciente As Paciente, fecha As String)
-        instancia.agregarDiagnostico_A_BD(diagnosticos, paciente, fecha)
+    Public Sub agregarDiagnostico_A_BD(diagnosticos As List(Of Diagnostico), paciente As Paciente, fecha As String, idDiagnostico As String)
+        instancia.agregarDiagnostico_A_BD(diagnosticos, paciente, fecha, idDiagnostico)
     End Sub
 
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -219,8 +227,8 @@ Public Class LogicaAplicacion
         Return instancia.medicosEspecializados(patologia)
     End Function
 
-    Public Sub crearSalaChat(fecha As String, medico As Medico, paciente As Paciente)
-        instancia.crearSalaChat(fecha, medico, paciente)
+    Public Sub crearSalaChat(fecha As String, medico As Medico, paciente As Paciente, idDiagnostico As String)
+        instancia.crearSalaChat(fecha, medico, paciente, idDiagnostico)
     End Sub
 
 
@@ -251,4 +259,13 @@ Public Class LogicaAplicacion
     Public Function obtenerMensajes(id_sala As String) As List(Of Mensaje)
         Return instancia.obtenerMensajes(id_sala)
     End Function
+
+    '----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    Public Sub finalizarConsultaMedico(contenido As String, id_consulta As String, id_medico As String, id_diagnostico As String)
+        instancia.finalizarConsultaMedico(contenido, id_consulta, id_medico, id_diagnostico)
+    End Sub
+
+
+
 End Class

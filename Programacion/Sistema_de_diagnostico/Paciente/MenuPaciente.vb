@@ -19,6 +19,7 @@ Public Class MenuPaciente
     Dim id_sala As String
     Dim salaActiva As Boolean = False
 
+    Dim idDiagnostico As String
 
     'Definir variables globales; estas van despues de la linea de inherits
 
@@ -81,11 +82,13 @@ Public Class MenuPaciente
         labDiagnostico4.Visible = False
 
         cargarListaSintomas()
+        lstSintomasSeleccionados.Clear()
         lstSintomasSeleccionados.Enabled = True
         btnAgregar.Enabled = True
         btnEliminar.Enabled = True
         btnRealizardiagnostico.Enabled = True
         btnFinalizarConsulta.Enabled = True
+
 
 
 
@@ -108,19 +111,11 @@ Public Class MenuPaciente
 
     '-------------------------------------------------------------------------------------------------------------------------------------------------
 
-    Private Sub Button1_MouseMove(sender As Object, e As MouseEventArgs) Handles Button1.MouseMove
-        Button1.BackColor = Color.FromArgb(255, 96, 96)
-    End Sub
-
-    Private Sub Button1_MouseLeave(sender As Object, e As EventArgs) Handles Button1.MouseLeave
-        Button1.BackColor = Color.FromArgb(255, 255, 255)
-    End Sub
-
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
@@ -158,8 +153,8 @@ Public Class MenuPaciente
                 labDiagnostico4.Text = listaResultadoDiag.ElementAt(3).nombre
                 labDiagnostico4.Visible = True
             End If
-
-            instancia.agregarDiagnostico_A_BD(listaResultadoDiag, paciente, fechaString)
+            idDiagnostico = instancia.codigoRandom(5)
+            instancia.agregarDiagnostico_A_BD(listaResultadoDiag, paciente, fechaString, idDiagnostico)
 
             lstSintomasSeleccionados.Enabled = False
             btnAgregar.Enabled = False
@@ -192,7 +187,7 @@ Public Class MenuPaciente
                     Dim botonChat As New Guna.UI2.WinForms.Guna2CircleButton()
                     With botonChat
 
-                        .Font = New Font("Segoe UI", 16.0!)
+                        .Font = New Font("DejaVu Sans", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
                         .ForeColor = Color.White
                         .Animated = True
                         .Location = New Point(11, separacion * 16)
@@ -225,14 +220,22 @@ Public Class MenuPaciente
         id_sala = boton.Name
         salaActiva = True
         btnEnviar.Enabled = True
-        refrescarChat.Start()
+
         cargarMensajes()
+        refrescarChat.Start()
 
     End Sub
 
     Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
         devolverColorBotonesMenu()
         btnCerrarSesion.FillColor = Color.FromArgb(24, 68, 122)
+        Dim pregunta As DialogResult = MessageBox.Show("¿Esta seguro quiere salir?", "Cerrar sesion", MessageBoxButtons.YesNo)
+        If pregunta = DialogResult.Yes Then
+            Me.Hide()
+            Login.ShowDialog()
+            Me.Close()
+        End If
+
         nullvisible()
     End Sub
 
@@ -278,6 +281,7 @@ Public Class MenuPaciente
             Dim ResultadoPatologia As New Patologia(listaResultadoDiag.ElementAt(0).nombre, listaResultadoDiag.ElementAt(0).prioridad, listaResultadoDiag.ElementAt(0).id, listaResultadoDiag.ElementAt(0).especialidad)
             solicitudchat.patologia = ResultadoPatologia
             solicitudchat.paciente = paciente
+            solicitudchat.idDiagnostico = idDiagnostico
 
             btnFinalizarConsulta.Enabled = False
             solicitudchat.ShowDialog()
@@ -297,12 +301,9 @@ Public Class MenuPaciente
     End Sub
 
     Private Sub refrescarChat_Tick(sender As Object, e As EventArgs) Handles refrescarChat.Tick
-        Dim cantidadMensajes As Integer = instancia.obtenerMensajes(id_sala).Count
-        If listaMensajes.Count = cantidadMensajes Then
 
-        Else
-            cargarMensajes()
-        End If
+        cargarMensajes()
+
 
     End Sub
 
@@ -375,23 +376,28 @@ Public Class MenuPaciente
         btnRealizardiagnostico.Enabled = True
     End Sub
 
-
-
     Public Sub cargarMensajes()
         txtChat.Clear()
         Dim mensajesCompletos As String = ""
         If id_sala = Nothing Then
 
         Else
-            listaMensajes = instancia.obtenerMensajes(id_sala)
-            For Each mensaje As Mensaje In listaMensajes
-                Dim lineaMensaje As String = mensaje.emisor & ": " & mensaje.contenido & Environment.NewLine
-                mensajesCompletos = mensajesCompletos & Environment.NewLine & lineaMensaje
+            Dim listaNuevaMensajes As List(Of Mensaje) = instancia.obtenerMensajes(id_sala)
 
-            Next
-            txtChat.Text = mensajesCompletos
-            txtChat.SelectionStart = txtChat.TextLength
-            txtChat.ScrollToCaret()
+            If listaMensajes.Count <> listaNuevaMensajes.Count Then
+
+            Else
+                listaMensajes = listaNuevaMensajes
+                For Each mensaje As Mensaje In listaMensajes
+                    Dim lineaMensaje As String = mensaje.emisor & ": " & mensaje.contenido & Environment.NewLine
+                    mensajesCompletos = mensajesCompletos & Environment.NewLine & lineaMensaje
+
+                Next
+                txtChat.Text = mensajesCompletos
+                txtChat.SelectionStart = txtChat.TextLength
+                txtChat.ScrollToCaret()
+            End If
+
         End If
 
     End Sub

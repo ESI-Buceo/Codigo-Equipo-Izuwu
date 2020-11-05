@@ -24,21 +24,21 @@ Partial Class ABMPatologia
     Private Sub InitializeComponent()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.txtIDPatologia = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.numPrioridad = New System.Windows.Forms.NumericUpDown()
-        Me.btnAceptar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.cbxEspecialidad = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.chkListaSintomas = New System.Windows.Forms.CheckedListBox()
-        Me.cbxEspecialidad = New System.Windows.Forms.ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnAceptar = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnCerrar = New Guna.UI2.WinForms.Guna2CircleButton()
         CType(Me.numPrioridad, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -61,34 +61,6 @@ Partial Class ABMPatologia
         Me.Label1.Size = New System.Drawing.Size(183, 36)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "ABM Patología"
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(281, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(41, 26)
-        Me.Button1.TabIndex = 9
-        Me.Button1.Text = "X"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(237, 3)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(41, 26)
-        Me.Button2.TabIndex = 10
-        Me.Button2.Text = "-"
-        Me.Button2.UseVisualStyleBackColor = False
         '
         'txtIDPatologia
         '
@@ -133,23 +105,10 @@ Partial Class ABMPatologia
         Me.numPrioridad.Size = New System.Drawing.Size(51, 20)
         Me.numPrioridad.TabIndex = 15
         '
-        'btnAceptar
-        '
-        Me.btnAceptar.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnAceptar.FlatAppearance.BorderSize = 0
-        Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAceptar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnAceptar.Location = New System.Drawing.Point(104, 410)
-        Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(106, 28)
-        Me.btnAceptar.TabIndex = 16
-        Me.btnAceptar.Text = "Aceptar"
-        Me.btnAceptar.UseVisualStyleBackColor = False
-        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Black
+        Me.Panel1.Controls.Add(Me.btnCerrar)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(330, 24)
@@ -162,7 +121,6 @@ Partial Class ABMPatologia
         Me.Panel2.Controls.Add(Me.cbxEspecialidad)
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Controls.Add(Me.chkListaSintomas)
-        Me.Panel2.Controls.Add(Me.btnAceptar)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.numPrioridad)
         Me.Panel2.Controls.Add(Me.Label13)
@@ -170,10 +128,29 @@ Partial Class ABMPatologia
         Me.Panel2.Controls.Add(Me.txtIDPatologia)
         Me.Panel2.Controls.Add(Me.txtNombre)
         Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Controls.Add(Me.btnAceptar)
         Me.Panel2.Location = New System.Drawing.Point(4, 26)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(318, 449)
         Me.Panel2.TabIndex = 18
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(61, 163)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(88, 17)
+        Me.Label4.TabIndex = 21
+        Me.Label4.Text = "Atendida por:"
+        '
+        'cbxEspecialidad
+        '
+        Me.cbxEspecialidad.FormattingEnabled = True
+        Me.cbxEspecialidad.Location = New System.Drawing.Point(159, 163)
+        Me.cbxEspecialidad.Name = "cbxEspecialidad"
+        Me.cbxEspecialidad.Size = New System.Drawing.Size(121, 21)
+        Me.cbxEspecialidad.TabIndex = 20
         '
         'Label5
         '
@@ -193,23 +170,39 @@ Partial Class ABMPatologia
         Me.chkListaSintomas.Size = New System.Drawing.Size(238, 184)
         Me.chkListaSintomas.TabIndex = 17
         '
-        'cbxEspecialidad
+        'btnAceptar
         '
-        Me.cbxEspecialidad.FormattingEnabled = True
-        Me.cbxEspecialidad.Location = New System.Drawing.Point(159, 163)
-        Me.cbxEspecialidad.Name = "cbxEspecialidad"
-        Me.cbxEspecialidad.Size = New System.Drawing.Size(121, 21)
-        Me.cbxEspecialidad.TabIndex = 20
+        Me.btnAceptar.Animated = True
+        Me.btnAceptar.AutoRoundedCorners = True
+        Me.btnAceptar.BorderRadius = 13
+        Me.btnAceptar.CheckedState.Parent = Me.btnAceptar
+        Me.btnAceptar.CustomImages.Parent = Me.btnAceptar
+        Me.btnAceptar.FillColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.btnAceptar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnAceptar.ForeColor = System.Drawing.Color.White
+        Me.btnAceptar.HoverState.Parent = Me.btnAceptar
+        Me.btnAceptar.Location = New System.Drawing.Point(104, 410)
+        Me.btnAceptar.Name = "btnAceptar"
+        Me.btnAceptar.ShadowDecoration.Parent = Me.btnAceptar
+        Me.btnAceptar.Size = New System.Drawing.Size(106, 28)
+        Me.btnAceptar.TabIndex = 22
+        Me.btnAceptar.Text = "Aceptar"
         '
-        'Label4
+        'btnCerrar
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Yu Gothic UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(61, 163)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(88, 17)
-        Me.Label4.TabIndex = 21
-        Me.Label4.Text = "Atendida por:"
+        Me.btnCerrar.CheckedState.Parent = Me.btnCerrar
+        Me.btnCerrar.CustomImages.Parent = Me.btnCerrar
+        Me.btnCerrar.FillColor = System.Drawing.Color.White
+        Me.btnCerrar.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.btnCerrar.ForeColor = System.Drawing.Color.Black
+        Me.btnCerrar.HoverState.Parent = Me.btnCerrar
+        Me.btnCerrar.Location = New System.Drawing.Point(293, 2)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnCerrar.ShadowDecoration.Parent = Me.btnCerrar
+        Me.btnCerrar.Size = New System.Drawing.Size(23, 23)
+        Me.btnCerrar.TabIndex = 18
+        Me.btnCerrar.Text = "X"
         '
         'ABMPatologia
         '
@@ -217,8 +210,6 @@ Partial Class ABMPatologia
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(326, 478)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -227,6 +218,7 @@ Partial Class ABMPatologia
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "ABMPatologia"
         CType(Me.numPrioridad, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
@@ -235,18 +227,17 @@ Partial Class ABMPatologia
 
     Friend WithEvents Label13 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
     Friend WithEvents txtIDPatologia As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents txtNombre As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents numPrioridad As NumericUpDown
-    Friend WithEvents btnAceptar As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents chkListaSintomas As CheckedListBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents cbxEspecialidad As ComboBox
+    Friend WithEvents btnAceptar As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnCerrar As Guna.UI2.WinForms.Guna2CircleButton
 End Class

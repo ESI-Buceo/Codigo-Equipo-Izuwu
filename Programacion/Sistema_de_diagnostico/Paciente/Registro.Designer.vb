@@ -29,8 +29,6 @@ Partial Class Registro
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnRegistro = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -62,6 +60,8 @@ Partial Class Registro
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.txtPatologiaPrevia = New System.Windows.Forms.TextBox()
+        Me.btnMinimizar = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.btnCerrar = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -137,34 +137,6 @@ Partial Class Registro
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(891, 1)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(41, 26)
-        Me.Button2.TabIndex = 8
-        Me.Button2.Text = "-"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(938, 1)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(41, 26)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "X"
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -436,12 +408,52 @@ Partial Class Registro
         Me.txtPatologiaPrevia.Size = New System.Drawing.Size(309, 69)
         Me.txtPatologiaPrevia.TabIndex = 38
         '
-        'RegistroNew
+        'btnMinimizar
+        '
+        Me.btnMinimizar.Animated = True
+        Me.btnMinimizar.BackColor = System.Drawing.Color.Transparent
+        Me.btnMinimizar.CheckedState.Parent = Me.btnMinimizar
+        Me.btnMinimizar.CustomImages.Parent = Me.btnMinimizar
+        Me.btnMinimizar.FillColor = System.Drawing.Color.Gray
+        Me.btnMinimizar.Font = New System.Drawing.Font("Segoe UI", 25.0!)
+        Me.btnMinimizar.ForeColor = System.Drawing.Color.White
+        Me.btnMinimizar.HoverState.Parent = Me.btnMinimizar
+        Me.btnMinimizar.Location = New System.Drawing.Point(915, 1)
+        Me.btnMinimizar.Name = "btnMinimizar"
+        Me.btnMinimizar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnMinimizar.ShadowDecoration.Parent = Me.btnMinimizar
+        Me.btnMinimizar.Size = New System.Drawing.Size(29, 30)
+        Me.btnMinimizar.TabIndex = 52
+        Me.btnMinimizar.Text = "-"
+        Me.btnMinimizar.UseTransparentBackground = True
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.Animated = True
+        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrar.CheckedState.Parent = Me.btnCerrar
+        Me.btnCerrar.CustomImages.Parent = Me.btnCerrar
+        Me.btnCerrar.FillColor = System.Drawing.Color.DarkRed
+        Me.btnCerrar.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.btnCerrar.ForeColor = System.Drawing.Color.White
+        Me.btnCerrar.HoverState.Parent = Me.btnCerrar
+        Me.btnCerrar.Location = New System.Drawing.Point(950, 1)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnCerrar.ShadowDecoration.Parent = Me.btnCerrar
+        Me.btnCerrar.Size = New System.Drawing.Size(29, 30)
+        Me.btnCerrar.TabIndex = 51
+        Me.btnCerrar.Text = "X"
+        Me.btnCerrar.UseTransparentBackground = True
+        '
+        'Registro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(980, 645)
+        Me.Controls.Add(Me.btnMinimizar)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.txtPatologiaPrevia)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.Label17)
@@ -473,13 +485,11 @@ Partial Class Registro
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(980, 645)
-        Me.Name = "RegistroNew"
+        Me.Name = "Registro"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -493,8 +503,6 @@ Partial Class Registro
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
@@ -531,4 +539,6 @@ Partial Class Registro
     Friend WithEvents Label17 As Label
     Friend WithEvents Label18 As Label
     Friend WithEvents txtPatologiaPrevia As TextBox
+    Friend WithEvents btnMinimizar As Guna.UI2.WinForms.Guna2CircleButton
+    Friend WithEvents btnCerrar As Guna.UI2.WinForms.Guna2CircleButton
 End Class

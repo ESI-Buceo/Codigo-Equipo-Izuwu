@@ -8,13 +8,10 @@ Public Class ABMSintoma
 
 
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Me.Hide()
-    End Sub
 
     Private Sub ABMSintoma_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -28,7 +25,7 @@ Public Class ABMSintoma
 
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
         Try
 
             If confirmar = -1 Then
@@ -91,7 +88,4 @@ Public Class ABMSintoma
         Next
     End Sub
 
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
-
-    End Sub
 End Class

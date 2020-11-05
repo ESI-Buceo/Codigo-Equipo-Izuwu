@@ -15,7 +15,7 @@ Public Class MenuMedico
 
     Dim salaActiva As Boolean = False
 
-
+    Dim paciente As Paciente
     'Estas tres subrutinas permiten desplazar el formulario. 
 
     Private Sub LoginNew_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseDown
@@ -49,28 +49,26 @@ Public Class MenuMedico
 
 
     Private Sub MenuPacienteNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        btnConsPendientes.BackColor = Color.FromArgb(50, 174, 144)
-        btnChats.BackColor = Color.FromArgb(50, 174, 144)
-        btnHistorialdeConsultas.BackColor = Color.FromArgb(50, 174, 144)
+        devolverColorBotonesMenu()
         labIniciales.Text = medico.nombre(0) + " " + medico.apellido(0)
         labNombre.Text = medico.nombre + " " + medico.apellido
         nullvisible()
 
         btnEnviar.Enabled = False
+        btnVerPerfilPaciente.Enabled = False
+        btnFinalizarConsulta.Enabled = False
     End Sub
 
-    Private Sub btnConsPendientes_Click(sender As Object, e As EventArgs) Handles btnConsPendientes.Click
+    Private Sub btnConsPendientes_Click(sender As Object, e As EventArgs) 
+        devolverColorBotonesMenu()
         btnConsPendientes.BackColor = Color.FromArgb(38, 131, 108)
-        btnChats.BackColor = Color.FromArgb(50, 174, 144)
-        btnHistorialdeConsultas.BackColor = Color.FromArgb(50, 174, 144)
         nullvisible()
         cargarConsultasPendientes()
         panelConsultaPendiente.Visible = True
         refrescarChat.Stop()
     End Sub
-    Private Sub btnHistorialdeConsultas_Click_1(sender As Object, e As EventArgs) Handles btnHistorialdeConsultas.Click
-        btnConsPendientes.BackColor = Color.FromArgb(50, 174, 144)
-        btnChats.BackColor = Color.FromArgb(50, 174, 144)
+    Private Sub btnHistorialdeConsultas_Click_1(sender As Object, e As EventArgs) 
+        devolverColorBotonesMenu()
         btnHistorialdeConsultas.BackColor = Color.FromArgb(38, 131, 108)
 
         nullvisible()
@@ -78,10 +76,10 @@ Public Class MenuMedico
         refrescarChat.Stop()
     End Sub
 
-    Private Sub btnChats_Click(sender As Object, e As EventArgs) Handles btnChats.Click
-        btnConsPendientes.BackColor = Color.FromArgb(50, 174, 144)
+    Private Sub btnChats_Click(sender As Object, e As EventArgs) 
+        devolverColorBotonesMenu()
         btnChats.BackColor = Color.FromArgb(38, 131, 108)
-        btnHistorialdeConsultas.BackColor = Color.FromArgb(50, 174, 144)
+
         nullvisible()
 
         listaConsultas_EnCurso = instancia.obtenerSolicitudesChat_EnCurso(medico)
@@ -94,16 +92,16 @@ Public Class MenuMedico
                 Dim botonChat As New Guna.UI2.WinForms.Guna2CircleButton()
                 With botonChat
 
-                    .Font = New Font("Segoe UI", 16.0!)
-                    .ForeColor = Color.White
+                    .Font = New Font("DejaVu Sans", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+                    .ForeColor = Color.Black
                     .Animated = True
                     .Location = New Point(11, separacion * 16)
                     .Name = listaConsultas_EnCurso.ElementAt(indice - 1).id_sala
                     .ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-                    .FillColor = Color.FromArgb(3, 187, 133)
+                    .FillColor = Color.FromArgb(255, 255, 255)
                     .Size = New Size(55, 57)
                     .TabIndex = 0
-                    .Text = listaConsultas_EnCurso.ElementAt(indice - 1).nombre_usuario(0) + " " + listaConsultas_EnCurso.ElementAt(indice - 1).apellido_usuario(0)
+                    .Text = listaConsultas_EnCurso.ElementAt(indice - 1).nombre_usuario(0) + listaConsultas_EnCurso.ElementAt(indice - 1).apellido_usuario(0)
                     AddHandler botonChat.Click, AddressOf btnChatsActivos_click
                 End With
                 panelListaChats.Controls.Add(botonChat)
@@ -122,47 +120,45 @@ Public Class MenuMedico
 
         id_sala = boton.Name
         btnEnviar.Enabled = True
+        btnVerPerfilPaciente.Enabled = True
+        btnFinalizarConsulta.Enabled = True
         salaActiva = True
         refrescarChat.Start()
         cargarMensajes()
     End Sub
 
-
-
-
-
-    Private Sub Button1_MouseMove(sender As Object, e As MouseEventArgs) Handles Button1.MouseMove
-        Button1.BackColor = Color.FromArgb(255, 96, 96)
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
+        Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub Button1_MouseLeave(sender As Object, e As EventArgs) Handles Button1.MouseLeave
-        Button1.BackColor = Color.FromArgb(255, 255, 255)
-    End Sub
-
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
     End Sub
 
     Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-        panelPerfilPaciente.Visible = False
+        panelPerfil.Visible = False
+        paneldatosPaciente.Visible = False
+        panelDatosMedicos.Visible = False
+        If perfilChat Then
+            panelChat.Visible = True
+            panelListaChats.Visible = True
+        End If
     End Sub
 
     Private Sub lbNombre_Click(sender As Object, e As EventArgs) Handles labNombre.Click
         labPerfilNombre.Text = medico.nombre
         labPerfilID.Text = medico.ID
-        labPerfilLugarDeTrabajo.Text = medico.lugarDeTrabajo
-        labPerfilDireccion.Text = medico.Direccion
-        labPerfilEspecialidad.Text = medico.especializacion
-        labPerfilTelefono.Text = medico.telefono
-        labPerfilFechaDeNacimiento.Text = medico.fechadenacimiento
+        labLugarDeTrabajoMED.Text = medico.lugarDeTrabajo
+        labDireccionMED.Text = medico.Direccion
+        labEspecialidadMED.Text = medico.especializacion
+        labTelefonoMED.Text = medico.telefono
+        labFechaDeNacimientoMED.Text = medico.fechadenacimiento
 
         refrescarChat.Stop()
-        panelPerfilPaciente.Visible = True
+        panelPerfil.Visible = True
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Me.WindowState = FormWindowState.Minimized
-    End Sub
+
 
     Private Sub btnAceptarSolicitud_Click(sender As Object, e As EventArgs) Handles btnAceptarSolicitud.Click
         instancia.aceptarSolicitud_De_Chat(listaConsultas_Pendientes.ElementAt(lstConsultasPendientes.FocusedItem.Index).id_sala)
@@ -207,15 +203,69 @@ Public Class MenuMedico
         End If
     End Sub
 
-    '-------------------------------------------------------------------------------------------------------------------------------------------------
-    Public Sub nullvisible()
-        panelConsultaPendiente.Visible = False
-        panelHistorialConsulta.Visible = False
-        panelPerfilPaciente.Visible = False
+    Private Sub labVerPerfil_MouseLeave(sender As Object, e As EventArgs) Handles labVerPerfil.MouseLeave
+        labVerPerfil.ForeColor = Color.FromArgb(255, 255, 255)
+    End Sub
+
+    Private Sub labVerPerfil_MouseMove(sender As Object, e As MouseEventArgs) Handles labVerPerfil.MouseMove
+        labVerPerfil.ForeColor = Color.FromArgb(0, 0, 255)
+    End Sub
+
+    Dim perfilChat As Boolean = False
+    Private Sub labVerPerfil_Click(sender As Object, e As EventArgs) Handles labVerPerfil.Click
+        nullvisible()
+        devolverColorBotonesMenu()
+        panelPerfil.Visible = True
+        panelDatosMedicos.Visible = True
+        labFechaDeNacimientoMED.Text = medico.fechadenacimiento
+        labLugarDeTrabajoMED.Text = medico.lugarDeTrabajo
+        labEspecialidadMED.Text = medico.especializacion
+        labDireccionMED.Text = medico.Direccion
+        labTelefonoMED.Text = medico.telefono
+        labPerfilNombre.Text = medico.nombre + " " + medico.apellido + " " + medico.segundoapellido
+        labPerfilID.Text = medico.ID
+        perfilChat = False
+    End Sub
+
+    Private Sub btnVerPerfilPaciente_Click(sender As Object, e As EventArgs) Handles btnVerPerfilPaciente.Click
+        paciente = instancia.obtenerUnPaciente(id_sala)
+
+        panelPerfil.Visible = True
+        paneldatosPaciente.Visible = True
+        labFechaDeNacimientoPAC.Text = paciente.fechadenacimiento
+        labTelefonoPAC.Text = paciente.telefono
+        labDireccionPAC.Text = paciente.Direccion
+        txtPatologiasPreviasPAC.Text = paciente.patologiaPrevia
+        labPerfilNombre.Text = paciente.nombre + " " + paciente.apellido + " " + paciente.segundoapellido
+        labPerfilID.Text = paciente.ID
+        perfilChat = True
         panelChat.Visible = False
         panelListaChats.Visible = False
     End Sub
 
+    Private Sub btnFinalizarConsulta_Click(sender As Object, e As EventArgs) Handles btnFinalizarConsulta.Click
+        Dim finalizarConsulta As New FinalizarConsulta()
+        finalizarConsulta.paciente = paciente
+
+
+    End Sub
+
+
+
+    '-------------------------------------------------------------------------------------------------------------------------------------------------
+    Public Sub nullvisible()
+        panelConsultaPendiente.Visible = False
+        panelHistorialConsulta.Visible = False
+        panelPerfil.Visible = False
+        panelChat.Visible = False
+        panelListaChats.Visible = False
+    End Sub
+
+    Public Sub devolverColorBotonesMenu()
+        btnConsPendientes.BackColor = Color.FromArgb(50, 174, 144)
+        btnChats.BackColor = Color.FromArgb(50, 174, 144)
+        btnHistorialdeConsultas.BackColor = Color.FromArgb(50, 174, 144)
+    End Sub
 
 
     Public Sub cargarConsultasPendientes()
@@ -228,8 +278,8 @@ Public Class MenuMedico
 
 
             For Each chat As Sala_Chat In listaConsultas_Pendientes
-                    lstConsultasPendientes.Items.Add(chat.nombre_usuario + " " + chat.apellido_usuario + " - " + chat.fecha)
-                Next
+                lstConsultasPendientes.Items.Add(chat.nombre_usuario + " " + chat.apellido_usuario + " - " + chat.fecha)
+            Next
 
         Catch ex As Exception
             MsgBox(ex.Message)

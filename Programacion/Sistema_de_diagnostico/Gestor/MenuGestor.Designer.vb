@@ -31,6 +31,9 @@ Partial Class MenuGestor
         Me.btn_ABMSinPat = New Guna.UI2.WinForms.Guna2Button()
         Me.btnMenu_ModUsuario = New Guna.UI2.WinForms.Guna2Button()
         Me.panelModificarEliminarMedico = New System.Windows.Forms.Panel()
+        Me.btnAceptarModificar = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnEliminarMedico = New Guna.UI2.WinForms.Guna2Button()
+        Me.cbxModDel_Especializacion = New System.Windows.Forms.ComboBox()
         Me.txtModDel_CI = New System.Windows.Forms.TextBox()
         Me.txtModDel_Segundoapellido = New System.Windows.Forms.TextBox()
         Me.Label32 = New System.Windows.Forms.Label()
@@ -38,7 +41,6 @@ Partial Class MenuGestor
         Me.cbxModDel_Sexo = New System.Windows.Forms.ComboBox()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.lstModDel_Medicos = New System.Windows.Forms.ListView()
-        Me.btnEliminarMedico = New System.Windows.Forms.Button()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.dateModDel_FechaNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -55,7 +57,6 @@ Partial Class MenuGestor
         Me.txtModDel_Direccion = New System.Windows.Forms.TextBox()
         Me.txtModDel_Apellido = New System.Windows.Forms.TextBox()
         Me.txtModDel_PrimerNombre = New System.Windows.Forms.TextBox()
-        Me.btnAceptarModificar = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -78,6 +79,8 @@ Partial Class MenuGestor
         Me.btnAgregarSintoma = New Guna.UI2.WinForms.Guna2Button()
         Me.btnAgregarPatologia = New Guna.UI2.WinForms.Guna2Button()
         Me.panelAgregarUsuario = New System.Windows.Forms.Panel()
+        Me.btnAgregarMedico = New Guna.UI2.WinForms.Guna2Button()
+        Me.cbxEspecializacion = New System.Windows.Forms.ComboBox()
         Me.txtCI = New System.Windows.Forms.TextBox()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.cbxSexo = New System.Windows.Forms.ComboBox()
@@ -99,17 +102,14 @@ Partial Class MenuGestor
         Me.txtDireccion = New System.Windows.Forms.TextBox()
         Me.txtApellido = New System.Windows.Forms.TextBox()
         Me.txtPrimerNombre = New System.Windows.Forms.TextBox()
-        Me.btnAgregarMedico = New System.Windows.Forms.Button()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
-        Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
-        Me.Guna2ControlBox2 = New Guna.UI2.WinForms.Guna2ControlBox()
-        Me.cbxModDel_Especializacion = New System.Windows.Forms.ComboBox()
-        Me.cbxEspecializacion = New System.Windows.Forms.ComboBox()
+        Me.btnMinimizar = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.btnCerrar = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.panelMenuInicio.SuspendLayout()
         Me.panelModificarEliminarMedico.SuspendLayout()
         Me.panelABMSintoma.SuspendLayout()
@@ -213,6 +213,8 @@ Partial Class MenuGestor
         '
         'panelModificarEliminarMedico
         '
+        Me.panelModificarEliminarMedico.Controls.Add(Me.btnAceptarModificar)
+        Me.panelModificarEliminarMedico.Controls.Add(Me.btnEliminarMedico)
         Me.panelModificarEliminarMedico.Controls.Add(Me.cbxModDel_Especializacion)
         Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_CI)
         Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_Segundoapellido)
@@ -221,7 +223,6 @@ Partial Class MenuGestor
         Me.panelModificarEliminarMedico.Controls.Add(Me.cbxModDel_Sexo)
         Me.panelModificarEliminarMedico.Controls.Add(Me.Label30)
         Me.panelModificarEliminarMedico.Controls.Add(Me.lstModDel_Medicos)
-        Me.panelModificarEliminarMedico.Controls.Add(Me.btnEliminarMedico)
         Me.panelModificarEliminarMedico.Controls.Add(Me.Label17)
         Me.panelModificarEliminarMedico.Controls.Add(Me.dateModDel_FechaNacimiento)
         Me.panelModificarEliminarMedico.Controls.Add(Me.Label16)
@@ -238,7 +239,6 @@ Partial Class MenuGestor
         Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_Direccion)
         Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_Apellido)
         Me.panelModificarEliminarMedico.Controls.Add(Me.txtModDel_PrimerNombre)
-        Me.panelModificarEliminarMedico.Controls.Add(Me.btnAceptarModificar)
         Me.panelModificarEliminarMedico.Controls.Add(Me.Label9)
         Me.panelModificarEliminarMedico.Controls.Add(Me.Label8)
         Me.panelModificarEliminarMedico.Controls.Add(Me.Label7)
@@ -249,6 +249,52 @@ Partial Class MenuGestor
         Me.panelModificarEliminarMedico.Name = "panelModificarEliminarMedico"
         Me.panelModificarEliminarMedico.Size = New System.Drawing.Size(685, 617)
         Me.panelModificarEliminarMedico.TabIndex = 7
+        '
+        'btnAceptarModificar
+        '
+        Me.btnAceptarModificar.Animated = True
+        Me.btnAceptarModificar.AutoRoundedCorners = True
+        Me.btnAceptarModificar.BorderRadius = 13
+        Me.btnAceptarModificar.CheckedState.Parent = Me.btnAceptarModificar
+        Me.btnAceptarModificar.CustomImages.Parent = Me.btnAceptarModificar
+        Me.btnAceptarModificar.FillColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.btnAceptarModificar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnAceptarModificar.ForeColor = System.Drawing.Color.White
+        Me.btnAceptarModificar.HoverState.Parent = Me.btnAceptarModificar
+        Me.btnAceptarModificar.Location = New System.Drawing.Point(558, 573)
+        Me.btnAceptarModificar.Name = "btnAceptarModificar"
+        Me.btnAceptarModificar.PressedColor = System.Drawing.Color.Gray
+        Me.btnAceptarModificar.ShadowDecoration.Parent = Me.btnAceptarModificar
+        Me.btnAceptarModificar.Size = New System.Drawing.Size(106, 28)
+        Me.btnAceptarModificar.TabIndex = 59
+        Me.btnAceptarModificar.Text = "Aceptar"
+        '
+        'btnEliminarMedico
+        '
+        Me.btnEliminarMedico.Animated = True
+        Me.btnEliminarMedico.AutoRoundedCorners = True
+        Me.btnEliminarMedico.BorderRadius = 13
+        Me.btnEliminarMedico.CheckedState.Parent = Me.btnEliminarMedico
+        Me.btnEliminarMedico.CustomImages.Parent = Me.btnEliminarMedico
+        Me.btnEliminarMedico.FillColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.btnEliminarMedico.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnEliminarMedico.ForeColor = System.Drawing.Color.White
+        Me.btnEliminarMedico.HoverState.Parent = Me.btnEliminarMedico
+        Me.btnEliminarMedico.Location = New System.Drawing.Point(558, 517)
+        Me.btnEliminarMedico.Name = "btnEliminarMedico"
+        Me.btnEliminarMedico.PressedColor = System.Drawing.Color.Gray
+        Me.btnEliminarMedico.ShadowDecoration.Parent = Me.btnEliminarMedico
+        Me.btnEliminarMedico.Size = New System.Drawing.Size(106, 28)
+        Me.btnEliminarMedico.TabIndex = 58
+        Me.btnEliminarMedico.Text = "Eliminar"
+        '
+        'cbxModDel_Especializacion
+        '
+        Me.cbxModDel_Especializacion.FormattingEnabled = True
+        Me.cbxModDel_Especializacion.Location = New System.Drawing.Point(206, 400)
+        Me.cbxModDel_Especializacion.Name = "cbxModDel_Especializacion"
+        Me.cbxModDel_Especializacion.Size = New System.Drawing.Size(198, 21)
+        Me.cbxModDel_Especializacion.TabIndex = 57
         '
         'txtModDel_CI
         '
@@ -314,20 +360,6 @@ Partial Class MenuGestor
         Me.lstModDel_Medicos.TabIndex = 56
         Me.lstModDel_Medicos.UseCompatibleStateImageBehavior = False
         Me.lstModDel_Medicos.View = System.Windows.Forms.View.Tile
-        '
-        'btnEliminarMedico
-        '
-        Me.btnEliminarMedico.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.btnEliminarMedico.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnEliminarMedico.FlatAppearance.BorderSize = 0
-        Me.btnEliminarMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminarMedico.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnEliminarMedico.Location = New System.Drawing.Point(558, 520)
-        Me.btnEliminarMedico.Name = "btnEliminarMedico"
-        Me.btnEliminarMedico.Size = New System.Drawing.Size(106, 28)
-        Me.btnEliminarMedico.TabIndex = 54
-        Me.btnEliminarMedico.Text = "Eliminar"
-        Me.btnEliminarMedico.UseVisualStyleBackColor = False
         '
         'Label17
         '
@@ -458,20 +490,6 @@ Partial Class MenuGestor
         Me.txtModDel_PrimerNombre.Name = "txtModDel_PrimerNombre"
         Me.txtModDel_PrimerNombre.Size = New System.Drawing.Size(198, 20)
         Me.txtModDel_PrimerNombre.TabIndex = 40
-        '
-        'btnAceptarModificar
-        '
-        Me.btnAceptarModificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.btnAceptarModificar.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnAceptarModificar.FlatAppearance.BorderSize = 0
-        Me.btnAceptarModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAceptarModificar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnAceptarModificar.Location = New System.Drawing.Point(558, 574)
-        Me.btnAceptarModificar.Name = "btnAceptarModificar"
-        Me.btnAceptarModificar.Size = New System.Drawing.Size(106, 28)
-        Me.btnAceptarModificar.TabIndex = 55
-        Me.btnAceptarModificar.Text = "Aceptar"
-        Me.btnAceptarModificar.UseVisualStyleBackColor = False
         '
         'Label9
         '
@@ -764,6 +782,7 @@ Partial Class MenuGestor
         '
         'panelAgregarUsuario
         '
+        Me.panelAgregarUsuario.Controls.Add(Me.btnAgregarMedico)
         Me.panelAgregarUsuario.Controls.Add(Me.cbxEspecializacion)
         Me.panelAgregarUsuario.Controls.Add(Me.txtCI)
         Me.panelAgregarUsuario.Controls.Add(Me.Label34)
@@ -786,7 +805,6 @@ Partial Class MenuGestor
         Me.panelAgregarUsuario.Controls.Add(Me.txtDireccion)
         Me.panelAgregarUsuario.Controls.Add(Me.txtApellido)
         Me.panelAgregarUsuario.Controls.Add(Me.txtPrimerNombre)
-        Me.panelAgregarUsuario.Controls.Add(Me.btnAgregarMedico)
         Me.panelAgregarUsuario.Controls.Add(Me.Label24)
         Me.panelAgregarUsuario.Controls.Add(Me.Label25)
         Me.panelAgregarUsuario.Controls.Add(Me.Label26)
@@ -797,6 +815,32 @@ Partial Class MenuGestor
         Me.panelAgregarUsuario.Name = "panelAgregarUsuario"
         Me.panelAgregarUsuario.Size = New System.Drawing.Size(685, 617)
         Me.panelAgregarUsuario.TabIndex = 43
+        '
+        'btnAgregarMedico
+        '
+        Me.btnAgregarMedico.Animated = True
+        Me.btnAgregarMedico.AutoRoundedCorners = True
+        Me.btnAgregarMedico.BorderRadius = 13
+        Me.btnAgregarMedico.CheckedState.Parent = Me.btnAgregarMedico
+        Me.btnAgregarMedico.CustomImages.Parent = Me.btnAgregarMedico
+        Me.btnAgregarMedico.FillColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.btnAgregarMedico.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnAgregarMedico.ForeColor = System.Drawing.Color.White
+        Me.btnAgregarMedico.HoverState.Parent = Me.btnAgregarMedico
+        Me.btnAgregarMedico.Location = New System.Drawing.Point(558, 567)
+        Me.btnAgregarMedico.Name = "btnAgregarMedico"
+        Me.btnAgregarMedico.ShadowDecoration.Parent = Me.btnAgregarMedico
+        Me.btnAgregarMedico.Size = New System.Drawing.Size(106, 28)
+        Me.btnAgregarMedico.TabIndex = 48
+        Me.btnAgregarMedico.Text = "Aceptar"
+        '
+        'cbxEspecializacion
+        '
+        Me.cbxEspecializacion.FormattingEnabled = True
+        Me.cbxEspecializacion.Location = New System.Drawing.Point(206, 385)
+        Me.cbxEspecializacion.Name = "cbxEspecializacion"
+        Me.cbxEspecializacion.Size = New System.Drawing.Size(241, 21)
+        Me.cbxEspecializacion.TabIndex = 47
         '
         'txtCI
         '
@@ -971,20 +1015,6 @@ Partial Class MenuGestor
         Me.txtPrimerNombre.Size = New System.Drawing.Size(241, 20)
         Me.txtPrimerNombre.TabIndex = 23
         '
-        'btnAgregarMedico
-        '
-        Me.btnAgregarMedico.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.btnAgregarMedico.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnAgregarMedico.FlatAppearance.BorderSize = 0
-        Me.btnAgregarMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAgregarMedico.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnAgregarMedico.Location = New System.Drawing.Point(558, 576)
-        Me.btnAgregarMedico.Name = "btnAgregarMedico"
-        Me.btnAgregarMedico.Size = New System.Drawing.Size(106, 28)
-        Me.btnAgregarMedico.TabIndex = 37
-        Me.btnAgregarMedico.Text = "Agregar"
-        Me.btnAgregarMedico.UseVisualStyleBackColor = False
-        '
         'Label24
         '
         Me.Label24.AutoSize = True
@@ -1045,48 +1075,43 @@ Partial Class MenuGestor
         Me.Label29.TabIndex = 5
         Me.Label29.Text = "Nombre:"
         '
-        'Guna2ControlBox1
+        'btnMinimizar
         '
-        Me.Guna2ControlBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Guna2ControlBox1.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox
-        Me.Guna2ControlBox1.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.Gray
-        Me.Guna2ControlBox1.HoverState.Parent = Me.Guna2ControlBox1
-        Me.Guna2ControlBox1.IconColor = System.Drawing.Color.Black
-        Me.Guna2ControlBox1.Location = New System.Drawing.Point(890, 0)
-        Me.Guna2ControlBox1.Name = "Guna2ControlBox1"
-        Me.Guna2ControlBox1.ShadowDecoration.Parent = Me.Guna2ControlBox1
-        Me.Guna2ControlBox1.Size = New System.Drawing.Size(45, 29)
-        Me.Guna2ControlBox1.TabIndex = 18
+        Me.btnMinimizar.Animated = True
+        Me.btnMinimizar.BackColor = System.Drawing.Color.Transparent
+        Me.btnMinimizar.CheckedState.Parent = Me.btnMinimizar
+        Me.btnMinimizar.CustomImages.Parent = Me.btnMinimizar
+        Me.btnMinimizar.FillColor = System.Drawing.Color.Gray
+        Me.btnMinimizar.Font = New System.Drawing.Font("Segoe UI", 25.0!)
+        Me.btnMinimizar.ForeColor = System.Drawing.Color.White
+        Me.btnMinimizar.HoverState.Parent = Me.btnMinimizar
+        Me.btnMinimizar.Location = New System.Drawing.Point(913, 0)
+        Me.btnMinimizar.Name = "btnMinimizar"
+        Me.btnMinimizar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnMinimizar.ShadowDecoration.Parent = Me.btnMinimizar
+        Me.btnMinimizar.Size = New System.Drawing.Size(29, 30)
+        Me.btnMinimizar.TabIndex = 49
+        Me.btnMinimizar.Text = "-"
+        Me.btnMinimizar.UseTransparentBackground = True
         '
-        'Guna2ControlBox2
+        'btnCerrar
         '
-        Me.Guna2ControlBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Guna2ControlBox2.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2ControlBox2.HoverState.FillColor = System.Drawing.Color.Red
-        Me.Guna2ControlBox2.HoverState.Parent = Me.Guna2ControlBox2
-        Me.Guna2ControlBox2.IconColor = System.Drawing.Color.Black
-        Me.Guna2ControlBox2.Location = New System.Drawing.Point(935, 0)
-        Me.Guna2ControlBox2.Name = "Guna2ControlBox2"
-        Me.Guna2ControlBox2.ShadowDecoration.Parent = Me.Guna2ControlBox2
-        Me.Guna2ControlBox2.Size = New System.Drawing.Size(45, 29)
-        Me.Guna2ControlBox2.TabIndex = 44
-        '
-        'cbxModDel_Especializacion
-        '
-        Me.cbxModDel_Especializacion.FormattingEnabled = True
-        Me.cbxModDel_Especializacion.Location = New System.Drawing.Point(206, 400)
-        Me.cbxModDel_Especializacion.Name = "cbxModDel_Especializacion"
-        Me.cbxModDel_Especializacion.Size = New System.Drawing.Size(198, 21)
-        Me.cbxModDel_Especializacion.TabIndex = 57
-        '
-        'cbxEspecializacion
-        '
-        Me.cbxEspecializacion.FormattingEnabled = True
-        Me.cbxEspecializacion.Location = New System.Drawing.Point(206, 385)
-        Me.cbxEspecializacion.Name = "cbxEspecializacion"
-        Me.cbxEspecializacion.Size = New System.Drawing.Size(241, 21)
-        Me.cbxEspecializacion.TabIndex = 47
+        Me.btnCerrar.Animated = True
+        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrar.CheckedState.Parent = Me.btnCerrar
+        Me.btnCerrar.CustomImages.Parent = Me.btnCerrar
+        Me.btnCerrar.FillColor = System.Drawing.Color.DarkRed
+        Me.btnCerrar.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.btnCerrar.ForeColor = System.Drawing.Color.White
+        Me.btnCerrar.HoverState.Parent = Me.btnCerrar
+        Me.btnCerrar.Location = New System.Drawing.Point(945, 0)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnCerrar.ShadowDecoration.Parent = Me.btnCerrar
+        Me.btnCerrar.Size = New System.Drawing.Size(29, 30)
+        Me.btnCerrar.TabIndex = 48
+        Me.btnCerrar.Text = "X"
+        Me.btnCerrar.UseTransparentBackground = True
         '
         'MenuGestor
         '
@@ -1095,12 +1120,12 @@ Partial Class MenuGestor
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(980, 645)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Guna2ControlBox1)
-        Me.Controls.Add(Me.Guna2ControlBox2)
+        Me.Controls.Add(Me.btnCerrar)
+        Me.Controls.Add(Me.btnMinimizar)
         Me.Controls.Add(Me.panelMenuInicio)
-        Me.Controls.Add(Me.panelAgregarUsuario)
         Me.Controls.Add(Me.panelABMSintoma)
         Me.Controls.Add(Me.panelModificarEliminarMedico)
+        Me.Controls.Add(Me.panelAgregarUsuario)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)
@@ -1132,7 +1157,6 @@ Partial Class MenuGestor
     Friend WithEvents txtModDel_Direccion As TextBox
     Friend WithEvents txtModDel_Apellido As TextBox
     Friend WithEvents txtModDel_PrimerNombre As TextBox
-    Friend WithEvents btnAceptarModificar As Button
     Friend WithEvents txtModDel_Email As TextBox
     Friend WithEvents txtModDel_Empresa As TextBox
     Friend WithEvents Label10 As Label
@@ -1173,7 +1197,6 @@ Partial Class MenuGestor
     Friend WithEvents txtDireccion As TextBox
     Friend WithEvents txtApellido As TextBox
     Friend WithEvents txtPrimerNombre As TextBox
-    Friend WithEvents btnAgregarMedico As Button
     Friend WithEvents Label24 As Label
     Friend WithEvents Label25 As Label
     Friend WithEvents Label26 As Label
@@ -1182,7 +1205,6 @@ Partial Class MenuGestor
     Friend WithEvents Label29 As Label
     Friend WithEvents Label30 As Label
     Friend WithEvents lstModDel_Medicos As ListView
-    Friend WithEvents btnEliminarMedico As Button
     Friend WithEvents Label31 As Label
     Friend WithEvents cbxModDel_Sexo As ComboBox
     Friend WithEvents txtModDel_Segundoapellido As TextBox
@@ -1199,11 +1221,14 @@ Partial Class MenuGestor
     Friend WithEvents btn_ABMSinPat As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnMenu_ModUsuario As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtBuscarSintoma As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Guna2ControlBox1 As Guna.UI2.WinForms.Guna2ControlBox
-    Friend WithEvents Guna2ControlBox2 As Guna.UI2.WinForms.Guna2ControlBox
     Friend WithEvents txtBuscarPatologia As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents btnAgregarSintoma As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnAgregarPatologia As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents cbxModDel_Especializacion As ComboBox
     Friend WithEvents cbxEspecializacion As ComboBox
+    Friend WithEvents btnAceptarModificar As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnEliminarMedico As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnAgregarMedico As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnMinimizar As Guna.UI2.WinForms.Guna2CircleButton
+    Friend WithEvents btnCerrar As Guna.UI2.WinForms.Guna2CircleButton
 End Class

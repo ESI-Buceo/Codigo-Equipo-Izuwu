@@ -42,8 +42,11 @@ Public Class Login
     Dim Instancia As LogicaAplicacion = New LogicaAplicacion()
 
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
+    End Sub
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
+        Me.WindowState = FormWindowState.Minimized
     End Sub
 
     Private Sub btnEntrar_Click_1(sender As Object, e As EventArgs) Handles btnEntrar.Click
@@ -65,12 +68,5 @@ Public Class Login
         End Try
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
-        Me.WindowState = FormWindowState.Minimized
-    End Sub
 
 End Class

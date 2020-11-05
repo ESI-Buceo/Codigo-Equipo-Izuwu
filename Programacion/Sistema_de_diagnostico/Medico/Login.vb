@@ -43,7 +43,7 @@ Public Class Login
 
 
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnEntrar.Click
+    Private Sub btnEntrar_Click(sender As Object, e As EventArgs) Handles btnEntrar.Click
 
         Try
             'Se toman los datos de los cuadros de texto CI y Contraseña
@@ -81,11 +81,11 @@ Public Class Login
     End Sub
 
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
@@ -96,7 +96,6 @@ Public Class Login
     Private Sub Label6_MouseLeave(sender As Object, e As EventArgs) Handles Label6.MouseLeave
         Label6.ForeColor = Color.FromArgb(255, 255, 255)
     End Sub
-
 
 
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click

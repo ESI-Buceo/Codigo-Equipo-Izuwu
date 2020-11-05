@@ -25,12 +25,6 @@ Partial Class MenuPaciente
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MenuPaciente))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnCerrarSesion = New Guna.UI2.WinForms.Guna2Button()
-        Me.labIniciales = New System.Windows.Forms.Label()
-        Me.labHistorialMedico = New System.Windows.Forms.Label()
-        Me.labNombre = New System.Windows.Forms.Label()
-        Me.btnMenu_RealizarDiagnostico = New System.Windows.Forms.Button()
-        Me.btnChats1 = New Guna.UI2.WinForms.Guna2Button()
         Me.panelRealizarDiagnostico = New System.Windows.Forms.Panel()
         Me.paelRealizaDiagnostico2 = New System.Windows.Forms.Panel()
         Me.txtBusquedaSintomas = New Guna.UI2.WinForms.Guna2TextBox()
@@ -38,9 +32,13 @@ Partial Class MenuPaciente
         Me.btnAgregar = New Guna.UI2.WinForms.Guna2Button()
         Me.lstSintomas = New System.Windows.Forms.ListView()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnCerrarSesion = New Guna.UI2.WinForms.Guna2Button()
+        Me.labIniciales = New System.Windows.Forms.Label()
+        Me.labHistorialMedico = New System.Windows.Forms.Label()
+        Me.labNombre = New System.Windows.Forms.Label()
+        Me.btnMenu_RealizarDiagnostico = New System.Windows.Forms.Button()
+        Me.btnChats1 = New Guna.UI2.WinForms.Guna2Button()
         Me.labVolverDisgnostico = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.panelListaChats = New System.Windows.Forms.Panel()
         Me.panelChat = New System.Windows.Forms.Panel()
         Me.txtMensaje = New System.Windows.Forms.TextBox()
@@ -78,6 +76,8 @@ Partial Class MenuPaciente
         Me.labEspecialidadMED = New System.Windows.Forms.Label()
         Me.labLugardeTrabajoMED = New System.Windows.Forms.Label()
         Me.refrescarChat = New System.Windows.Forms.Timer(Me.components)
+        Me.btnMinimizar = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.btnCerrar = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.Panel1.SuspendLayout()
         Me.panelRealizarDiagnostico.SuspendLayout()
         Me.paelRealizaDiagnostico2.SuspendLayout()
@@ -104,87 +104,6 @@ Partial Class MenuPaciente
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(284, 648)
         Me.Panel1.TabIndex = 1
-        '
-        'btnCerrarSesion
-        '
-        Me.btnCerrarSesion.Animated = True
-        Me.btnCerrarSesion.BackColor = System.Drawing.Color.Transparent
-        Me.btnCerrarSesion.CheckedState.Parent = Me.btnCerrarSesion
-        Me.btnCerrarSesion.CustomImages.Parent = Me.btnCerrarSesion
-        Me.btnCerrarSesion.FillColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(207, Byte), Integer))
-        Me.btnCerrarSesion.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnCerrarSesion.ForeColor = System.Drawing.Color.White
-        Me.btnCerrarSesion.HoverState.Parent = Me.btnCerrarSesion
-        Me.btnCerrarSesion.Location = New System.Drawing.Point(0, 392)
-        Me.btnCerrarSesion.Name = "btnCerrarSesion"
-        Me.btnCerrarSesion.ShadowDecoration.Parent = Me.btnCerrarSesion
-        Me.btnCerrarSesion.Size = New System.Drawing.Size(291, 47)
-        Me.btnCerrarSesion.TabIndex = 24
-        Me.btnCerrarSesion.Text = "Cerrar sesión"
-        '
-        'labIniciales
-        '
-        Me.labIniciales.AutoSize = True
-        Me.labIniciales.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(207, Byte), Integer))
-        Me.labIniciales.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labIniciales.ForeColor = System.Drawing.Color.White
-        Me.labIniciales.Location = New System.Drawing.Point(12, 16)
-        Me.labIniciales.Name = "labIniciales"
-        Me.labIniciales.Size = New System.Drawing.Size(84, 44)
-        Me.labIniciales.TabIndex = 8
-        Me.labIniciales.Text = "N U"
-        '
-        'labHistorialMedico
-        '
-        Me.labHistorialMedico.AutoSize = True
-        Me.labHistorialMedico.ForeColor = System.Drawing.Color.White
-        Me.labHistorialMedico.Location = New System.Drawing.Point(105, 49)
-        Me.labHistorialMedico.Name = "labHistorialMedico"
-        Me.labHistorialMedico.Size = New System.Drawing.Size(81, 13)
-        Me.labHistorialMedico.TabIndex = 7
-        Me.labHistorialMedico.Text = "Historial médico"
-        '
-        'labNombre
-        '
-        Me.labNombre.AutoSize = True
-        Me.labNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labNombre.ForeColor = System.Drawing.Color.White
-        Me.labNombre.Location = New System.Drawing.Point(103, 9)
-        Me.labNombre.Name = "labNombre"
-        Me.labNombre.Size = New System.Drawing.Size(153, 25)
-        Me.labNombre.TabIndex = 5
-        Me.labNombre.Text = "Nombre Usuario"
-        '
-        'btnMenu_RealizarDiagnostico
-        '
-        Me.btnMenu_RealizarDiagnostico.BackColor = System.Drawing.Color.Transparent
-        Me.btnMenu_RealizarDiagnostico.FlatAppearance.BorderSize = 0
-        Me.btnMenu_RealizarDiagnostico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMenu_RealizarDiagnostico.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMenu_RealizarDiagnostico.ForeColor = System.Drawing.Color.White
-        Me.btnMenu_RealizarDiagnostico.Location = New System.Drawing.Point(0, 180)
-        Me.btnMenu_RealizarDiagnostico.Name = "btnMenu_RealizarDiagnostico"
-        Me.btnMenu_RealizarDiagnostico.Size = New System.Drawing.Size(291, 47)
-        Me.btnMenu_RealizarDiagnostico.TabIndex = 0
-        Me.btnMenu_RealizarDiagnostico.Text = "Realizar diagnóstico"
-        Me.btnMenu_RealizarDiagnostico.UseVisualStyleBackColor = False
-        '
-        'btnChats1
-        '
-        Me.btnChats1.Animated = True
-        Me.btnChats1.BackColor = System.Drawing.Color.Transparent
-        Me.btnChats1.CheckedState.Parent = Me.btnChats1
-        Me.btnChats1.CustomImages.Parent = Me.btnChats1
-        Me.btnChats1.FillColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(207, Byte), Integer))
-        Me.btnChats1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnChats1.ForeColor = System.Drawing.Color.White
-        Me.btnChats1.HoverState.Parent = Me.btnChats1
-        Me.btnChats1.Location = New System.Drawing.Point(0, 286)
-        Me.btnChats1.Name = "btnChats1"
-        Me.btnChats1.ShadowDecoration.Parent = Me.btnChats1
-        Me.btnChats1.Size = New System.Drawing.Size(291, 47)
-        Me.btnChats1.TabIndex = 25
-        Me.btnChats1.Text = "Chats"
         '
         'panelRealizarDiagnostico
         '
@@ -289,6 +208,87 @@ Partial Class MenuPaciente
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Politicas de privacidad"
         '
+        'btnCerrarSesion
+        '
+        Me.btnCerrarSesion.Animated = True
+        Me.btnCerrarSesion.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrarSesion.CheckedState.Parent = Me.btnCerrarSesion
+        Me.btnCerrarSesion.CustomImages.Parent = Me.btnCerrarSesion
+        Me.btnCerrarSesion.FillColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(207, Byte), Integer))
+        Me.btnCerrarSesion.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnCerrarSesion.ForeColor = System.Drawing.Color.White
+        Me.btnCerrarSesion.HoverState.Parent = Me.btnCerrarSesion
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(0, 392)
+        Me.btnCerrarSesion.Name = "btnCerrarSesion"
+        Me.btnCerrarSesion.ShadowDecoration.Parent = Me.btnCerrarSesion
+        Me.btnCerrarSesion.Size = New System.Drawing.Size(291, 47)
+        Me.btnCerrarSesion.TabIndex = 24
+        Me.btnCerrarSesion.Text = "Cerrar sesión"
+        '
+        'labIniciales
+        '
+        Me.labIniciales.AutoSize = True
+        Me.labIniciales.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(207, Byte), Integer))
+        Me.labIniciales.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labIniciales.ForeColor = System.Drawing.Color.White
+        Me.labIniciales.Location = New System.Drawing.Point(12, 16)
+        Me.labIniciales.Name = "labIniciales"
+        Me.labIniciales.Size = New System.Drawing.Size(84, 44)
+        Me.labIniciales.TabIndex = 8
+        Me.labIniciales.Text = "N U"
+        '
+        'labHistorialMedico
+        '
+        Me.labHistorialMedico.AutoSize = True
+        Me.labHistorialMedico.ForeColor = System.Drawing.Color.White
+        Me.labHistorialMedico.Location = New System.Drawing.Point(105, 49)
+        Me.labHistorialMedico.Name = "labHistorialMedico"
+        Me.labHistorialMedico.Size = New System.Drawing.Size(81, 13)
+        Me.labHistorialMedico.TabIndex = 7
+        Me.labHistorialMedico.Text = "Historial médico"
+        '
+        'labNombre
+        '
+        Me.labNombre.AutoSize = True
+        Me.labNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labNombre.ForeColor = System.Drawing.Color.White
+        Me.labNombre.Location = New System.Drawing.Point(103, 9)
+        Me.labNombre.Name = "labNombre"
+        Me.labNombre.Size = New System.Drawing.Size(153, 25)
+        Me.labNombre.TabIndex = 5
+        Me.labNombre.Text = "Nombre Usuario"
+        '
+        'btnMenu_RealizarDiagnostico
+        '
+        Me.btnMenu_RealizarDiagnostico.BackColor = System.Drawing.Color.Transparent
+        Me.btnMenu_RealizarDiagnostico.FlatAppearance.BorderSize = 0
+        Me.btnMenu_RealizarDiagnostico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMenu_RealizarDiagnostico.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMenu_RealizarDiagnostico.ForeColor = System.Drawing.Color.White
+        Me.btnMenu_RealizarDiagnostico.Location = New System.Drawing.Point(0, 180)
+        Me.btnMenu_RealizarDiagnostico.Name = "btnMenu_RealizarDiagnostico"
+        Me.btnMenu_RealizarDiagnostico.Size = New System.Drawing.Size(291, 47)
+        Me.btnMenu_RealizarDiagnostico.TabIndex = 0
+        Me.btnMenu_RealizarDiagnostico.Text = "Realizar diagnóstico"
+        Me.btnMenu_RealizarDiagnostico.UseVisualStyleBackColor = False
+        '
+        'btnChats1
+        '
+        Me.btnChats1.Animated = True
+        Me.btnChats1.BackColor = System.Drawing.Color.Transparent
+        Me.btnChats1.CheckedState.Parent = Me.btnChats1
+        Me.btnChats1.CustomImages.Parent = Me.btnChats1
+        Me.btnChats1.FillColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(207, Byte), Integer))
+        Me.btnChats1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnChats1.ForeColor = System.Drawing.Color.White
+        Me.btnChats1.HoverState.Parent = Me.btnChats1
+        Me.btnChats1.Location = New System.Drawing.Point(0, 286)
+        Me.btnChats1.Name = "btnChats1"
+        Me.btnChats1.ShadowDecoration.Parent = Me.btnChats1
+        Me.btnChats1.Size = New System.Drawing.Size(291, 47)
+        Me.btnChats1.TabIndex = 25
+        Me.btnChats1.Text = "Chats"
+        '
         'labVolverDisgnostico
         '
         Me.labVolverDisgnostico.AutoSize = True
@@ -298,34 +298,6 @@ Partial Class MenuPaciente
         Me.labVolverDisgnostico.Size = New System.Drawing.Size(39, 32)
         Me.labVolverDisgnostico.TabIndex = 23
         Me.labVolverDisgnostico.Text = "←"
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(891, 0)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(41, 26)
-        Me.Button2.TabIndex = 6
-        Me.Button2.Text = "-"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(938, 0)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(41, 26)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "X"
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'panelListaChats
         '
@@ -767,6 +739,44 @@ Partial Class MenuPaciente
         '
         Me.refrescarChat.Interval = 3000
         '
+        'btnMinimizar
+        '
+        Me.btnMinimizar.Animated = True
+        Me.btnMinimizar.BackColor = System.Drawing.Color.Transparent
+        Me.btnMinimizar.CheckedState.Parent = Me.btnMinimizar
+        Me.btnMinimizar.CustomImages.Parent = Me.btnMinimizar
+        Me.btnMinimizar.FillColor = System.Drawing.Color.Gray
+        Me.btnMinimizar.Font = New System.Drawing.Font("Segoe UI", 25.0!)
+        Me.btnMinimizar.ForeColor = System.Drawing.Color.White
+        Me.btnMinimizar.HoverState.Parent = Me.btnMinimizar
+        Me.btnMinimizar.Location = New System.Drawing.Point(914, 1)
+        Me.btnMinimizar.Name = "btnMinimizar"
+        Me.btnMinimizar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnMinimizar.ShadowDecoration.Parent = Me.btnMinimizar
+        Me.btnMinimizar.Size = New System.Drawing.Size(29, 30)
+        Me.btnMinimizar.TabIndex = 50
+        Me.btnMinimizar.Text = "-"
+        Me.btnMinimizar.UseTransparentBackground = True
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.Animated = True
+        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrar.CheckedState.Parent = Me.btnCerrar
+        Me.btnCerrar.CustomImages.Parent = Me.btnCerrar
+        Me.btnCerrar.FillColor = System.Drawing.Color.DarkRed
+        Me.btnCerrar.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.btnCerrar.ForeColor = System.Drawing.Color.White
+        Me.btnCerrar.HoverState.Parent = Me.btnCerrar
+        Me.btnCerrar.Location = New System.Drawing.Point(949, 1)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnCerrar.ShadowDecoration.Parent = Me.btnCerrar
+        Me.btnCerrar.Size = New System.Drawing.Size(29, 30)
+        Me.btnCerrar.TabIndex = 49
+        Me.btnCerrar.Text = "X"
+        Me.btnCerrar.UseTransparentBackground = True
+        '
         'MenuPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -774,13 +784,13 @@ Partial Class MenuPaciente
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(980, 645)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.btnMinimizar)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.panelChat)
-        Me.Controls.Add(Me.panelListaChats)
-        Me.Controls.Add(Me.panelPerfil)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.panelRealizarDiagnostico2)
+        Me.Controls.Add(Me.panelChat)
+        Me.Controls.Add(Me.panelPerfil)
+        Me.Controls.Add(Me.panelListaChats)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)
@@ -815,8 +825,6 @@ Partial Class MenuPaciente
     Friend WithEvents labHistorialMedico As Label
     Friend WithEvents labNombre As Label
     Friend WithEvents btnMenu_RealizarDiagnostico As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
     Friend WithEvents panelListaChats As Panel
     Friend WithEvents labVolverDisgnostico As Label
     Friend WithEvents panelChat As Panel
@@ -864,4 +872,6 @@ Partial Class MenuPaciente
     Friend WithEvents btnFinalizarConsulta As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents refrescarChat As Timer
+    Friend WithEvents btnMinimizar As Guna.UI2.WinForms.Guna2CircleButton
+    Friend WithEvents btnCerrar As Guna.UI2.WinForms.Guna2CircleButton
 End Class

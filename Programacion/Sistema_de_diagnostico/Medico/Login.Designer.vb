@@ -24,18 +24,18 @@ Partial Class Login
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtContraseña = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtUsuario = New Guna.UI2.WinForms.Guna2TextBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.txtContraseña = New System.Windows.Forms.TextBox()
-        Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.btnEntrar = New System.Windows.Forms.Button()
         Me.labOlvidoPassword = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnEntrar = New Guna.UI2.WinForms.Guna2Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnMinimizar = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.btnCerrar = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,19 +44,72 @@ Partial Class Login
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(144, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.txtContraseña)
         Me.Panel1.Controls.Add(Me.txtUsuario)
+        Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.btnEntrar)
         Me.Panel1.Controls.Add(Me.labOlvidoPassword)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.btnEntrar)
         Me.Panel1.Location = New System.Drawing.Point(0, -3)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(284, 648)
         Me.Panel1.TabIndex = 0
+        '
+        'txtContraseña
+        '
+        Me.txtContraseña.AutoRoundedCorners = True
+        Me.txtContraseña.BorderRadius = 11
+        Me.txtContraseña.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtContraseña.DefaultText = ""
+        Me.txtContraseña.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtContraseña.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtContraseña.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtContraseña.DisabledState.Parent = Me.txtContraseña
+        Me.txtContraseña.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtContraseña.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtContraseña.FocusedState.Parent = Me.txtContraseña
+        Me.txtContraseña.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtContraseña.ForeColor = System.Drawing.Color.Black
+        Me.txtContraseña.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtContraseña.HoverState.Parent = Me.txtContraseña
+        Me.txtContraseña.Location = New System.Drawing.Point(15, 277)
+        Me.txtContraseña.Name = "txtContraseña"
+        Me.txtContraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtContraseña.PlaceholderText = "Ingrese contraseña..."
+        Me.txtContraseña.SelectedText = ""
+        Me.txtContraseña.ShadowDecoration.Parent = Me.txtContraseña
+        Me.txtContraseña.Size = New System.Drawing.Size(192, 25)
+        Me.txtContraseña.TabIndex = 20
+        Me.txtContraseña.UseSystemPasswordChar = True
+        '
+        'txtUsuario
+        '
+        Me.txtUsuario.AutoRoundedCorners = True
+        Me.txtUsuario.BorderRadius = 11
+        Me.txtUsuario.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtUsuario.DefaultText = ""
+        Me.txtUsuario.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtUsuario.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtUsuario.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtUsuario.DisabledState.Parent = Me.txtUsuario
+        Me.txtUsuario.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtUsuario.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtUsuario.FocusedState.Parent = Me.txtUsuario
+        Me.txtUsuario.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtUsuario.ForeColor = System.Drawing.Color.Black
+        Me.txtUsuario.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtUsuario.HoverState.Parent = Me.txtUsuario
+        Me.txtUsuario.Location = New System.Drawing.Point(12, 205)
+        Me.txtUsuario.Name = "txtUsuario"
+        Me.txtUsuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtUsuario.PlaceholderText = "Sin puntos ni guiones..."
+        Me.txtUsuario.SelectedText = ""
+        Me.txtUsuario.ShadowDecoration.Parent = Me.txtUsuario
+        Me.txtUsuario.Size = New System.Drawing.Size(192, 25)
+        Me.txtUsuario.TabIndex = 19
         '
         'PictureBox2
         '
@@ -67,22 +120,6 @@ Partial Class Login
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 18
         Me.PictureBox2.TabStop = False
-        '
-        'txtContraseña
-        '
-        Me.txtContraseña.Location = New System.Drawing.Point(15, 277)
-        Me.txtContraseña.Name = "txtContraseña"
-        Me.txtContraseña.Size = New System.Drawing.Size(180, 20)
-        Me.txtContraseña.TabIndex = 10
-        Me.txtContraseña.UseSystemPasswordChar = True
-        '
-        'txtUsuario
-        '
-        Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario.Location = New System.Drawing.Point(15, 205)
-        Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(177, 21)
-        Me.txtUsuario.TabIndex = 9
         '
         'Label6
         '
@@ -105,20 +142,6 @@ Partial Class Login
         Me.Label5.Size = New System.Drawing.Size(111, 13)
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "Politicas de privacidad"
-        '
-        'btnEntrar
-        '
-        Me.btnEntrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.btnEntrar.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnEntrar.FlatAppearance.BorderSize = 0
-        Me.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEntrar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnEntrar.Location = New System.Drawing.Point(74, 405)
-        Me.btnEntrar.Name = "btnEntrar"
-        Me.btnEntrar.Size = New System.Drawing.Size(106, 28)
-        Me.btnEntrar.TabIndex = 6
-        Me.btnEntrar.Text = "Entrar"
-        Me.btnEntrar.UseVisualStyleBackColor = False
         '
         'labOlvidoPassword
         '
@@ -153,33 +176,23 @@ Partial Class Login
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Usuario(CI)"
         '
-        'Button1
+        'btnEntrar
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(939, 0)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(41, 26)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "X"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.LightGray
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(898, 0)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(41, 26)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "-"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btnEntrar.Animated = True
+        Me.btnEntrar.AutoRoundedCorners = True
+        Me.btnEntrar.BorderRadius = 18
+        Me.btnEntrar.CheckedState.Parent = Me.btnEntrar
+        Me.btnEntrar.CustomImages.Parent = Me.btnEntrar
+        Me.btnEntrar.FillColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.btnEntrar.Font = New System.Drawing.Font("Yu Gothic UI", 11.25!)
+        Me.btnEntrar.ForeColor = System.Drawing.Color.White
+        Me.btnEntrar.HoverState.Parent = Me.btnEntrar
+        Me.btnEntrar.Location = New System.Drawing.Point(76, 412)
+        Me.btnEntrar.Name = "btnEntrar"
+        Me.btnEntrar.ShadowDecoration.Parent = Me.btnEntrar
+        Me.btnEntrar.Size = New System.Drawing.Size(107, 38)
+        Me.btnEntrar.TabIndex = 21
+        Me.btnEntrar.Text = "Ingresar"
         '
         'PictureBox1
         '
@@ -192,14 +205,52 @@ Partial Class Login
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
+        'btnMinimizar
+        '
+        Me.btnMinimizar.Animated = True
+        Me.btnMinimizar.BackColor = System.Drawing.Color.Transparent
+        Me.btnMinimizar.CheckedState.Parent = Me.btnMinimizar
+        Me.btnMinimizar.CustomImages.Parent = Me.btnMinimizar
+        Me.btnMinimizar.FillColor = System.Drawing.Color.Gray
+        Me.btnMinimizar.Font = New System.Drawing.Font("Segoe UI", 25.0!)
+        Me.btnMinimizar.ForeColor = System.Drawing.Color.White
+        Me.btnMinimizar.HoverState.Parent = Me.btnMinimizar
+        Me.btnMinimizar.Location = New System.Drawing.Point(915, 0)
+        Me.btnMinimizar.Name = "btnMinimizar"
+        Me.btnMinimizar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnMinimizar.ShadowDecoration.Parent = Me.btnMinimizar
+        Me.btnMinimizar.Size = New System.Drawing.Size(29, 30)
+        Me.btnMinimizar.TabIndex = 50
+        Me.btnMinimizar.Text = "-"
+        Me.btnMinimizar.UseTransparentBackground = True
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.Animated = True
+        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrar.CheckedState.Parent = Me.btnCerrar
+        Me.btnCerrar.CustomImages.Parent = Me.btnCerrar
+        Me.btnCerrar.FillColor = System.Drawing.Color.DarkRed
+        Me.btnCerrar.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.btnCerrar.ForeColor = System.Drawing.Color.White
+        Me.btnCerrar.HoverState.Parent = Me.btnCerrar
+        Me.btnCerrar.Location = New System.Drawing.Point(950, 0)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnCerrar.ShadowDecoration.Parent = Me.btnCerrar
+        Me.btnCerrar.Size = New System.Drawing.Size(29, 30)
+        Me.btnCerrar.TabIndex = 49
+        Me.btnCerrar.Text = "X"
+        Me.btnCerrar.UseTransparentBackground = True
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ClientSize = New System.Drawing.Size(980, 645)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnMinimizar)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -218,16 +269,16 @@ Partial Class Login
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents btnEntrar As Button
     Friend WithEvents labOlvidoPassword As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents txtContraseña As TextBox
-    Friend WithEvents txtUsuario As TextBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents btnEntrar As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents txtContraseña As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtUsuario As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents btnMinimizar As Guna.UI2.WinForms.Guna2CircleButton
+    Friend WithEvents btnCerrar As Guna.UI2.WinForms.Guna2CircleButton
 End Class

@@ -247,70 +247,7 @@ Public Class ConexionConBD
     End Function
 
 
-    Public Function obtenerUnPaciente(ID_paciente As String) As Paciente
-        Dim connection As Connection = conectar()
-        Dim fechaBaseDatos As Date
-        Dim fechaString As String
-        Dim nombre, segundonombre, apellido, segundoapellido, email, direccion, ci, contraseña, telefono, sexo, peso, altura, patologiaprevia As String
-        Dim obtenerPaciente As Recordset = connection.Execute("select * " +
-                                                       "from usuario inner join paciente " +
-                                                       "on usuario.id_us = paciente.id_pac " +
-                                                       "where id_pac = '" + ID_paciente + "';")
 
-        nombre = TryCast(obtenerPaciente.Fields("Nombre").Value, String)
-        apellido = TryCast(obtenerPaciente.Fields("Apellido").Value, String)
-        email = TryCast(obtenerPaciente.Fields("Email").Value, String)
-        direccion = TryCast(obtenerPaciente.Fields("Direccion").Value, String)
-        ci = TryCast(obtenerPaciente.Fields("CI").Value, String)
-        contraseña = TryCast(obtenerPaciente.Fields("Contrasenia").Value, String)
-        Dim consultaTelefono As Recordset = connection.Execute("select telefono from telefono_us where id_us ='" + ID_paciente + "';")
-        telefono = TryCast(consultaTelefono.Fields("Telefono").Value, String)
-        fechaBaseDatos = TryCast(obtenerPaciente.Fields("FDN").Value, Object)
-        fechaString = Format(fechaBaseDatos, "yyyy/MM/dd")
-        peso = TryCast(obtenerPaciente.Fields("peso").Value, String)
-        altura = TryCast(obtenerPaciente.Fields("altura").Value, String)
-        patologiaprevia = TryCast(obtenerPaciente.Fields("patologiasp").Value, String)
-        segundonombre = TryCast(obtenerPaciente.Fields("segundo_nombre").Value, String)
-        segundoapellido = TryCast(obtenerPaciente.Fields("segundo_apellido").Value, String)
-        sexo = TryCast(obtenerPaciente.Fields("Sexo").Value, String)
-        Dim paciente As New Paciente(nombre, segundonombre, apellido, segundoapellido, email, ID_paciente, direccion, ci, contraseña, telefono, fechaString, sexo, peso, altura, patologiaprevia)
-
-        Return paciente
-    End Function
-
-
-    Public Function obtenerUnMedico(ID_medico As String) As Medico
-        Dim connection As Connection = conectar()
-        Dim fechaBaseDatos As Date
-        Dim fechaString As String
-        Dim id, nombre, segundonombre, apellido, segundoapellido, email, direccion, ci, contraseña, especializacion, telefono, sexo, lugardetrabajo As String
-        Dim obtenerMedico As Recordset = connection.Execute("select usuario.* ,medico.* ,telefono_us.Telefono,campo_medico.nombre as 'Campo',campo_medico.id_campomedico " +
-                                                            "from usuario inner join medico on " +
-                                                            "usuario.id_us = medico.id_med inner join especializado on " +
-                                                            "medico.ID_MED = especializado.id_medE inner join campo_medico on " +
-                                                            "especializado.id_campomedicoE = campo_medico.id_campomedico inner join telefono_us on " +
-                                                            "usuario.id_us = telefono_us.ID_US " +
-                                                            "where id_us ='" + ID_medico + "' " +
-                                                            "group by id_us;")
-
-        ci = TryCast(obtenerMedico.Fields("CI").Value, String)
-        nombre = TryCast(obtenerMedico.Fields("nombre").Value, String)
-        apellido = TryCast(obtenerMedico.Fields("apellido").Value, String)
-        email = TryCast(obtenerMedico.Fields("email").Value, String)
-        direccion = TryCast(obtenerMedico.Fields("direccion").Value, String)
-        Dim consultaTelefono As Recordset = connection.Execute("select telefono from telefono_us where id_us ='" + ID_medico + "';")
-        telefono = TryCast(consultaTelefono.Fields("Telefono").Value, String)
-        fechaBaseDatos = TryCast(obtenerMedico.Fields("FDN").Value, Object)
-        fechaString = Format(fechaBaseDatos, "yyyy/MM/dd")
-        especializacion = TryCast(obtenerMedico.Fields("Campo").Value, String)
-        segundonombre = TryCast(obtenerMedico.Fields("segundo_nombre").Value, String)
-        segundoapellido = TryCast(obtenerMedico.Fields("segundo_apellido").Value, String)
-        lugardetrabajo = TryCast(obtenerMedico.Fields("Lugar_de_trabajo").Value, String)
-        sexo = TryCast(obtenerMedico.Fields("Sexo").Value, String)
-        contraseña = TryCast(obtenerMedico.Fields("contrasenia").Value, String)
-        Dim medico As New Medico(nombre, segundonombre, apellido, segundoapellido, email, ID_medico, direccion, ci, contraseña, especializacion, telefono, fechaString, sexo, lugardetrabajo)
-        Return medico
-    End Function
 
     '-----------------------------------------------------------------------------------------------------------////
     'Funcion de logeo a la aplicacion
@@ -629,7 +566,13 @@ Public Class ConexionConBD
                 If consulta.EOF = False Then
                     idConsulta = TryCast(consulta.Fields("id_sala").Value, String)
                 End If
-                id = "IDS"
+                id = "SAL"
+            Case 7
+                consulta = connection.Execute("select id_trt from tratamiento;")
+                If consulta.EOF = False Then
+                    idConsulta = TryCast(consulta.Fields("id_trt").Value, String)
+                End If
+                id = "TRT"
         End Select
 
         Do
@@ -758,13 +701,12 @@ Public Class ConexionConBD
         Return listaDiagnostico
     End Function
 
-    Public Sub agregarDiagnostico_A_BD(diagnosticos As List(Of Diagnostico), paciente As Paciente, fecha As String)
+    Public Sub agregarDiagnostico_A_BD(diagnosticos As List(Of Diagnostico), paciente As Paciente, fecha As String, idDiagnostico As String)
         Dim connection As Connection = conectar()
-        Dim idDiagnostico As String = codigoRandom(5)
+
         Dim agregar_A_Diagnostico As Recordset = connection.Execute("insert into diagnostico values('" + idDiagnostico + "');")
         Dim diagnostico As String = diagnosticos.ElementAt(0).id
         Dim agregar_A_Resulta As Recordset = connection.Execute("insert into resulta values('" + idDiagnostico + "','" + diagnostico + "');")
-
         Dim patologia_Mas_probable As String = diagnosticos.ElementAt(0).nombre
         Dim agregar_a_dianosticoapp As Recordset = connection.Execute("insert into diagnostico_app values('" + idDiagnostico + "','" + paciente.ID + "','" + fecha + "');")
 
@@ -814,12 +756,13 @@ Public Class ConexionConBD
         Return listaMedicos
     End Function
 
-    Public Sub crearSalaChat(fecha As String, medico As Medico, paciente As Paciente)
+    Public Sub crearSalaChat(fecha As String, medico As Medico, paciente As Paciente, idDiagnostico As String)
         Dim connection As Connection = conectar()
         Dim idsala As String = codigoRandom(6)
         Dim crearsala As Recordset = connection.Execute("insert into sala values('" + idsala + "','" + fecha + "','P');")
         Dim insetarPacienteEnSala As Recordset = connection.Execute("insert into chatea values('" + paciente.ID + "','" + idsala + "');")
         Dim insertarMedico As Recordset = connection.Execute("insert into atiende values('" + idsala + "','" + medico.ID + "');")
+        Dim crearDiagnostico_medico As Recordset = connection.Execute("insert into diagnostico_med values('" + idDiagnostico + "','" + medico.ID + "')")
 
     End Sub
 
@@ -962,11 +905,82 @@ Public Class ConexionConBD
     '------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Funciones para el historial de consulta y ingresar nuevas consultas al historial.
 
-    Public Sub finalizarConsultaMedico()
+    Public Sub finalizarConsultaMedico(contenido As String, id_tratamiento As String, id_medico As String, id_diag As String)
         Dim connection As Connection = conectar()
-
+        Dim consulta As Recordset = connection.Execute("insert into tratamiento values('" + id_tratamiento + "','" + contenido + "','" + id_medico + "','" + id_diag + "')")
 
     End Sub
+
+    '-----------------------------------------------------------------------------------------------------------------------------------------------------------
+    'Funciones para obtener un solo medico o paciente, para tener un perfil o cualquier dato que se desee.
+    Public Function obtenerUnPaciente(ID_sala As String) As Paciente
+        Dim connection As Connection = conectar()
+        Dim fechaBaseDatos As Date
+        Dim fechaString As String
+        Dim nombre, segundonombre, apellido, segundoapellido, email, direccion, ci, contraseña, telefono, sexo, peso, altura, patologiaprevia, id As String
+        Dim obtenerPaciente As Recordset = connection.Execute("select usuario.*,telefono_us.Telefono,paciente.altura,paciente.PatologiasP,paciente.peso,sala.id_sala " +
+                                                              "from usuario inner join paciente on " +
+                                                              "usuario.ID_US = paciente.ID_PAC join telefono_us on " +
+                                                              "usuario.ID_US = telefono_us.ID_US inner join chatea on " +
+                                                              "paciente.ID_PAC = chatea.Cid_pac inner join sala on " +
+                                                              "chatea.Cid_sala = sala.id_sala inner join atiende on " +
+                                                              "sala.id_sala = atiende.Aid_sala where sala.id_sala = '" + ID_sala + "';")
+
+        id = TryCast(obtenerPaciente.Fields("id_us").Value, String)
+        nombre = TryCast(obtenerPaciente.Fields("Nombre").Value, String)
+        apellido = TryCast(obtenerPaciente.Fields("Apellido").Value, String)
+        email = TryCast(obtenerPaciente.Fields("Email").Value, String)
+        direccion = TryCast(obtenerPaciente.Fields("Direccion").Value, String)
+        ci = TryCast(obtenerPaciente.Fields("CI").Value, String)
+        contraseña = TryCast(obtenerPaciente.Fields("Contrasenia").Value, String)
+        Dim consultaTelefono As Recordset = connection.Execute("select telefono from telefono_us where id_us ='" + id + "';")
+        telefono = TryCast(consultaTelefono.Fields("Telefono").Value, String)
+        fechaBaseDatos = TryCast(obtenerPaciente.Fields("FDN").Value, Object)
+        fechaString = Format(fechaBaseDatos, "yyyy/MM/dd")
+        peso = TryCast(obtenerPaciente.Fields("peso").Value, String)
+        altura = TryCast(obtenerPaciente.Fields("altura").Value, String)
+        patologiaprevia = TryCast(obtenerPaciente.Fields("patologiasp").Value, String)
+        segundonombre = TryCast(obtenerPaciente.Fields("segundo_nombre").Value, String)
+        segundoapellido = TryCast(obtenerPaciente.Fields("segundo_apellido").Value, String)
+        sexo = TryCast(obtenerPaciente.Fields("Sexo").Value, String)
+        Dim paciente As New Paciente(nombre, segundonombre, apellido, segundoapellido, email, id, direccion, ci, contraseña, telefono, fechaString, sexo, peso, altura, patologiaprevia)
+
+        Return paciente
+    End Function
+
+
+    Public Function obtenerUnMedico(id_sala As String) As Medico
+        Dim connection As Connection = conectar()
+        Dim fechaBaseDatos As Date
+        Dim fechaString As String
+        Dim id, nombre, segundonombre, apellido, segundoapellido, email, direccion, ci, contraseña, especializacion, telefono, sexo, lugardetrabajo As String
+        Dim obtenerMedico As Recordset = connection.Execute("select usuario.*, telefono_us.Telefono, medico.Lugar_de_trabajo, campo_medico.nombre, sala.id_sala " +
+                                                            "from usuario inner Join medico On usuario.ID_US = medico.ID_MED inner Join telefono_us On " +
+                                                            "Usuario.ID_US = telefono_us.ID_US inner Join especializado On medico.ID_MED = especializado.id_medE inner Join campo_medico On " +
+                                                            "especializado.id_campomedicoE = campo_medico.id_campomedico inner Join atiende On medico.ID_MED = atiende.Aid_medico inner Join sala On " +
+                                                            "atiende.Aid_sala = sala.id_sala Where sala.id_sala = '" + id_sala + "';")
+
+        id = TryCast(obtenerMedico.Fields("id_us").Value, String)
+        ci = TryCast(obtenerMedico.Fields("CI").Value, String)
+        nombre = TryCast(obtenerMedico.Fields("nombre").Value, String)
+        apellido = TryCast(obtenerMedico.Fields("apellido").Value, String)
+        email = TryCast(obtenerMedico.Fields("email").Value, String)
+        direccion = TryCast(obtenerMedico.Fields("direccion").Value, String)
+        Dim consultaTelefono As Recordset = connection.Execute("select telefono from telefono_us where id_us ='" + id + "';")
+        telefono = TryCast(consultaTelefono.Fields("Telefono").Value, String)
+        fechaBaseDatos = TryCast(obtenerMedico.Fields("FDN").Value, Object)
+        fechaString = Format(fechaBaseDatos, "yyyy/MM/dd")
+        especializacion = TryCast(obtenerMedico.Fields("Campo").Value, String)
+        segundonombre = TryCast(obtenerMedico.Fields("segundo_nombre").Value, String)
+        segundoapellido = TryCast(obtenerMedico.Fields("segundo_apellido").Value, String)
+        lugardetrabajo = TryCast(obtenerMedico.Fields("Lugar_de_trabajo").Value, String)
+        sexo = TryCast(obtenerMedico.Fields("Sexo").Value, String)
+        contraseña = TryCast(obtenerMedico.Fields("contrasenia").Value, String)
+        Dim medico As New Medico(nombre, segundonombre, apellido, segundoapellido, email, id, direccion, ci, contraseña, especializacion, telefono, fechaString, sexo, lugardetrabajo)
+        Return medico
+    End Function
+
+
 
 End Class
 
