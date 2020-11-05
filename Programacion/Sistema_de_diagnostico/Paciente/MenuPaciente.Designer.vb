@@ -31,7 +31,6 @@ Partial Class MenuPaciente
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnAgregar = New Guna.UI2.WinForms.Guna2Button()
         Me.lstSintomas = New System.Windows.Forms.ListView()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.btnMenu_RealizarDiagnostico = New Guna.UI2.WinForms.Guna2Button()
         Me.btnCerrarSesion = New Guna.UI2.WinForms.Guna2Button()
         Me.labIniciales = New System.Windows.Forms.Label()
@@ -110,7 +109,6 @@ Partial Class MenuPaciente
         Me.panelRealizarDiagnostico.Controls.Add(Me.paelRealizaDiagnostico2)
         Me.panelRealizarDiagnostico.Controls.Add(Me.btnAgregar)
         Me.panelRealizarDiagnostico.Controls.Add(Me.lstSintomas)
-        Me.panelRealizarDiagnostico.Controls.Add(Me.Label4)
         Me.panelRealizarDiagnostico.Location = New System.Drawing.Point(0, 71)
         Me.panelRealizarDiagnostico.Name = "panelRealizarDiagnostico"
         Me.panelRealizarDiagnostico.Size = New System.Drawing.Size(284, 582)
@@ -197,16 +195,6 @@ Partial Class MenuPaciente
         Me.lstSintomas.TabIndex = 10
         Me.lstSintomas.UseCompatibleStateImageBehavior = False
         Me.lstSintomas.View = System.Windows.Forms.View.Tile
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(13, 542)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(113, 13)
-        Me.Label4.TabIndex = 9
-        Me.Label4.Text = "Politicas de privacidad"
         '
         'btnMenu_RealizarDiagnostico
         '
@@ -806,7 +794,6 @@ Partial Class MenuPaciente
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.panelRealizarDiagnostico.ResumeLayout(False)
-        Me.panelRealizarDiagnostico.PerformLayout()
         Me.paelRealizaDiagnostico2.ResumeLayout(False)
         Me.paelRealizaDiagnostico2.PerformLayout()
         Me.panelChat.ResumeLayout(False)
@@ -868,7 +855,6 @@ Partial Class MenuPaciente
     Friend WithEvents Label1 As Label
     Friend WithEvents btnAgregar As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents lstSintomas As ListView
-    Friend WithEvents Label4 As Label
     Friend WithEvents btnEnviar As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents labDiagnostico4 As Label
     Friend WithEvents labDiagnostico3 As Label

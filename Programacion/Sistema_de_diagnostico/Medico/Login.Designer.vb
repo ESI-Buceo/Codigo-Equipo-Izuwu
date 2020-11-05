@@ -28,8 +28,6 @@ Partial Class Login
         Me.txtContraseña = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtUsuario = New Guna.UI2.WinForms.Guna2TextBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.labOlvidoPassword = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnEntrar = New Guna.UI2.WinForms.Guna2Button()
@@ -48,8 +46,6 @@ Partial Class Login
         Me.Panel1.Controls.Add(Me.txtContraseña)
         Me.Panel1.Controls.Add(Me.txtUsuario)
         Me.Panel1.Controls.Add(Me.PictureBox2)
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.labOlvidoPassword)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.btnEntrar)
@@ -135,28 +131,6 @@ Partial Class Login
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 18
         Me.PictureBox2.TabStop = False
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(12, 613)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(111, 13)
-        Me.Label5.TabIndex = 7
-        Me.Label5.Text = "Politicas de privacidad"
-        '
-        'labOlvidoPassword
-        '
-        Me.labOlvidoPassword.AutoSize = True
-        Me.labOlvidoPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labOlvidoPassword.ForeColor = System.Drawing.Color.White
-        Me.labOlvidoPassword.Location = New System.Drawing.Point(12, 338)
-        Me.labOlvidoPassword.Name = "labOlvidoPassword"
-        Me.labOlvidoPassword.Size = New System.Drawing.Size(130, 13)
-        Me.labOlvidoPassword.TabIndex = 5
-        Me.labOlvidoPassword.Text = "¿Olvidaste tu contraseña?"
         '
         'Label3
         '
@@ -273,10 +247,8 @@ Partial Class Login
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents labOlvidoPassword As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label5 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents btnEntrar As Guna.UI2.WinForms.Guna2Button

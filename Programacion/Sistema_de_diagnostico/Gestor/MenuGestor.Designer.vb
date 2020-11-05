@@ -25,7 +25,6 @@ Partial Class MenuGestor
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MenuGestor))
         Me.panelMenuInicio = New System.Windows.Forms.Panel()
         Me.labCambiarContraseña = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.labIniciales = New System.Windows.Forms.Label()
         Me.labNombre = New System.Windows.Forms.Label()
         Me.btnMenu_AgregarMedico = New Guna.UI2.WinForms.Guna2Button()
@@ -121,7 +120,6 @@ Partial Class MenuGestor
         '
         Me.panelMenuInicio.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer))
         Me.panelMenuInicio.Controls.Add(Me.labCambiarContraseña)
-        Me.panelMenuInicio.Controls.Add(Me.Label2)
         Me.panelMenuInicio.Controls.Add(Me.labIniciales)
         Me.panelMenuInicio.Controls.Add(Me.labNombre)
         Me.panelMenuInicio.Controls.Add(Me.btnMenu_AgregarMedico)
@@ -142,17 +140,6 @@ Partial Class MenuGestor
         Me.labCambiarContraseña.Size = New System.Drawing.Size(129, 16)
         Me.labCambiarContraseña.TabIndex = 39
         Me.labCambiarContraseña.Text = "Cambiar contraseña"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(12, 620)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(111, 13)
-        Me.Label2.TabIndex = 33
-        Me.Label2.Text = "Politicas de privacidad"
         '
         'labIniciales
         '
@@ -1173,7 +1160,6 @@ Partial Class MenuGestor
     Friend WithEvents txtModDel_Email As TextBox
     Friend WithEvents txtModDel_Empresa As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents panelABMSintoma As Panel
     Friend WithEvents Label13 As Label
     Friend WithEvents Label12 As Label
