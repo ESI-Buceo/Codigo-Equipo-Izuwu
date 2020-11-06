@@ -38,16 +38,17 @@ Public Class Login
 
     End Sub
 
-
+    '-----------------------------------------------------------------------------------------------------------------------------------
     Dim Instancia As LogicaAplicacion = New LogicaAplicacion()
 
-
+    'Funciones para cerrar y minimizar la aplicacion.
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
+    '-----------------------------------------------------------------------------------------------------------------------------------------------
 
     Dim mostrarContraseña As Boolean = True
     Private Sub btnMostrarContraseña_Click(sender As Object, e As EventArgs) Handles btnMostrarContraseña.Click

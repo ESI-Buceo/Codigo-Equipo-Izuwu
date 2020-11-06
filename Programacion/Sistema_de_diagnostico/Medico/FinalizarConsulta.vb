@@ -21,7 +21,7 @@ Public Class FinalizarConsulta
     Private Sub btnFinalizarConsulta_Click(sender As Object, e As EventArgs) Handles btnFinalizarConsulta.Click
         Dim textoFinal As String = "Patologia diagnosticada por el medico: " + cbxPatologiaFinal.Text + ". Detalles de la consulta: " + txtContenido.Text
         Dim id_tratamiento As String = instancia.codigoRandom(7)
-        Dim idDiagnostico As String = instancia.obtenerIDDiagnostico(medico.ID)
+        Dim idDiagnostico As String = instancia.obtenerIDDiagnostico(paciente.ID)
         instancia.finalizarConsultaMedico(textoFinal, id_tratamiento, medico.ID, idDiagnostico, sala)
         Me.Close()
     End Sub

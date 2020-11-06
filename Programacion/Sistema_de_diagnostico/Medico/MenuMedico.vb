@@ -18,6 +18,8 @@ Public Class MenuMedico
     Dim paciente As Paciente
 
     Dim cambiarContraseña As Boolean = False
+
+    Dim botonesChat As New List(Of Guna.UI2.WinForms.Guna2CircleButton)
     'Estas tres subrutinas permiten desplazar el formulario. 
 
     Private Sub LoginNew_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseDown
@@ -83,36 +85,8 @@ Public Class MenuMedico
         btnChats.FillColor = Color.FromArgb(38, 131, 108)
 
         nullvisible()
+        cargarBurbujasChat()
 
-        listaConsultas_EnCurso = instancia.obtenerSolicitudesChat_EnCurso(medico)
-        If listaConsultas_EnCurso.Count > 0 Then
-
-
-            Dim separacion As Single = 1
-            Dim indice As Integer = 1
-            Do
-                Dim botonChat As New Guna.UI2.WinForms.Guna2CircleButton()
-                With botonChat
-
-                    .Font = New Font("DejaVu Sans", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-                    .ForeColor = Color.Black
-                    .Animated = True
-                    .Location = New Point(11, separacion * 16)
-                    .Name = listaConsultas_EnCurso.ElementAt(indice - 1).id_sala
-                    .ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-                    .FillColor = Color.FromArgb(255, 255, 255)
-                    .Size = New Size(55, 57)
-                    .TabIndex = 0
-                    .Text = listaConsultas_EnCurso.ElementAt(indice - 1).nombre_usuario(0) + listaConsultas_EnCurso.ElementAt(indice - 1).apellido_usuario(0)
-                    AddHandler botonChat.Click, AddressOf btnChatsActivos_click
-                End With
-                panelListaChats.Controls.Add(botonChat)
-                separacion = separacion + 4.2
-                indice = indice + 1
-
-            Loop While (indice < listaConsultas_EnCurso.Count + 1)
-
-        End If
         panelChat.Visible = True
         panelListaChats.Visible = True
     End Sub
@@ -247,6 +221,10 @@ Public Class MenuMedico
 
         finalizarConsulta.ShowDialog()
 
+
+
+        cargarBurbujasChat()
+
     End Sub
 
 
@@ -312,5 +290,45 @@ Public Class MenuMedico
             txtChat.ScrollToCaret()
         End If
 
+    End Sub
+
+    Public Sub cargarBurbujasChat()
+        For Each boton As Control In panelListaChats.Controls
+            If ((TypeOf boton Is Guna.UI2.WinForms.Guna2CircleButton) AndAlso (boton.Name.Equals(id_sala))) Then
+                panelListaChats.Controls.Remove(boton)
+            End If
+
+        Next
+
+
+        listaConsultas_EnCurso = instancia.obtenerSolicitudesChat_EnCurso(medico)
+        If listaConsultas_EnCurso.Count > 0 Then
+
+
+            Dim separacion As Single = 1
+            Dim indice As Integer = 1
+            Do
+                Dim botonChat As New Guna.UI2.WinForms.Guna2CircleButton()
+                With botonChat
+
+                    .Font = New Font("DejaVu Sans", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+                    .ForeColor = Color.Black
+                    .Animated = True
+                    .Location = New Point(11, separacion * 16)
+                    .Name = listaConsultas_EnCurso.ElementAt(indice - 1).id_sala
+                    .ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+                    .FillColor = Color.FromArgb(255, 255, 255)
+                    .Size = New Size(55, 57)
+                    .TabIndex = 0
+                    .Text = listaConsultas_EnCurso.ElementAt(indice - 1).nombre_usuario(0) + listaConsultas_EnCurso.ElementAt(indice - 1).apellido_usuario(0)
+                    AddHandler botonChat.Click, AddressOf btnChatsActivos_click
+                End With
+                panelListaChats.Controls.Add(botonChat)
+                separacion = separacion + 4.2
+                indice = indice + 1
+                botonesChat.Add(botonChat)
+            Loop While (indice < listaConsultas_EnCurso.Count + 1)
+
+        End If
     End Sub
 End Class

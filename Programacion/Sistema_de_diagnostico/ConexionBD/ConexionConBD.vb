@@ -4,6 +4,8 @@ Imports Microsoft.VisualBasic.ApplicationServices
 Public Class ConexionConBD
 
     'Funcion para conectarse a la base de datos
+
+    'Se establece la conexion a la base de datos
     Private Function conectar() As Connection
         Dim connection As New Connection
         connection.ConnectionString = "" &
@@ -19,7 +21,8 @@ Public Class ConexionConBD
     End Function
 
     '///---------------------------------------------------------------------------------------------------------------
-    'Funciones para obtener los datos de la base de datos y almacenarlos en listas
+    'Funciones para obtener los datos de la base de datos y almacenarlos en listas.
+    'Estos datos son patologias, sintomas, pacientes, medicos, gestores, referencias de patologia y sintomas.
 
     Public Function ObtenerPacientes() As List(Of Paciente)
         Dim connection As Connection = conectar()
@@ -251,7 +254,7 @@ Public Class ConexionConBD
 
     '-----------------------------------------------------------------------------------------------------------////
     'Funcion de logeo a la aplicacion
-
+    'Mediante la cedula que se ingresa por el textbox se busca si existe y se crea un objeto de tipo usuario(medico, paciente o gestor)
     Public Function LoginMedico(UserCi As String, pass As String) As Medico
         Dim connection As Connection = conectar()
         Dim consulta As Recordset = connection.Execute("select usuario.* ,medico.* ,telefono_us.Telefono,campo_medico.nombre as 'Campo',campo_medico.id_campomedico " +
@@ -543,6 +546,10 @@ Public Class ConexionConBD
 
 
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------////
+    'Funcion para generarUnaIDrandom
+
+    'Esta toma las ID de una tabla en especifico (con los case) y verifica que la ID que se genera no exista ya
+    'si es asi se vuelve a generar una nueva ID hasta que no existan coincidencias.
     Public Function codigoRandom(num As Integer) As String
 
         Dim connection As Connection = conectar()
@@ -670,6 +677,11 @@ Public Class ConexionConBD
 
     'Funcion para obtener diagnostico y agregarlo a la base de datos
 
+
+    'Primero se va a utilizar la lista de sintomas (que previamente se envia desde la aplicacion de paciente), el ID del paciente 
+    'y la fecha actual donde se hace la consulta
+    'Luego se crea un nuevo test en la tabla Test, y se envian los sintomas a la tabla Posee.
+
     Public Sub agregarSintomasPaciente(sintomas As List(Of Sintoma), paciente As Paciente, fecha As String)
         Dim connection As Connection = conectar()
         Dim nTest As Recordset = connection.Execute("SELECT nro_test FROM test " +
@@ -688,6 +700,9 @@ Public Class ConexionConBD
         connection.Close()
     End Sub
 
+    'Se usa el numero de test y se obtiene el diagnostico.
+    'El mismo se hace que las coincidencias de sintomas con las patologias se muestran 
+    'y se limitan los resultados a 4 siendo estas las mas coincidentes
     Public Function Diagnostico() As List(Of Diagnostico)
         Dim connection As Connection = conectar()
         Dim listaDiagnostico As New List(Of Diagnostico)
@@ -729,13 +744,15 @@ Public Class ConexionConBD
         Return listaDiagnostico
     End Function
 
+    'Por ultimo se agrega un nuevo diagnostico a la tabla diagnostico
+    'Luego el id del diagnostico y el diagnostico arrojado a resulta.
+    'y la patologia mas coincidente a la tabla diagnostico_app.
     Public Sub agregarDiagnostico_A_BD(diagnosticos As List(Of Diagnostico), paciente As Paciente, fecha As String, idDiagnostico As String)
         Dim connection As Connection = conectar()
 
         Dim agregar_A_Diagnostico As Recordset = connection.Execute("insert into diagnostico values('" + idDiagnostico + "');")
         Dim diagnostico As String = diagnosticos.ElementAt(0).id
         Dim agregar_A_Resulta As Recordset = connection.Execute("insert into resulta values('" + idDiagnostico + "','" + diagnostico + "');")
-        Dim patologia_Mas_probable As String = diagnosticos.ElementAt(0).nombre
         Dim agregar_a_dianosticoapp As Recordset = connection.Execute("insert into diagnostico_app values('" + idDiagnostico + "','" + paciente.ID + "','" + fecha + "');")
         connection.Close()
     End Sub
@@ -746,6 +763,7 @@ Public Class ConexionConBD
 
     'Parte del paciente
 
+    'Se obtienen los medicos con una especialidad que trate la patologia que se tiene.
     Public Function medicosEspecializados(patologia As Patologia) As List(Of Medico)
         Dim connection As Connection = conectar()
 
@@ -785,6 +803,8 @@ Public Class ConexionConBD
         Return listaMedicos
     End Function
 
+    'Se crea una sala de chat donde este el paciente que pidio la consulta
+    'y el medico que eligio, ademas de crearse un nuevo diagnostico_med con la id del diagnostico del paciente.
     Public Sub crearSalaChat(fecha As String, medico As Medico, paciente As Paciente, idDiagnostico As String)
         Dim connection As Connection = conectar()
         Dim idsala As String = codigoRandom(6)
@@ -795,6 +815,7 @@ Public Class ConexionConBD
         connection.Close()
     End Sub
 
+    'se traen los chats donde el estado sea en Curso (osea que el medico acepto su solicitud).
     Public Function obtenerSolicitudesAceptadas(paciente As Paciente) As List(Of Sala_Chat)
         Dim connection As Connection = conectar()
         Dim obtenerSolicitudes As Recordset = connection.Execute("select Cid_sala,sala.estado,sala.fecha,usuario.Nombre,usuario.Apellido,atiende.Aid_medico " +
@@ -828,6 +849,8 @@ Public Class ConexionConBD
     '------------------------------------------------------------
     'Parte del medico
 
+    'Se obtienen las consultas hechas por distintos pacientes a un medico en especifico.
+    'donde el estado de la consulta sea Pendiente.
     Public Function obtenerSolicitudesChatPendientes(medico As Medico) As List(Of Sala_Chat)
         Dim connection As Connection = conectar()
         Dim obtenerSolicitudes As Recordset = connection.Execute("select usuario.nombre,usuario.apellido,sala.*,chatea.Cid_pac " +
@@ -858,12 +881,14 @@ Public Class ConexionConBD
 
     End Function
 
+    'Una vez aceptado se cambia el estado a en curso.
     Public Sub aceptarSolicitud_De_Chat(id_sala As String)
         Dim connection As Connection = conectar()
         Dim cambiarEstado As Recordset = connection.Execute("update sala set estado ='C' where id_sala ='" + id_sala + "';")
         connection.Close()
     End Sub
 
+    'Se obtienen las salas de chat donde el estado sea en curso.
     Public Function obtenerSolicitudesChat_EnCurso(medico As Medico) As List(Of Sala_Chat)
         Dim connection As Connection = conectar()
         Dim obtenerSolicitudes As Recordset = connection.Execute("select usuario.nombre,usuario.apellido,sala.*,atiende.Aid_medico,chatea.Cid_pac " +
@@ -940,21 +965,24 @@ Public Class ConexionConBD
 
     '------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Funciones para el historial de consulta y ingresar nuevas consultas al historial.
-    Public Function obtenerIDDiagnostico(idmedico As String) As String
+
+    'Aqui solamente se consigue el Id del diagnostico donde el medico esta atendiendo, para usarse despues.
+    Public Function obtenerIDDiagnostico(idpaciente As String) As String
         Dim connection As Connection = conectar()
-        Dim consulta As Recordset = connection.Execute("select diagnostico_med.id_Dmed " +
-                                                        "from paciente inner join chatea on " +
-                                                        "paciente.ID_PAC = chatea.Cid_pac inner join sala on " +
-                                                        "chatea.Cid_sala = sala.id_sala inner join atiende on " +
-                                                        "sala.id_sala = atiende.Aid_sala inner join medico on " +
-                                                        "atiende.Aid_medico = medico.ID_MED inner join diagnostico_med on " +
-                                                        "medico.ID_MED = diagnostico_med.Did_med " +
-                                                        "where medico.id_med = '" + idmedico + "';")
-        Dim idDiag As String = TryCast(consulta.Fields("id_Dmed").Value, String)
+        Dim consulta As Recordset = connection.Execute("select paciente.ID_PAC,sala.id_sala,atiende.Aid_medico,diagnostico_app.ID_DAPP " +
+                                                       "from paciente inner join chatea on " +
+                                                       "paciente.ID_PAC = chatea.Cid_pac inner join sala on " +
+                                                       "chatea.Cid_sala = sala.id_sala inner join atiende on " +
+                                                       "sala.id_sala = atiende.Aid_sala inner join  diagnostico_app on " +
+                                                       "paciente.ID_PAC = diagnostico_app.ID_PAC " +
+                                                       "where paciente.ID_PAC=  '" + idpaciente + "';")
+        Dim idDiag As String = TryCast(consulta.Fields("id_DAPP").Value, String)
         connection.Close()
         Return idDiag
     End Function
 
+    'Se cambia el estado de la sala a Finalizado y se inserta a la tabla Tratamiento
+    'las concluciones del medico, con una id de tratamiento, id del medico y id de diagnostico.
     Public Sub finalizarConsultaMedico(contenido As String, id_tratamiento As String, id_medico As String, id_diag As String, id_sala As String)
         Dim connection As Connection = conectar()
         Dim consulta As Recordset = connection.Execute("insert into tratamiento values('" + id_tratamiento + "','" + contenido + "','" + id_medico + "','" + id_diag + "')")
@@ -962,8 +990,20 @@ Public Class ConexionConBD
         connection.Close()
     End Sub
 
+    Public Function obtenerHistorialMedico_Medico()
+        Dim connection As Connection = conectar()
+
+    End Function
+
+    Public Function obtenerHistorialMedico_Paciente()
+        Dim connection As Connection = conectar()
+
+    End Function
+
+
     '-----------------------------------------------------------------------------------------------------------------------------------------------------------
     'Funciones para obtener un solo medico o paciente, para tener un perfil o cualquier dato que se desee.
+    'Esto a modo de poder mostrar el perfil de un paciente o medico.
     Public Function obtenerUnPaciente(ID_sala As String) As Paciente
         Dim connection As Connection = conectar()
         Dim fechaBaseDatos As Date
@@ -1030,14 +1070,6 @@ Public Class ConexionConBD
         Dim medico As New Medico(nombre, segundonombre, apellido, segundoapellido, email, id, direccion, ci, contraseña, especializacion, telefono, fechaString, sexo, lugardetrabajo)
         connection.Close()
         Return medico
-    End Function
-
-    Public Function obtenerHistorialMedico_Medico()
-
-    End Function
-
-    Public Function obtenerHistorialMedico_Paciente()
-
     End Function
 
 

@@ -237,8 +237,8 @@ Public Class LogicaAplicacion
         instancia.crearSalaChat(fecha, medico, paciente, idDiagnostico)
     End Sub
 
-    Public Function obtenerIDDiagnostico(idmedico As String) As String
-        Return instancia.obtenerIDDiagnostico(idmedico)
+    Public Function obtenerIDDiagnostico(idpaciente As String) As String
+        Return instancia.obtenerIDDiagnostico(idpaciente)
     End Function
 
     Public Function obtenerSolicitudesChatPendientes(medico As Medico) As List(Of Sala_Chat)

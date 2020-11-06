@@ -174,40 +174,11 @@ Public Class MenuPaciente
         btnCerrarSesion.FillColor = Color.FromArgb(40, 117, 207)
 
         nullvisible()
-        Try
 
 
-            listaChatsAceptados = instancia.obtenerSolicitudesAceptadas(paciente)
-            If listaChatsAceptados.Count > 0 Then
+        cargarBurbujasChat()
 
 
-                Dim separacion As Single = 1
-                Dim indice As Integer = 1
-                Do
-                    Dim botonChat As New Guna.UI2.WinForms.Guna2CircleButton()
-                    With botonChat
-
-                        .Font = New Font("DejaVu Sans", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-                        .ForeColor = Color.White
-                        .Animated = True
-                        .Location = New Point(11, separacion * 16)
-                        .Name = listaChatsAceptados.ElementAt(indice - 1).id_sala
-                        .ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-                        .FillColor = Color.FromArgb(3, 187, 133)
-                        .Size = New Size(55, 57)
-                        .TabIndex = 0
-                        .Text = listaChatsAceptados.ElementAt(indice - 1).nombre_usuario(0) + " " + listaChatsAceptados.ElementAt(indice - 1).apellido_usuario(0)
-                        AddHandler botonChat.Click, AddressOf btnChatsActivos_click
-                    End With
-                    panelListaChats.Controls.Add(botonChat)
-                    separacion = separacion + 4.2
-                    indice = indice + 1
-
-                Loop While (indice < listaChatsAceptados.Count + 1)
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
         panelChat.Visible = True
         panelListaChats.Visible = True
 
@@ -388,16 +359,56 @@ Public Class MenuPaciente
 
             listaMensajes = instancia.obtenerMensajes(id_sala)
             For Each mensaje As Mensaje In listaMensajes
-                    Dim lineaMensaje As String = mensaje.emisor & ": " & mensaje.contenido & Environment.NewLine
-                    mensajesCompletos = mensajesCompletos & Environment.NewLine & lineaMensaje
+                Dim lineaMensaje As String = mensaje.emisor & ": " & mensaje.contenido & Environment.NewLine
+                mensajesCompletos = mensajesCompletos & Environment.NewLine & lineaMensaje
 
-                Next
-                txtChat.Text = mensajesCompletos
-                txtChat.SelectionStart = txtChat.TextLength
-                txtChat.ScrollToCaret()
+            Next
+            txtChat.Text = mensajesCompletos
+            txtChat.SelectionStart = txtChat.TextLength
+            txtChat.ScrollToCaret()
 
 
         End If
+
+    End Sub
+    Public Sub cargarBurbujasChat()
+        For Each boton As Control In panelListaChats.Controls
+            If ((TypeOf boton Is Guna.UI2.WinForms.Guna2CircleButton) AndAlso (boton.Name.Equals(id_sala))) Then
+                panelListaChats.Controls.Remove(boton)
+            End If
+
+        Next
+
+
+        listaChatsAceptados = instancia.obtenerSolicitudesAceptadas(paciente)
+        If listaChatsAceptados.Count > 0 Then
+
+
+            Dim separacion As Single = 1
+            Dim indice As Integer = 1
+            Do
+                Dim botonChat As New Guna.UI2.WinForms.Guna2CircleButton()
+                With botonChat
+
+                    .Font = New Font("DejaVu Sans", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+                    .ForeColor = Color.White
+                    .Animated = True
+                    .Location = New Point(11, separacion * 16)
+                    .Name = listaChatsAceptados.ElementAt(indice - 1).id_sala
+                    .ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+                    .FillColor = Color.FromArgb(3, 187, 133)
+                    .Size = New Size(55, 57)
+                    .TabIndex = 0
+                    .Text = listaChatsAceptados.ElementAt(indice - 1).nombre_usuario(0) + " " + listaChatsAceptados.ElementAt(indice - 1).apellido_usuario(0)
+                    AddHandler botonChat.Click, AddressOf btnChatsActivos_click
+                End With
+                panelListaChats.Controls.Add(botonChat)
+                separacion = separacion + 4.2
+                indice = indice + 1
+
+            Loop While (indice < listaChatsAceptados.Count + 1)
+        End If
+
 
     End Sub
 End Class
