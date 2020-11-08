@@ -836,6 +836,8 @@ Partial Class MenuGestor
         '
         'cbxEspecializacion
         '
+        Me.cbxEspecializacion.BackColor = System.Drawing.Color.White
+        Me.cbxEspecializacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxEspecializacion.FormattingEnabled = True
         Me.cbxEspecializacion.Location = New System.Drawing.Point(206, 385)
         Me.cbxEspecializacion.Name = "cbxEspecializacion"
@@ -861,6 +863,8 @@ Partial Class MenuGestor
         '
         'cbxSexo
         '
+        Me.cbxSexo.BackColor = System.Drawing.Color.White
+        Me.cbxSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxSexo.FormattingEnabled = True
         Me.cbxSexo.Items.AddRange(New Object() {"H", "M"})
         Me.cbxSexo.Location = New System.Drawing.Point(206, 214)
@@ -1123,9 +1127,9 @@ Partial Class MenuGestor
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnMinimizar)
         Me.Controls.Add(Me.panelMenuInicio)
+        Me.Controls.Add(Me.panelAgregarUsuario)
         Me.Controls.Add(Me.panelABMSintoma)
         Me.Controls.Add(Me.panelModificarEliminarMedico)
-        Me.Controls.Add(Me.panelAgregarUsuario)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)

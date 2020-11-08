@@ -12,6 +12,11 @@ Public Class ABMPatologia
         Me.Close()
     End Sub
 
+    'Al cargarse la ventana se verifica si es una modificacion
+    'o si es un elemento nuevo.
+    'Esto se hace con el atributo "confirmar"
+    'si el mismo es 0 significa que es un elemento existente
+    'si es -1 significa que es un elemento nuevo.
     Private Sub ABMPatologia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If confirmar = -1 Then
             cargarPantalla()
@@ -23,6 +28,9 @@ Public Class ABMPatologia
         End If
     End Sub
 
+    'Despues de apretar aceptar se verifican cuales casillas del CheckListBox
+    'estan marcadas y mediante un for se agregan a la referencia sintoma-patologia.
+    'Por ultimo agrega los datos de la patologia, ademas de el campo medico que la trata.
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         Try
 
@@ -63,7 +71,7 @@ Public Class ABMPatologia
     End Sub
 
     '---------------------------------------------------------------------------------------------------------------------------------------------------------------
-    'Funcion para cargar listas, textbox, etc.
+    'Funciones para cargar listas, textbox, etc.
 
     Public Sub cargarPantalla()
         listaSintomas = instancia.ObtenerSintoma()

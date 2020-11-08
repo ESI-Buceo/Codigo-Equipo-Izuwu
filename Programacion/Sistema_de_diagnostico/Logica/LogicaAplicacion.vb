@@ -4,6 +4,13 @@ Imports Microsoft.VisualBasic.ApplicationServices
 Public Class LogicaAplicacion
     Dim instancia As New ConexionConBD()
 
+    'Las funciones de aca en general sirven como "puente" o "conector"
+    'entre la persistencia y la presentacion.
+
+    'Algunas de estas funciones realizan validaciones para que no lleguen
+    'datos erroneos a la persistencia.
+
+
     Public Function ObtenerPacientes() As List(Of Paciente)
         Return instancia.ObtenerPacientes()
     End Function
@@ -90,7 +97,9 @@ Public Class LogicaAplicacion
     End Sub
     '-----------------------------------------------------------------------------------------------------------------------------------------------
     Public Sub agregarPaciente(paciente As Paciente)
-        If paciente.nombre.Length = 0 Or paciente.apellido.Length = 0 Or paciente.CI.Length = 0 Or paciente.Direccion.Length = 0 Or paciente.email.Length = 0 Or paciente.contraseña.Length = 0 Or paciente.telefono.Length = 0 Or paciente.fechadenacimiento.Length = 0 Or paciente.segundoapellido.Length = 0 Or paciente.altura.Length = 0 Or paciente.peso.Length = 0 Or paciente.patologiaPrevia.Length = 0 Then
+        If paciente.nombre.Length = 0 Or paciente.apellido.Length = 0 Or paciente.CI.Length = 0 Or paciente.Direccion.Length = 0 Or paciente.email.Length = 0 Or
+            paciente.contraseña.Length = 0 Or paciente.telefono.Length = 0 Or paciente.fechadenacimiento.Length = 0 Or paciente.segundoapellido.Length = 0 Or
+            paciente.altura.Length = 0 Or paciente.peso.Length = 0 Or paciente.patologiaPrevia.Length = 0 Then
             Throw New Exception("Datos incompletos.")
         Else
             instancia.agregarPaciente(paciente)
@@ -98,7 +107,9 @@ Public Class LogicaAplicacion
     End Sub
 
     Public Sub agregarMedico(medico As Medico, idcampo As String)
-        If medico.nombre.Length = 0 Or medico.apellido.Length = 0 Or medico.CI.Length = 0 Or medico.Direccion.Length = 0 Or medico.email.Length = 0 Or medico.contraseña.Length = 0 Or medico.telefono.Length = 0 Or medico.fechadenacimiento.Length = 0 Or medico.segundoapellido.Length = 0 Or medico.lugarDeTrabajo.Length = 0 Then
+        If medico.nombre.Length = 0 Or medico.apellido.Length = 0 Or medico.CI.Length = 0 Or medico.Direccion.Length = 0 Or medico.email.Length = 0 Or
+            medico.contraseña.Length = 0 Or medico.telefono.Length = 0 Or medico.fechadenacimiento.Length = 0 Or medico.segundoapellido.Length = 0 Or
+            medico.lugarDeTrabajo.Length = 0 Then
             Throw New Exception("Datos incompletos.")
         Else
             instancia.agregarMedico(medico, idcampo)
@@ -106,7 +117,9 @@ Public Class LogicaAplicacion
     End Sub
 
     Public Sub agregarGestor(gestor As Gestor)
-        If gestor.nombre.Length = 0 Or gestor.apellido.Length = 0 Or gestor.CI.Length = 0 Or gestor.Direccion.Length = 0 Or gestor.email.Length = 0 Or gestor.contraseña.Length = 0 Or gestor.telefono.Length = 0 Or gestor.fechadenacimiento.Length = 0 Or gestor.empresa.Length = 0 Or gestor.segundoapellido.Length = 0 Then
+        If gestor.nombre.Length = 0 Or gestor.apellido.Length = 0 Or gestor.CI.Length = 0 Or gestor.Direccion.Length = 0 Or gestor.email.Length = 0 Or
+            gestor.contraseña.Length = 0 Or gestor.telefono.Length = 0 Or gestor.fechadenacimiento.Length = 0 Or gestor.empresa.Length = 0 Or
+            gestor.segundoapellido.Length = 0 Then
             Throw New Exception("Datos incompletos.")
         Else
             instancia.agregarGestor(gestor)
@@ -176,7 +189,9 @@ Public Class LogicaAplicacion
     End Sub
 
     Public Sub actualizarMedico(medico As Medico, idcampo As String)
-        If medico.nombre.Length = 0 Or medico.apellido.Length = 0 Or medico.email.Length = 0 Or medico.Direccion.Length = 0 Or medico.CI.Length = 0 Or medico.contraseña.Length = 0 Or medico.telefono.Length = 0 Or medico.fechadenacimiento.Length = 0 Or medico.segundoapellido.Length = 0 Or medico.lugarDeTrabajo.Length = 0 Then
+        If medico.nombre.Length = 0 Or medico.apellido.Length = 0 Or medico.email.Length = 0 Or medico.Direccion.Length = 0 Or
+            medico.CI.Length = 0 Or medico.contraseña.Length = 0 Or medico.telefono.Length = 0 Or medico.fechadenacimiento.Length = 0 Or
+            medico.segundoapellido.Length = 0 Or medico.lugarDeTrabajo.Length = 0 Then
             Throw New Exception("Datos vacíos.")
         Else
             instancia.actualizarMedico(medico, idcampo)
@@ -187,7 +202,8 @@ Public Class LogicaAplicacion
     End Sub
 
     Public Sub actualizarPaciente(paciente As Paciente)
-        If paciente.email.Length = 0 Or paciente.Direccion.Length = 0 Or paciente.contraseña.Length = 0 Or paciente.telefono.Length = 0 Or paciente.altura.Length = 0 Or paciente.peso.Length = 0 Then
+        If paciente.email.Length = 0 Or paciente.Direccion.Length = 0 Or paciente.contraseña.Length = 0 Or paciente.telefono.Length = 0 Or
+            paciente.altura.Length = 0 Or paciente.peso.Length = 0 Then
             Throw New Exception("Datos vacíos.")
         Else
             instancia.actualizarPaciente(paciente)
@@ -195,7 +211,8 @@ Public Class LogicaAplicacion
     End Sub
 
     Public Sub actualizarGestor(gestor As Gestor)
-        If gestor.nombre.Length = 0 Or gestor.apellido.Length = 0 Or gestor.email.Length = 0 Or gestor.Direccion.Length = 0 Or gestor.CI.Length = 0 Or gestor.contraseña.Length = 0 Or gestor.telefono.Length = 0 Or gestor.fechadenacimiento.Length = 0 Or gestor.empresa.Length = 0 Or gestor.segundoapellido.Length = 0 Then
+        If gestor.nombre.Length = 0 Or gestor.apellido.Length = 0 Or gestor.email.Length = 0 Or gestor.Direccion.Length = 0 Or gestor.CI.Length = 0 Or
+            gestor.contraseña.Length = 0 Or gestor.telefono.Length = 0 Or gestor.fechadenacimiento.Length = 0 Or gestor.empresa.Length = 0 Or gestor.segundoapellido.Length = 0 Then
             Throw New Exception("Datos vacíos.")
         Else
             instancia.actualizarGestor(gestor)
@@ -257,11 +274,11 @@ Public Class LogicaAplicacion
 
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    Public Sub enviarMensaje(contenido As String, id_sala As String, fecha As String, id_emisor As String)
+    Public Sub enviarMensaje(contenido As String, id_sala As String, fecha As String, id_emisor As String, nombre As String)
         If id_emisor(0) = "P" Then
-            instancia.enviarMensajePaciente(contenido, id_sala, fecha)
+            instancia.enviarMensajePaciente(contenido, id_sala, fecha, nombre)
         ElseIf id_emisor(0) = "M" Then
-            instancia.enviarMensajeMedico(contenido, id_sala, fecha)
+            instancia.enviarMensajeMedico(contenido, id_sala, fecha, nombre)
         End If
     End Sub
 

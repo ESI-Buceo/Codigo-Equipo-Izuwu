@@ -31,7 +31,7 @@ Partial Class Login
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.labRegistro = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnMinimizar = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.btnCerrar = New Guna.UI2.WinForms.Guna2CircleButton()
@@ -50,7 +50,7 @@ Partial Class Login
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.labRegistro)
         Me.Panel1.Location = New System.Drawing.Point(0, -3)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(284, 648)
@@ -178,16 +178,16 @@ Partial Class Login
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "Usuario(CI)"
         '
-        'Label6
+        'labRegistro
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(12, 587)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(59, 13)
-        Me.Label6.TabIndex = 8
-        Me.Label6.Text = "Registrarse"
+        Me.labRegistro.AutoSize = True
+        Me.labRegistro.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labRegistro.ForeColor = System.Drawing.Color.White
+        Me.labRegistro.Location = New System.Drawing.Point(9, 599)
+        Me.labRegistro.Name = "labRegistro"
+        Me.labRegistro.Size = New System.Drawing.Size(59, 13)
+        Me.labRegistro.TabIndex = 8
+        Me.labRegistro.Text = "Registrarse"
         '
         'PictureBox1
         '
@@ -264,7 +264,7 @@ Partial Class Login
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label6 As Label
+    Friend WithEvents labRegistro As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox2 As PictureBox

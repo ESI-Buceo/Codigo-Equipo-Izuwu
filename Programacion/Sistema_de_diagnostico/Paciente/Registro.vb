@@ -1,47 +1,28 @@
-﻿Imports Datos, Logica
+﻿Imports System.Globalization
+Imports Datos, Logica
 Public Class Registro
 
 
-    Dim ex, ey As Integer
+    Dim ejeX, ejeY As Integer
     Dim Arrastre As Boolean
     Dim instancia As New LogicaAplicacion()
 
-
-    'Definir variables globales; estas van despues de la linea de inherits
-
     'Estas tres subrutinas permiten desplazar el formulario. 
-
     Private Sub LoginNew_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseDown
-
-        ex = e.X
-
-        ey = e.Y
-
+        ejeX = e.X
+        ejeY = e.Y
         Arrastre = True
-
     End Sub
 
     Private Sub LoginNew_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseUp
-
         Arrastre = False
-
     End Sub
 
     Private Sub LoginNew_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseMove
-
-        'Si el formulario no tiene borde (FormBorderStyle = none) la siguiente linea funciona bien
-
-        If Arrastre Then Me.Location = Me.PointToScreen(New Point(Me.MousePosition.X - Me.Location.X - ex, Me.MousePosition.Y - Me.Location.Y - ey))
-
-        'pero si quieres dejar los bordes y la barra de titulo entonces es necesario descomentar la siguiente linea y comentar la anterior, osea ponerle el apostrofe
-
-        'If Arrastre Then Me.Location = Me.PointToScreen(New Point(Me.MousePosition.X - Me.Location.X - ex - 8, Me.MousePosition.Y - Me.Location.Y - ey - 60))
-
+        If Arrastre Then Me.Location = Me.PointToScreen(New Point(Me.MousePosition.X - Me.Location.X - ejeX, Me.MousePosition.Y - Me.Location.Y - ejeY))
     End Sub
-
-
-
-
+    '------------------------------------------------------------------------------------------------------------------------------------------------
+    'Botones para cerrar y minimizar la aplicacion.
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
     End Sub
@@ -49,13 +30,20 @@ Public Class Registro
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
+    '----------------------------------------------------------------------------------------------------------------------------------------------
 
-    Private Sub btnRegis_Click(sender As Object, e As EventArgs) Handles btnRegistro.Click
+    'Este boton toma todos los datos introducidos en las casillas correspondientes
+    'y los envia a la funcion "AgregarPaciente" de la persistencia.
+    'Luego llama a la ventana login para que el paciente pueda loguearse.
+    Private Sub btnRegistro_Click(sender As Object, e As EventArgs) Handles btnRegistro.Click
         If txtContraseña.Text = txtConfContraseña.Text Then
             Dim fecha As Date = dateFechaNacimiento.Value.Date
             Dim fechastring As String = Format(fecha, "yyyy/MM/dd")
             Dim id As String = instancia.codigoRandom(3)
-            instancia.agregarPaciente(New Paciente(txtPrimerNombre.Text, txtSegundoNombre.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, id, txtDireccion.Text, txtCI.Text, txtContraseña.Text, txtTelefono.Text, fechastring, cbxSexo.Text, numPeso.Value.ToString, numAltura.Value.ToString, txtPatologiaPrevia.Text))
+            Dim altura As String = String.Format(System.Globalization.CultureInfo.GetCultureInfo("en-US"), "{0:0.00}", numAltura.Value)
+            Dim peso As String = String.Format(System.Globalization.CultureInfo.GetCultureInfo("en-US"), "{0:0.0}", numPeso.Value)
+
+            instancia.agregarPaciente(New Paciente(txtPrimerNombre.Text, txtSegundoNombre.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, id, txtDireccion.Text, txtCI.Text, txtContraseña.Text, txtTelefono.Text, fechastring, cbxSexo.Text, peso, altura, txtPatologiaPrevia.Text))
             MsgBox("Registro exitoso.")
             txtPrimerNombre.Clear()
             txtSegundoNombre.Clear()
@@ -80,6 +68,8 @@ Public Class Registro
         End If
     End Sub
 
+    'El boton hace que el TextBox "txtContraseña" cambie su propiedad
+    'de mostrar el texto a modo de contraseña (con puntitos)
     Dim mostrarContraseña As Boolean = True
     Private Sub btnMostrarContraseña_Click(sender As Object, e As EventArgs) Handles btnMostrarContraseña.Click
         If mostrarContraseña Then
@@ -93,9 +83,4 @@ Public Class Registro
         End If
     End Sub
 
-    Private Sub Label13_Click(sender As Object, e As EventArgs) Handles labAtras.Click
-        Me.Hide()
-        Login.ShowDialog()
-        Me.Close()
-    End Sub
 End Class

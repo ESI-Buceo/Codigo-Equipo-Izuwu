@@ -1,46 +1,26 @@
 ﻿Imports Logica, Datos
 Public Class Login
-
-    Dim ex, ey As Integer
+    Dim Instancia As LogicaAplicacion = New LogicaAplicacion()
+    Dim ejeX, ejeY As Integer
     Dim Arrastre As Boolean
 
     'Estas tres subrutinas permiten desplazar el formulario. 
 
     Private Sub LoginNew_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseDown
-
-        ex = e.X
-
-        ey = e.Y
-
+        ejeX = e.X
+        ejeY = e.Y
         Arrastre = True
-
     End Sub
-
     Private Sub LoginNew_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseUp
-
         Arrastre = False
-
     End Sub
 
     Private Sub LoginNew_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseMove
-
-        'Si el formulario no tiene borde (FormBorderStyle = none) la siguiente linea funciona bien
-
-        If Arrastre Then Me.Location = Me.PointToScreen(New Point(Me.MousePosition.X - Me.Location.X - ex, Me.MousePosition.Y - Me.Location.Y - ey))
-
-        'pero si quieres dejar los bordes y la barra de titulo entonces es necesario descomentar la siguiente linea y comentar la anterior, osea ponerle el apostrofe
-
-        'If Arrastre Then Me.Location = Me.PointToScreen(New Point(Me.MousePosition.X - Me.Location.X - ex - 8, Me.MousePosition.Y - Me.Location.Y - ey - 60))
-
+        If Arrastre Then Me.Location = Me.PointToScreen(New Point(Me.MousePosition.X - Me.Location.X - ejeX, Me.MousePosition.Y - Me.Location.Y - ejeY))
     End Sub
+    '-----------------------------------------------------------------------------------------------------------------------------------------------
 
-
-    Dim Instancia As LogicaAplicacion = New LogicaAplicacion()
-
-
-
-
-
+    'Eventos para minimizar y cerrar la aplicacion.
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
     End Sub
@@ -49,14 +29,11 @@ Public Class Login
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub Label6_MouseMove(sender As Object, e As MouseEventArgs) Handles Label6.MouseMove
-        Label6.ForeColor = Color.FromArgb(0, 0, 255)
-    End Sub
+    '---------------------------------------------------------------------------------------------------------------------------------------
 
-    Private Sub Label6_MouseLeave(sender As Object, e As EventArgs) Handles Label6.MouseLeave
-        Label6.ForeColor = Color.FromArgb(255, 255, 255)
-    End Sub
-
+    'Se verifica si el usuario y contraseña esten bien ingresados
+    'y se crea una nueva instancia de la ventana para crearla con los parametros
+    'personalizados, para cada usuario.
     Private Sub btnEntrar_Click(sender As Object, e As EventArgs) Handles btnEntrar.Click
         Try
 
@@ -80,6 +57,10 @@ Public Class Login
 
         End Try
     End Sub
+
+    'Este evento hace lo mismo que el boton de ingresar,
+    'solo que ocurre cuando el usuario aprieta Enter,
+    'mientras el foco este puesto en el textBox de contraseña.
     Private Sub txtContraseña_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtContraseña.KeyPress
         If e.KeyChar = ChrW(Keys.Enter) Then
             Try
@@ -104,15 +85,8 @@ Public Class Login
         End If
     End Sub
 
-
-
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-        Me.Hide()
-        Registro.ShowDialog()
-        Me.Show()
-    End Sub
-
-
+    'El boton hace que el TextBox "txtContraseña" cambie su propiedad
+    'de mostrar el texto a modo de contraseña (con puntitos)
     Dim mostrarContraseña As Boolean = True
     Private Sub btnMostrarContraseña_Click(sender As Object, e As EventArgs) Handles btnMostrarContraseña.Click
         If mostrarContraseña Then
@@ -125,4 +99,22 @@ Public Class Login
             btnMostrarContraseña.FillColor = Color.Green
         End If
     End Sub
+
+    'Eventos para que el label de registro cambie de color
+    'y cuando se presione abra la ventana de registro de paciente.
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles labRegistro.Click
+        Me.Hide()
+        Registro.ShowDialog()
+        Me.Show()
+    End Sub
+    Private Sub Label6_MouseMove(sender As Object, e As MouseEventArgs) Handles labRegistro.MouseMove
+        labRegistro.ForeColor = Color.FromArgb(0, 0, 255)
+    End Sub
+
+    Private Sub Label6_MouseLeave(sender As Object, e As EventArgs) Handles labRegistro.MouseLeave
+        labRegistro.ForeColor = Color.FromArgb(255, 255, 255)
+    End Sub
+
+
+
 End Class

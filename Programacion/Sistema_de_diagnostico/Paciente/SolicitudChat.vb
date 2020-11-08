@@ -7,10 +7,13 @@ Public Class SolicitudChat
     Public idDiagnostico As String
     Dim listaMedicos As List(Of Medico)
 
-    Private Sub Guna2CircleButton1_Click(sender As Object, e As EventArgs) Handles Guna2CircleButton1.Click
+    'Boton para cerrar la ventana.
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
     End Sub
 
+    'Cuando la ventana se abra, segun los parametros recibidos
+    'se muestran una serie de medicos que atienden una patologia en concreto.
     Private Sub SolicitudChat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         labPatologia.Text = patologia.nombre
         listaMedicos = instancia.medicosEspecializados(patologia)
@@ -19,7 +22,8 @@ Public Class SolicitudChat
         Next
     End Sub
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+    'Este boton inicia una solitud con un medico, y crea una sala de chat (A nivel persistencia).
+    Private Sub btnIniciarSolicitud_Click(sender As Object, e As EventArgs) Handles btnIniciarSolicitud.Click
         Dim fechaActual As Date = Date.Now
         Dim fechaString As String = Format(fechaActual, "yyyy/MM/dd")
         instancia.crearSalaChat(fechaString, listaMedicos.ElementAt(lstMedicos.FocusedItem.Index), paciente, idDiagnostico)
@@ -27,6 +31,7 @@ Public Class SolicitudChat
         Me.Close()
     End Sub
 
+    'misma funcion que la de cerrar, solo que se muestra otra vez (para comodidad del usuario).
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Me.Close()
     End Sub

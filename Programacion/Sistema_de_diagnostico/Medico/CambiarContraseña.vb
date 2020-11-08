@@ -6,6 +6,7 @@ Public Class CambiarContraseña
         Me.Close()
     End Sub
 
+    'Este evento verifica que los campos de contraseña coincidan.
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         If txtConfirmarContraseña.Text = txtContraseña.Text Then
             instancia.actualizarContraseñaMedico(txtContraseña.Text, medico.ID)
@@ -17,6 +18,8 @@ Public Class CambiarContraseña
 
     End Sub
 
+    'El boton hace que el TextBox "txtContraseña" cambie su propiedad
+    'de mostrar el texto a modo de contraseña (con puntitos)
     Dim mostrarContraseña As Boolean = True
     Private Sub btnMostrarContraseña_Click(sender As Object, e As EventArgs) Handles btnMostrarContraseña.Click
         If mostrarContraseña Then

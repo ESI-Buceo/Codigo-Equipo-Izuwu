@@ -31,15 +31,16 @@ Partial Class MenuPaciente
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnAgregar = New Guna.UI2.WinForms.Guna2Button()
         Me.lstSintomas = New System.Windows.Forms.ListView()
-        Me.btnMenu_RealizarDiagnostico = New Guna.UI2.WinForms.Guna2Button()
         Me.btnCerrarSesion = New Guna.UI2.WinForms.Guna2Button()
         Me.labIniciales = New System.Windows.Forms.Label()
         Me.labHistorialMedico = New System.Windows.Forms.Label()
         Me.labNombre = New System.Windows.Forms.Label()
+        Me.btnMenu_RealizarDiagnostico = New Guna.UI2.WinForms.Guna2Button()
         Me.btnChats1 = New Guna.UI2.WinForms.Guna2Button()
         Me.labVolverDisgnostico = New System.Windows.Forms.Label()
         Me.panelListaChats = New System.Windows.Forms.Panel()
         Me.panelChat = New System.Windows.Forms.Panel()
+        Me.btnVerPerfilMedico = New Guna.UI2.WinForms.Guna2Button()
         Me.txtMensaje = New System.Windows.Forms.TextBox()
         Me.txtChat = New System.Windows.Forms.TextBox()
         Me.btnEnviar = New Guna.UI2.WinForms.Guna2Button()
@@ -61,7 +62,11 @@ Partial Class MenuPaciente
         Me.labPerfilNombre = New System.Windows.Forms.Label()
         Me.labVolverPerfil = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.pdatosPaciente = New System.Windows.Forms.Panel()
+        Me.panelDatosMedicos = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.labEspecialidadMED = New System.Windows.Forms.Label()
+        Me.labLugardeTrabajoMED = New System.Windows.Forms.Label()
+        Me.paneldatosPaciente = New System.Windows.Forms.Panel()
         Me.labPerfilDireccion = New System.Windows.Forms.Label()
         Me.labPerfilTelefono = New System.Windows.Forms.Label()
         Me.labPerfilFechaDeNacimiento = New System.Windows.Forms.Label()
@@ -70,10 +75,6 @@ Partial Class MenuPaciente
         Me.label17 = New System.Windows.Forms.Label()
         Me.label16 = New System.Windows.Forms.Label()
         Me.label15 = New System.Windows.Forms.Label()
-        Me.panelDatosMedicos = New System.Windows.Forms.Panel()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.labEspecialidadMED = New System.Windows.Forms.Label()
-        Me.labLugardeTrabajoMED = New System.Windows.Forms.Label()
         Me.refrescarChat = New System.Windows.Forms.Timer(Me.components)
         Me.btnMinimizar = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.btnCerrar = New Guna.UI2.WinForms.Guna2CircleButton()
@@ -85,8 +86,8 @@ Partial Class MenuPaciente
         Me.Guna2CustomGradientPanel1.SuspendLayout()
         Me.panelPerfil.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pdatosPaciente.SuspendLayout()
         Me.panelDatosMedicos.SuspendLayout()
+        Me.paneldatosPaciente.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -196,23 +197,6 @@ Partial Class MenuPaciente
         Me.lstSintomas.UseCompatibleStateImageBehavior = False
         Me.lstSintomas.View = System.Windows.Forms.View.Tile
         '
-        'btnMenu_RealizarDiagnostico
-        '
-        Me.btnMenu_RealizarDiagnostico.Animated = True
-        Me.btnMenu_RealizarDiagnostico.BackColor = System.Drawing.Color.Transparent
-        Me.btnMenu_RealizarDiagnostico.CheckedState.Parent = Me.btnMenu_RealizarDiagnostico
-        Me.btnMenu_RealizarDiagnostico.CustomImages.Parent = Me.btnMenu_RealizarDiagnostico
-        Me.btnMenu_RealizarDiagnostico.FillColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(207, Byte), Integer))
-        Me.btnMenu_RealizarDiagnostico.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnMenu_RealizarDiagnostico.ForeColor = System.Drawing.Color.White
-        Me.btnMenu_RealizarDiagnostico.HoverState.Parent = Me.btnMenu_RealizarDiagnostico
-        Me.btnMenu_RealizarDiagnostico.Location = New System.Drawing.Point(4, 176)
-        Me.btnMenu_RealizarDiagnostico.Name = "btnMenu_RealizarDiagnostico"
-        Me.btnMenu_RealizarDiagnostico.ShadowDecoration.Parent = Me.btnMenu_RealizarDiagnostico
-        Me.btnMenu_RealizarDiagnostico.Size = New System.Drawing.Size(291, 47)
-        Me.btnMenu_RealizarDiagnostico.TabIndex = 28
-        Me.btnMenu_RealizarDiagnostico.Text = "Realizar Diagnostico"
-        '
         'btnCerrarSesion
         '
         Me.btnCerrarSesion.Animated = True
@@ -263,6 +247,23 @@ Partial Class MenuPaciente
         Me.labNombre.TabIndex = 5
         Me.labNombre.Text = "Nombre Usuario"
         '
+        'btnMenu_RealizarDiagnostico
+        '
+        Me.btnMenu_RealizarDiagnostico.Animated = True
+        Me.btnMenu_RealizarDiagnostico.BackColor = System.Drawing.Color.Transparent
+        Me.btnMenu_RealizarDiagnostico.CheckedState.Parent = Me.btnMenu_RealizarDiagnostico
+        Me.btnMenu_RealizarDiagnostico.CustomImages.Parent = Me.btnMenu_RealizarDiagnostico
+        Me.btnMenu_RealizarDiagnostico.FillColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(207, Byte), Integer))
+        Me.btnMenu_RealizarDiagnostico.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnMenu_RealizarDiagnostico.ForeColor = System.Drawing.Color.White
+        Me.btnMenu_RealizarDiagnostico.HoverState.Parent = Me.btnMenu_RealizarDiagnostico
+        Me.btnMenu_RealizarDiagnostico.Location = New System.Drawing.Point(4, 176)
+        Me.btnMenu_RealizarDiagnostico.Name = "btnMenu_RealizarDiagnostico"
+        Me.btnMenu_RealizarDiagnostico.ShadowDecoration.Parent = Me.btnMenu_RealizarDiagnostico
+        Me.btnMenu_RealizarDiagnostico.Size = New System.Drawing.Size(291, 47)
+        Me.btnMenu_RealizarDiagnostico.TabIndex = 28
+        Me.btnMenu_RealizarDiagnostico.Text = "Realizar Diagnostico"
+        '
         'btnChats1
         '
         Me.btnChats1.Animated = True
@@ -301,6 +302,7 @@ Partial Class MenuPaciente
         '
         'panelChat
         '
+        Me.panelChat.Controls.Add(Me.btnVerPerfilMedico)
         Me.panelChat.Controls.Add(Me.txtMensaje)
         Me.panelChat.Controls.Add(Me.txtChat)
         Me.panelChat.Controls.Add(Me.btnEnviar)
@@ -309,10 +311,28 @@ Partial Class MenuPaciente
         Me.panelChat.Size = New System.Drawing.Size(620, 611)
         Me.panelChat.TabIndex = 9
         '
+        'btnVerPerfilMedico
+        '
+        Me.btnVerPerfilMedico.Animated = True
+        Me.btnVerPerfilMedico.AutoRoundedCorners = True
+        Me.btnVerPerfilMedico.BorderRadius = 9
+        Me.btnVerPerfilMedico.CheckedState.Parent = Me.btnVerPerfilMedico
+        Me.btnVerPerfilMedico.CustomImages.Parent = Me.btnVerPerfilMedico
+        Me.btnVerPerfilMedico.FillColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(122, Byte), Integer))
+        Me.btnVerPerfilMedico.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.btnVerPerfilMedico.ForeColor = System.Drawing.Color.White
+        Me.btnVerPerfilMedico.HoverState.Parent = Me.btnVerPerfilMedico
+        Me.btnVerPerfilMedico.Location = New System.Drawing.Point(23, 11)
+        Me.btnVerPerfilMedico.Name = "btnVerPerfilMedico"
+        Me.btnVerPerfilMedico.ShadowDecoration.Parent = Me.btnVerPerfilMedico
+        Me.btnVerPerfilMedico.Size = New System.Drawing.Size(116, 21)
+        Me.btnVerPerfilMedico.TabIndex = 5
+        Me.btnVerPerfilMedico.Text = "Ver Perfil del Medico"
+        '
         'txtMensaje
         '
         Me.txtMensaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMensaje.Location = New System.Drawing.Point(21, 546)
+        Me.txtMensaje.Location = New System.Drawing.Point(22, 569)
         Me.txtMensaje.Name = "txtMensaje"
         Me.txtMensaje.Size = New System.Drawing.Size(468, 22)
         Me.txtMensaje.TabIndex = 1
@@ -320,8 +340,9 @@ Partial Class MenuPaciente
         'txtChat
         '
         Me.txtChat.BackColor = System.Drawing.Color.White
+        Me.txtChat.Enabled = False
         Me.txtChat.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtChat.Location = New System.Drawing.Point(21, 17)
+        Me.txtChat.Location = New System.Drawing.Point(22, 40)
         Me.txtChat.Multiline = True
         Me.txtChat.Name = "txtChat"
         Me.txtChat.ReadOnly = True
@@ -340,7 +361,7 @@ Partial Class MenuPaciente
         Me.btnEnviar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnEnviar.ForeColor = System.Drawing.Color.White
         Me.btnEnviar.HoverState.Parent = Me.btnEnviar
-        Me.btnEnviar.Location = New System.Drawing.Point(508, 540)
+        Me.btnEnviar.Location = New System.Drawing.Point(509, 563)
         Me.btnEnviar.Name = "btnEnviar"
         Me.btnEnviar.ShadowDecoration.Parent = Me.btnEnviar
         Me.btnEnviar.Size = New System.Drawing.Size(82, 34)
@@ -514,8 +535,8 @@ Partial Class MenuPaciente
         Me.panelPerfil.Controls.Add(Me.labPerfilNombre)
         Me.panelPerfil.Controls.Add(Me.labVolverPerfil)
         Me.panelPerfil.Controls.Add(Me.PictureBox1)
-        Me.panelPerfil.Controls.Add(Me.pdatosPaciente)
         Me.panelPerfil.Controls.Add(Me.panelDatosMedicos)
+        Me.panelPerfil.Controls.Add(Me.paneldatosPaciente)
         Me.panelPerfil.Location = New System.Drawing.Point(297, 31)
         Me.panelPerfil.Name = "panelPerfil"
         Me.panelPerfil.Size = New System.Drawing.Size(682, 608)
@@ -582,20 +603,64 @@ Partial Class MenuPaciente
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'pdatosPaciente
+        'panelDatosMedicos
         '
-        Me.pdatosPaciente.Controls.Add(Me.labPerfilDireccion)
-        Me.pdatosPaciente.Controls.Add(Me.labPerfilTelefono)
-        Me.pdatosPaciente.Controls.Add(Me.labPerfilFechaDeNacimiento)
-        Me.pdatosPaciente.Controls.Add(Me.txtPerfilPatologias)
-        Me.pdatosPaciente.Controls.Add(Me.labPerfilPatologias)
-        Me.pdatosPaciente.Controls.Add(Me.label17)
-        Me.pdatosPaciente.Controls.Add(Me.label16)
-        Me.pdatosPaciente.Controls.Add(Me.label15)
-        Me.pdatosPaciente.Location = New System.Drawing.Point(7, 350)
-        Me.pdatosPaciente.Name = "pdatosPaciente"
-        Me.pdatosPaciente.Size = New System.Drawing.Size(668, 245)
-        Me.pdatosPaciente.TabIndex = 25
+        Me.panelDatosMedicos.Controls.Add(Me.Button3)
+        Me.panelDatosMedicos.Controls.Add(Me.labEspecialidadMED)
+        Me.panelDatosMedicos.Controls.Add(Me.labLugardeTrabajoMED)
+        Me.panelDatosMedicos.Location = New System.Drawing.Point(74, 348)
+        Me.panelDatosMedicos.Name = "panelDatosMedicos"
+        Me.panelDatosMedicos.Size = New System.Drawing.Size(551, 245)
+        Me.panelDatosMedicos.TabIndex = 26
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.LightGray
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Location = New System.Drawing.Point(507, 252)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(111, 22)
+        Me.Button3.TabIndex = 17
+        Me.Button3.Text = "! Reportar usuario"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'labEspecialidadMED
+        '
+        Me.labEspecialidadMED.AutoSize = True
+        Me.labEspecialidadMED.Font = New System.Drawing.Font("Yu Gothic UI Semilight", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labEspecialidadMED.ForeColor = System.Drawing.Color.Black
+        Me.labEspecialidadMED.Location = New System.Drawing.Point(26, 181)
+        Me.labEspecialidadMED.Name = "labEspecialidadMED"
+        Me.labEspecialidadMED.Size = New System.Drawing.Size(109, 25)
+        Me.labEspecialidadMED.TabIndex = 16
+        Me.labEspecialidadMED.Text = "Especialidad:"
+        '
+        'labLugardeTrabajoMED
+        '
+        Me.labLugardeTrabajoMED.AutoSize = True
+        Me.labLugardeTrabajoMED.Font = New System.Drawing.Font("Yu Gothic UI Semilight", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labLugardeTrabajoMED.ForeColor = System.Drawing.Color.Black
+        Me.labLugardeTrabajoMED.Location = New System.Drawing.Point(26, 64)
+        Me.labLugardeTrabajoMED.Name = "labLugardeTrabajoMED"
+        Me.labLugardeTrabajoMED.Size = New System.Drawing.Size(143, 25)
+        Me.labLugardeTrabajoMED.TabIndex = 15
+        Me.labLugardeTrabajoMED.Text = "Lugar de Trabajo:"
+        '
+        'paneldatosPaciente
+        '
+        Me.paneldatosPaciente.Controls.Add(Me.labPerfilDireccion)
+        Me.paneldatosPaciente.Controls.Add(Me.labPerfilTelefono)
+        Me.paneldatosPaciente.Controls.Add(Me.labPerfilFechaDeNacimiento)
+        Me.paneldatosPaciente.Controls.Add(Me.txtPerfilPatologias)
+        Me.paneldatosPaciente.Controls.Add(Me.labPerfilPatologias)
+        Me.paneldatosPaciente.Controls.Add(Me.label17)
+        Me.paneldatosPaciente.Controls.Add(Me.label16)
+        Me.paneldatosPaciente.Controls.Add(Me.label15)
+        Me.paneldatosPaciente.Location = New System.Drawing.Point(7, 350)
+        Me.paneldatosPaciente.Name = "paneldatosPaciente"
+        Me.paneldatosPaciente.Size = New System.Drawing.Size(668, 245)
+        Me.paneldatosPaciente.TabIndex = 25
         '
         'labPerfilDireccion
         '
@@ -685,50 +750,6 @@ Partial Class MenuPaciente
         Me.label15.TabIndex = 14
         Me.label15.Text = "Fecha de nacimiento:"
         '
-        'panelDatosMedicos
-        '
-        Me.panelDatosMedicos.Controls.Add(Me.Button3)
-        Me.panelDatosMedicos.Controls.Add(Me.labEspecialidadMED)
-        Me.panelDatosMedicos.Controls.Add(Me.labLugardeTrabajoMED)
-        Me.panelDatosMedicos.Location = New System.Drawing.Point(74, 348)
-        Me.panelDatosMedicos.Name = "panelDatosMedicos"
-        Me.panelDatosMedicos.Size = New System.Drawing.Size(551, 245)
-        Me.panelDatosMedicos.TabIndex = 26
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.LightGray
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Location = New System.Drawing.Point(507, 252)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(111, 22)
-        Me.Button3.TabIndex = 17
-        Me.Button3.Text = "! Reportar usuario"
-        Me.Button3.UseVisualStyleBackColor = False
-        '
-        'labEspecialidadMED
-        '
-        Me.labEspecialidadMED.AutoSize = True
-        Me.labEspecialidadMED.Font = New System.Drawing.Font("Yu Gothic UI Semilight", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labEspecialidadMED.ForeColor = System.Drawing.Color.Black
-        Me.labEspecialidadMED.Location = New System.Drawing.Point(26, 181)
-        Me.labEspecialidadMED.Name = "labEspecialidadMED"
-        Me.labEspecialidadMED.Size = New System.Drawing.Size(109, 25)
-        Me.labEspecialidadMED.TabIndex = 16
-        Me.labEspecialidadMED.Text = "Especialidad:"
-        '
-        'labLugardeTrabajoMED
-        '
-        Me.labLugardeTrabajoMED.AutoSize = True
-        Me.labLugardeTrabajoMED.Font = New System.Drawing.Font("Yu Gothic UI Semilight", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labLugardeTrabajoMED.ForeColor = System.Drawing.Color.Black
-        Me.labLugardeTrabajoMED.Location = New System.Drawing.Point(26, 64)
-        Me.labLugardeTrabajoMED.Name = "labLugardeTrabajoMED"
-        Me.labLugardeTrabajoMED.Size = New System.Drawing.Size(143, 25)
-        Me.labLugardeTrabajoMED.TabIndex = 15
-        Me.labLugardeTrabajoMED.Text = "Lugar de Trabajo:"
-        '
         'refrescarChat
         '
         Me.refrescarChat.Interval = 3000
@@ -782,9 +803,9 @@ Partial Class MenuPaciente
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.panelListaChats)
-        Me.Controls.Add(Me.panelPerfil)
         Me.Controls.Add(Me.panelRealizarDiagnostico2)
         Me.Controls.Add(Me.panelChat)
+        Me.Controls.Add(Me.panelPerfil)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)
@@ -805,10 +826,10 @@ Partial Class MenuPaciente
         Me.panelPerfil.ResumeLayout(False)
         Me.panelPerfil.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pdatosPaciente.ResumeLayout(False)
-        Me.pdatosPaciente.PerformLayout()
         Me.panelDatosMedicos.ResumeLayout(False)
         Me.panelDatosMedicos.PerformLayout()
+        Me.paneldatosPaciente.ResumeLayout(False)
+        Me.paneldatosPaciente.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -834,7 +855,7 @@ Partial Class MenuPaciente
     Friend WithEvents Button3 As Button
     Friend WithEvents labEspecialidadMED As Label
     Friend WithEvents labLugardeTrabajoMED As Label
-    Friend WithEvents pdatosPaciente As Panel
+    Friend WithEvents paneldatosPaciente As Panel
     Friend WithEvents labPerfilPatologias As Label
     Friend WithEvents label17 As Label
     Friend WithEvents label16 As Label
@@ -866,4 +887,5 @@ Partial Class MenuPaciente
     Friend WithEvents btnMinimizar As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents btnCerrar As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents btnMenu_RealizarDiagnostico As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnVerPerfilMedico As Guna.UI2.WinForms.Guna2Button
 End Class

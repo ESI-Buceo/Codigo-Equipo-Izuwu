@@ -2,10 +2,15 @@
 Public Class EditarPerfil
     Dim instancia As New LogicaAplicacion()
     Public paciente As Paciente
+
+    'Cuando se carga la ventana, se cargan con los datos del paciente
+    'en los textbox y numericUpDown correspondientes.
     Private Sub EditarPerfil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarPaciente()
     End Sub
 
+    'El boton hace que el TextBox "txtContraseña" cambie su propiedad
+    'de mostrar el texto a modo de contraseña (con puntitos)
     Dim mostrarContraseña As Boolean = True
     Private Sub btnMostrarContraseña_Click(sender As Object, e As EventArgs) Handles btnMostrarContraseña.Click
         If mostrarContraseña Then
@@ -19,8 +24,9 @@ Public Class EditarPerfil
         End If
     End Sub
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-
+    'Se envian los datos cambiados (y no cambiados)
+    'a la persistencia para que se actualicen los datos del paciente.
+    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         If txtContraseña.Text = txtConfirmarContraseña.Text Then
             instancia.actualizarPaciente(New Paciente(paciente.nombre, paciente.apellido, paciente.apellido, paciente.segundoapellido, txtEmail.Text, paciente.ID, txtDireccion.Text,
                                                   paciente.CI, txtContraseña.Text, txtTelefono.Text, paciente.fechadenacimiento, paciente.sexo, numAltura.Value.ToString, numPeso.Value.ToString,

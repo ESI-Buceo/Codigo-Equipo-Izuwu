@@ -12,7 +12,11 @@ Public Class ABMSintoma
         Me.Close()
     End Sub
 
-
+    'Al cargarse la ventana se verifica si es una modificacion
+    'o si es un elemento nuevo.
+    'Esto se hace con el atributo "confirmar"
+    'si el mismo es 0 significa que es un elemento existente
+    'si es -1 significa que es un elemento nuevo.
     Private Sub ABMSintoma_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         If confirmar = -1 Then
@@ -25,6 +29,8 @@ Public Class ABMSintoma
 
     End Sub
 
+    'Despues de apretar aceptar se verifican cuales casillas del CheckListBox
+    'estan marcadas y mediante un for se agregan a la referencia sintoma-patologia.
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         Try
 
