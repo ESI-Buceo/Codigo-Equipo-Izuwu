@@ -78,6 +78,12 @@ Partial Class MenuPaciente
         Me.refrescarChat = New System.Windows.Forms.Timer(Me.components)
         Me.btnMinimizar = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.btnCerrar = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.panelHistorialConsulta = New System.Windows.Forms.Panel()
+        Me.btnCerrarHistorial = New Guna.UI2.WinForms.Guna2Button()
+        Me.txtContenido = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lstHistorialConsulta = New System.Windows.Forms.ListView()
+        Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel1.SuspendLayout()
         Me.panelRealizarDiagnostico.SuspendLayout()
         Me.paelRealizaDiagnostico2.SuspendLayout()
@@ -88,6 +94,7 @@ Partial Class MenuPaciente
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelDatosMedicos.SuspendLayout()
         Me.paneldatosPaciente.SuspendLayout()
+        Me.panelHistorialConsulta.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -792,6 +799,112 @@ Partial Class MenuPaciente
         Me.btnCerrar.Text = "X"
         Me.btnCerrar.UseTransparentBackground = True
         '
+        'panelHistorialConsulta
+        '
+        Me.panelHistorialConsulta.Controls.Add(Me.btnCerrarHistorial)
+        Me.panelHistorialConsulta.Controls.Add(Me.txtContenido)
+        Me.panelHistorialConsulta.Controls.Add(Me.Guna2HtmlLabel1)
+        Me.panelHistorialConsulta.Controls.Add(Me.lstHistorialConsulta)
+        Me.panelHistorialConsulta.Controls.Add(Me.Guna2TextBox1)
+        Me.panelHistorialConsulta.Location = New System.Drawing.Point(330, 17)
+        Me.panelHistorialConsulta.Name = "panelHistorialConsulta"
+        Me.panelHistorialConsulta.Size = New System.Drawing.Size(612, 601)
+        Me.panelHistorialConsulta.TabIndex = 9
+        '
+        'btnCerrarHistorial
+        '
+        Me.btnCerrarHistorial.Animated = True
+        Me.btnCerrarHistorial.AutoRoundedCorners = True
+        Me.btnCerrarHistorial.BorderRadius = 10
+        Me.btnCerrarHistorial.CheckedState.Parent = Me.btnCerrarHistorial
+        Me.btnCerrarHistorial.CustomImages.Parent = Me.btnCerrarHistorial
+        Me.btnCerrarHistorial.FillColor = System.Drawing.Color.Red
+        Me.btnCerrarHistorial.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnCerrarHistorial.ForeColor = System.Drawing.Color.White
+        Me.btnCerrarHistorial.HoverState.Parent = Me.btnCerrarHistorial
+        Me.btnCerrarHistorial.Location = New System.Drawing.Point(534, 567)
+        Me.btnCerrarHistorial.Name = "btnCerrarHistorial"
+        Me.btnCerrarHistorial.ShadowDecoration.Parent = Me.btnCerrarHistorial
+        Me.btnCerrarHistorial.Size = New System.Drawing.Size(72, 22)
+        Me.btnCerrarHistorial.TabIndex = 24
+        Me.btnCerrarHistorial.Text = "Cerrar"
+        '
+        'txtContenido
+        '
+        Me.txtContenido.BorderColor = System.Drawing.Color.Black
+        Me.txtContenido.BorderRadius = 15
+        Me.txtContenido.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtContenido.DefaultText = ""
+        Me.txtContenido.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtContenido.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtContenido.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtContenido.DisabledState.Parent = Me.txtContenido
+        Me.txtContenido.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtContenido.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtContenido.FocusedState.Parent = Me.txtContenido
+        Me.txtContenido.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContenido.ForeColor = System.Drawing.Color.Black
+        Me.txtContenido.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtContenido.HoverState.Parent = Me.txtContenido
+        Me.txtContenido.Location = New System.Drawing.Point(326, 89)
+        Me.txtContenido.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtContenido.Multiline = True
+        Me.txtContenido.Name = "txtContenido"
+        Me.txtContenido.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtContenido.PlaceholderText = ""
+        Me.txtContenido.ReadOnly = True
+        Me.txtContenido.SelectedText = ""
+        Me.txtContenido.ShadowDecoration.Parent = Me.txtContenido
+        Me.txtContenido.Size = New System.Drawing.Size(270, 259)
+        Me.txtContenido.TabIndex = 23
+        '
+        'Guna2HtmlLabel1
+        '
+        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(326, 56)
+        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(95, 26)
+        Me.Guna2HtmlLabel1.TabIndex = 22
+        Me.Guna2HtmlLabel1.Text = "Contenido:"
+        '
+        'lstHistorialConsulta
+        '
+        Me.lstHistorialConsulta.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lstHistorialConsulta.HideSelection = False
+        Me.lstHistorialConsulta.Location = New System.Drawing.Point(3, 56)
+        Me.lstHistorialConsulta.Name = "lstHistorialConsulta"
+        Me.lstHistorialConsulta.Size = New System.Drawing.Size(307, 528)
+        Me.lstHistorialConsulta.TabIndex = 0
+        Me.lstHistorialConsulta.UseCompatibleStateImageBehavior = False
+        Me.lstHistorialConsulta.View = System.Windows.Forms.View.Tile
+        '
+        'Guna2TextBox1
+        '
+        Me.Guna2TextBox1.AutoRoundedCorners = True
+        Me.Guna2TextBox1.BorderColor = System.Drawing.Color.Black
+        Me.Guna2TextBox1.BorderRadius = 9
+        Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Guna2TextBox1.DefaultText = ""
+        Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox1.DisabledState.Parent = Me.Guna2TextBox1
+        Me.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox1.FocusedState.Parent = Me.Guna2TextBox1
+        Me.Guna2TextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox1.HoverState.Parent = Me.Guna2TextBox1
+        Me.Guna2TextBox1.Location = New System.Drawing.Point(17, 17)
+        Me.Guna2TextBox1.Name = "Guna2TextBox1"
+        Me.Guna2TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Guna2TextBox1.PlaceholderText = ""
+        Me.Guna2TextBox1.SelectedText = ""
+        Me.Guna2TextBox1.ShadowDecoration.Parent = Me.Guna2TextBox1
+        Me.Guna2TextBox1.Size = New System.Drawing.Size(273, 20)
+        Me.Guna2TextBox1.TabIndex = 21
+        '
         'MenuPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -799,13 +912,14 @@ Partial Class MenuPaciente
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(980, 645)
         Me.ControlBox = False
-        Me.Controls.Add(Me.btnMinimizar)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnCerrar)
-        Me.Controls.Add(Me.panelListaChats)
+        Me.Controls.Add(Me.btnMinimizar)
+        Me.Controls.Add(Me.panelHistorialConsulta)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.panelRealizarDiagnostico2)
         Me.Controls.Add(Me.panelChat)
         Me.Controls.Add(Me.panelPerfil)
+        Me.Controls.Add(Me.panelListaChats)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(980, 645)
         Me.MinimumSize = New System.Drawing.Size(964, 606)
@@ -830,6 +944,8 @@ Partial Class MenuPaciente
         Me.panelDatosMedicos.PerformLayout()
         Me.paneldatosPaciente.ResumeLayout(False)
         Me.paneldatosPaciente.PerformLayout()
+        Me.panelHistorialConsulta.ResumeLayout(False)
+        Me.panelHistorialConsulta.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -888,4 +1004,10 @@ Partial Class MenuPaciente
     Friend WithEvents btnCerrar As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents btnMenu_RealizarDiagnostico As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnVerPerfilMedico As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents panelHistorialConsulta As Panel
+    Friend WithEvents btnCerrarHistorial As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents txtContenido As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lstHistorialConsulta As ListView
+    Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
 End Class

@@ -16,6 +16,7 @@ Public Class MenuMedico
     Dim paciente As Paciente
     Dim cambiarContraseña As Boolean = False
     Dim botonesChat As New List(Of Guna.UI2.WinForms.Guna2CircleButton)
+    Dim listaHistorialConsulta As List(Of tratamiento)
 
 
     'Estas tres subrutinas permiten desplazar el formulario. 
@@ -63,7 +64,7 @@ Public Class MenuMedico
     Private Sub btnHistorialdeConsultas_Click_1(sender As Object, e As EventArgs) Handles btnHistorialdeConsultas.Click
         devolverColorBotonesMenu()
         btnHistorialdeConsultas.FillColor = Color.FromArgb(38, 131, 108)
-
+        cargarHistorialConsulta()
         nullvisible()
         panelHistorialConsulta.Visible = True
         refrescarChat.Stop()
@@ -296,6 +297,7 @@ Public Class MenuMedico
 
     End Sub
 
+
     'Esta funcion crea botones circulares (de la extension GUNA)
     'y le da ciertos parametros, entre ellos se establece el nombre del boton
     'como la ID de la sala con el paciente.
@@ -333,5 +335,28 @@ Public Class MenuMedico
             Loop While (indice < listaConsultas_EnCurso.Count + 1)
 
         End If
+    End Sub
+
+    Private Sub lstHistorialConsulta_ItemSelectionChanged(sender As Object, e As ListViewItemSelectionChangedEventArgs) Handles lstHistorialConsulta.ItemSelectionChanged
+        Dim tratamiento As Integer = lstHistorialConsulta.FocusedItem.Index
+        txtContenido.Text = listaHistorialConsulta.ElementAt(tratamiento).contenido
+    End Sub
+
+
+
+    'Esta funcion se encargara de cargarlo las consultas que hayan sido antendidas
+    'por el medico que se encuentre logeado en el momento.
+    Public Sub cargarHistorialConsulta()
+        lstHistorialConsulta.Clear()
+
+
+        Try
+            listaHistorialConsulta = instancia.obtenerHistorialConsultasM(medico.ID)
+            For Each tratamiento As tratamiento In listaHistorialConsulta
+                lstHistorialConsulta.Items.Add(tratamiento.nombre + " " + tratamiento.apellido + " - " + tratamiento.fecha)
+            Next
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

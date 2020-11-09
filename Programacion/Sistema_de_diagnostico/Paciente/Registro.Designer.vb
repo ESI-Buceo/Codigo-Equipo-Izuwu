@@ -367,7 +367,7 @@ Partial Class Registro
         Me.txtPrimerNombre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtPrimerNombre.FocusedState.Parent = Me.txtPrimerNombre
         Me.txtPrimerNombre.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtPrimerNombre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.txtPrimerNombre.ForeColor = System.Drawing.Color.Black
         Me.txtPrimerNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtPrimerNombre.HoverState.Parent = Me.txtPrimerNombre
         Me.txtPrimerNombre.Location = New System.Drawing.Point(431, 86)

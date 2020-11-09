@@ -10,11 +10,11 @@ Public Class ConexionConBD
         Dim connection As New Connection
         connection.ConnectionString = "" &
             "driver={MySQL ODBC 8.0 Unicode Driver};" &
-            "server=127.0.0.1;" &
+            "server=izuwuedb.co8sw6a5kje7.us-east-2.rds.amazonaws.com;" &
             "port=3306;" &
-            "database=proyecto_izuwup2;" &
-            "uid=root;" &
-            "pwd=1234;"
+            "database=izuwuDB;" &
+            "uid=admin;" &
+            "pwd=izuwuteam;"
         connection.Open()
 
         Return Connection
@@ -1008,14 +1008,71 @@ Public Class ConexionConBD
         connection.Close()
     End Sub
 
-    Public Function obtenerHistorialMedico_Medico()
+    Public Function obtenerHistorialMedico_Medico(id_medico As String) As List(Of tratamiento)
         Dim connection As Connection = conectar()
+        Dim obtenerHistorialMedicoM As Recordset = connection.Execute("select usuario.nombre, usuario.apellido, diagnostico_app.ID_DAPP, tratamiento.contenido, diagnostico_app.FechaHora " +
+                                                                      "From usuario inner join paciente on " +
+                                                                      "paciente.id_pac = usuario.ID_US inner join chatea on " +
+                                                                      "paciente.ID_PAC = chatea.Cid_pac inner join sala on " +
+                                                                      "chatea.Cid_sala = sala.id_sala inner join atiende on " +
+                                                                      "sala.id_sala = atiende.Aid_sala inner join diagnostico_app on " +
+                                                                      "paciente.ID_PAC = diagnostico_app.ID_PAC inner join tratamiento on " +
+                                                                      "diagnostico_app.ID_DAPP = tratamiento.Tid_diag " +
+                                                                      "where atiende.Aid_medico = '" + id_medico + "' " +
+                                                                      "order by FechaHora desc;")
 
+        If obtenerHistorialMedicoM.EOF = True Then
+            connection.Close()
+            Throw New Exception("Historial de consultas vacío.")
+        Else
+            Dim listaTratamiento As New List(Of tratamiento)
+            While (Not obtenerHistorialMedicoM.EOF)
+                Dim contenido As String = TryCast(obtenerHistorialMedicoM.Fields("contenido").Value, String)
+                Dim nombre As String = TryCast(obtenerHistorialMedicoM.Fields("nombre").Value, String)
+                Dim fechaBaseDatos As Date = TryCast(obtenerHistorialMedicoM.Fields("FechaHora").Value, Object)
+                Dim fechaString As String = Format(fechaBaseDatos, "yyyy/MM/dd")
+                Dim apellido As String = TryCast(obtenerHistorialMedicoM.Fields("apellido").Value, String)
+                Dim id_dapp As String = TryCast(obtenerHistorialMedicoM.Fields("ID_DAPP").Value, String)
+                listaTratamiento.Add(New tratamiento(nombre, apellido, id_dapp, contenido, fechaString))
+                obtenerHistorialMedicoM.MoveNext()
+            End While
+            connection.Close()
+            Return listaTratamiento
+        End If
     End Function
 
-    Public Function obtenerHistorialMedico_Paciente()
+    Public Function obtenerHistorialMedico_Paciente(id_pac As String) As List(Of tratamiento)
         Dim connection As Connection = conectar()
+        Dim obtenerHistorialMedicoP As Recordset = connection.Execute("select um.nombre, um.apellido, diagnostico_app.ID_DAPP, tratamiento.contenido, diagnostico_app.FechaHora " +
+                                                                      "From usuario inner join paciente on " +
+                                                                      "paciente.id_pac = usuario.ID_US inner join chatea on " +
+                                                                      "paciente.ID_PAC = chatea.Cid_pac inner join sala on " +
+                                                                      "chatea.Cid_sala = sala.id_sala inner join atiende on " +
+                                                                      "sala.id_sala = atiende.Aid_sala inner join diagnostico_app on " +
+                                                                      "paciente.ID_PAC = diagnostico_app.ID_PAC inner join tratamiento on " +
+                                                                      "diagnostico_app.ID_DAPP = tratamiento.Tid_diag inner join usuario um on " +
+                                                                      "um.ID_US = atiende.Aid_medico " +
+                                                                      "where paciente.id_pac = '" + id_pac + "' " +
+                                                                      "order by FechaHora desc;")
 
+        If obtenerHistorialMedicoP.EOF = True Then
+            connection.Close()
+            Throw New Exception("Historial de consultas vacío.")
+        Else
+            Dim listaTratamiento As New List(Of tratamiento)
+            While (Not obtenerHistorialMedicoP.EOF)
+                Dim contenido As String = TryCast(obtenerHistorialMedicoP.Fields("contenido").Value, String)
+                Dim nombre As String = TryCast(obtenerHistorialMedicoP.Fields("nombre").Value, String)
+                Dim fechaBaseDatos As Date = TryCast(obtenerHistorialMedicoP.Fields("FechaHora").Value, Object)
+                Dim fechaString As String = Format(fechaBaseDatos, "yyyy/MM/dd")
+                Dim apellido As String = TryCast(obtenerHistorialMedicoP.Fields("apellido").Value, String)
+                Dim id_dapp As String = TryCast(obtenerHistorialMedicoP.Fields("ID_DAPP").Value, String)
+                listaTratamiento.Add(New tratamiento(nombre, apellido, id_dapp, contenido, fechaString))
+                obtenerHistorialMedicoP.MoveNext()
+            End While
+            connection.Close()
+            Return listaTratamiento
+        End If
     End Function
 
 
@@ -1027,12 +1084,12 @@ Public Class ConexionConBD
         Dim fechaBaseDatos As Date
         Dim fechaString As String
         Dim nombre, segundonombre, apellido, segundoapellido, email, direccion, ci, contraseña, telefono, sexo, peso, altura, patologiaprevia, id As String
-        Dim obtenerPaciente As Recordset = connection.Execute("select usuario.*,telefono_us.Telefono,paciente.altura,paciente.PatologiasP,paciente.peso,sala.id_sala " +
-                                                              "from usuario inner join paciente on " +
-                                                              "usuario.ID_US = paciente.ID_PAC join telefono_us on " +
-                                                              "usuario.ID_US = telefono_us.ID_US inner join chatea on " +
-                                                              "paciente.ID_PAC = chatea.Cid_pac inner join sala on " +
-                                                              "chatea.Cid_sala = sala.id_sala inner join atiende on " +
+        Dim obtenerPaciente As Recordset = connection.Execute("Select usuario.*,telefono_us.Telefono,paciente.altura,paciente.PatologiasP,paciente.peso,sala.id_sala " +
+                                                              "from usuario inner join paciente On " +
+                                                              "usuario.ID_US = paciente.ID_PAC join telefono_us On " +
+                                                              "usuario.ID_US = telefono_us.ID_US inner join chatea On " +
+                                                              "paciente.ID_PAC = chatea.Cid_pac inner join sala On " +
+                                                              "chatea.Cid_sala = sala.id_sala inner join atiende On " +
                                                               "sala.id_sala = atiende.Aid_sala where sala.id_sala = '" + ID_sala + "';")
 
         id = TryCast(obtenerPaciente.Fields("id_us").Value, String)

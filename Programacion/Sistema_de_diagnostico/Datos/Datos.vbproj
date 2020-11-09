@@ -78,6 +78,7 @@
     <Compile Include="Patologia.vb" />
     <Compile Include="Sala_Chat.vb" />
     <Compile Include="Sintoma.vb" />
+    <Compile Include="tratamiento.vb" />
     <Compile Include="Usuario.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

@@ -51,6 +51,14 @@ Public Class LogicaAplicacion
         Return instancia.obtenerUnMedico(ID_sala)
     End Function
 
+    Public Function obtenerHistorialConsultasM(id_med As String) As List(Of tratamiento)
+        Return instancia.obtenerHistorialMedico_Medico(id_med)
+    End Function
+
+    Public Function obtenerHistorialConsultasP(id_pac As String) As List(Of tratamiento)
+        Return instancia.obtenerHistorialMedico_Paciente(id_pac)
+    End Function
+
     '----------------------------------------------------------------------------------------------------------------------------------------------
 
     Public Function loginMedico(userCI As String, pass As String) As Medico

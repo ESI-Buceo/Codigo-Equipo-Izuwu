@@ -12,7 +12,7 @@ Public Class MenuPaciente
     Dim listaSintomas As List(Of Sintoma) = instancia.ObtenerSintoma()
     Dim filtroSintomas As New List(Of Sintoma)
     Dim listaResultadoDiag As List(Of Diagnostico)
-
+    Dim listaHistorialConsulta As List(Of tratamiento)
 
     Dim listaChatsAceptados As List(Of Sala_Chat)
     Dim listaMensajes As List(Of Mensaje)
@@ -50,6 +50,7 @@ Public Class MenuPaciente
         labIniciales.Text = paciente.nombre(0) + " " + paciente.apellido(0)
         labNombre.Text = paciente.nombre + " " + paciente.apellido
         nullvisible()
+        cargarHistorialConsultas()
         btnEnviar.Enabled = False
         btnVerPerfilMedico.Enabled = False
     End Sub
@@ -361,6 +362,7 @@ Public Class MenuPaciente
         panelRealizarDiagnostico.Visible = False
         panelRealizarDiagnostico2.Visible = False
         panelPerfil.Visible = False
+        panelHistorialConsulta.Visible = False
     End Sub
 
     Public Sub devolverColorBotonesMenu()
@@ -401,6 +403,17 @@ Public Class MenuPaciente
         End If
     End Sub
 
+    Private Sub labHistorialMedico_Click(sender As Object, e As EventArgs) Handles labHistorialMedico.Click
+        nullvisible()
+        panelHistorialConsulta.Show()
+    End Sub
+
+
+
+    Private Sub btnCerrarHistorial_Click(sender As Object, e As EventArgs) Handles btnCerrarHistorial.Click
+        nullvisible()
+    End Sub
+
     'Esta funcion crea botones circulares (de la extension GUNA)
     'y le da ciertos parametros, entre ellos se establece el nombre del boton
     'como la ID de la sala con el paciente.
@@ -437,6 +450,25 @@ Public Class MenuPaciente
                     indice = indice + 1
                 Loop While (indice < listaChatsAceptados.Count + 1)
             End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub lstHistorialConsulta_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstHistorialConsulta.SelectedIndexChanged
+        Dim tratamiento As Integer = lstHistorialConsulta.FocusedItem.Index
+        txtContenido.Text = listaHistorialConsulta.ElementAt(tratamiento).contenido
+    End Sub
+
+    Public Sub cargarHistorialConsultas()
+        lstHistorialConsulta.Clear()
+
+
+        Try
+            listaHistorialConsulta = instancia.obtenerHistorialConsultasP(paciente.ID)
+            For Each tratamiento As tratamiento In listaHistorialConsulta
+                lstHistorialConsulta.Items.Add(tratamiento.nombre + " " + tratamiento.apellido + " - " + tratamiento.fecha)
+            Next
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
